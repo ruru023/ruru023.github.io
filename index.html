@@ -50,14 +50,12 @@
   <div id="app">
     
       
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
     <main class="content on">
       
 <section class="cover">
-    
-      
-      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
     
   <div class="cover-frame">
     <div class="bg-box">
@@ -105,64 +103,6 @@
 <div id="main">
   <section class="outer">
   
-  <ul class="ads">
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://curl.qcloud.com/kvO7hb43">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5ccc.jpg" width="300" alt="云服务器限时秒杀">
-            </a>
-        </li>
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8630075">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5cd7.png" width="300" alt="vultr优惠vps">
-            </a>
-        </li>
-    
-</ul>
-  
-  
-  
-
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content" id="broad"></div>
-</div>
-<script type="text/javascript">
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("broad").innerHTML = data.hitokoto;
-        })
-        .catch(console.error)
-</script>
-
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
-
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
   
   <article class="articles">
     
@@ -183,14 +123,7 @@
   <time datetime="2022-03-30T03:25:57.147Z" itemprop="datePublished">2022-03-30</time>
 </a>    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1> 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -218,14 +151,7 @@
   <time datetime="2022-03-30T03:25:20.219Z" itemprop="datePublished">2022-03-30</time>
 </a>    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Github-仓库"><a href="#Github-仓库" class="headerlink" title="Github 仓库"></a>Github 仓库</h1> 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -253,22 +179,7 @@
   <time datetime="2022-03-30T02:41:33.987Z" itemprop="datePublished">2022-03-30</time>
 </a>    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Python小技巧"><a href="#Python小技巧" class="headerlink" title="Python小技巧"></a>Python小技巧</h1><blockquote>
-<p>参考文档： <a target="_blank" rel="noopener" href="https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository">https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository</a></p>
-<p>计划：先翻译上述文档；再把工作中遇到的到逐步移植过来。</p>
-</blockquote>
-<h1 id="001：合并字典的多种方式"><a href="#001：合并字典的多种方式" class="headerlink" title="001：合并字典的多种方式"></a>001：合并字典的多种方式</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#原始的字典</span></span><br><span class="line">orig_dict = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;wuxianfeng&quot;</span>,<span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>,<span class="string">&#x27;sex&#x27;</span>:<span class="string">&#x27;male&#x27;</span>&#125;</span><br><span class="line"><span class="comment">#新的key</span></span><br><span class="line">new_dict = &#123;<span class="string">&#x27;country&#x27;</span>:<span class="string">&#x27;china&#x27;</span>&#125;</span><br><span class="line"><span class="comment">#重复的key</span></span><br><span class="line">dupe_dict = &#123;<span class="string">&#x27;sex&#x27;</span>:<span class="string">&#x27;female&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式1</span></span><br><span class="line">orig_dict.update(new_dict)</span><br><span class="line"><span class="built_in">print</span>(orig_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式2 遍历2个字典   注意与方式1要分开测试，因为方式1已经改变了原始的字典，下面的是新的字典不影响</span></span><br><span class="line">merge_dict2 = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> (orig_dict, new_dict):</span><br><span class="line">    <span class="keyword">for</span> key, value <span class="keyword">in</span> _.items():</span><br><span class="line">        merge_dict2[key] = value</span><br><span class="line"><span class="built_in">print</span>(merge_dict2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式3 字典推导式</span></span><br><span class="line">merge_dict3 = &#123;key: value <span class="keyword">for</span> d <span class="keyword">in</span> (orig_dict, new_dict) <span class="keyword">for</span> key, value <span class="keyword">in</span> d.items()&#125;</span><br><span class="line"><span class="built_in">print</span>(merge_dict3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并方式4  字典解包</span></span><br><span class="line"><span class="comment"># Dictionary unpacking (Python 3.5+)</span></span><br><span class="line">merge_dict4 = &#123;**orig_dict, **new_dict&#125;</span><br><span class="line"><span class="built_in">print</span>(merge_dict4)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式5 联合字典</span></span><br><span class="line"><span class="comment"># # Dictionary union operator (Python 3.9+ maybe?)</span></span><br><span class="line">merge_dict5 = orig_dict | dupe_dict</span><br><span class="line">merge_dict6 = dupe_dict | orig_dict</span><br><span class="line"><span class="built_in">print</span>(merge_dict5)</span><br><span class="line"><span class="built_in">print</span>(merge_dict6)</span><br></pre></td></tr></table></figure>
-
-
-
- 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -296,14 +207,7 @@
   <time datetime="2022-03-30T02:40:13.925Z" itemprop="datePublished">2022-03-30</time>
 </a>    
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="Python第三方库"><a href="#Python第三方库" class="headerlink" title="Python第三方库"></a>Python第三方库</h1><h1 id="arrow"><a href="#arrow" class="headerlink" title="arrow"></a>arrow</h1><h1 id="pathlib"><a href="#pathlib" class="headerlink" title="pathlib"></a>pathlib</h1><h1 id="yaml"><a href="#yaml" class="headerlink" title="yaml"></a>yaml</h1> 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -585,7 +489,9 @@
 <!-- ClickBoom1 -->
 
 <!-- ClickBoom2 -->
-
+ 
+<script src="/js/clickBoom2.js"></script>
+ 
 <!-- CodeCopy -->
  
 <link rel="stylesheet" href="/css/clipboard.css">
@@ -645,7 +551,9 @@
 </script>
  
 <!-- CanvasBackground -->
-
+ 
+<script src="/js/dz.js"></script>
+ 
 <script>
   if (window.mermaid) {
     mermaid.initialize({ theme: "forest" });
@@ -653,6 +561,23 @@
 </script>
 
 
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
     
     
 
