@@ -89,6 +89,12 @@
  
     </div>
       
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
   <h1 id="Python第三方库"><a href="#Python第三方库" class="headerlink" title="Python第三方库"></a>Python第三方库</h1><h1 id="arrow"><a href="#arrow" class="headerlink" title="arrow"></a>arrow</h1><h1 id="pathlib"><a href="#pathlib" class="headerlink" title="pathlib"></a>pathlib</h1><h1 id="yaml"><a href="#yaml" class="headerlink" title="yaml"></a>yaml</h1> 
@@ -329,6 +335,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
