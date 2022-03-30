@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">77</span>
+            <span class="post-count">202</span>
         </span>
     </span>
 
@@ -118,11 +118,29 @@
 <li><p>输出</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">songqin008@DESKTOP-6PNR7SB MINGW64 /e/github/myblog/hexo</span><br><span class="line">$ hexo new page categories</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: E:\github\myblog\hexo\source\categories\index.md</span><br></pre></td></tr></table></figure></li>
 <li><p>index.md的内容如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2022-03-30 13:46:23</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2022-03-30 13:46:23</span><br><span class="line">type: categories   #网上都说是这句话，但有点奇怪的，感觉不太对。</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p><strong>步骤二：在文章中增加对应信息</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">categories: </span><br><span class="line">- hexo</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>效果是有的，但在分类标签中看不到</li>
+</ul>
+<h1 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h1><p><strong>步骤一：添加标签</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">songqin008@DESKTOP-6PNR7SB MINGW64 /e/github/myblog/hexo</span><br><span class="line">$ hexo new page tags</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: E:\github\myblog\hexo\source\tags\index.md</span><br></pre></td></tr></table></figure></li>
+<li><p>index.md的内容如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2022-03-30 13:55:59</span><br><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>步骤二：在文章中增加对应信息</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">tags: </span><br><span class="line">- hexo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>效果是有的，但在标签中看不到</li>
+</ul>
  
       <!-- reward -->
       
