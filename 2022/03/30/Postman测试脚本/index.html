@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">209</span>
+            <span class="post-count">232</span>
         </span>
     </span>
 
@@ -130,8 +130,12 @@
 
 <h2 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Response time is less than 200ms&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.responseTime).to.be.below(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="响应码"><a href="#响应码" class="headerlink" title="响应码"></a>响应码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Successful POST request&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.code).to.be.oneOf([<span class="number">200</span>, <span class="number">201</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<h2 id="响应码"><a href="#响应码" class="headerlink" title="响应码"></a>响应码</h2><ul>
+<li><p>方式一</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Successful POST request&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.code).to.be.oneOf([<span class="number">200</span>, <span class="number">201</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>方式二</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code is 200&quot;</span>, function () &#123;</span><br><span class="line">  pm.response.to.have.status(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
 <h2 id="响应码字符串"><a href="#响应码字符串" class="headerlink" title="响应码字符串"></a>响应码字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code name has string&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.status(<span class="string">&quot;OK&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
  
