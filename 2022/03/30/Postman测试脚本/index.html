@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">232</span>
+            <span class="post-count">349</span>
         </span>
     </span>
 
@@ -138,6 +138,16 @@
 </ul>
 <h2 id="响应码字符串"><a href="#响应码字符串" class="headerlink" title="响应码字符串"></a>响应码字符串</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code name has string&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.status(<span class="string">&quot;OK&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="语法总结"><a href="#语法总结" class="headerlink" title="语法总结"></a>语法总结</h2><ul>
+<li><p>语法1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(参数<span class="number">1</span>,函数)</span><br><span class="line">	参数<span class="number">1</span>: 函数执行成功后输出的字符串</span><br><span class="line">    函数: <span class="keyword">function</span>(<span class="params"></span>) &#123; 函数体&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>语法2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#下面要结合pm.<span class="property">expect</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">text</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">json</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">code</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">responseTime</span></span><br><span class="line">#下面可以直接断言</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">body</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">header</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">status</span></span><br></pre></td></tr></table></figure></li>
+<li><p>语法3</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="property">oneOf</span></span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="title function_">include</span>(<span class="string">&quot;retcode&quot;</span>)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="property">below</span></span><br></pre></td></tr></table></figure></li>
+</ul>
  
       <!-- reward -->
       
