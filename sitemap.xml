@@ -155,20 +155,6 @@
 
   
   <url>
-    <loc>http://example.com/tags/github/</loc>
-    <lastmod>2022-03-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/%E5%BE%85%E7%BB%AD/</loc>
-    <lastmod>2022-03-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/postman/</loc>
     <lastmod>2022-03-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -183,7 +169,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%AE%8C%E7%BB%93/</loc>
+    <loc>http://example.com/tags/%E5%BE%85%E7%BB%AD/</loc>
     <lastmod>2022-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -197,7 +183,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
+    <loc>http://example.com/tags/%E5%AE%8C%E7%BB%93/</loc>
+    <lastmod>2022-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/github/</loc>
     <lastmod>2022-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -205,6 +198,13 @@
   
   <url>
     <loc>http://example.com/tags/hexo/</loc>
+    <lastmod>2022-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</loc>
     <lastmod>2022-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -220,13 +220,6 @@
 
   
   <url>
-    <loc>http://example.com/categories/github/</loc>
-    <lastmod>2022-03-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/categories/postman/</loc>
     <lastmod>2022-03-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -235,6 +228,13 @@
   
   <url>
     <loc>http://example.com/categories/python/</loc>
+    <lastmod>2022-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/github/</loc>
     <lastmod>2022-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
