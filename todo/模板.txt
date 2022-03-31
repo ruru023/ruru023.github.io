@@ -1,0 +1,6 @@
+
+title: Python小技巧
+date: 2022-3-31
+tags: [python,待续]
+categories: [python,待续]
+top: False
