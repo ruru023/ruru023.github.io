@@ -75,8 +75,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/03/30/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="article-date">
-  <time datetime="2022-03-30T02:41:33.987Z" itemprop="datePublished">2022-03-30</time>
+      <a href="/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time datetime="2022-03-30T16:00:00.000Z" itemprop="datePublished">2022-03-31</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/python/">python</a> / <a class="article-category-link" href="/categories/python/%E5%BE%85%E7%BB%AD/">待续</a>
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">311</span>
+            <span class="post-count">916</span>
         </span>
     </span>
 
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -125,8 +125,39 @@
 
 
 
+<h1 id="003：输出在同一行"><a href="#003：输出在同一行" class="headerlink" title="003：输出在同一行"></a>003：输出在同一行</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello china&#x27;</span>)  <span class="comment">#这一行跟上一行在一起</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.stdout.write(<span class="string">&#x27;hello nanjing&#x27;</span>)</span><br><span class="line">sys.stdout.write(<span class="string">&#x27;hello jiangning&#x27;</span>)  <span class="comment">#这一行跟上一行在一起</span></span><br></pre></td></tr></table></figure>
 
 
+
+<h1 id="004：代码运行时间"><a href="#004：代码运行时间" class="headerlink" title="004：代码运行时间"></a>004：代码运行时间</h1><ul>
+<li><p><strong>方法一:timeit</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeit</span><br><span class="line">expr = <span class="string">&#x27;[(a, b) for a in (1, 3, 5) for b in (2, 4, 6)]&#x27;</span>  <span class="comment">#被测代码</span></span><br><span class="line"><span class="built_in">print</span>(timeit.timeit(expr,number=<span class="number">1000000</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">min</span>(timeit.repeat(expr)))</span><br></pre></td></tr></table></figure></li>
+<li><p>timeit.repeat()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">repeat</span>(<span class="params">stmt=<span class="string">&quot;pass&quot;</span>, setup=<span class="string">&quot;pass&quot;</span>, timer=default_timer,</span></span><br><span class="line"><span class="params">           repeat=default_repeat, number=default_number, <span class="built_in">globals</span>=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Convenience function to create Timer object and call repeat method.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> Timer(stmt, setup, timer, <span class="built_in">globals</span>).repeat(repeat, number)</span><br><span class="line">default_number = <span class="number">1000000</span></span><br><span class="line">default_repeat = <span class="number">5</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>方法二:cprofile</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m cProfile -s cumulative  待执行的文件.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Ordered by: cumulative time</span><br><span class="line">  </span><br><span class="line">ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.099</span>    <span class="number">0.099</span> &#123;built-<span class="keyword">in</span> method builtins.<span class="built_in">exec</span>&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.099</span>    <span class="number">0.099</span> 待执行的文件.py:<span class="number">6</span>(&lt;module&gt;)</span><br><span class="line">     <span class="number">2</span>    <span class="number">0.088</span>    <span class="number">0.044</span>    <span class="number">0.088</span>    <span class="number">0.044</span> &#123;built-<span class="keyword">in</span> method builtins.<span class="built_in">print</span>&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.006</span>    <span class="number">0.006</span>    <span class="number">0.008</span>    <span class="number">0.008</span> 待执行的文件.py:<span class="number">11</span>(test2)</span><br><span class="line"> <span class="number">30000</span>    <span class="number">0.003</span>    <span class="number">0.000</span>    <span class="number">0.003</span>    <span class="number">0.000</span> &#123;method <span class="string">&#x27;append&#x27;</span> of <span class="string">&#x27;list&#x27;</span> objects&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.001</span>    <span class="number">0.001</span>    <span class="number">0.002</span>    <span class="number">0.002</span> 待执行的文件.py:<span class="number">6</span>(test1)</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.000</span> &#123;method <span class="string">&#x27;disable&#x27;</span> of <span class="string">&#x27;_lsprof.Profiler&#x27;</span> objects&#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>ncalls</strong>：表示函数调用的次数；</li>
+<li><strong>tottime</strong>：表示指定函数的总的运行时间，除掉函数中调用子函数的运行时间；</li>
+<li><strong>percall</strong>：（第一个percall）等于 tottime/ncalls；</li>
+<li><strong>cumtime</strong>：表示该函数及其所有子函数的调用运行的时间，即函数开始调用到返回的时间；</li>
+<li><strong>percall</strong>：（第二个percall）即函数运行一次的平均时间，等于 cumtime/ncalls；</li>
+<li>**filename:lineno(function)**：每个函数调用的具体信息；</li>
+<li>需要注意的是cProfile很难搞清楚函数内的每一行发生了什么，是针对整个函数来说的。</li>
+</ul>
+</li>
+</ul>
+<h1 id="005：python3-10以下版本实现switch-case"><a href="#005：python3-10以下版本实现switch-case" class="headerlink" title="005：python3.10以下版本实现switch-case"></a>005：python3.10以下版本实现switch-case</h1><ul>
+<li><p>常规的处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">choice  = <span class="built_in">input</span>(<span class="string">&#x27;choice:&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> choice == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 1&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> choice == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 2&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;oops!&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>字典实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">choice_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;1&#x27;</span>:<span class="string">&#x27;choose 1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;2&#x27;</span>:<span class="string">&#x27;choose 2&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">choice = <span class="built_in">input</span>(<span class="string">&#x27;choice: &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(choice_dict.get(choice,<span class="string">&#x27;oops!&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
+<li><p>如果要做很多事情，用函数封装一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">choose_1</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 1&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">choose_2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 2&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">choose_3</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 3&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">choice_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;1&#x27;</span>:choose_1,</span><br><span class="line">    <span class="string">&#x27;2&#x27;</span>:choose_2,</span><br><span class="line">    <span class="string">&#x27;3&#x27;</span>:choose_3</span><br><span class="line">&#125;</span><br><span class="line">choice = <span class="built_in">input</span>(<span class="string">&#x27;choice: &#x27;</span>)</span><br><span class="line">choice_dict.get(choice,<span class="string">&#x27;oops!&#x27;</span>)()</span><br></pre></td></tr></table></figure></li>
+</ul>
  
       <!-- reward -->
       
@@ -197,7 +228,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/30/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -210,19 +241,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/03/30/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/" class="article-nav-link">
+      <a href="/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Github仓库整理
+            Postman生成报告
           
         </div>
       </a>
     
     
-      <a href="/2021/03/31/hexo/" class="article-nav-link">
+      <a href="/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">hexo技巧</div>
+        <div class="article-nav-title">Python第三方库arrow</div>
       </a>
     
   </nav>

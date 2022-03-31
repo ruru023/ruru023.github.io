@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/2021/03/31/hexo/</loc>
+    <loc>http://example.com/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2022-03-31</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2022/03/31/hexo/</loc>
     <lastmod>2022-03-31</lastmod>
   </url>
   <url>
@@ -18,10 +22,6 @@
   </url>
   <url>
     <loc>http://example.com/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/</loc>
-    <lastmod>2022-03-31</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2022/03/30/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2022-03-31</lastmod>
   </url>
   <url>
