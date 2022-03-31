@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">203</span>
+            <span class="post-count">267</span>
         </span>
     </span>
 
@@ -111,7 +111,10 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="hexo技巧"><a href="#hexo技巧" class="headerlink" title="hexo技巧"></a>hexo技巧</h1><h1 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h1><p><strong>步骤一：添加分类</strong></p>
+  <h1 id="hexo技巧"><a href="#hexo技巧" class="headerlink" title="hexo技巧"></a>hexo技巧</h1><blockquote>
+<p>当前博客是用hexo+ayer主题结合github搭建而成</p>
+</blockquote>
+<h1 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h1><p><strong>步骤一：添加分类</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -144,7 +147,13 @@
 <ul>
 <li>效果是有的，但在标签中看不到</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure> 
+<h1 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h1><ul>
+<li><p>执行2个命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-generator-index --save</span><br><span class="line">$ npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure></li>
+<li><p>在文件头部信息加入top: True</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">categories: </span><br><span class="line">- hexo</span><br><span class="line">tags:</span><br><span class="line">- hexo</span><br><span class="line">top: <span class="literal">True</span>   <span class="comment">#关键是这个</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+ 
       <!-- reward -->
       
       <div id="reword-out">
@@ -239,7 +248,7 @@
     
       <a href="/2022/03/30/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-python%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">读书笔记</div>
+        <div class="article-nav-title">读书笔记_python源码剖析</div>
       </a>
     
   </nav>
