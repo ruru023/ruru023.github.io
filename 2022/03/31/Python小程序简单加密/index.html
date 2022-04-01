@@ -84,7 +84,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">384</span>
+            <span class="post-count">432</span>
         </span>
     </span>
 
@@ -124,9 +124,9 @@
 </ul>
 <h1 id="代码改造成函数"><a href="#代码改造成函数" class="headerlink" title="代码改造成函数"></a>代码改造成函数</h1><ul>
 <li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):   <span class="comment">#接受一个字符串，通过将每个字符串往后挪13位（默认值，可以自行更改）</span></span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span>  <span class="comment">#原始字符串</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan  #加密后的字符串</span></span><br></pre></td></tr></table></figure></li>
 <li><p>解码代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)  <span class="comment">#返回来就是解密</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
 </ul>
  
       <!-- reward -->
@@ -211,11 +211,11 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="article-nav-link">
+      <a href="/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Python小技巧
+            Postman生成报告
           
         </div>
       </a>
@@ -223,7 +223,7 @@
     
       <a href="/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python第三方库arrow</div>
+        <div class="article-nav-title">Python第三方库_arrow</div>
       </a>
     
   </nav>
