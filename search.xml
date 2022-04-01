@@ -239,6 +239,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Python小程序_简单加密</title>
+    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h1><ul>
+<li><p>chr：返回指定数字的unicode字符串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chr</span>(i, /)</span><br><span class="line">    Return a Unicode string of one character <span class="keyword">with</span> ordinal i; <span class="number">0</span> &lt;= i &lt;= <span class="number">0x10ffff</span>.</span><br><span class="line">    </span><br><span class="line"><span class="built_in">chr</span>(<span class="number">65</span>)  是A  <span class="built_in">chr</span>(<span class="number">90</span>)是Z ,差<span class="number">25</span></span><br><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)  是a  <span class="built_in">chr</span>(<span class="number">122</span>)是z，差<span class="number">25</span>(<span class="number">26</span>个英文字母)</span><br></pre></td></tr></table></figure></li>
+<li><p>chr(i+c)，i从0到25</p>
+</li>
+<li><p>两个for循环建立了一个字典</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#超出26个字符要求余数+C，这是关键</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;A&#x27;</span>: <span class="string">&#x27;N&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;B&#x27;</span>: <span class="string">&#x27;O&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;C&#x27;</span>: <span class="string">&#x27;P&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;D&#x27;</span>: <span class="string">&#x27;Q&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;E&#x27;</span>: <span class="string">&#x27;R&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;F&#x27;</span>: <span class="string">&#x27;S&#x27;</span>) <span class="comment">#省略了很多  A后第13个字符串后的N</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="代码改造成函数"><a href="#代码改造成函数" class="headerlink" title="代码改造成函数"></a>代码改造成函数</h1><ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解码代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>完结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python第三方库arrow</title>
     <url>/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/</url>
     <content><![CDATA[<h1 id="Python第三方库arrow"><a href="#Python第三方库arrow" class="headerlink" title="Python第三方库arrow"></a>Python第三方库arrow</h1><blockquote>
@@ -327,41 +359,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
         <tag>第三方库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python小程序_简单加密</title>
-    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h1><ul>
-<li><p>chr：返回指定数字的unicode字符串</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chr</span>(i, /)</span><br><span class="line">    Return a Unicode string of one character <span class="keyword">with</span> ordinal i; <span class="number">0</span> &lt;= i &lt;= <span class="number">0x10ffff</span>.</span><br><span class="line">    </span><br><span class="line"><span class="built_in">chr</span>(<span class="number">65</span>)  是A  <span class="built_in">chr</span>(<span class="number">90</span>)是Z ,差<span class="number">25</span></span><br><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)  是a  <span class="built_in">chr</span>(<span class="number">122</span>)是z，差<span class="number">25</span>(<span class="number">26</span>个英文字母)</span><br></pre></td></tr></table></figure></li>
-<li><p>chr(i+c)，i从0到25</p>
-</li>
-<li><p>两个for循环建立了一个字典</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#超出26个字符要求余数+C，这是关键</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;A&#x27;</span>: <span class="string">&#x27;N&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;B&#x27;</span>: <span class="string">&#x27;O&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;C&#x27;</span>: <span class="string">&#x27;P&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;D&#x27;</span>: <span class="string">&#x27;Q&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;E&#x27;</span>: <span class="string">&#x27;R&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;F&#x27;</span>: <span class="string">&#x27;S&#x27;</span>) <span class="comment">#省略了很多  A后第13个字符串后的N</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="代码改造成函数"><a href="#代码改造成函数" class="headerlink" title="代码改造成函数"></a>代码改造成函数</h1><ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan</span></span><br></pre></td></tr></table></figure></li>
-<li><p>解码代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -467,9 +467,9 @@
         <category>postman</category>
       </categories>
       <tags>
+        <tag>待续</tag>
         <tag>postman</tag>
         <tag>api</tag>
-        <tag>待续</tag>
       </tags>
   </entry>
   <entry>
@@ -497,8 +497,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>待续</tag>
         <tag>github</tag>
+        <tag>待续</tag>
       </tags>
   </entry>
   <entry>
