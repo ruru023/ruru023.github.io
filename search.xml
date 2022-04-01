@@ -1,161 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Postman测试脚本</title>
-    <url>/2022/03/30/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h1 id="Postman测试脚本"><a href="#Postman测试脚本" class="headerlink" title="Postman测试脚本"></a>Postman测试脚本</h1><blockquote>
-<p><a href="https://learning.postman.com/docs/writing-scripts/script-references/test-examples/">https://learning.postman.com/docs/writing-scripts/script-references/test-examples/</a></p>
-</blockquote>
-<h1 id="SNIPPETS"><a href="#SNIPPETS" class="headerlink" title="SNIPPETS"></a>SNIPPETS</h1><blockquote>
-<p>POSTMAN界面提供的</p>
-</blockquote>
-<h2 id="响应体包含字符串"><a href="#响应体包含字符串" class="headerlink" title="响应体包含字符串"></a>响应体包含字符串</h2><blockquote>
-<p><em>{<strong>retcode: 0</strong>} 这是响应体</em></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body matches string&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.text()).to.include(<span class="string">&quot;retcode&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应体JSON数据"><a href="#响应体JSON数据" class="headerlink" title="响应体JSON数据"></a>响应体JSON数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Your test name&quot;</span>, function () &#123;</span><br><span class="line">    var jsonData = pm.response.json();</span><br><span class="line">    pm.expect(jsonData.retcode).to.eql(<span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应体数据"><a href="#响应体数据" class="headerlink" title="响应体数据"></a>响应体数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body is correct&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.body(&#123;retcode: <span class="number">0</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应头数据"><a href="#响应头数据" class="headerlink" title="响应头数据"></a>响应头数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Content-Type is present&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.header(<span class="string">&quot;Content-Type&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Response time is less than 200ms&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.responseTime).to.be.below(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应码"><a href="#响应码" class="headerlink" title="响应码"></a>响应码</h2><ul>
-<li><p>方式一</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Successful POST request&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.code).to.be.oneOf([<span class="number">200</span>, <span class="number">201</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p>方式二</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code is 200&quot;</span>, function () &#123;</span><br><span class="line">  pm.response.to.have.status(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="响应码字符串"><a href="#响应码字符串" class="headerlink" title="响应码字符串"></a>响应码字符串</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code name has string&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.status(<span class="string">&quot;OK&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="语法总结"><a href="#语法总结" class="headerlink" title="语法总结"></a>语法总结</h2><ul>
-<li><p>语法1</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(参数<span class="number">1</span>,函数)</span><br><span class="line">	参数<span class="number">1</span>: 函数执行成功后输出的字符串</span><br><span class="line">    函数: <span class="keyword">function</span>(<span class="params"></span>) &#123; 函数体&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>语法2</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#下面要结合pm.<span class="property">expect</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">text</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">json</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">code</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">responseTime</span></span><br><span class="line">#下面可以直接断言</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">body</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">header</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">status</span></span><br></pre></td></tr></table></figure></li>
-<li><p>语法3</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="title function_">oneOf</span>(列表中存储多个值)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="title function_">include</span>(字符串)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="title function_">below</span>(比较数值)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="title function_">eql</span>()</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>postman</category>
-      </categories>
-      <tags>
-        <tag>postman</tag>
-        <tag>api</tag>
-        <tag>待续</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo技巧</title>
-    <url>/2022/03/31/hexo/</url>
-    <content><![CDATA[<h1 id="hexo技巧"><a href="#hexo技巧" class="headerlink" title="hexo技巧"></a>hexo技巧</h1><blockquote>
-<p>当前博客是用hexo+ayer主题结合github搭建而成</p>
-</blockquote>
-<h1 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h1><p><strong>步骤一：添加分类</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>输出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">songqin008@DESKTOP-6PNR7SB MINGW64 /e/github/myblog/hexo</span><br><span class="line">$ hexo new page categories</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: E:\github\myblog\hexo\source\categories\index.md</span><br></pre></td></tr></table></figure></li>
-<li><p>index.md的内容如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2022-03-30 13:46:23</span><br><span class="line">type: categories   #网上都说是这句话，但有点奇怪的，感觉不太对。</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>步骤二：在文章中增加对应信息</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">categories: </span><br><span class="line">- hexo</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>效果是有的，但在分类标签中看不到</li>
-</ul>
-<h1 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h1><p><strong>步骤一：添加标签</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>输出</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">songqin008@DESKTOP-6PNR7SB MINGW64 /e/github/myblog/hexo</span><br><span class="line">$ hexo new page tags</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: E:\github\myblog\hexo\source\tags\index.md</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>index.md的内容如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2022-03-30 13:55:59</span><br><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>步骤二：在文章中增加对应信息</strong></p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">tags: </span><br><span class="line">- hexo</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>效果是有的，但在标签中看不到</li>
-</ul>
-<h1 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h1><ul>
-<li><p>执行2个命令</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-generator-index --save</span><br><span class="line">$ npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure></li>
-<li><p>在文件头部信息加入top: True</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">categories: </span><br><span class="line">- hexo</span><br><span class="line">tags:</span><br><span class="line">- hexo</span><br><span class="line">top: <span class="literal">True</span>   <span class="comment">#关键是这个</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h1><ul>
-<li>本地的显然不行，上传到images目录下也没通过；</li>
-<li>找免费图床，推荐SM.MS</li>
-</ul>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>待续</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Postman生成报告</title>
-    <url>/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/</url>
-    <content><![CDATA[<h1 id="Postman生成报告"><a href="#Postman生成报告" class="headerlink" title="Postman生成报告"></a>Postman生成报告</h1><blockquote>
-<p>POSTMAN的企业版是支持生成一个漂亮的报告的</p>
-</blockquote>
-<h2 id="newman安装"><a href="#newman安装" class="headerlink" title="newman安装"></a>newman安装</h2><ul>
-<li><p>安装newman</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">npm install -g newman</span><br></pre></td></tr></table></figure></li>
-<li><p>new报告插件安装</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman-reporter-html</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="POSTMAN中导出"><a href="#POSTMAN中导出" class="headerlink" title="POSTMAN中导出"></a>POSTMAN中导出</h2><ul>
-<li><p>导出用例</p>
-<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
-<p><img src="https://s2.loli.net/2022/03/31/JdifKSGBZg5WaRI.png" alt="1648712363265.png"></p>
-</li>
-<li><p>导出环境变量</p>
-<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
-</li>
-<li><p>这样会生成两个json文件</p>
-<ul>
-<li>教官系统.postman_collection.json</li>
-<li>教官系统环境变量.postman_environment.json</li>
-</ul>
-</li>
-</ul>
-<h2 id="newman生成报告"><a href="#newman生成报告" class="headerlink" title="newman生成报告"></a>newman生成报告</h2><ul>
-<li><p>newman其实是个命令行工具</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman -h</span><br><span class="line">Usage: newman [options] [command]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -v, --version               output the version number</span><br><span class="line">  -h, --<span class="built_in">help</span>                  display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  run [options] &lt;collection&gt;  Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">To get available options <span class="keyword">for</span> a command:</span><br><span class="line">  newman &lt;command&gt; -h</span><br></pre></td></tr></table></figure></li>
-<li><p>可以看到关键是run命令，主要的参数和用法如下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman run 用例.json -e 环境.json -r html  <span class="comment">#生成一个html报告</span></span><br><span class="line">newman run 用例.json -e 环境.json --bail newman  <span class="comment">#console打印</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>cmd示例,html的就不看了</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">newman run 教官系统.postman_collection.json -e 教官系统环境变量.postman_environment.json --bail newman</span></span><br><span class="line">newman</span><br><span class="line"></span><br><span class="line">教官系统</span><br><span class="line"></span><br><span class="line">→ 登录</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/loginReq ―[200 OK, 256B, 214ms]</span><br><span class="line">  1. Response time is less than 200ms</span><br><span class="line">  √  Status code name has string</span><br><span class="line">  √  Status code is 200</span><br><span class="line">  ┌</span><br><span class="line">  │ &#x27;&#123;&quot;retcode&quot;: 0&#125;&#x27;</span><br><span class="line">  │ [</span><br><span class="line">  │   &#123;</span><br><span class="line">  │     name: &#x27;sessionid&#x27;,</span><br><span class="line">  │     expires: null,</span><br><span class="line">  │     maxAge: 0,</span><br><span class="line">  │     domain: &#x27;124.223.33.41&#x27;,</span><br><span class="line">  │     path: &#x27;/&#x27;,</span><br><span class="line">  │     secure: false,</span><br><span class="line">  │     httpOnly: true,</span><br><span class="line">  │     hostOnly: true,</span><br><span class="line">  │     value: &#x27;5nhn3fuygio2bddi1vodi7nk79vnusdr&#x27;</span><br><span class="line">  │   &#125;</span><br><span class="line">  │ ]</span><br><span class="line">  └</span><br><span class="line"></span><br><span class="line">→ 添加课程</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 194B, 36ms]</span><br><span class="line">  √  Status code is 200</span><br><span class="line"></span><br><span class="line">→ 列出课程</span><br><span class="line">  GET http://124.223.33.41:7081/api/mgr/sq_mgr/?action=list_course&amp;pagenum=1&amp;pagesize=20 [200 OK, 546B, 20ms]</span><br><span class="line"></span><br><span class="line">→ 修改课程</span><br><span class="line">  PUT http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 49ms]</span><br><span class="line"></span><br><span class="line">→ 删除课程</span><br><span class="line">  DELETE http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 39ms]</span><br><span class="line"></span><br><span class="line">┌─────────────────────────┬───────────────────┬───────────────────┐</span><br><span class="line">│                         │          executed │            failed │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              iterations │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│                requests │                 5 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│            test-scripts │                 3 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│      prerequest-scripts │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              assertions │                 4 │                 1 │</span><br><span class="line">├─────────────────────────┴───────────────────┴───────────────────┤</span><br><span class="line">│ total run duration: 793ms                                       │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ total data received: 445B (approx)                              │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ average response time: 71ms [min: 20ms, max: 214ms, s.d.: 71ms] │</span><br><span class="line">└─────────────────────────────────────────────────────────────────┘</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash"> failure                detail</span></span><br><span class="line"></span><br><span class="line"> 1.  AssertionError         Response time is less than 200ms</span><br><span class="line">                            expected 214 to be below 200</span><br><span class="line">                            at assertion:0 in test-script</span><br><span class="line">                            inside &quot;登录&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="附录：run命令所有帮助"><a href="#附录：run命令所有帮助" class="headerlink" title="附录：run命令所有帮助"></a>附录：run命令所有帮助</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman run -h</span><br><span class="line">Usage: newman run &lt;collection&gt; [options]</span><br><span class="line"></span><br><span class="line">Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -e, --environment &lt;path&gt;              Specify a URL <span class="keyword">or</span> path to a Postman Environment</span><br><span class="line">  -g, --<span class="built_in">globals</span> &lt;path&gt;                  Specify a URL <span class="keyword">or</span> path to a file containing Postman Globals</span><br><span class="line">  -r, --reporters [reporters]           Specify the reporters to use <span class="keyword">for</span> this run (default: [<span class="string">&quot;cli&quot;</span>])</span><br><span class="line">  -n, --iteration-count &lt;n&gt;             Define the number of iterations to run</span><br><span class="line">  -d, --iteration-data &lt;path&gt;           Specify a data file to use <span class="keyword">for</span> iterations (either JSON <span class="keyword">or</span> CSV)</span><br><span class="line">  --folder &lt;path&gt;                       Specify the folder to run <span class="keyword">from</span> a collection. Can be specified multiple times to</span><br><span class="line">                                        run multiple folders (default: [])</span><br><span class="line">  --<span class="keyword">global</span>-var &lt;value&gt;                  Allows the specification of <span class="keyword">global</span> variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --env-var &lt;value&gt;                     Allows the specification of environment variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --export-environment &lt;path&gt;           Exports the final environment to a file after completing the run</span><br><span class="line">  --export-<span class="built_in">globals</span> &lt;path&gt;               Exports the final <span class="built_in">globals</span> to a file after completing the run</span><br><span class="line">  --export-collection &lt;path&gt;            Exports the executed collection to a file after completing the run</span><br><span class="line">  --postman-api-key &lt;apiKey&gt;            API Key used to load the resources <span class="keyword">from</span> the Postman API</span><br><span class="line">  --bail [modifiers]                    Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to gracefully stop a collection run on encountering an</span><br><span class="line">                                        error <span class="keyword">and</span> whether to end the run <span class="keyword">with</span> an error based on the optional modifier</span><br><span class="line">  --ignore-redirects                    Prevents Newman <span class="keyword">from</span> automatically following 3XX redirect responses</span><br><span class="line">  -x , --suppress-exit-code             Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to override the default exit code <span class="keyword">for</span> the current run</span><br><span class="line">  --silent                              Prevents Newman <span class="keyword">from</span> showing output to CLI</span><br><span class="line">  --disable-unicode                     Forces Unicode compliant symbols to be replaced by their plain text equivalents</span><br><span class="line">  --color &lt;value&gt;                       Enable/Disable colored output (auto|on|off) (default: <span class="string">&quot;auto&quot;</span>)</span><br><span class="line">  --delay-request [n]                   Specify the extent of delay between requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout [n]                         Specify a timeout <span class="keyword">for</span> collection run (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-request [n]                 Specify a timeout <span class="keyword">for</span> requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-script [n]                  Specify a timeout <span class="keyword">for</span> scripts (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --working-<span class="built_in">dir</span> &lt;path&gt;                  Specify the path to the working directory</span><br><span class="line">  --no-insecure-file-read               Prevents reading the files situated outside of the working directory</span><br><span class="line">  -k, --insecure                        Disables SSL validations</span><br><span class="line">  --ssl-client-cert-<span class="built_in">list</span> &lt;path&gt;         Specify the path to a client certificates configurations (JSON)</span><br><span class="line">  --ssl-client-cert &lt;path&gt;              Specify the path to a client certificate (PEM)</span><br><span class="line">  --ssl-client-key &lt;path&gt;               Specify the path to a client certificate private key</span><br><span class="line">  --ssl-client-passphrase &lt;passphrase&gt;  Specify the client certificate passphrase (<span class="keyword">for</span> protected key)</span><br><span class="line">  --ssl-extra-ca-certs &lt;path&gt;           Specify additionally trusted CA certificates (PEM)</span><br><span class="line">  --cookie-jar &lt;path&gt;                   Specify the path to a custom cookie jar (serialized tough-cookie JSON)</span><br><span class="line">  --export-cookie-jar &lt;path&gt;            Exports the cookie jar to a file after completing the run</span><br><span class="line">  --verbose                             Show detailed information of collection run <span class="keyword">and</span> each request sent</span><br><span class="line">  -h, --<span class="built_in">help</span>                            display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>postman</category>
-      </categories>
-      <tags>
-        <tag>postman</tag>
-        <tag>api</tag>
-        <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python小技巧</title>
     <url>/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<h1 id="Python小技巧"><a href="#Python小技巧" class="headerlink" title="Python小技巧"></a>Python小技巧</h1><blockquote>
@@ -212,35 +57,6 @@
       <tags>
         <tag>待续</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github仓库整理</title>
-    <url>/2022/03/30/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
-<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
-</blockquote>
-<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat"><a href="#hashcat" class="headerlink" title="hashcat"></a>hashcat</h2><ul>
-<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
-</li>
-<li><p>简介：破解密码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hashcat <span class="keyword">is</span> the world<span class="string">&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="reveal-js"><a href="#reveal-js" class="headerlink" title="reveal.js"></a>reveal.js</h2><ul>
-<li><p>地址：<a href="https://github.com/hakimel/reveal.js">https://github.com/hakimel/reveal.js</a></p>
-</li>
-<li><p>简介：HTML演示框架</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">reveal.js <span class="keyword">is</span> an <span class="built_in">open</span> source HTML presentation framework. It enables anyone <span class="keyword">with</span> a web browser to create beautiful presentations <span class="keyword">for</span> free. Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></li>
-<li><p>备注：我一直在用哈</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>待续</tag>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -376,6 +192,111 @@
       </tags>
   </entry>
   <entry>
+    <title>Postman生成报告</title>
+    <url>/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[<h1 id="Postman生成报告"><a href="#Postman生成报告" class="headerlink" title="Postman生成报告"></a>Postman生成报告</h1><blockquote>
+<p>POSTMAN的企业版是支持生成一个漂亮的报告的</p>
+</blockquote>
+<h2 id="newman安装"><a href="#newman安装" class="headerlink" title="newman安装"></a>newman安装</h2><ul>
+<li><p>安装newman</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">npm install -g newman</span><br></pre></td></tr></table></figure></li>
+<li><p>new报告插件安装</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman-reporter-html</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="POSTMAN中导出"><a href="#POSTMAN中导出" class="headerlink" title="POSTMAN中导出"></a>POSTMAN中导出</h2><ul>
+<li><p>导出用例</p>
+<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
+<p><img src="https://s2.loli.net/2022/03/31/JdifKSGBZg5WaRI.png" alt="1648712363265.png"></p>
+</li>
+<li><p>导出环境变量</p>
+<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
+</li>
+<li><p>这样会生成两个json文件</p>
+<ul>
+<li>教官系统.postman_collection.json</li>
+<li>教官系统环境变量.postman_environment.json</li>
+</ul>
+</li>
+</ul>
+<h2 id="newman生成报告"><a href="#newman生成报告" class="headerlink" title="newman生成报告"></a>newman生成报告</h2><ul>
+<li><p>newman其实是个命令行工具</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman -h</span><br><span class="line">Usage: newman [options] [command]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -v, --version               output the version number</span><br><span class="line">  -h, --<span class="built_in">help</span>                  display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  run [options] &lt;collection&gt;  Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">To get available options <span class="keyword">for</span> a command:</span><br><span class="line">  newman &lt;command&gt; -h</span><br></pre></td></tr></table></figure></li>
+<li><p>可以看到关键是run命令，主要的参数和用法如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman run 用例.json -e 环境.json -r html  <span class="comment">#生成一个html报告</span></span><br><span class="line">newman run 用例.json -e 环境.json --bail newman  <span class="comment">#console打印</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>cmd示例,html的就不看了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">newman run 教官系统.postman_collection.json -e 教官系统环境变量.postman_environment.json --bail newman</span></span><br><span class="line">newman</span><br><span class="line"></span><br><span class="line">教官系统</span><br><span class="line"></span><br><span class="line">→ 登录</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/loginReq ―[200 OK, 256B, 214ms]</span><br><span class="line">  1. Response time is less than 200ms</span><br><span class="line">  √  Status code name has string</span><br><span class="line">  √  Status code is 200</span><br><span class="line">  ┌</span><br><span class="line">  │ &#x27;&#123;&quot;retcode&quot;: 0&#125;&#x27;</span><br><span class="line">  │ [</span><br><span class="line">  │   &#123;</span><br><span class="line">  │     name: &#x27;sessionid&#x27;,</span><br><span class="line">  │     expires: null,</span><br><span class="line">  │     maxAge: 0,</span><br><span class="line">  │     domain: &#x27;124.223.33.41&#x27;,</span><br><span class="line">  │     path: &#x27;/&#x27;,</span><br><span class="line">  │     secure: false,</span><br><span class="line">  │     httpOnly: true,</span><br><span class="line">  │     hostOnly: true,</span><br><span class="line">  │     value: &#x27;5nhn3fuygio2bddi1vodi7nk79vnusdr&#x27;</span><br><span class="line">  │   &#125;</span><br><span class="line">  │ ]</span><br><span class="line">  └</span><br><span class="line"></span><br><span class="line">→ 添加课程</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 194B, 36ms]</span><br><span class="line">  √  Status code is 200</span><br><span class="line"></span><br><span class="line">→ 列出课程</span><br><span class="line">  GET http://124.223.33.41:7081/api/mgr/sq_mgr/?action=list_course&amp;pagenum=1&amp;pagesize=20 [200 OK, 546B, 20ms]</span><br><span class="line"></span><br><span class="line">→ 修改课程</span><br><span class="line">  PUT http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 49ms]</span><br><span class="line"></span><br><span class="line">→ 删除课程</span><br><span class="line">  DELETE http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 39ms]</span><br><span class="line"></span><br><span class="line">┌─────────────────────────┬───────────────────┬───────────────────┐</span><br><span class="line">│                         │          executed │            failed │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              iterations │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│                requests │                 5 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│            test-scripts │                 3 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│      prerequest-scripts │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              assertions │                 4 │                 1 │</span><br><span class="line">├─────────────────────────┴───────────────────┴───────────────────┤</span><br><span class="line">│ total run duration: 793ms                                       │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ total data received: 445B (approx)                              │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ average response time: 71ms [min: 20ms, max: 214ms, s.d.: 71ms] │</span><br><span class="line">└─────────────────────────────────────────────────────────────────┘</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash"> failure                detail</span></span><br><span class="line"></span><br><span class="line"> 1.  AssertionError         Response time is less than 200ms</span><br><span class="line">                            expected 214 to be below 200</span><br><span class="line">                            at assertion:0 in test-script</span><br><span class="line">                            inside &quot;登录&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="附录：run命令所有帮助"><a href="#附录：run命令所有帮助" class="headerlink" title="附录：run命令所有帮助"></a>附录：run命令所有帮助</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman run -h</span><br><span class="line">Usage: newman run &lt;collection&gt; [options]</span><br><span class="line"></span><br><span class="line">Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -e, --environment &lt;path&gt;              Specify a URL <span class="keyword">or</span> path to a Postman Environment</span><br><span class="line">  -g, --<span class="built_in">globals</span> &lt;path&gt;                  Specify a URL <span class="keyword">or</span> path to a file containing Postman Globals</span><br><span class="line">  -r, --reporters [reporters]           Specify the reporters to use <span class="keyword">for</span> this run (default: [<span class="string">&quot;cli&quot;</span>])</span><br><span class="line">  -n, --iteration-count &lt;n&gt;             Define the number of iterations to run</span><br><span class="line">  -d, --iteration-data &lt;path&gt;           Specify a data file to use <span class="keyword">for</span> iterations (either JSON <span class="keyword">or</span> CSV)</span><br><span class="line">  --folder &lt;path&gt;                       Specify the folder to run <span class="keyword">from</span> a collection. Can be specified multiple times to</span><br><span class="line">                                        run multiple folders (default: [])</span><br><span class="line">  --<span class="keyword">global</span>-var &lt;value&gt;                  Allows the specification of <span class="keyword">global</span> variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --env-var &lt;value&gt;                     Allows the specification of environment variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --export-environment &lt;path&gt;           Exports the final environment to a file after completing the run</span><br><span class="line">  --export-<span class="built_in">globals</span> &lt;path&gt;               Exports the final <span class="built_in">globals</span> to a file after completing the run</span><br><span class="line">  --export-collection &lt;path&gt;            Exports the executed collection to a file after completing the run</span><br><span class="line">  --postman-api-key &lt;apiKey&gt;            API Key used to load the resources <span class="keyword">from</span> the Postman API</span><br><span class="line">  --bail [modifiers]                    Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to gracefully stop a collection run on encountering an</span><br><span class="line">                                        error <span class="keyword">and</span> whether to end the run <span class="keyword">with</span> an error based on the optional modifier</span><br><span class="line">  --ignore-redirects                    Prevents Newman <span class="keyword">from</span> automatically following 3XX redirect responses</span><br><span class="line">  -x , --suppress-exit-code             Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to override the default exit code <span class="keyword">for</span> the current run</span><br><span class="line">  --silent                              Prevents Newman <span class="keyword">from</span> showing output to CLI</span><br><span class="line">  --disable-unicode                     Forces Unicode compliant symbols to be replaced by their plain text equivalents</span><br><span class="line">  --color &lt;value&gt;                       Enable/Disable colored output (auto|on|off) (default: <span class="string">&quot;auto&quot;</span>)</span><br><span class="line">  --delay-request [n]                   Specify the extent of delay between requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout [n]                         Specify a timeout <span class="keyword">for</span> collection run (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-request [n]                 Specify a timeout <span class="keyword">for</span> requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-script [n]                  Specify a timeout <span class="keyword">for</span> scripts (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --working-<span class="built_in">dir</span> &lt;path&gt;                  Specify the path to the working directory</span><br><span class="line">  --no-insecure-file-read               Prevents reading the files situated outside of the working directory</span><br><span class="line">  -k, --insecure                        Disables SSL validations</span><br><span class="line">  --ssl-client-cert-<span class="built_in">list</span> &lt;path&gt;         Specify the path to a client certificates configurations (JSON)</span><br><span class="line">  --ssl-client-cert &lt;path&gt;              Specify the path to a client certificate (PEM)</span><br><span class="line">  --ssl-client-key &lt;path&gt;               Specify the path to a client certificate private key</span><br><span class="line">  --ssl-client-passphrase &lt;passphrase&gt;  Specify the client certificate passphrase (<span class="keyword">for</span> protected key)</span><br><span class="line">  --ssl-extra-ca-certs &lt;path&gt;           Specify additionally trusted CA certificates (PEM)</span><br><span class="line">  --cookie-jar &lt;path&gt;                   Specify the path to a custom cookie jar (serialized tough-cookie JSON)</span><br><span class="line">  --export-cookie-jar &lt;path&gt;            Exports the cookie jar to a file after completing the run</span><br><span class="line">  --verbose                             Show detailed information of collection run <span class="keyword">and</span> each request sent</span><br><span class="line">  -h, --<span class="built_in">help</span>                            display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>postman</category>
+      </categories>
+      <tags>
+        <tag>postman</tag>
+        <tag>api</tag>
+        <tag>完结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo技巧</title>
+    <url>/2022/03/31/hexo/</url>
+    <content><![CDATA[<h1 id="hexo技巧"><a href="#hexo技巧" class="headerlink" title="hexo技巧"></a>hexo技巧</h1><blockquote>
+<p>当前博客是用hexo+ayer主题结合github搭建而成</p>
+</blockquote>
+<h1 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h1><p><strong>步骤一：添加分类</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">songqin008@DESKTOP-6PNR7SB MINGW64 /e/github/myblog/hexo</span><br><span class="line">$ hexo new page categories</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: E:\github\myblog\hexo\source\categories\index.md</span><br></pre></td></tr></table></figure></li>
+<li><p>index.md的内容如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2022-03-30 13:46:23</span><br><span class="line">type: categories   #网上都说是这句话，但有点奇怪的，感觉不太对。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>步骤二：在文章中增加对应信息</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">categories: </span><br><span class="line">- hexo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>效果是有的，但在分类标签中看不到</li>
+</ul>
+<h1 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h1><p><strong>步骤一：添加标签</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">songqin008@DESKTOP-6PNR7SB MINGW64 /e/github/myblog/hexo</span><br><span class="line">$ hexo new page tags</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: E:\github\myblog\hexo\source\tags\index.md</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>index.md的内容如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2022-03-30 13:55:59</span><br><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>步骤二：在文章中增加对应信息</strong></p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">tags: </span><br><span class="line">- hexo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>效果是有的，但在标签中看不到</li>
+</ul>
+<h1 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h1><ul>
+<li><p>执行2个命令</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-generator-index --save</span><br><span class="line">$ npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure></li>
+<li><p>在文件头部信息加入top: True</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">title: hexo技巧</span><br><span class="line">date: </span><br><span class="line">categories: </span><br><span class="line">- hexo</span><br><span class="line">tags:</span><br><span class="line">- hexo</span><br><span class="line">top: <span class="literal">True</span>   <span class="comment">#关键是这个</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h1><ul>
+<li>本地的显然不行，上传到images目录下也没通过；</li>
+<li>找免费图床，推荐SM.MS</li>
+</ul>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python小程序_简单加密</title>
     <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%8A%A0%E5%AF%86/</url>
     <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
@@ -499,6 +420,85 @@
         <tag>完结</tag>
         <tag>python</tag>
         <tag>第三方库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Postman测试脚本</title>
+    <url>/2022/03/30/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h1 id="Postman测试脚本"><a href="#Postman测试脚本" class="headerlink" title="Postman测试脚本"></a>Postman测试脚本</h1><blockquote>
+<p><a href="https://learning.postman.com/docs/writing-scripts/script-references/test-examples/">https://learning.postman.com/docs/writing-scripts/script-references/test-examples/</a></p>
+</blockquote>
+<h1 id="SNIPPETS"><a href="#SNIPPETS" class="headerlink" title="SNIPPETS"></a>SNIPPETS</h1><blockquote>
+<p>POSTMAN界面提供的</p>
+</blockquote>
+<h2 id="响应体包含字符串"><a href="#响应体包含字符串" class="headerlink" title="响应体包含字符串"></a>响应体包含字符串</h2><blockquote>
+<p><em>{<strong>retcode: 0</strong>} 这是响应体</em></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body matches string&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.text()).to.include(<span class="string">&quot;retcode&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应体JSON数据"><a href="#响应体JSON数据" class="headerlink" title="响应体JSON数据"></a>响应体JSON数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Your test name&quot;</span>, function () &#123;</span><br><span class="line">    var jsonData = pm.response.json();</span><br><span class="line">    pm.expect(jsonData.retcode).to.eql(<span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应体数据"><a href="#响应体数据" class="headerlink" title="响应体数据"></a>响应体数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body is correct&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.body(&#123;retcode: <span class="number">0</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应头数据"><a href="#响应头数据" class="headerlink" title="响应头数据"></a>响应头数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Content-Type is present&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.header(<span class="string">&quot;Content-Type&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Response time is less than 200ms&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.responseTime).to.be.below(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应码"><a href="#响应码" class="headerlink" title="响应码"></a>响应码</h2><ul>
+<li><p>方式一</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Successful POST request&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.code).to.be.oneOf([<span class="number">200</span>, <span class="number">201</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>方式二</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code is 200&quot;</span>, function () &#123;</span><br><span class="line">  pm.response.to.have.status(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="响应码字符串"><a href="#响应码字符串" class="headerlink" title="响应码字符串"></a>响应码字符串</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code name has string&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.status(<span class="string">&quot;OK&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="语法总结"><a href="#语法总结" class="headerlink" title="语法总结"></a>语法总结</h2><ul>
+<li><p>语法1</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(参数<span class="number">1</span>,函数)</span><br><span class="line">	参数<span class="number">1</span>: 函数执行成功后输出的字符串</span><br><span class="line">    函数: <span class="keyword">function</span>(<span class="params"></span>) &#123; 函数体&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>语法2</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#下面要结合pm.<span class="property">expect</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">text</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">json</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">code</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">responseTime</span></span><br><span class="line">#下面可以直接断言</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">body</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">header</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">status</span></span><br></pre></td></tr></table></figure></li>
+<li><p>语法3</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="title function_">oneOf</span>(列表中存储多个值)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="title function_">include</span>(字符串)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="title function_">below</span>(比较数值)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="title function_">eql</span>()</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>postman</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>postman</tag>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github仓库整理</title>
+    <url>/2022/03/30/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
+<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
+</blockquote>
+<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat"><a href="#hashcat" class="headerlink" title="hashcat"></a>hashcat</h2><ul>
+<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
+</li>
+<li><p>简介：破解密码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hashcat <span class="keyword">is</span> the world<span class="string">&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="reveal-js"><a href="#reveal-js" class="headerlink" title="reveal.js"></a>reveal.js</h2><ul>
+<li><p>地址：<a href="https://github.com/hakimel/reveal.js">https://github.com/hakimel/reveal.js</a></p>
+</li>
+<li><p>简介：HTML演示框架</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">reveal.js <span class="keyword">is</span> an <span class="built_in">open</span> source HTML presentation framework. It enables anyone <span class="keyword">with</span> a web browser to create beautiful presentations <span class="keyword">for</span> free. Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></li>
+<li><p>备注：我一直在用哈</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>待续</tag>
       </tags>
   </entry>
   <entry>
