@@ -184,6 +184,18 @@
 <td></td>
 </tr>
 </tbody></table>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MDN关于HTTP协议详解</td>
+<td><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP">https://developer.mozilla.org/zh-CN/docs/Web/HTTP</a></td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>资源</category>
@@ -444,9 +456,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
-        <tag>第三方库</tag>
+        <tag>完结</tag>
+        <tag>标准库</tag>
       </tags>
   </entry>
   <entry>
@@ -524,8 +536,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -617,8 +629,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
         <tag>第三方库</tag>
       </tags>
   </entry>
@@ -725,9 +737,9 @@
         <category>postman</category>
       </categories>
       <tags>
-        <tag>待续</tag>
         <tag>postman</tag>
         <tag>api</tag>
+        <tag>待续</tag>
       </tags>
   </entry>
   <entry>
@@ -756,8 +768,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>待续</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
