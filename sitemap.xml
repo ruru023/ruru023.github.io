@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/04/02/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pathlib/</loc>
+    <loc>http://example.com/2022/04/02/Python%E6%A0%87%E5%87%86%E5%BA%93pathlib/</loc>
     
     <lastmod>2022-04-02</lastmod>
     
@@ -182,6 +182,20 @@
 
   
   <url>
+    <loc>http://example.com/tags/github/</loc>
+    <lastmod>2022-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E5%BE%85%E7%BB%AD/</loc>
+    <lastmod>2022-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/postman/</loc>
     <lastmod>2022-04-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -196,14 +210,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%BE%85%E7%BB%AD/</loc>
-    <lastmod>2022-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/github/</loc>
+    <loc>http://example.com/tags/%E5%AE%8C%E7%BB%93/</loc>
     <lastmod>2022-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -224,7 +231,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%AE%8C%E7%BB%93/</loc>
+    <loc>http://example.com/tags/hexo/</loc>
     <lastmod>2022-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -237,24 +244,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>http://example.com/tags/hexo/</loc>
-    <lastmod>2022-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>http://example.com/categories/postman/</loc>
+    <loc>http://example.com/categories/github/</loc>
     <lastmod>2022-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/github/</loc>
+    <loc>http://example.com/categories/postman/</loc>
     <lastmod>2022-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E8%B5%84%E6%BA%90/</loc>
+    <loc>http://example.com/categories/hexo/</loc>
     <lastmod>2022-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/hexo/</loc>
+    <loc>http://example.com/categories/%E8%B5%84%E6%BA%90/</loc>
     <lastmod>2022-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
