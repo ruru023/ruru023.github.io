@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Python标准库_pathlib |  老吴的博客</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Python第三方库pathlib"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Python标准库_pathlib
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/04/02/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pathlib/" class="article-date">
+  <time datetime="2022-04-01T16:00:00.000Z" itemprop="datePublished">2022-04-02</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">7 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Python标准库pathlib"><a href="#Python标准库pathlib" class="headerlink" title="Python标准库pathlib"></a>Python标准库pathlib</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.9/library/pathlib.html">https://docs.python.org/zh-cn/3.9/library/pathlib.html</a>  官网</p>
+<p>讲的比较好的文章  <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139783331">https://zhuanlan.zhihu.com/p/139783331</a></p>
+</blockquote>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
+<li>该模块提供表示文件系统路径的类，其语义适用于不同的操作系统</li>
+</ul>
+<h2 id="优点（对比os-path"><a href="#优点（对比os-path" class="headerlink" title="优点（对比os.path)"></a>优点（对比os.path)</h2><ul>
+<li><p>老的路径操作函数管理比较混乱，有的是导入 os, 有的又是在 os.path 当中，而新的用法统一可以用 pathlib 管理。</p>
+</li>
+<li><p>老用法在处理不同操作系统 win，mac 以及 linux 之间很吃力。换了操作系统常常要改代码，还经常需要进行一些额外操作。</p>
+</li>
+<li><p>老用法主要是函数形式，返回的数据类型通常是字符串。但是路径和字符串并不等价，所以在使用 os 操作路径的时候常常还要引入其他类库协助操作。新用法是面向对象，处理起来更灵活方便。</p>
+</li>
+<li><p>pathlib 简化了很多操作，用起来更轻松</p>
+</li>
+<li></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/04/02/UOoHQdw2WyRLpKM.jpg" alt="v2-046244f5fa0fad6736ee6ffb205cd169_720w.jpg"></p>
+<h1 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h1><h2 id="获取文件路径"><a href="#获取文件路径" class="headerlink" title="获取文件路径"></a>获取文件路径</h2><ul>
+<li><p>语法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Path(__file__)   <span class="comment">#__file__是当前文件的绝对路径</span></span><br><span class="line"></span><br><span class="line">Path(__file__).parent  <span class="comment">#所在目录</span></span><br><span class="line">Path(__file__).parent.parent  <span class="comment">#所在目录的父目录</span></span><br><span class="line"></span><br><span class="line">Path(文件的相对路径)  </span><br><span class="line">Path(__file__).resolve()  <span class="comment">#仍然可以得到绝对路径</span></span><br><span class="line"></span><br><span class="line">Path(__file__).parent / <span class="string">&#x27;filename&#x27;</span>  <span class="comment">#目录拼接文件名 用/</span></span><br></pre></td></tr></table></figure></li>
+<li><p>示例1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="built_in">print</span>(Path.cwd())   <span class="comment">#你当前py文件的所在目录，类似于pwd</span></span><br><span class="line"><span class="built_in">print</span>(Path.home())  <span class="comment">#你当前用户的家目录（windows比如C:\Users\用户名）</span></span><br></pre></td></tr></table></figure></li>
+<li><p>示例2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># demo_pathlib.py</span></span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">file_abs_path = Path(__file__)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;对象类型是: &#x27;</span>,<span class="built_in">type</span>(file_abs_path))  <span class="comment">#pathlib.WindowsPath</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;当前文件的绝对路径:&#x27;</span>,file_abs_path)</span><br><span class="line">file_relative_path = Path(<span class="string">&#x27;demo_pathlib.py&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;当前文件的相对路径:&#x27;</span>,file_relative_path)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;当前文件的绝对路径(另外一种写法):&#x27;</span>,file_relative_path.resolve())</span><br><span class="line"></span><br><span class="line">parent_dir  = Path(__file__).parent  <span class="comment">#还可以继续.parent，相当于cd ..和cd ../..</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;当前文件的父目录:&#x27;</span>,parent_dir)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;路径拼接用/(忽略操作系统差异): &#x27;</span>,parent_dir / file_relative_path) <span class="comment">#</span></span><br></pre></td></tr></table></figure></li>
+<li><p>注意</p>
+<ul>
+<li>不管字符串使用的是正斜杠 <code>/</code> 还是反斜杠 <code>\</code>， 在 windows 系统里，得到的路径都是反斜杠<code>\</code>, pathlib 会根据操作系统智能处理</li>
+</ul>
+</li>
+</ul>
+<h2 id="获取路径组成部分"><a href="#获取路径组成部分" class="headerlink" title="获取路径组成部分"></a>获取路径组成部分</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from pathlib import Path</span><br><span class="line">saolei_apk = Path(r&#x27;d:\com.kejia.mine.apk&#x27;)</span><br><span class="line">print(saolei_apk.name)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>文件名，包含后缀名，如果是目录则获取目录名</td>
+</tr>
+<tr>
+<td>stem</td>
+<td>文件名，不包含后缀。</td>
+</tr>
+<tr>
+<td>suffix</td>
+<td>后缀，比如 <code>.txt</code>, <code>.png</code>。</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>父级目录，相当于 <code>cd ..</code></td>
+</tr>
+<tr>
+<td>anchor</td>
+<td>锚，目录前面的部分 <code>C:\</code> 或者 <code>/</code>。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>多级目录</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">saolei_apk = Path(<span class="string">r&#x27;D:\software\aDrive\locales\am.pak&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> parent <span class="keyword">in</span> saolei_apk.parents:</span><br><span class="line">    <span class="built_in">print</span>(parent)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\software\aDrive\locales</span><br><span class="line">D:\software\aDrive</span><br><span class="line">D:\software</span><br><span class="line">D:\</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果是os模块，要获取其父目录用的是os.path.dirname(),多级目录的话就麻烦，对比一下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os_saolei_apk_dir  = os.path.dirname(<span class="string">r&#x27;D:\software\aDrive\locales\am.pak&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(os_saolei_apk_dir)</span><br><span class="line">os_saolei_apk_parent_dir = os.path.dirname(os.path.dirname(<span class="string">r&#x27;D:\software\aDrive\locales\am.pak&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(os_saolei_apk_parent_dir)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">pathlib_saolei_apk = Path(<span class="string">r&#x27;D:\software\aDrive\locales\am.pak&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(pathlib_saolei_apk.parent)</span><br><span class="line"><span class="built_in">print</span>(pathlib_saolei_apk.parent.parent)  <span class="comment">#就相当于cd..多次</span></span><br><span class="line"><span class="built_in">print</span>(pathlib_saolei_apk.parents[<span class="number">1</span>])  <span class="comment">#你还可以用parents，注意0是第一层所在目录，1是父目录，2是爷目录....</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="获取文件属性"><a href="#获取文件属性" class="headerlink" title="获取文件属性"></a>获取文件属性</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line">saolei_apk = Path(<span class="string">r&#x27;d:\com.kejia.mine.apk&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(saolei_apk.stat())</span><br><span class="line"><span class="comment">#os.stat_result(st_mode=33206, st_ino=562949953558668, st_dev=3393479561, st_nlink=1, st_uid=0, st_gid=0, st_size=698179, st_atime=1648601046, st_mtime=1631589296, st_ctime=1631952752)</span></span><br><span class="line"></span><br><span class="line">mtime = saolei_apk.stat().st_mtime</span><br><span class="line"><span class="built_in">print</span>(arrow.get(mtime).<span class="built_in">format</span>(<span class="string">&#x27;YYYY-MM-DD HH:MM:SS&#x27;</span>))  </span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>st_mode</td>
+<td>权限模式</td>
+</tr>
+<tr>
+<td>st_ino</td>
+<td>inode number</td>
+</tr>
+<tr>
+<td>st_dev</td>
+<td>device</td>
+</tr>
+<tr>
+<td>st_nlink</td>
+<td>硬链接数</td>
+</tr>
+<tr>
+<td>st_uid</td>
+<td>所属用户的user id</td>
+</tr>
+<tr>
+<td>st_gid</td>
+<td>所属用户的group id</td>
+</tr>
+<tr>
+<td>st_size</td>
+<td>文件的大小，以位为单位</td>
+</tr>
+<tr>
+<td>st_atime</td>
+<td>文件访问时间</td>
+</tr>
+<tr>
+<td>st_mtime</td>
+<td>文件修改时间</td>
+</tr>
+<tr>
+<td>st_ctime</td>
+<td>文件创建时间</td>
+</tr>
+</tbody></table>
+<ul>
+<li>注意3个时间都是时间戳，要获取好看的时间就用arrow（详见我的另外一篇博文<a target="_blank" rel="noopener" href="https://ruru023.github.io/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/">Python第三方库_arrow</a>）来获取。</li>
+<li></li>
+</ul>
+<h2 id="文件-夹-操作"><a href="#文件-夹-操作" class="headerlink" title="文件(夹)操作"></a>文件(夹)操作</h2><ul>
+<li><p>慎用！推荐用shutil</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">newfile = Path(<span class="string">r&#x27;D:\20220402.txt&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> newfile.exists():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;创建文件&#x27;</span>)</span><br><span class="line">    newfile.touch(exist_ok=<span class="literal">False</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;删除文件&#x27;</span>)</span><br><span class="line">    newfile.unlink()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exists()</td>
+<td>是否存在</td>
+</tr>
+<tr>
+<td>is_dir()</td>
+<td>是否是文件</td>
+</tr>
+<tr>
+<td>is_file()</td>
+<td>是否是目录</td>
+</tr>
+<tr>
+<td>touch(mode=0o666, exist_ok=True)</td>
+<td>创建文件，默认权限666，如果exist_ok为True，文件存在不做任何事情，若为False，文件存在执行touch会报错<code>FileExistsError</code></td>
+</tr>
+<tr>
+<td>unlink()</td>
+<td>删除文件！危险操作！</td>
+</tr>
+<tr>
+<td>rmdir()</td>
+<td>删除目录非常危险，并且没有提示，一定要谨慎操作。一次只删除一级目录，且当前目录必须为空</td>
+</tr>
+<tr>
+<td>mkdir()</td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td>read_text()</td>
+<td>读文件内容，不再需要重复去打开文件和管理文件的关闭了，下同</td>
+</tr>
+<tr>
+<td>read_bytes()</td>
+<td>读取bytes</td>
+</tr>
+<tr>
+<td>write_text</td>
+<td>写入文本，注意是w 模式，如果之前已经有文件内容，将会被覆盖</td>
+</tr>
+<tr>
+<td>write_bytes</td>
+<td>写入bytes</td>
+</tr>
+<tr>
+<td>replace(文件新路径)</td>
+<td>移动文件</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>重命名</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">txt_path = Path(<span class="string">&#x27;archive/demo.txt&#x27;</span>)</span><br><span class="line">new_file = txt_path.with_name(<span class="string">&#x27;new.txt&#x27;</span>)</span><br><span class="line">txt_path.replace(new_file)</span><br></pre></td></tr></table></figure></li>
+<li><p>改后缀</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">txt_path = Path(<span class="string">&#x27;archive/demo.txt&#x27;</span>)</span><br><span class="line">new_file = txt_path.with_suffix(<span class="string">&#x27;.json&#x27;</span>)</span><br><span class="line">txt_path.replace(new_file)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="批量移动"><a href="#批量移动" class="headerlink" title="批量移动"></a>批量移动</h2><ul>
+<li><p>现在有这个目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">E:\test (6.5KB)</span><br><span class="line">+-- 1 (6.5KB)</span><br><span class="line">|   +-- 1.txt (0b)</span><br><span class="line">|   `-- 1.xls (6.5KB)</span><br><span class="line">`-- 2</span><br><span class="line">    `-- 2.txt (0b)</span><br></pre></td></tr></table></figure></li>
+<li><p>移动所有子目录下的.txt文件到E:\test这个根目录下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">move_file_to</span>(<span class="params">srcdir,dstdir,file_pattern</span>):</span><br><span class="line">    file = Path(srcdir).rglob(file_pattern)</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> file:</span><br><span class="line">        Path(_).replace(Path(dstdir) / Path(_).name)</span><br><span class="line"></span><br><span class="line">move_file_to(srcdir=<span class="string">r&#x27;e:\test&#x27;</span>,dstdir=<span class="string">r&#x27;e:\test&#x27;</span>,file_pattern=<span class="string">&#x27;*.txt&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="批量修改后缀"><a href="#批量修改后缀" class="headerlink" title="批量修改后缀"></a>批量修改后缀</h2><ul>
+<li><p>还是上面的目录结构</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">E:\test (<span class="number">6.5</span>KB)</span><br><span class="line">+-- <span class="number">1</span> (<span class="number">6.5</span>KB)</span><br><span class="line">|   +-- <span class="number">1.</span>txt (0b)</span><br><span class="line">|   `-- <span class="number">1.</span>xls (<span class="number">6.5</span>KB)</span><br><span class="line">`-- <span class="number">2</span></span><br><span class="line">    `-- <span class="number">2.</span>txt (0b)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">change_suffix</span>(<span class="params">dst_dir,old_suffix,new_suffix</span>):</span><br><span class="line">    file = Path(dst_dir).rglob(<span class="string">&#x27;*.&#x27;</span>+old_suffix)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">list</span>(file):</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> file:</span><br><span class="line">            new_ = Path(_).with_suffix(<span class="string">&#x27;.&#x27;</span>+new_suffix)</span><br><span class="line">            Path(_).replace(new_)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> Exception(<span class="string">f&#x27;file-type:<span class="subst">&#123;old_suffix&#125;</span> not found(recursive) in <span class="subst">&#123;dst_dir&#125;</span>&#x27;</span>)</span><br><span class="line">change_suffix(dst_dir=<span class="string">r&#x27;e:\test&#x27;</span>,old_suffix=<span class="string">&#x27;txt&#x27;</span>,new_suffix=<span class="string">&#x27;docx&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>修改后</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ tree</span><br><span class="line">E:\test (<span class="number">6.5</span>KB)</span><br><span class="line">+-- <span class="number">1</span> (<span class="number">6.5</span>KB)</span><br><span class="line">|   +-- <span class="number">1.</span>docx (0b)</span><br><span class="line">|   `-- <span class="number">1.</span>xls (<span class="number">6.5</span>KB)</span><br><span class="line">`-- <span class="number">2</span></span><br><span class="line">    `-- <span class="number">2.</span>docx (0b)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>rglob是递归，glob只会找一个目录下</li>
+<li>glob得到的是一个生成器，可以用list来转化成列表</li>
+</ul>
+</li>
+</ul>
+<h2 id="统计目录下的文件类型"><a href="#统计目录下的文件类型" class="headerlink" title="统计目录下的文件类型"></a>统计目录下的文件类型</h2><ul>
+<li><p>还是刚才的目录结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">E:\test (6.5KB)</span><br><span class="line">+-- 1 (6.5KB)</span><br><span class="line">|   +-- 1.txt (0b)</span><br><span class="line">|   `-- 1.xls (6.5KB)</span><br><span class="line">`-- 2</span><br><span class="line">    `-- 2.txt (0b)</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">path = Path(<span class="string">r&#x27;e:\test\1&#x27;</span>)</span><br><span class="line">files = [f.suffix <span class="keyword">for</span> f <span class="keyword">in</span> path.iterdir() <span class="keyword">if</span> f.is_file()]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dict</span>(collections.Counter(files)))  <span class="comment">#&#123;&#x27;.txt&#x27;: 1, &#x27;.xls&#x27;: 1&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>但是上面的代码不能递归，就是当前目录下的文件的类型</p>
+</li>
+<li><p>改造一下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">path = Path(<span class="string">r&#x27;e:\test&#x27;</span>)</span><br><span class="line">files = [f.suffix <span class="keyword">for</span> f <span class="keyword">in</span> path.rglob(<span class="string">&#x27;*.*&#x27;</span>) <span class="keyword">if</span> f.is_file()]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dict</span>(collections.Counter(files)))</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="统计某个目录下最近修改的文件"><a href="#统计某个目录下最近修改的文件" class="headerlink" title="统计某个目录下最近修改的文件"></a>统计某个目录下最近修改的文件</h2><ul>
+<li><p>转载知乎原文的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">path = Path.cwd()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">max</span>(</span><br><span class="line">    [(f.stat().st_mtime, f)</span><br><span class="line">     <span class="keyword">for</span> f <span class="keyword">in</span> path.iterdir()</span><br><span class="line">     <span class="keyword">if</span> f.is_file()]</span><br><span class="line">))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>也不能递归，你知道怎么改吗？</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/02/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pathlib/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" rel="tag">第三方库</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Postman生成报告</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "yPxr6M5Pq9OqDxX7xu6PLIvP-gzGzoHsz",
+    app_key: "8W8rnCc8ofSQdGuf0dQdhQh9",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2022
+        <i class="ri-heart-fill heart_icon"></i> 吴贤峰
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="老吴的博客"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>客观您随意</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>
