@@ -380,8 +380,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Postman内置变量</title>
-    <url>/2022/04/03/Postman%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F/</url>
+    <title>Postman内置变量一览</title>
+    <url>/2022/04/03/Postman%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F%E4%B8%80%E8%A7%88/</url>
     <content><![CDATA[<h1 id="Postman内置变量"><a href="#Postman内置变量" class="headerlink" title="Postman内置变量"></a>Postman内置变量</h1><blockquote>
 <p><a href="https://learning.postman.com/docs/writing-scripts/script-references/variables-list/">https://learning.postman.com/docs/writing-scripts/script-references/variables-list/</a></p>
 <p>我只是个搬运工，网上有的地方说只有3个?怎么可能呢。你说常用？那几个一点都不好用。</p>
@@ -1356,8 +1356,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Python小程序_MD5</title>
-    <url>/2022/04/03/Python%E5%B0%8F%E7%A8%8B%E5%BA%8FMD5/</url>
+    <title>Python小程序_MD5常见操作</title>
+    <url>/2022/04/03/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F-MD5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="MD5不是加密"><a href="#MD5不是加密" class="headerlink" title="MD5不是加密"></a>MD5不是加密</h1><blockquote>
 <p><a href="https://draveness.me/whys-the-design-password-with-md5/">https://draveness.me/whys-the-design-password-with-md5/</a>   参考为什么这么设计</p>
 </blockquote>
@@ -1822,8 +1822,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Python小程序_简单加密</title>
-    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%8A%A0%E5%AF%86/</url>
+    <title>Python小程序_简单凯撒加密</title>
+    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86/</url>
     <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br></pre></td></tr></table></figure>
