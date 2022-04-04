@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>归档 |  老吴的博客</title>
+      <title>LeetCode_176.第二高的薪水 |  老吴的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -52,172 +52,229 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-LeetCode-176-第二高的薪水"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  LeetCode_176.第二高的薪水
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/" class="article-date">
+  <time datetime="2022-04-03T16:00:00.000Z" itemprop="datePublished">2022-04-04</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/SQL/">SQL</a>
+  </div>
   
-  <ul class="ads">
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://www.songqinnet.com/">
-                <img src="https://www.songqinnet.com/files/system/2021/03-18/145119727a56774579.png?7.1.4" width="200" alt="松勤">
-            </a>
-        </li>
-    
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">221</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li><p>原文地址：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
+</li>
+<li><p>难度：简单</p>
+</li>
 </ul>
-  
-  
-  <article class="articles">
-    
-    
-    <h1 class="page-type-title">归档</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%8A%A0%E5%AF%86/" class="archive-article-date">
-  <time datetime="2022-03-30T16:00:00.000Z" itemprop="datePublished">03/31</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%8A%A0%E5%AF%86/"
-    >Python小程序_简单加密</a> 
-</h2>
- 
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/" class="archive-article-date">
-  <time datetime="2022-03-30T16:00:00.000Z" itemprop="datePublished">03/31</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/"
-    >Python第三方库_arrow</a> 
-</h2>
+<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
+<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
  
-
-    </header>
-    
-    
-  </div>
-</article>
+      <!-- reward -->
       
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/31/hexo/" class="archive-article-date">
-  <time datetime="2022-03-30T16:00:00.000Z" itemprop="datePublished">03/31</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/31/hexo/"
-    >hexo技巧</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/30/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/" class="archive-article-date">
-  <time datetime="2022-03-30T07:48:36.593Z" itemprop="datePublished">03/30</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/30/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/"
-    >Postman测试脚本</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/30/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/" class="archive-article-date">
-  <time datetime="2022-03-30T03:25:20.219Z" itemprop="datePublished">03/30</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/30/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/"
-    >Github仓库整理</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/30/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-python%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/" class="archive-article-date">
-  <time datetime="2022-03-29T16:00:00.000Z" itemprop="datePublished">03/30</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/03/30/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-python%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/"
-    >读书笔记_python源码剖析</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
-  </div>
-  
-  
-
-  
-  <nav class="page-nav">
     
-    <a class="extend prev" rel="prev" href="/archives/">上一页</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">LeetCode_512.游戏玩家分析2</div>
+      </a>
+    
   </nav>
-  
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "yPxr6M5Pq9OqDxX7xu6PLIvP-gzGzoHsz",
+    app_key: "8W8rnCc8ofSQdGuf0dQdhQh9",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -354,6 +411,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
