@@ -790,27 +790,24 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode_512.游戏玩家分析2</title>
-    <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
+    <title>LeetCode_176.第二高的薪水</title>
+    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li><p>原文地址：<a href="https://leetcode-cn.com/problems/game-play-analysis-i/">https://leetcode-cn.com/problems/game-play-analysis-i/</a></p>
+<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
 </li>
 <li><p>难度：简单</p>
 </li>
-<li><p>收费（会员可看），我不是会员。</p>
-</li>
 </ul>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>Activity table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd6c27bf1~tplv-t2oaga2asx-image.image" alt="image.png"></p>
-<p>Result table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd0c865ee~tplv-t2oaga2asx-image.image" alt="image.png"></p>
-<p>题目是：Write a SQL query that reports the device that is first logged in for each player<br>翻译一下就是写一条sql，显示每个玩家首次登录的设备号（同时显示玩家ID）</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>如果做过题1，那这道题就简单一些了。我们可以先求出每次玩家首次登录的信息。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id</span><br></pre></td></tr></table></figure>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-<p>有了这个信息，我们可以根据它们找到指定id、指定时间的设备id信息。<br>但此处可能有很多方法：</p>
-<h2 id="方法1，用in来做"><a href="#方法1，用in来做" class="headerlink" title="方法1，用in来做"></a>方法1，用in来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,device_id</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">WHERE</span> (player_id,event_date) <span class="keyword">IN</span> (</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd5d5e9b9~tplv-t2oaga2asx-image.image" alt="image.png"></p>
-<h2 id="方法2，用表关联来做"><a href="#方法2，用表关联来做" class="headerlink" title="方法2，用表关联来做"></a>方法2，用表关联来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.player_id,a.device_id</span><br><span class="line"><span class="keyword">FROM</span> activity <span class="keyword">AS</span> a,</span><br><span class="line">(</span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date) <span class="keyword">AS</span> mindate</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id) <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">WHERE</span> a.`event_date`<span class="operator">=</span>b.mindate </span><br><span class="line"><span class="keyword">AND</span> a.`player_id`<span class="operator">=</span>b.player_id</span><br></pre></td></tr></table></figure>]]></content>
+<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
+<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
+]]></content>
       <categories>
         <category>SQL</category>
       </categories>
@@ -846,24 +843,27 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode_176.第二高的薪水</title>
-    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
+    <title>LeetCode_512.游戏玩家分析2</title>
+    <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
+<li><p>原文地址：<a href="https://leetcode-cn.com/problems/game-play-analysis-i/">https://leetcode-cn.com/problems/game-play-analysis-i/</a></p>
 </li>
 <li><p>难度：简单</p>
 </li>
+<li><p>收费（会员可看），我不是会员。</p>
+</li>
 </ul>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>Activity table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd6c27bf1~tplv-t2oaga2asx-image.image" alt="image.png"></p>
+<p>Result table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd0c865ee~tplv-t2oaga2asx-image.image" alt="image.png"></p>
+<p>题目是：Write a SQL query that reports the device that is first logged in for each player<br>翻译一下就是写一条sql，显示每个玩家首次登录的设备号（同时显示玩家ID）</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>如果做过题1，那这道题就简单一些了。我们可以先求出每次玩家首次登录的信息。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id</span><br></pre></td></tr></table></figure>
 
-<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
-<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
-]]></content>
+<p>有了这个信息，我们可以根据它们找到指定id、指定时间的设备id信息。<br>但此处可能有很多方法：</p>
+<h2 id="方法1，用in来做"><a href="#方法1，用in来做" class="headerlink" title="方法1，用in来做"></a>方法1，用in来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,device_id</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">WHERE</span> (player_id,event_date) <span class="keyword">IN</span> (</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd5d5e9b9~tplv-t2oaga2asx-image.image" alt="image.png"></p>
+<h2 id="方法2，用表关联来做"><a href="#方法2，用表关联来做" class="headerlink" title="方法2，用表关联来做"></a>方法2，用表关联来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.player_id,a.device_id</span><br><span class="line"><span class="keyword">FROM</span> activity <span class="keyword">AS</span> a,</span><br><span class="line">(</span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date) <span class="keyword">AS</span> mindate</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id) <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">WHERE</span> a.`event_date`<span class="operator">=</span>b.mindate </span><br><span class="line"><span class="keyword">AND</span> a.`player_id`<span class="operator">=</span>b.player_id</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>SQL</category>
       </categories>
