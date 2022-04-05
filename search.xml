@@ -269,7 +269,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Content-Type</title>
+    <title>Content-Type的那些事儿</title>
     <url>/2022/04/05/Content-Type/</url>
     <content><![CDATA[<h1 id="Content-Type"><a href="#Content-Type" class="headerlink" title="Content-Type"></a>Content-Type</h1><blockquote>
 <p><a href="https://www.iana.org/assignments/media-types/media-types.xhtml">https://www.iana.org/assignments/media-types/media-types.xhtml</a></p>
@@ -284,6 +284,54 @@
 <h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><ul>
 <li><p>示例</p>
 <figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>text/html; charset=utf-8</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>multipart/form-data; boundary=something</span><br></pre></td></tr></table></figure></li>
+<li><p>第一个字段</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">type/subtype</span><br><span class="line">类型与子类型</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>不允许空格存在。<em>type</em> 表示可以被分多个子类的独立类别。<em>subtype 表示细分后的每个类型</em></p>
+</li>
+<li><p>独立类别</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">描述</th>
+<th align="left">典型示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>text</code></td>
+<td align="left">表明文件是普通文本，理论上是人类可读</td>
+<td align="left"><code>text/plain</code>, <code>text/html</code>, <code>text/css, text/javascript</code></td>
+</tr>
+<tr>
+<td align="left"><code>image</code></td>
+<td align="left">表明是某种图像。不包括视频，但是动态图（比如动态gif）也使用image类型</td>
+<td align="left"><code>image/gif</code>, <code>image/png</code>, <code>image/jpeg</code>, <code>image/bmp</code>, <code>image/webp</code>, <code>image/x-icon</code>, <code>image/vnd.microsoft.icon</code></td>
+</tr>
+<tr>
+<td align="left"><code>audio</code></td>
+<td align="left">表明是某种音频文件</td>
+<td align="left"><code>audio/midi</code>, <code>audio/mpeg, audio/webm, audio/ogg, audio/wav</code></td>
+</tr>
+<tr>
+<td align="left"><code>video</code></td>
+<td align="left">表明是某种视频文件</td>
+<td align="left"><code>video/webm</code>, <code>video/ogg</code></td>
+</tr>
+<tr>
+<td align="left"><code>application</code></td>
+<td align="left">表明是某种二进制数据</td>
+<td align="left"><code>application/octet-stream</code>, <code>application/pkcs12</code>, <code>application/vnd.mspowerpoint</code>, <code>application/xhtml+xml</code>, <code>application/xml</code>,  <code>application/pdf</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>对于text文件类型若没有特定的subtype，就使用 <code>text/plain</code>。类似的，二进制文件没有特定或已知的 subtype，即使用 <code>application/octet-stream</code></p>
+</li>
+<li><p><em>Multipart</em> 类型表示细分领域的文件类型的种类，经常对应不同的 MIME 类型。这是<em>复合</em>文件的一种表现方式。<code>multipart/form-data</code> 可用于联系 <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms">HTML Forms</a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST"><code>POST</code></a> 方法，此外 <code>multipart/byteranges</code>使用状态码<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206"><code>206</code></a> <code>Partial Content</code>来发送整个文件的子集，而HTTP对不能处理的复合文件使用特殊的方式：将信息直接传送给浏览器（这时可能会建立一个“另存为”窗口，但是却不知道如何去显示内联文件。）</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">multipart/form-data</span><br><span class="line">multipart/byteranges</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 <li><p>charset:字符编码标准</p>
 </li>
 <li><p>boundary:对于多部分实体，boundary 是必需的，其包括来自一组字符的1到70个字符，已知通过电子邮件网关是非常健壮的，而不是以空白结尾。它用于封装消息的多个部分的边界</p>
@@ -294,6 +342,13 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">value</span>=<span class="string">&quot;some text&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;myFile&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>请求头类似于</p>
 <figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/foo</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>68137</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>multipart/form-data; boundary=---------------------------974767299852498929531610575</span><br><span class="line"></span><br><span class="line"><span class="language-pgsql"><span class="comment">---------------------------974767299852498929531610575</span></span></span><br><span class="line"><span class="language-pgsql">Content-Disposition: form-data; <span class="type">name</span>=&quot;description&quot;</span></span><br><span class="line"><span class="language-pgsql"></span></span><br><span class="line"><span class="language-pgsql"><span class="keyword">some</span> <span class="type">text</span></span></span><br><span class="line"><span class="language-pgsql"><span class="comment">---------------------------974767299852498929531610575</span></span></span><br><span class="line"><span class="language-pgsql">Content-Disposition: form-data; <span class="type">name</span>=&quot;myFile&quot;; filename=&quot;foo.txt&quot;</span></span><br><span class="line"><span class="language-pgsql">Content-<span class="keyword">Type</span>: <span class="type">text</span>/plain</span></span><br><span class="line"><span class="language-pgsql"></span></span><br><span class="line"><span class="language-pgsql">(content <span class="keyword">of</span> the uploaded file foo.txt)</span></span><br><span class="line"><span class="language-pgsql"><span class="comment">---------------------------974767299852498929531610575</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>一个 <code>POST</code> 请求通常是通过 <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms">HTML 表单</a>发送, 并返回服务器的修改结果. 在这种情况下, content type 是通过在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form">``</a> 元素中设置正确的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form#attr-enctype"><code>enctype</code></a> 属性, 或是在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input">``</a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button">``</a> 元素中设置 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input#attr-formenctype"><code>formenctype</code></a> 属性来选择的:</p>
+<ul>
+<li><code>application/``x-www-form-urlencoded</code>: 数据被编码成以 <code>&#39;&amp;&#39;</code> 分隔的键-值对, 同时以 <code>&#39;=&#39;</code> 分隔键和值. 非字母或数字的字符会被 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/percent-encoding">percent-encoding</a>: 这也就是为什么这种类型不支持二进制数据(应使用 <code>multipart/form-data</code> 代替).</li>
+<li><code>multipart/form-data</code></li>
+<li><code>text/plain</code></li>
+</ul>
+</li>
 </ul>
 <h1 id="MIME"><a href="#MIME" class="headerlink" title="MIME"></a>MIME</h1><ul>
 <li><strong>MIME type</strong> （现在称为“媒体类型(media type)”，但有时也是“内容类型(content type)”）是指示文件类型的字符串，与文件一起发送（例如，一个声音文件可能被标记为 <code>audio/ogg</code> ，一个图像文件可能是 <code>image/png</code> ）。它与传统Windows上的文件扩展名有相同目的</li>
@@ -396,7 +451,7 @@
       </categories>
       <tags>
         <tag>http</tag>
-        <tag>完结</tag>
+        <tag>待续</tag>
       </tags>
   </entry>
   <entry>
@@ -915,8 +970,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
         <tag>爬虫</tag>
       </tags>
   </entry>
@@ -940,37 +995,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
         <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_176.第二高的薪水</title>
-    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
-</li>
-<li><p>难度：简单</p>
-</li>
-</ul>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
-<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
-]]></content>
-      <categories>
-        <category>SQL</category>
-      </categories>
-      <tags>
         <tag>完结</tag>
-        <tag>LeetCode</tag>
-        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -999,8 +1026,36 @@
         <category>SQL</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>LeetCode</tag>
+        <tag>完结</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_176.第二高的薪水</title>
+    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
+</li>
+<li><p>难度：简单</p>
+</li>
+</ul>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
+<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
+]]></content>
+      <categories>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
         <tag>SQL</tag>
       </tags>
   </entry>
@@ -1026,9 +1081,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
         <tag>LeetCode</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -2165,8 +2220,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
         <tag>MD5</tag>
       </tags>
   </entry>
@@ -2421,8 +2476,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
         <tag>标准库</tag>
       </tags>
   </entry>
@@ -2501,8 +2556,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -2594,8 +2649,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>python</tag>
+        <tag>完结</tag>
         <tag>第三方库</tag>
       </tags>
   </entry>
@@ -2683,8 +2738,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>待续</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>

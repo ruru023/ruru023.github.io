@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Content-Type |  老吴的博客</title>
+      <title>Content-Type的那些事儿 |  老吴的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -64,7 +64,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Content-Type
+  Content-Type的那些事儿
 </h1>
  
 
@@ -84,7 +84,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">695</span>
+            <span class="post-count">1.2k</span>
         </span>
     </span>
 
@@ -93,7 +93,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3 分钟</span>
+            <span class="post-count">5 分钟</span>
         </span>
     </span>
 </div>
@@ -121,6 +121,54 @@
 <h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><ul>
 <li><p>示例</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>text/html; charset=utf-8</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>multipart/form-data; boundary=something</span><br></pre></td></tr></table></figure></li>
+<li><p>第一个字段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type/subtype</span><br><span class="line">类型与子类型</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>不允许空格存在。<em>type</em> 表示可以被分多个子类的独立类别。<em>subtype 表示细分后的每个类型</em></p>
+</li>
+<li><p>独立类别</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">描述</th>
+<th align="left">典型示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>text</code></td>
+<td align="left">表明文件是普通文本，理论上是人类可读</td>
+<td align="left"><code>text/plain</code>, <code>text/html</code>, <code>text/css, text/javascript</code></td>
+</tr>
+<tr>
+<td align="left"><code>image</code></td>
+<td align="left">表明是某种图像。不包括视频，但是动态图（比如动态gif）也使用image类型</td>
+<td align="left"><code>image/gif</code>, <code>image/png</code>, <code>image/jpeg</code>, <code>image/bmp</code>, <code>image/webp</code>, <code>image/x-icon</code>, <code>image/vnd.microsoft.icon</code></td>
+</tr>
+<tr>
+<td align="left"><code>audio</code></td>
+<td align="left">表明是某种音频文件</td>
+<td align="left"><code>audio/midi</code>, <code>audio/mpeg, audio/webm, audio/ogg, audio/wav</code></td>
+</tr>
+<tr>
+<td align="left"><code>video</code></td>
+<td align="left">表明是某种视频文件</td>
+<td align="left"><code>video/webm</code>, <code>video/ogg</code></td>
+</tr>
+<tr>
+<td align="left"><code>application</code></td>
+<td align="left">表明是某种二进制数据</td>
+<td align="left"><code>application/octet-stream</code>, <code>application/pkcs12</code>, <code>application/vnd.mspowerpoint</code>, <code>application/xhtml+xml</code>, <code>application/xml</code>,  <code>application/pdf</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>对于text文件类型若没有特定的subtype，就使用 <code>text/plain</code>。类似的，二进制文件没有特定或已知的 subtype，即使用 <code>application/octet-stream</code></p>
+</li>
+<li><p><em>Multipart</em> 类型表示细分领域的文件类型的种类，经常对应不同的 MIME 类型。这是<em>复合</em>文件的一种表现方式。<code>multipart/form-data</code> 可用于联系 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/Forms">HTML Forms</a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST"><code>POST</code></a> 方法，此外 <code>multipart/byteranges</code>使用状态码<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/206"><code>206</code></a> <code>Partial Content</code>来发送整个文件的子集，而HTTP对不能处理的复合文件使用特殊的方式：将信息直接传送给浏览器（这时可能会建立一个“另存为”窗口，但是却不知道如何去显示内联文件。）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">multipart/form-data</span><br><span class="line">multipart/byteranges</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 <li><p>charset:字符编码标准</p>
 </li>
 <li><p>boundary:对于多部分实体，boundary 是必需的，其包括来自一组字符的1到70个字符，已知通过电子邮件网关是非常健壮的，而不是以空白结尾。它用于封装消息的多个部分的边界</p>
@@ -131,6 +179,13 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">value</span>=<span class="string">&quot;some text&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;myFile&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>请求头类似于</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/foo</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>68137</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>multipart/form-data; boundary=---------------------------974767299852498929531610575</span><br><span class="line"></span><br><span class="line"><span class="language-pgsql"><span class="comment">---------------------------974767299852498929531610575</span></span></span><br><span class="line"><span class="language-pgsql">Content-Disposition: form-data; <span class="type">name</span>=&quot;description&quot;</span></span><br><span class="line"><span class="language-pgsql"></span></span><br><span class="line"><span class="language-pgsql"><span class="keyword">some</span> <span class="type">text</span></span></span><br><span class="line"><span class="language-pgsql"><span class="comment">---------------------------974767299852498929531610575</span></span></span><br><span class="line"><span class="language-pgsql">Content-Disposition: form-data; <span class="type">name</span>=&quot;myFile&quot;; filename=&quot;foo.txt&quot;</span></span><br><span class="line"><span class="language-pgsql">Content-<span class="keyword">Type</span>: <span class="type">text</span>/plain</span></span><br><span class="line"><span class="language-pgsql"></span></span><br><span class="line"><span class="language-pgsql">(content <span class="keyword">of</span> the uploaded file foo.txt)</span></span><br><span class="line"><span class="language-pgsql"><span class="comment">---------------------------974767299852498929531610575</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>一个 <code>POST</code> 请求通常是通过 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/Forms">HTML 表单</a>发送, 并返回服务器的修改结果. 在这种情况下, content type 是通过在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form">``</a> 元素中设置正确的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/form#attr-enctype"><code>enctype</code></a> 属性, 或是在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input">``</a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button">``</a> 元素中设置 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input#attr-formenctype"><code>formenctype</code></a> 属性来选择的:</p>
+<ul>
+<li><code>application/``x-www-form-urlencoded</code>: 数据被编码成以 <code>&#39;&amp;&#39;</code> 分隔的键-值对, 同时以 <code>&#39;=&#39;</code> 分隔键和值. 非字母或数字的字符会被 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/percent-encoding">percent-encoding</a>: 这也就是为什么这种类型不支持二进制数据(应使用 <code>multipart/form-data</code> 代替).</li>
+<li><code>multipart/form-data</code></li>
+<li><code>text/plain</code></li>
+</ul>
+</li>
 </ul>
 <h1 id="MIME"><a href="#MIME" class="headerlink" title="MIME"></a>MIME</h1><ul>
 <li><strong>MIME type</strong> （现在称为“媒体类型(media type)”，但有时也是“内容类型(content type)”）是指示文件类型的字符串，与文件一起发送（例如，一个声音文件可能被标记为 <code>audio/ogg</code> ，一个图像文件可能是 <code>image/png</code> ）。它与传统Windows上的文件扩展名有相同目的</li>
@@ -302,7 +357,7 @@
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/" rel="tag">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%85%E7%BB%AD/" rel="tag">待续</a></li></ul>
 
     </footer>
   </div>
