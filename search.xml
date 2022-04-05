@@ -435,9 +435,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Selenium_使用requests实现selenium相关API操作</title>
+    <title>使用requests实现selenium相关API操作</title>
     <url>/2022/04/05/Selenium-%E4%BD%BF%E7%94%A8requests%E5%AE%9E%E7%8E%B0selenium%E7%9B%B8%E5%85%B3API%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="Selenium-使用requests实现selenium相关API操作"><a href="#Selenium-使用requests实现selenium相关API操作" class="headerlink" title="Selenium_使用requests实现selenium相关API操作"></a>Selenium_使用requests实现selenium相关API操作</h1><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
 <li><p>你在做下面的练习之前应该具备</p>
 <ul>
 <li><p>安装好chrome，并通过chrome://version确认其版本号</p>
@@ -627,6 +627,33 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode_788. 旋转数字</title>
+    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<ul>
+<li>难度：简单</li>
+<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
+<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>思路</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>执行效果也是非常的好。</p>
+</li>
+</ul>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode_512.游戏玩家分析2</title>
     <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
@@ -655,33 +682,6 @@
         <tag>SQL</tag>
         <tag>LeetCode</tag>
         <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_788. 旋转数字</title>
-    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
-    <content><![CDATA[<ul>
-<li>难度：简单</li>
-<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
-<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><p>思路</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>执行效果也是非常的好。</p>
-</li>
-</ul>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
