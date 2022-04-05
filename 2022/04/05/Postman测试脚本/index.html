@@ -72,8 +72,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/03/30/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/" class="article-date">
-  <time datetime="2022-03-30T07:48:36.593Z" itemprop="datePublished">2022-03-30</time>
+      <a href="/2022/04/05/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/" class="article-date">
+  <time datetime="2022-04-04T16:00:00.000Z" itemprop="datePublished">2022-04-05</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/postman/">postman</a>
@@ -84,7 +84,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">372</span>
+            <span class="post-count">1k</span>
         </span>
     </span>
 
@@ -93,7 +93,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">5 分钟</span>
         </span>
     </span>
 </div>
@@ -137,14 +137,153 @@
 
 
 
-<h2 id="语法总结"><a href="#语法总结" class="headerlink" title="语法总结"></a>语法总结</h2><ul>
-<li><p>语法1</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(参数<span class="number">1</span>,函数)</span><br><span class="line">	参数<span class="number">1</span>: 函数执行成功后输出的字符串</span><br><span class="line">    函数: <span class="keyword">function</span>(<span class="params"></span>) &#123; 函数体&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>语法2</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#下面要结合pm.<span class="property">expect</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">text</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">json</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">code</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">responseTime</span></span><br><span class="line">#下面可以直接断言</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">body</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">header</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">status</span></span><br></pre></td></tr></table></figure></li>
-<li><p>语法3</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="title function_">oneOf</span>(列表中存储多个值)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="title function_">include</span>(字符串)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="property">be</span>.<span class="title function_">below</span>(比较数值)</span><br><span class="line">pm.<span class="title function_">expect</span>(要断言的内容).<span class="property">to</span>.<span class="title function_">eql</span>()</span><br></pre></td></tr></table></figure></li>
+<ul>
+<li></li>
 </ul>
+<h1 id="pm-Obj"><a href="#pm-Obj" class="headerlink" title="pm Obj"></a>pm Obj</h1><h2 id="脚本中使用变量"><a href="#脚本中使用变量" class="headerlink" title="脚本中使用变量"></a>脚本中使用变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量??</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → <span class="title class_">Boolean</span>   <span class="comment">//较少使用</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *         <span class="comment">//多用get或者set</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//环境变量</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="property">name</span>:<span class="title class_">String</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → <span class="title class_">Boolean</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">unset</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">clear</span>():<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 集合变量</span></span><br><span class="line">pm.<span class="property">collectionVariables</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">collectionVariables</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量</span></span><br><span class="line">pm.<span class="property">globals</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">globals</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// data 变量，在run collection的时候</span></span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → boolean</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">toObject</span>():<span class="keyword">function</span> → <span class="title class_">Object</span></span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">toJSON</span>():<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">unset</span>(<span class="attr">key</span>:<span class="title class_">String</span>):<span class="keyword">function</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>变量的有效范围，从大到小</strong></p>
+<ul>
+<li>Global</li>
+<li>Collection</li>
+<li>Environment</li>
+<li>Data</li>
+<li>Local</li>
+</ul>
+<h2 id="脚本中使用request和response数据"><a href="#脚本中使用request和response数据" class="headerlink" title="脚本中使用request和response数据"></a>脚本中使用request和response数据</h2><table>
+<thead>
+<tr>
+<th>对象方法</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pm.request</td>
+<td>pm.request.url:Url</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers:HeaderList</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.method:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.body:RequestBody</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers.add(header:Header):function</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers.remove(headerName:String):function</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers.upsert({key: headerName:String, value: headerValue:String}):function)</td>
+</tr>
+<tr>
+<td>pm.response</td>
+<td>pm.response.code:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.status:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.headers:HeaderList</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.responseTime:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.responseSize:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.text():Function → String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.json():Function → Object</td>
+</tr>
+<tr>
+<td>pm.info</td>
+<td>pm.info.eventName:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.iteration:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.iterationCount:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.requestName:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.requestId:String</td>
+</tr>
+<tr>
+<td>pm.cookies</td>
+<td>pm.cookies.has(cookieName:String):Function → Boolean</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.cookies.get(cookieName:String):Function → String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.cookies.toObject():Function → Object</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.cookies.jar():Function → Object</td>
+</tr>
+<tr>
+<td>pm.sendRequest</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="property">request</span>.<span class="property">headers</span>.<span class="title function_">add</span>(&#123;</span><br><span class="line">  <span class="attr">key</span>: <span class="string">&quot;client-id&quot;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&quot;abcdef&quot;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>示例2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jar = pm.<span class="property">cookies</span>.<span class="title function_">jar</span>();</span><br><span class="line">jar.<span class="title function_">set</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, cookie <span class="attr">name</span>:<span class="title class_">String</span>, cookie <span class="attr">value</span>:<span class="title class_">String</span>, <span class="title function_">callback</span>(error, cookie)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line">    </span><br><span class="line">jar.<span class="title function_">set</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, &#123; <span class="attr">name</span>:<span class="title class_">String</span>, <span class="attr">value</span>:<span class="title class_">String</span>, <span class="attr">httpOnly</span>:<span class="title class_">Bool</span> &#125;, <span class="title function_">callback</span>(error, cookie)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">get</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, <span class="attr">cookieName</span>:<span class="title class_">String</span>, callback (error, value)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">getAll</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, callback (error, cookies)):<span class="title class_">Function</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">unset</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, <span class="attr">token</span>:<span class="title class_">String</span>, <span class="title function_">callback</span>(error)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line">  </span><br><span class="line">jar.<span class="title function_">clear</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, callback (error)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br></pre></td></tr></table></figure></li>
+<li><p>示例3</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jar = pm.<span class="property">cookies</span>.<span class="title function_">jar</span>();</span><br><span class="line">jar.<span class="title function_">set</span>(<span class="string">&quot;httpbin.org&quot;</span>, <span class="string">&quot;session-id&quot;</span>, <span class="string">&quot;abc123&quot;</span>, <span class="function">(<span class="params">error, cookie</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`An error occurred: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Cookie saved: <span class="subst">$&#123;cookie&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>示例4</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example with a plain string URL</span></span><br><span class="line">pm.<span class="title function_">sendRequest</span>(<span class="string">&#x27;https://postman-echo.com/get&#x27;</span>, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example with a full-fledged request</span></span><br><span class="line"><span class="keyword">const</span> postRequest = &#123;</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://postman-echo.com/post&#x27;</span>,</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  <span class="attr">header</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X-Foo&#x27;</span>: <span class="string">&#x27;bar&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">body</span>: &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&#x27;raw&#x27;</span>,</span><br><span class="line">    <span class="attr">raw</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="attr">key</span>: <span class="string">&#x27;this is json&#x27;</span> &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">pm.<span class="title function_">sendRequest</span>(postRequest, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(error ? error : response.<span class="title function_">json</span>());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example containing a test</span></span><br><span class="line">pm.<span class="title function_">sendRequest</span>(<span class="string">&#x27;https://postman-echo.com/get&#x27;</span>, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  pm.<span class="title function_">test</span>(<span class="string">&#x27;response should be okay to process&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    pm.<span class="title function_">expect</span>(error).<span class="property">to</span>.<span class="title function_">equal</span>(<span class="literal">null</span>);</span><br><span class="line">    pm.<span class="title function_">expect</span>(response).<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">property</span>(<span class="string">&#x27;code&#x27;</span>, <span class="number">200</span>);</span><br><span class="line">    pm.<span class="title function_">expect</span>(response).<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">property</span>(<span class="string">&#x27;status&#x27;</span>, <span class="string">&#x27;OK&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="pm-test"><a href="#pm-test" class="headerlink" title="pm.test()"></a>pm.test()</h2><ul>
+<li><p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(<span class="attr">testName</span>:<span class="title class_">String</span>, <span class="attr">specFunction</span>:<span class="title class_">Function</span>):<span class="title class_">Function</span></span><br><span class="line">参数<span class="number">1</span>: 函数执行成功后输出的字符串</span><br><span class="line">参数<span class="number">2</span>：测试函数，格式 ===&gt;函数: <span class="keyword">function</span>(<span class="params"></span>) &#123; 函数体&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>示例1</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#下面要结合pm.<span class="property">expect</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">text</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">json</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">code</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">responseTime</span></span><br><span class="line">#下面可以直接断言</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">body</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">header</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">status</span></span><br></pre></td></tr></table></figure></li>
+<li><p>示例2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(<span class="string">&quot;response should be okay to process&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">not</span>.<span class="property">be</span>.<span class="property">error</span>;</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">jsonBody</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">not</span>.<span class="property">have</span>.<span class="title function_">jsonBody</span>(<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">&#125;);	</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="pm-expect"><a href="#pm-expect" class="headerlink" title="pm.expect()"></a>pm.expect()</h2><ul>
+<li><p>往往嵌入到pm.test()中使用</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm.<span class="title function_">expect</span>(<span class="attr">assertion</span>:*):<span class="title class_">Function</span> → <span class="title class_">Assertion</span></span><br></pre></td></tr></table></figure></li>
+<li><p>请结合上面的SNIPPETS来使用</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>写不下去了，这玩意没啥营养，真做POSTMAN做到这个层面，写代码自动化不香吗？</p>
+</blockquote>
  
       <!-- reward -->
       
@@ -215,12 +354,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/30/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/05/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postman/" rel="tag">postman</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%85%E7%BB%AD/" rel="tag">待续</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postman/" rel="tag">postman</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li></ul>
 
     </footer>
   </div>
@@ -228,19 +367,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/03/31/hexo/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            hexo技巧
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/03/30/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/" class="article-nav-link">
+      <a href="/2022/04/05/RESTful%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E6%95%B4%E7%90%86/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Github仓库整理</div>
+        <div class="article-nav-title">RESTful相关信息整理</div>
       </a>
     
   </nav>
