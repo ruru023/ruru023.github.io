@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>网络资源整理</title>
-    <url>/2022/04/03/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</url>
+    <url>/2022/04/07/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<h1 id="网络资源整理"><a href="#网络资源整理" class="headerlink" title="网络资源整理"></a>网络资源整理</h1><h1 id="IT博客"><a href="#IT博客" class="headerlink" title="IT博客"></a>IT博客</h1><table>
 <thead>
 <tr>
@@ -40,6 +40,30 @@
 <td></td>
 <td></td>
 <td></td>
+</tr>
+</tbody></table>
+<h1 id="IT各大排行榜"><a href="#IT各大排行榜" class="headerlink" title="IT各大排行榜"></a>IT各大排行榜</h1><table>
+<thead>
+<tr>
+<th>排行榜</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>编程语言</td>
+<td><a href="https://www.tiobe.com/tiobe-index/">https://www.tiobe.com/tiobe-index/</a></td>
+</tr>
+<tr>
+<td>数据库</td>
+<td><a href="https://db-engines.com/en/ranking">https://db-engines.com/en/ranking</a></td>
+</tr>
+<tr>
+<td>杂类</td>
+<td><a href="https://w3techs.com/">https://w3techs.com/</a></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><a href="https://distrowatch.com/dwres.php?resource=popularity">https://distrowatch.com/dwres.php?resource=popularity</a></td>
 </tr>
 </tbody></table>
 <h1 id="知名软件"><a href="#知名软件" class="headerlink" title="知名软件"></a>知名软件</h1><table>
@@ -1001,6 +1025,34 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode_176.第二高的薪水</title>
+    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
+</li>
+<li><p>难度：简单</p>
+</li>
+</ul>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
+<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
+]]></content>
+      <categories>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode_512.游戏玩家分析2</title>
     <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
@@ -1022,34 +1074,6 @@
 
 <p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd5d5e9b9~tplv-t2oaga2asx-image.image" alt="image.png"></p>
 <h2 id="方法2，用表关联来做"><a href="#方法2，用表关联来做" class="headerlink" title="方法2，用表关联来做"></a>方法2，用表关联来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.player_id,a.device_id</span><br><span class="line"><span class="keyword">FROM</span> activity <span class="keyword">AS</span> a,</span><br><span class="line">(</span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date) <span class="keyword">AS</span> mindate</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id) <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">WHERE</span> a.`event_date`<span class="operator">=</span>b.mindate </span><br><span class="line"><span class="keyword">AND</span> a.`player_id`<span class="operator">=</span>b.player_id</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_176.第二高的薪水</title>
-    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
-</li>
-<li><p>难度：简单</p>
-</li>
-</ul>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
-<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
-]]></content>
       <categories>
         <category>SQL</category>
       </categories>
@@ -2529,38 +2553,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python小程序_简单凯撒加密</title>
-    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h1><ul>
-<li><p>chr：返回指定数字的unicode字符串</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chr</span>(i, /)</span><br><span class="line">    Return a Unicode string of one character <span class="keyword">with</span> ordinal i; <span class="number">0</span> &lt;= i &lt;= <span class="number">0x10ffff</span>.</span><br><span class="line">    </span><br><span class="line"><span class="built_in">chr</span>(<span class="number">65</span>)  是A  <span class="built_in">chr</span>(<span class="number">90</span>)是Z ,差<span class="number">25</span></span><br><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)  是a  <span class="built_in">chr</span>(<span class="number">122</span>)是z，差<span class="number">25</span>(<span class="number">26</span>个英文字母)</span><br></pre></td></tr></table></figure></li>
-<li><p>chr(i+c)，i从0到25</p>
-</li>
-<li><p>两个for循环建立了一个字典</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#超出26个字符要求余数+C，这是关键</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;A&#x27;</span>: <span class="string">&#x27;N&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;B&#x27;</span>: <span class="string">&#x27;O&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;C&#x27;</span>: <span class="string">&#x27;P&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;D&#x27;</span>: <span class="string">&#x27;Q&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;E&#x27;</span>: <span class="string">&#x27;R&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;F&#x27;</span>: <span class="string">&#x27;S&#x27;</span>) <span class="comment">#省略了很多  A后第13个字符串后的N</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="代码改造成函数"><a href="#代码改造成函数" class="headerlink" title="代码改造成函数"></a>代码改造成函数</h1><ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):   <span class="comment">#接受一个字符串，通过将每个字符串往后挪13位（默认值，可以自行更改）</span></span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span>  <span class="comment">#原始字符串</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan  #加密后的字符串</span></span><br></pre></td></tr></table></figure></li>
-<li><p>解码代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)  <span class="comment">#返回来就是解密</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python第三方库_arrow</title>
     <url>/2022/03/31/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93arrow/</url>
     <content><![CDATA[<h1 id="Python第三方库arrow"><a href="#Python第三方库arrow" class="headerlink" title="Python第三方库arrow"></a>Python第三方库arrow</h1><blockquote>
@@ -2652,6 +2644,38 @@
         <tag>python</tag>
         <tag>完结</tag>
         <tag>第三方库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python小程序_简单凯撒加密</title>
+    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h1><ul>
+<li><p>chr：返回指定数字的unicode字符串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chr</span>(i, /)</span><br><span class="line">    Return a Unicode string of one character <span class="keyword">with</span> ordinal i; <span class="number">0</span> &lt;= i &lt;= <span class="number">0x10ffff</span>.</span><br><span class="line">    </span><br><span class="line"><span class="built_in">chr</span>(<span class="number">65</span>)  是A  <span class="built_in">chr</span>(<span class="number">90</span>)是Z ,差<span class="number">25</span></span><br><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)  是a  <span class="built_in">chr</span>(<span class="number">122</span>)是z，差<span class="number">25</span>(<span class="number">26</span>个英文字母)</span><br></pre></td></tr></table></figure></li>
+<li><p>chr(i+c)，i从0到25</p>
+</li>
+<li><p>两个for循环建立了一个字典</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#超出26个字符要求余数+C，这是关键</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;A&#x27;</span>: <span class="string">&#x27;N&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;B&#x27;</span>: <span class="string">&#x27;O&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;C&#x27;</span>: <span class="string">&#x27;P&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;D&#x27;</span>: <span class="string">&#x27;Q&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;E&#x27;</span>: <span class="string">&#x27;R&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;F&#x27;</span>: <span class="string">&#x27;S&#x27;</span>) <span class="comment">#省略了很多  A后第13个字符串后的N</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="代码改造成函数"><a href="#代码改造成函数" class="headerlink" title="代码改造成函数"></a>代码改造成函数</h1><ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):   <span class="comment">#接受一个字符串，通过将每个字符串往后挪13位（默认值，可以自行更改）</span></span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span>  <span class="comment">#原始字符串</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan  #加密后的字符串</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解码代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)  <span class="comment">#返回来就是解密</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
