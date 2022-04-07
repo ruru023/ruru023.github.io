@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/04/07/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</loc>
+    
+    <lastmod>2022-04-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/04/02/Python%E6%A0%87%E5%87%86%E5%BA%93typing/</loc>
+    
+    <lastmod>2022-04-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/04/07/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</loc>
     
     <lastmod>2022-04-07</lastmod>
@@ -443,6 +461,13 @@
   
   <url>
     <loc>http://example.com/categories/hexo/</loc>
+    <lastmod>2022-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/%E5%AE%8C%E7%BB%93/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
