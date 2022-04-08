@@ -311,6 +311,152 @@
       </tags>
   </entry>
   <entry>
+    <title>Python标准库_typing</title>
+    <url>/2022/04/08/Python%E6%A0%87%E5%87%86%E5%BA%93typing/</url>
+    <content><![CDATA[<h1 id="Python标准库typing"><a href="#Python标准库typing" class="headerlink" title="Python标准库typing"></a>Python标准库typing</h1><blockquote>
+<p><a href="https://docs.python.org/zh-cn/3/library/typing.html">https://docs.python.org/zh-cn/3/library/typing.html</a></p>
+</blockquote>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
+<li><p>python3.5+才有</p>
+</li>
+<li><p>Python 运行时不强制执行函数和变量类型注解，但这些注解可用于类型检查器、IDE、静态检查器等第三方工具。</p>
+</li>
+<li><p>作用</p>
+<ul>
+<li>类型检查，防止运行时出现参数和返回值类型不符合。（pycharm会自动联想类型）</li>
+<li>作为开发文档附加说明，方便使用者调用时传入和返回参数类型。</li>
+<li>该模块加入后并不会影响程序的运行，不会报正式的错误，<strong>只有提醒</strong></li>
+</ul>
+</li>
+<li><p>最早接触是在leetcode做题的时候看到的，后面在各种源码中广泛有看到。</p>
+<ul>
+<li><p>比如LeetCode算法第一题：两数之和，的解题模板（python3）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br></pre></td></tr></table></figure></li>
+<li><p>比如Selenium中get方法的源码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, url: <span class="built_in">str</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Loads a web page in the current browser session.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">    self.execute(Command.GET, &#123;<span class="string">&#x27;url&#x27;</span>: url&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name:<span class="built_in">str</span></span><br><span class="line">name = <span class="string">&#x27;wuxianfeng&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(name.upper())</span><br></pre></td></tr></table></figure></li>
+<li><p>PEP8中有提及，在声明变量类型时，变量后方紧跟一个冒号，冒号后面跟一个空格，再跟上变量的类型。</p>
+</li>
+<li><p>其实我们很少这么做就是了。更多是放在函数或者方法中</p>
+</li>
+</ul>
+<h2 id="函数参数（基础类型）"><a href="#函数参数（基础类型）" class="headerlink" title="函数参数（基础类型）"></a>函数参数（基础类型）</h2><ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">greeting</span>(<span class="params">name: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello &#x27;</span> + name</span><br></pre></td></tr></table></figure>
+<ul>
+<li>声明name参数是str类型，格式是<strong>参数名冒号类型</strong></li>
+<li>返回对象也是str类型，格式是**-&gt;类型**，注意是一个-</li>
+<li>-&gt;先写，再写冒号！</li>
+</ul>
+</li>
+<li><p>语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">参数名:类型</span><br><span class="line">    </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">参数...</span>) -&gt; 类型:</span><br></pre></td></tr></table></figure></li>
+<li><p>一个好处就是用pycharm在输入代码的时候</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">name:<span class="built_in">str</span></span>) -&gt;<span class="literal">None</span>:</span><br><span class="line">    <span class="built_in">print</span>(name.)   <span class="comment">#输入到name.的时候能自动补齐出来str类型的方法，如果不声明绝对是没有的</span></span><br></pre></td></tr></table></figure></li>
+<li><p>str是默认类型，你发现跟typing模块好像并没任何关系，因为这是<strong>基础的模块，无需导入即可使用。类似的还有int，float，bool等</strong></p>
+</li>
+</ul>
+<h2 id="函数参数默认值"><a href="#函数参数默认值" class="headerlink" title="函数参数默认值"></a>函数参数默认值</h2><ul>
+<li><p>示例代码：Faker类的初始化方法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params"></span></span><br><span class="line"><span class="params">    self,</span></span><br><span class="line"><span class="params">    locale: <span class="type">Optional</span>[<span class="type">Union</span>[<span class="built_in">str</span>, <span class="type">Sequence</span>[<span class="built_in">str</span>], <span class="type">Dict</span>[<span class="built_in">str</span>, <span class="type">Union</span>[<span class="built_in">int</span>, <span class="built_in">float</span>]]]] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">    providers: <span class="type">Optional</span>[<span class="type">List</span>[<span class="built_in">str</span>]] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">    generator: <span class="type">Optional</span>[Generator] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">    includes: <span class="type">Optional</span>[<span class="type">List</span>[<span class="built_in">str</span>]] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">    use_weighting: <span class="built_in">bool</span> = <span class="literal">True</span>,</span></span><br><span class="line"><span class="params">    **config: <span class="type">Any</span>,</span></span><br><span class="line"><span class="params"></span>) -&gt; <span class="literal">None</span>:</span><br></pre></td></tr></table></figure></li>
+<li><p>语法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">参数名:类型=默认值</span><br><span class="line">    </span><br><span class="line">实例: use_weighting: <span class="built_in">bool</span> = <span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
+<li><p>跟以前相比就是加了冒号和类型</p>
+</li>
+</ul>
+<h2 id="高级类型List和Tuple"><a href="#高级类型List和Tuple" class="headerlink" title="高级类型List和Tuple"></a>高级类型List和Tuple</h2><ul>
+<li><p>此处的中级类型指的是List和Tuple，Dict这些</p>
+</li>
+<li><p>示例代码：文章开头提到的leetcode第一题，两数之和</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>意思是nums这个参数是一个list，其中每个元素是int类型的</li>
+</ul>
+</li>
+<li><p>注意，代码模板不会显示所有的细节，其实这是需要导入的</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Dict</span>,  <span class="type">List</span>,  <span class="type">Tuple</span></span><br></pre></td></tr></table></figure></li>
+<li><p>实例代码1</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">names:<span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> names:   <span class="comment">#如果你输入names.，会产生列表的方法</span></span><br><span class="line">        <span class="built_in">print</span>(name)      <span class="comment">#如果你输入name.，会产生字符串的方法</span></span><br><span class="line"></span><br><span class="line">names = [<span class="string">&#x27;wuxianfeng&#x27;</span>,<span class="string">&#x27;qianyuli&#x27;</span>]</span><br><span class="line">func(names)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>注意上述代码跟以下代码的区别</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">func1</span>(<span class="params">*names</span>):</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">        <span class="built_in">print</span>(name)</span><br><span class="line">classes = [<span class="string">&#x27;c1&#x27;</span>,<span class="string">&#x27;c2&#x27;</span>]</span><br><span class="line">func1(*classes)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>实例代码2：多个相同类型可以用…来替代，但要注意是Tuple[]</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Tuple</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">ages: <span class="type">Tuple</span>[<span class="built_in">int</span>, ...]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> age <span class="keyword">in</span> ages:</span><br><span class="line">        <span class="built_in">print</span>(age)</span><br><span class="line"></span><br><span class="line">ages = (<span class="number">18</span>, <span class="number">19</span>, <span class="number">22</span>, <span class="number">34</span>,)</span><br><span class="line">func(ages)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>此处比较诡异的是如果我写</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Tuple</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">ages: <span class="type">Tuple</span>[<span class="built_in">int</span>,<span class="built_in">int</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> age <span class="keyword">in</span> ages:</span><br><span class="line">        <span class="built_in">print</span>(age)</span><br><span class="line"></span><br><span class="line">ages = (<span class="number">18</span>, <span class="number">19</span>, <span class="number">22</span>, <span class="number">34</span>,)  <span class="comment">#这里只能写2个值，多或者少都会警告！</span></span><br><span class="line">func(ages)  <span class="comment">#应为类型Tuple[int,int],实为类型Tuple[int,int,int,int]</span></span><br></pre></td></tr></table></figure></li>
+<li><p>但是List却没有这个问题，后续有空查下</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="高级类型Dict"><a href="#高级类型Dict" class="headerlink" title="高级类型Dict"></a>高级类型Dict</h2><ul>
+<li><p>dict是key:value形式</p>
+</li>
+<li><p>注意跟Tuple一样，都是[]的形式，不能是{}</p>
+</li>
+<li><p>实例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Dict</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">info: <span class="type">Dict</span>[<span class="built_in">str</span>, <span class="built_in">str</span>]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> info.items():</span><br><span class="line">        <span class="built_in">print</span>(k)</span><br><span class="line">        <span class="built_in">print</span>(v)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">nanjings = &#123;<span class="string">&#x27;wuxianfeng&#x27;</span>: <span class="string">&#x27;male&#x27;</span>, <span class="string">&#x27;qianyuli&#x27;</span>: <span class="string">&#x27;female&#x27;</span>&#125;</span><br><span class="line">func(nanjings)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h2><ul>
+<li><p>示例</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"></span><br><span class="line">Alias = <span class="type">List</span>[<span class="built_in">int</span>]  <span class="comment">#这里可以是List或者list</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">scale</span>(<span class="params">orgin_num: <span class="built_in">int</span>, vector: Alias</span>) -&gt; Alias:</span><br><span class="line">    <span class="keyword">return</span> [orgin_num * vec <span class="keyword">for</span> vec <span class="keyword">in</span> vector]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(scale(<span class="number">2</span>, [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]))</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="类型嵌套"><a href="#类型嵌套" class="headerlink" title="类型嵌套"></a>类型嵌套</h2><ul>
+<li><p>示例</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params"><span class="built_in">vars</span>: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">vars</span>:</span><br><span class="line">        <span class="keyword">for</span> __ <span class="keyword">in</span> _:</span><br><span class="line">            <span class="built_in">print</span>(__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">3</span>]])</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="可选类型Optional"><a href="#可选类型Optional" class="headerlink" title="可选类型Optional"></a>可选类型Optional</h2><ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Optional</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">arg: <span class="type">Optional</span>[<span class="built_in">int</span>] = <span class="literal">None</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(arg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func()</span><br><span class="line">func(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>显然你去掉=None是不行的，func()的时候会提示错误</p>
+</li>
+<li><p>Optional[int] 等价于 Union[int, None]</p>
+</li>
+</ul>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
+<li><p>str、int、float、bool无需声明,直接用即可</p>
+</li>
+<li><p>List是list的泛型，其后紧跟一个方括号，里面代表了构成这个列表的元素类型。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">age:<span class="type">List</span>[<span class="built_in">int</span>]</span><br><span class="line">var: <span class="type">List</span>[<span class="built_in">int</span> <span class="keyword">or</span> <span class="built_in">float</span>] = [<span class="number">2</span>, <span class="number">3.5</span>]</span><br><span class="line"><span class="built_in">vars</span>: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]] = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">3</span>]]</span><br></pre></td></tr></table></figure></li>
+<li><p>Tuple、元组，是 tuple 的泛型，其后紧跟一个方括号，方括号中按照顺序声明了构成本元组的元素类型</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="type">Tuple</span>[X, Y] 代表了构成元组的第一个元素是 X 类型，第二个元素是 Y 类型</span><br><span class="line">person: <span class="type">Tuple</span>[<span class="built_in">str</span>, <span class="built_in">int</span>, <span class="built_in">float</span>] = (<span class="string">&#x27;Mike&#x27;</span>, <span class="number">22</span>, <span class="number">1.75</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>NamedTuple，是 collections.namedtuple 的泛型，实际上就和 namedtuple 用法完全一致</li>
+</ul>
+</li>
+<li><p>Dict、字典，是 dict 的泛型；Mapping，映射，是 collections.abc.Mapping 的泛型。根据官方文档，Dict 推荐用于注解返回类型，Mapping 推荐用于注解参数。它们的使用方法都是一样的，其后跟一个中括号，中括号内分别声明键名、键值的类型</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">rect: Mapping[<span class="built_in">str</span>, <span class="built_in">int</span>]</span>) -&gt; <span class="type">Dict</span>[<span class="built_in">str</span>, <span class="built_in">int</span>]:</span><br><span class="line"> <span class="keyword">return</span> &#123;<span class="string">&#x27;width&#x27;</span>: rect[<span class="string">&#x27;width&#x27;</span>] + <span class="number">100</span>, <span class="string">&#x27;height&#x27;</span>: rect[<span class="string">&#x27;width&#x27;</span>] + <span class="number">100</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>MutableMapping 则是 Mapping 对象的子类，在很多库中也经常用 MutableMapping 来代替 Mapping</li>
+</ul>
+</li>
+<li><p>Set、集合，是 set 的泛型；AbstractSet、是 collections.abc.Set 的泛型。根据官方文档，Set 推荐用于注解返回类型，AbstractSet 用于注解参数。它们的使用方法都是一样的，其后跟一个中括号，里面声明集合中元素的类型</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">describe</span>(<span class="params">s: AbstractSet[<span class="built_in">int</span>]</span>) -&gt; <span class="type">Set</span>[<span class="built_in">int</span>]:</span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">set</span>(s)</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>完结</tag>
+        <tag>标准库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Content-Type的那些事儿</title>
     <url>/2022/04/05/Content-Type/</url>
     <content><![CDATA[<h1 id="Content-Type"><a href="#Content-Type" class="headerlink" title="Content-Type"></a>Content-Type</h1><blockquote>
@@ -492,8 +638,8 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>http</tag>
         <tag>待续</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
@@ -1018,33 +1164,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode_788. 旋转数字</title>
-    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
-    <content><![CDATA[<ul>
-<li>难度：简单</li>
-<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
-<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><p>思路</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>执行效果也是非常的好。</p>
-</li>
-</ul>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode_217.存在重复元素</title>
     <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<ul>
@@ -1126,6 +1245,33 @@
         <tag>LeetCode</tag>
         <tag>完结</tag>
         <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_788. 旋转数字</title>
+    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<ul>
+<li>难度：简单</li>
+<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
+<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>思路</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>执行效果也是非常的好。</p>
+</li>
+</ul>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -2524,40 +2670,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python标准库_typing</title>
-    <url>/2022/04/02/Python%E6%A0%87%E5%87%86%E5%BA%93typing/</url>
-    <content><![CDATA[<h1 id="Python标准库typing"><a href="#Python标准库typing" class="headerlink" title="Python标准库typing"></a>Python标准库typing</h1><blockquote>
-<p><a href="https://docs.python.org/zh-cn/3/library/typing.html">https://docs.python.org/zh-cn/3/library/typing.html</a></p>
-</blockquote>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
-<li>python3.5+才有</li>
-<li>Python 运行时不强制执行函数和变量类型注解，但这些注解可用于类型检查器、IDE、静态检查器等第三方工具。</li>
-<li>作用</li>
-</ul>
-<h2 id="优点（对比os-path"><a href="#优点（对比os-path" class="headerlink" title="优点（对比os.path)"></a>优点（对比os.path)</h2><ul>
-<li>类型检查，防止运行时出现参数和返回值类型不符合。</li>
-<li>作为开发文档附加说明，方便使用者调用时传入和返回参数类型。</li>
-<li>该模块加入后并不会影响程序的运行，不会报正式的错误，<strong>只有提醒</strong></li>
-</ul>
-<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h2 id="批量移动"><a href="#批量移动" class="headerlink" title="批量移动"></a>批量移动</h2><h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">greeting</span>(<span class="params">name: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello &#x27;</span> + name</span><br></pre></td></tr></table></figure></li>
-<li><p>声明name参数是str类型</p>
-</li>
-<li><p>返回对象也是str类型</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>完结</tag>
-        <tag>标准库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Postman生成报告</title>
     <url>/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/</url>
     <content><![CDATA[<h1 id="Postman生成报告"><a href="#Postman生成报告" class="headerlink" title="Postman生成报告"></a>Postman生成报告</h1><blockquote>
@@ -2814,8 +2926,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>待续</tag>
         <tag>github</tag>
+        <tag>待续</tag>
       </tags>
   </entry>
   <entry>
