@@ -299,7 +299,7 @@
 
   
   <url>
-    <loc>http://example.com/tags/github/</loc>
+    <loc>http://example.com/tags/http/</loc>
     <lastmod>2022-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -334,7 +334,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/http/</loc>
+    <loc>http://example.com/tags/github/</loc>
     <lastmod>2022-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -420,7 +420,7 @@
 
   
   <url>
-    <loc>http://example.com/categories/github/</loc>
+    <loc>http://example.com/categories/http/</loc>
     <lastmod>2022-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -434,7 +434,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/http/</loc>
+    <loc>http://example.com/categories/github/</loc>
     <lastmod>2022-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
