@@ -306,13 +306,13 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>待续</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
-    <title>Python第三方库_pycryptodome加密</title>
-    <url>/2022/04/08/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pycryptodome%E5%8A%A0%E5%AF%86/</url>
+    <title>Python第三方库_pycryptodome_RSA加密</title>
+    <url>/2022/04/09/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pycryptodome%E5%8A%A0%E5%AF%86/</url>
     <content><![CDATA[<h1 id="Python第三方库pycryptodome加密"><a href="#Python第三方库pycryptodome加密" class="headerlink" title="Python第三方库pycryptodome加密"></a>Python第三方库pycryptodome加密</h1><blockquote>
 <p><a href="https://www.pycryptodome.org/en/latest/src/introduction.html">https://www.pycryptodome.org/en/latest/src/introduction.html</a></p>
 </blockquote>
@@ -409,8 +409,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>待续</tag>
+        <tag>python</tag>
         <tag>第三方库</tag>
       </tags>
   </entry>
@@ -555,8 +555,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>完结</tag>
+        <tag>python</tag>
         <tag>标准库</tag>
       </tags>
   </entry>
@@ -936,145 +936,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用requests实现selenium相关API操作</title>
-    <url>/2022/04/05/Selenium-%E4%BD%BF%E7%94%A8requests%E5%AE%9E%E7%8E%B0selenium%E7%9B%B8%E5%85%B3API%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li><p>你在做下面的练习之前应该具备</p>
-<ul>
-<li><p>安装好chrome，并通过chrome://version确认其版本号</p>
-</li>
-<li><p>安装chromedriver并与你的chrome版本相匹配，下载路径如下</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://registry.npmmirror.com/binary.html?path=chromedriver/</span><br></pre></td></tr></table></figure></li>
-<li><p>你应该有一个python+ide（如pycharm）的环境，反正下面的示例是用这些来完成的。</p>
-</li>
-<li><p>下好requests库，对语法不再阐述</p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="关于chromedriver"><a href="#关于chromedriver" class="headerlink" title="关于chromedriver"></a>关于chromedriver</h1><ul>
-<li><p>本质上是个web server</p>
-</li>
-<li><p>在命令行启动chromedriver应该是如下提示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cmd&gt;chromedriver.exe</span><br><span class="line">Starting ChromeDriver <span class="number">100.0</span><span class="number">.4896</span><span class="number">.20</span> (f9d71f93d32a6487809d6f35a9670c879fe97dfe-refs/branch-heads/<span class="number">4896</span>@&#123;<span class="comment">#203&#125;) on port 9515</span></span><br><span class="line">Only local connections are allowed.</span><br><span class="line">Please see https://chromedriver.chromium.org/security-considerations <span class="keyword">for</span> suggestions on keeping ChromeDriver safe.</span><br><span class="line">ChromeDriver was started successfully.</span><br></pre></td></tr></table></figure></li>
-<li><p>放在那里不要关闭哦~</p>
-</li>
-</ul>
-<h1 id="关于webdriver"><a href="#关于webdriver" class="headerlink" title="关于webdriver"></a>关于webdriver</h1><ul>
-<li><p>参阅:6.5的endpoint部分</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://w3c.github.io/webdriver/#endpoints</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><blockquote>
-<p>我就不封装了，你有兴趣自行封装</p>
-</blockquote>
-<h2 id="不一样的，打开浏览器"><a href="#不一样的，打开浏览器" class="headerlink" title="不一样的，打开浏览器"></a>不一样的，打开浏览器</h2><table>
-<thead>
-<tr>
-<th align="left">Method</th>
-<th align="left">URI Template</th>
-<th align="left">Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POST</td>
-<td align="left">/session</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>示例代码：以chrome为例</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span> </span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;   <span class="comment">#此处可以变更浏览器类型，前提你启动了对应的chromedriver或者geckodriver等。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#json传递</span></span><br></pre></td></tr></table></figure></li>
-<li><p>是不是相当于selenium的api</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure></li>
-<li><p>区别是？不需要安装selenium就可以通过api来调用了，当然会更麻烦，人家给你封装好了。</p>
-</li>
-</ul>
-<h2 id="不一样的，输入网址"><a href="#不一样的，输入网址" class="headerlink" title="不一样的，输入网址"></a>不一样的，输入网址</h2><table>
-<thead>
-<tr>
-<th align="left">Method</th>
-<th align="left">URI Template</th>
-<th align="left">Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POST</td>
-<td align="left">/session</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/url</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 打开网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)  <span class="comment">#首先要获取sessionId，是后面操作的根基</span></span><br><span class="line">dest_url = <span class="string">&#x27;http://121.41.14.39:8088/index.html#/&#x27;</span>  <span class="comment">#比如你要打开这个网址</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;  <span class="comment">#字典形式</span></span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data) <span class="comment">#注意url的格式，跟ep对比</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>是不是类似于selenium中的driver.get()</p>
-</li>
-</ul>
-<h2 id="不一样的，输入，点击"><a href="#不一样的，输入，点击" class="headerlink" title="不一样的，输入，点击"></a>不一样的，输入，点击</h2><table>
-<thead>
-<tr>
-<th align="left">Method</th>
-<th align="left">URI Template</th>
-<th align="left">Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POST</td>
-<td align="left">/session</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/url</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/element</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-find-element">Find Element</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/element/{element id}/click</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-click">Element Click</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/element/{element id}/value</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-send-keys">Element Send Keys</a></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#登录</span></span><br><span class="line"><span class="comment"># 1. 打开浏览器</span></span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 2. 输入网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)</span><br><span class="line">dest_url = <span class="string">&#x27;http://106.14.1.150:8090/forum.php&#x27;</span>  <span class="comment">#这是我在阿里云部署的一个服务器</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;</span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单封装下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_eid</span>(<span class="params">url,sid,method,method_value</span>):  <span class="comment">#获取elementid</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;using&#x27;</span>:method,<span class="string">&#x27;value&#x27;</span>:method_value&#125;</span><br><span class="line">    <span class="keyword">return</span> requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element&#x27;</span>,json=data).json().get(<span class="string">&#x27;value&#x27;</span>).get(<span class="string">&#x27;ELEMENT&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">input_text</span>(<span class="params">url,sid,eid,text</span>): <span class="comment">#在指定的元素上输入内容</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;value&#x27;</span>:[text]&#125;</span><br><span class="line">    requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element/&#x27;</span>+eid+<span class="string">&#x27;/value&#x27;</span>, json=data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">click_element</span>(<span class="params">url,sid,eid</span>): <span class="comment">#点击指定的元素</span></span><br><span class="line">    requests.post(url + <span class="string">&#x27;/&#x27;</span> + sid + <span class="string">&#x27;/element/&#x27;</span> + eid + <span class="string">&#x27;/click&#x27;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 3. 输入用户名</span></span><br><span class="line"><span class="comment"># 3.1 获取用户名元素的elementid，通过id方式，其值为ls_username</span></span><br><span class="line">username_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_username&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,username_id,<span class="string">&#x27;ruru023&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.2 获取密码元素的elementid，通过id方式，其值为ls_password</span></span><br><span class="line">password_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_password&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,password_id,<span class="string">&#x27;123456&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.3 获取登录按钮元素的elementid，通过css selector方式，其值为.pn.vm</span></span><br><span class="line">login_button_id =  get_eid(server_url,session_id,<span class="string">&#x27;css selector&#x27;</span>,<span class="string">&#x27;.pn.vm&#x27;</span>)</span><br><span class="line">click_element(server_url,session_id,login_button_id)</span><br></pre></td></tr></table></figure></li>
-<li><p>类似于seleniumapi中的</p>
-<ul>
-<li>webelement.send_keys()</li>
-<li>webelement.click()</li>
-<li>driver.find_element(By.ID,’ID_VALUE’)</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>selenium</category>
-      </categories>
-      <tags>
-        <tag>api</tag>
-        <tag>selenium</tag>
-        <tag>ui</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>RESTful相关信息整理</title>
     <url>/2022/04/05/RESTful%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<h1 id="RESTful相关信息整理"><a href="#RESTful相关信息整理" class="headerlink" title="RESTful相关信息整理"></a>RESTful相关信息整理</h1><blockquote>
@@ -1241,6 +1102,145 @@
       </tags>
   </entry>
   <entry>
+    <title>使用requests实现selenium相关API操作</title>
+    <url>/2022/04/05/Selenium-%E4%BD%BF%E7%94%A8requests%E5%AE%9E%E7%8E%B0selenium%E7%9B%B8%E5%85%B3API%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li><p>你在做下面的练习之前应该具备</p>
+<ul>
+<li><p>安装好chrome，并通过chrome://version确认其版本号</p>
+</li>
+<li><p>安装chromedriver并与你的chrome版本相匹配，下载路径如下</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://registry.npmmirror.com/binary.html?path=chromedriver/</span><br></pre></td></tr></table></figure></li>
+<li><p>你应该有一个python+ide（如pycharm）的环境，反正下面的示例是用这些来完成的。</p>
+</li>
+<li><p>下好requests库，对语法不再阐述</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="关于chromedriver"><a href="#关于chromedriver" class="headerlink" title="关于chromedriver"></a>关于chromedriver</h1><ul>
+<li><p>本质上是个web server</p>
+</li>
+<li><p>在命令行启动chromedriver应该是如下提示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cmd&gt;chromedriver.exe</span><br><span class="line">Starting ChromeDriver <span class="number">100.0</span><span class="number">.4896</span><span class="number">.20</span> (f9d71f93d32a6487809d6f35a9670c879fe97dfe-refs/branch-heads/<span class="number">4896</span>@&#123;<span class="comment">#203&#125;) on port 9515</span></span><br><span class="line">Only local connections are allowed.</span><br><span class="line">Please see https://chromedriver.chromium.org/security-considerations <span class="keyword">for</span> suggestions on keeping ChromeDriver safe.</span><br><span class="line">ChromeDriver was started successfully.</span><br></pre></td></tr></table></figure></li>
+<li><p>放在那里不要关闭哦~</p>
+</li>
+</ul>
+<h1 id="关于webdriver"><a href="#关于webdriver" class="headerlink" title="关于webdriver"></a>关于webdriver</h1><ul>
+<li><p>参阅:6.5的endpoint部分</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://w3c.github.io/webdriver/#endpoints</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><blockquote>
+<p>我就不封装了，你有兴趣自行封装</p>
+</blockquote>
+<h2 id="不一样的，打开浏览器"><a href="#不一样的，打开浏览器" class="headerlink" title="不一样的，打开浏览器"></a>不一样的，打开浏览器</h2><table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">URI Template</th>
+<th align="left">Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">/session</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例代码：以chrome为例</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span> </span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;   <span class="comment">#此处可以变更浏览器类型，前提你启动了对应的chromedriver或者geckodriver等。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#json传递</span></span><br></pre></td></tr></table></figure></li>
+<li><p>是不是相当于selenium的api</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure></li>
+<li><p>区别是？不需要安装selenium就可以通过api来调用了，当然会更麻烦，人家给你封装好了。</p>
+</li>
+</ul>
+<h2 id="不一样的，输入网址"><a href="#不一样的，输入网址" class="headerlink" title="不一样的，输入网址"></a>不一样的，输入网址</h2><table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">URI Template</th>
+<th align="left">Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">/session</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/url</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 打开网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)  <span class="comment">#首先要获取sessionId，是后面操作的根基</span></span><br><span class="line">dest_url = <span class="string">&#x27;http://121.41.14.39:8088/index.html#/&#x27;</span>  <span class="comment">#比如你要打开这个网址</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;  <span class="comment">#字典形式</span></span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data) <span class="comment">#注意url的格式，跟ep对比</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>是不是类似于selenium中的driver.get()</p>
+</li>
+</ul>
+<h2 id="不一样的，输入，点击"><a href="#不一样的，输入，点击" class="headerlink" title="不一样的，输入，点击"></a>不一样的，输入，点击</h2><table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">URI Template</th>
+<th align="left">Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">/session</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/url</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/element</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-find-element">Find Element</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/element/{element id}/click</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-click">Element Click</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/element/{element id}/value</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-send-keys">Element Send Keys</a></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#登录</span></span><br><span class="line"><span class="comment"># 1. 打开浏览器</span></span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 2. 输入网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)</span><br><span class="line">dest_url = <span class="string">&#x27;http://106.14.1.150:8090/forum.php&#x27;</span>  <span class="comment">#这是我在阿里云部署的一个服务器</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;</span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单封装下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_eid</span>(<span class="params">url,sid,method,method_value</span>):  <span class="comment">#获取elementid</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;using&#x27;</span>:method,<span class="string">&#x27;value&#x27;</span>:method_value&#125;</span><br><span class="line">    <span class="keyword">return</span> requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element&#x27;</span>,json=data).json().get(<span class="string">&#x27;value&#x27;</span>).get(<span class="string">&#x27;ELEMENT&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">input_text</span>(<span class="params">url,sid,eid,text</span>): <span class="comment">#在指定的元素上输入内容</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;value&#x27;</span>:[text]&#125;</span><br><span class="line">    requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element/&#x27;</span>+eid+<span class="string">&#x27;/value&#x27;</span>, json=data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">click_element</span>(<span class="params">url,sid,eid</span>): <span class="comment">#点击指定的元素</span></span><br><span class="line">    requests.post(url + <span class="string">&#x27;/&#x27;</span> + sid + <span class="string">&#x27;/element/&#x27;</span> + eid + <span class="string">&#x27;/click&#x27;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 3. 输入用户名</span></span><br><span class="line"><span class="comment"># 3.1 获取用户名元素的elementid，通过id方式，其值为ls_username</span></span><br><span class="line">username_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_username&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,username_id,<span class="string">&#x27;ruru023&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.2 获取密码元素的elementid，通过id方式，其值为ls_password</span></span><br><span class="line">password_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_password&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,password_id,<span class="string">&#x27;123456&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.3 获取登录按钮元素的elementid，通过css selector方式，其值为.pn.vm</span></span><br><span class="line">login_button_id =  get_eid(server_url,session_id,<span class="string">&#x27;css selector&#x27;</span>,<span class="string">&#x27;.pn.vm&#x27;</span>)</span><br><span class="line">click_element(server_url,session_id,login_button_id)</span><br></pre></td></tr></table></figure></li>
+<li><p>类似于seleniumapi中的</p>
+<ul>
+<li>webelement.send_keys()</li>
+<li>webelement.click()</li>
+<li>driver.find_element(By.ID,’ID_VALUE’)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>selenium</category>
+      </categories>
+      <tags>
+        <tag>api</tag>
+        <tag>selenium</tag>
+        <tag>ui</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爬虫_下载王者荣耀英雄图片</title>
     <url>/2022/04/05/%E7%88%AC%E8%99%AB-%E4%B8%8B%E8%BD%BD%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E8%8B%B1%E9%9B%84%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<h1 id="下载王者荣耀英雄图片"><a href="#下载王者荣耀英雄图片" class="headerlink" title="下载王者荣耀英雄图片"></a>下载王者荣耀英雄图片</h1><ul>
@@ -1262,34 +1262,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>完结</tag>
+        <tag>python</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_217.存在重复元素</title>
-    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<ul>
-<li><p>难度：简单</p>
-</li>
-<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
-</li>
-<li><p>题目</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>思路：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -1315,9 +1290,34 @@
         <category>SQL</category>
       </categories>
       <tags>
+        <tag>SQL</tag>
         <tag>LeetCode</tag>
         <tag>完结</tag>
-        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_217.存在重复元素</title>
+    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<ul>
+<li><p>难度：简单</p>
+</li>
+<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
+</li>
+<li><p>题目</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>思路：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -1346,9 +1346,9 @@
         <category>SQL</category>
       </categories>
       <tags>
+        <tag>SQL</tag>
         <tag>LeetCode</tag>
         <tag>完结</tag>
-        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1373,172 +1373,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>LeetCode</tag>
         <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python小程序_MD5常见操作</title>
-    <url>/2022/04/03/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F-MD5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="MD5不是加密"><a href="#MD5不是加密" class="headerlink" title="MD5不是加密"></a>MD5不是加密</h1><blockquote>
-<p><a href="https://draveness.me/whys-the-design-password-with-md5/">https://draveness.me/whys-the-design-password-with-md5/</a>   参考为什么这么设计</p>
-</blockquote>
-<ul>
-<li><p><strong>Message-Digest Algorithm 5</strong>：信息摘要算法</p>
-</li>
-<li><p>MD5 并不是一种加密算法，我们也可以叫它哈希函数</p>
-</li>
-<li><p>世界上最常见的20个密码，类似建立一个彩虹表进行碰撞，以达到<em>解密</em>的效果。</p>
-<ul>
-<li><a href="https://md5.hwcha.com/">https://md5.hwcha.com/</a></li>
-<li><a href="https://www.sojson.com/md5/">https://www.sojson.com/md5/</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>RANK</th>
-<th>2021</th>
-<th>MD5值(32位小写)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>123456</td>
-<td>e10adc3949ba59abbe56e057f20f883e</td>
-</tr>
-<tr>
-<td>2</td>
-<td>123456789</td>
-<td>25f9e794323b453885f5181f1b624d0b</td>
-</tr>
-<tr>
-<td>3</td>
-<td>12345</td>
-<td>827ccb0eea8a706c4c34a16891f84e7b</td>
-</tr>
-<tr>
-<td>4</td>
-<td>qwerty</td>
-<td>d8578edf8458ce06fbc5bb76a58c5ca4</td>
-</tr>
-<tr>
-<td>5</td>
-<td>password</td>
-<td>5f4dcc3b5aa765d61d8327deb882cf99</td>
-</tr>
-<tr>
-<td>6</td>
-<td>12345678</td>
-<td>25d55ad283aa400af464c76d713c07ad</td>
-</tr>
-<tr>
-<td>7</td>
-<td>111111</td>
-<td>96e79218965eb72c92a549dd5a330112</td>
-</tr>
-<tr>
-<td>8</td>
-<td>123123</td>
-<td>4297f44b13955235245b2497399d7a93</td>
-</tr>
-<tr>
-<td>9</td>
-<td>1234567890</td>
-<td>e807f1fcf82d132f9bb018ca6738a19f</td>
-</tr>
-<tr>
-<td>10</td>
-<td>1234567</td>
-<td>fcea920f7412b5da7be0cf42b8c93759</td>
-</tr>
-<tr>
-<td>11</td>
-<td>qwerty123</td>
-<td>3fc0a7acf087f549ac2b266baf94b8b1</td>
-</tr>
-<tr>
-<td>12</td>
-<td>000000</td>
-<td>670b14728ad9902aecba32e22fa4f6bd</td>
-</tr>
-<tr>
-<td>13</td>
-<td>1q2w3e</td>
-<td>3fde6bb0541387e4ebdadf7c2ff31123</td>
-</tr>
-<tr>
-<td>14</td>
-<td>aa12345678</td>
-<td>d4f2a60315eef2b600cf0240ac0c37ad</td>
-</tr>
-<tr>
-<td>15</td>
-<td>abc123</td>
-<td>e99a18c428cb38d5f260853678922e03</td>
-</tr>
-<tr>
-<td>16</td>
-<td>password1</td>
-<td>7c6a180b36896a0a8c02787eeafb0e4c</td>
-</tr>
-<tr>
-<td>17</td>
-<td>1234</td>
-<td>81dc9bdb52d04dc20036dbd8313ed055</td>
-</tr>
-<tr>
-<td>18</td>
-<td>qwertyuiop</td>
-<td>6eea9b7ef19179a06954edd0f6c05ceb</td>
-</tr>
-<tr>
-<td>19</td>
-<td>123321</td>
-<td>c8837b23ff8aaa8a2dde915473ce0991</td>
-</tr>
-<tr>
-<td>20</td>
-<td>password123</td>
-<td>482c811da5d5b4bc6d497ffa98491e38</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>为什么说MD5不是加密呢？</p>
-<ul>
-<li>数据源是无穷尽的，而 MD5密文是有限的。所以不存在MD5解密。</li>
-<li>MD5 哈希的信息无法被还原，只依靠 MD5 是无法完成加密的。</li>
-</ul>
-</li>
-<li><p>哈希加盐salt</p>
-<ul>
-<li>在原始字符串的基础上增加一个字符串，得到一个新的”密码”。</li>
-<li>/etc/passwd早期就是这么存储密码的</li>
-</ul>
-</li>
-<li><p>密码的破解（哈希碰撞）</p>
-<ul>
-<li>攻击者其实不需要知道用户的密码是什么，他只需要找到一个值 <code>value</code>，这个值加盐后的哈希与密码加盐后的哈希完全一致就能登录用户的账号</li>
-<li>可以了解下hashcat（github搜）</li>
-</ul>
-</li>
-</ul>
-<h1 id="Python中的MD5”加密”"><a href="#Python中的MD5”加密”" class="headerlink" title="Python中的MD5”加密”"></a>Python中的MD5”加密”</h1><ul>
-<li><p>加密</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment">#bytes对象</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="comment">#e10adc3949ba59abbe56e057f20f883e  都是这个</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(<span class="string">b&#x27;123456&#x27;</span>).hexdigest())</span><br></pre></td></tr></table></figure></li>
-<li><p>得到的是32位小写，如果要32位大写、16位大小写，那就简单处理下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest().upper())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>].upper())</span><br></pre></td></tr></table></figure></li>
-<li><p>加盐</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_md5</span>(<span class="params">ori_str:<span class="built_in">str</span>,salt:<span class="built_in">str</span>=<span class="string">&#x27;&#x27;</span>,mode:<span class="built_in">str</span>=<span class="string">&#x27;1&#x27;</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    获取字符串的MD加密后的信息</span></span><br><span class="line"><span class="string">    :param ori_str: 原始字符串</span></span><br><span class="line"><span class="string">    :param salt: 盐值</span></span><br><span class="line"><span class="string">    :param mode: 1=32小  2=32大 3=16小 4=16大</span></span><br><span class="line"><span class="string">    :return: MD5后的字符串</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    md5_password = hashlib.md5((ori_str+salt).encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password.upper()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;3&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>]</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;4&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>].upper()</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">f&#x27;unsupport mode <span class="subst">&#123;mode&#125;</span>,only support 1,2,3,4&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;3&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;5&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
         <tag>python</tag>
-        <tag>完结</tag>
-        <tag>MD5</tag>
       </tags>
   </entry>
   <entry>
@@ -2518,6 +2355,169 @@
       </tags>
   </entry>
   <entry>
+    <title>Python小程序_MD5常见操作</title>
+    <url>/2022/04/03/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F-MD5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="MD5不是加密"><a href="#MD5不是加密" class="headerlink" title="MD5不是加密"></a>MD5不是加密</h1><blockquote>
+<p><a href="https://draveness.me/whys-the-design-password-with-md5/">https://draveness.me/whys-the-design-password-with-md5/</a>   参考为什么这么设计</p>
+</blockquote>
+<ul>
+<li><p><strong>Message-Digest Algorithm 5</strong>：信息摘要算法</p>
+</li>
+<li><p>MD5 并不是一种加密算法，我们也可以叫它哈希函数</p>
+</li>
+<li><p>世界上最常见的20个密码，类似建立一个彩虹表进行碰撞，以达到<em>解密</em>的效果。</p>
+<ul>
+<li><a href="https://md5.hwcha.com/">https://md5.hwcha.com/</a></li>
+<li><a href="https://www.sojson.com/md5/">https://www.sojson.com/md5/</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>RANK</th>
+<th>2021</th>
+<th>MD5值(32位小写)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>123456</td>
+<td>e10adc3949ba59abbe56e057f20f883e</td>
+</tr>
+<tr>
+<td>2</td>
+<td>123456789</td>
+<td>25f9e794323b453885f5181f1b624d0b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>12345</td>
+<td>827ccb0eea8a706c4c34a16891f84e7b</td>
+</tr>
+<tr>
+<td>4</td>
+<td>qwerty</td>
+<td>d8578edf8458ce06fbc5bb76a58c5ca4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>password</td>
+<td>5f4dcc3b5aa765d61d8327deb882cf99</td>
+</tr>
+<tr>
+<td>6</td>
+<td>12345678</td>
+<td>25d55ad283aa400af464c76d713c07ad</td>
+</tr>
+<tr>
+<td>7</td>
+<td>111111</td>
+<td>96e79218965eb72c92a549dd5a330112</td>
+</tr>
+<tr>
+<td>8</td>
+<td>123123</td>
+<td>4297f44b13955235245b2497399d7a93</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1234567890</td>
+<td>e807f1fcf82d132f9bb018ca6738a19f</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1234567</td>
+<td>fcea920f7412b5da7be0cf42b8c93759</td>
+</tr>
+<tr>
+<td>11</td>
+<td>qwerty123</td>
+<td>3fc0a7acf087f549ac2b266baf94b8b1</td>
+</tr>
+<tr>
+<td>12</td>
+<td>000000</td>
+<td>670b14728ad9902aecba32e22fa4f6bd</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1q2w3e</td>
+<td>3fde6bb0541387e4ebdadf7c2ff31123</td>
+</tr>
+<tr>
+<td>14</td>
+<td>aa12345678</td>
+<td>d4f2a60315eef2b600cf0240ac0c37ad</td>
+</tr>
+<tr>
+<td>15</td>
+<td>abc123</td>
+<td>e99a18c428cb38d5f260853678922e03</td>
+</tr>
+<tr>
+<td>16</td>
+<td>password1</td>
+<td>7c6a180b36896a0a8c02787eeafb0e4c</td>
+</tr>
+<tr>
+<td>17</td>
+<td>1234</td>
+<td>81dc9bdb52d04dc20036dbd8313ed055</td>
+</tr>
+<tr>
+<td>18</td>
+<td>qwertyuiop</td>
+<td>6eea9b7ef19179a06954edd0f6c05ceb</td>
+</tr>
+<tr>
+<td>19</td>
+<td>123321</td>
+<td>c8837b23ff8aaa8a2dde915473ce0991</td>
+</tr>
+<tr>
+<td>20</td>
+<td>password123</td>
+<td>482c811da5d5b4bc6d497ffa98491e38</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>为什么说MD5不是加密呢？</p>
+<ul>
+<li>数据源是无穷尽的，而 MD5密文是有限的。所以不存在MD5解密。</li>
+<li>MD5 哈希的信息无法被还原，只依靠 MD5 是无法完成加密的。</li>
+</ul>
+</li>
+<li><p>哈希加盐salt</p>
+<ul>
+<li>在原始字符串的基础上增加一个字符串，得到一个新的”密码”。</li>
+<li>/etc/passwd早期就是这么存储密码的</li>
+</ul>
+</li>
+<li><p>密码的破解（哈希碰撞）</p>
+<ul>
+<li>攻击者其实不需要知道用户的密码是什么，他只需要找到一个值 <code>value</code>，这个值加盐后的哈希与密码加盐后的哈希完全一致就能登录用户的账号</li>
+<li>可以了解下hashcat（github搜）</li>
+</ul>
+</li>
+</ul>
+<h1 id="Python中的MD5”加密”"><a href="#Python中的MD5”加密”" class="headerlink" title="Python中的MD5”加密”"></a>Python中的MD5”加密”</h1><ul>
+<li><p>加密</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment">#bytes对象</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="comment">#e10adc3949ba59abbe56e057f20f883e  都是这个</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(<span class="string">b&#x27;123456&#x27;</span>).hexdigest())</span><br></pre></td></tr></table></figure></li>
+<li><p>得到的是32位小写，如果要32位大写、16位大小写，那就简单处理下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest().upper())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>].upper())</span><br></pre></td></tr></table></figure></li>
+<li><p>加盐</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_md5</span>(<span class="params">ori_str:<span class="built_in">str</span>,salt:<span class="built_in">str</span>=<span class="string">&#x27;&#x27;</span>,mode:<span class="built_in">str</span>=<span class="string">&#x27;1&#x27;</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    获取字符串的MD加密后的信息</span></span><br><span class="line"><span class="string">    :param ori_str: 原始字符串</span></span><br><span class="line"><span class="string">    :param salt: 盐值</span></span><br><span class="line"><span class="string">    :param mode: 1=32小  2=32大 3=16小 4=16大</span></span><br><span class="line"><span class="string">    :return: MD5后的字符串</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    md5_password = hashlib.md5((ori_str+salt).encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password.upper()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;3&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>]</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;4&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>].upper()</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">f&#x27;unsupport mode <span class="subst">&#123;mode&#125;</span>,only support 1,2,3,4&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;3&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;5&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>python</tag>
+        <tag>MD5</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python标准库_pathlib及实例操作</title>
     <url>/2022/04/02/Python%E6%A0%87%E5%87%86%E5%BA%93pathlib/</url>
     <content><![CDATA[<h1 id="Python标准库pathlib及实例操作"><a href="#Python标准库pathlib及实例操作" class="headerlink" title="Python标准库pathlib及实例操作"></a>Python标准库pathlib及实例操作</h1><blockquote>
@@ -2768,8 +2768,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>完结</tag>
+        <tag>python</tag>
         <tag>标准库</tag>
       </tags>
   </entry>
@@ -2848,8 +2848,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>完结</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -2941,8 +2941,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>完结</tag>
+        <tag>python</tag>
         <tag>第三方库</tag>
       </tags>
   </entry>
@@ -3042,8 +3042,8 @@
         <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>待续</tag>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>
