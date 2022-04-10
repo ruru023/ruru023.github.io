@@ -367,6 +367,489 @@
       </tags>
   </entry>
   <entry>
+    <title>Github搜索技巧一览</title>
+    <url>/2022/04/10/Github%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<h1 id="Github搜索技巧一览"><a href="#Github搜索技巧一览" class="headerlink" title="Github搜索技巧一览"></a>Github搜索技巧一览</h1><blockquote>
+<p><a href="https://docs.github.com/cn/search-github">https://docs.github.com/cn/search-github</a></p>
+<p>都参考了官网</p>
+</blockquote>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>cats stars:&gt;1000</td>
+<td>匹配含有 “cats” 字样、星标超过 1000 个的仓库。</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>cats topics:&gt;=5</td>
+<td>匹配含有 “cats” 字样、有 5 个或更多主题的仓库。</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>cats size:&lt;10000</td>
+<td>匹配小于 10 KB 的文件中含有 “cats” 字样的代码</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>cats stars:&lt;50</td>
+<td>匹配含有 “cats” 字样、星标不超过 50 个的仓库。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>跟everything的语法极其相似</li>
+</ul>
+<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n..*</td>
+<td>cats stars:10..*</td>
+<td>等同于 <code>stars:&gt;=10</code> 并匹配含有 “cats” 字样、有 10 个或更多星号的仓库。</td>
+</tr>
+<tr>
+<td>*..n</td>
+<td>cats starts:*..10</td>
+<td>等同于 <code>stars:&lt;=10</code> 并匹配含有 “cats” 字样、有不超过 10 个星号的仓库。</td>
+</tr>
+<tr>
+<td>n..n</td>
+<td>cats stars:10..50</td>
+<td>匹配含有 “cats” 字样、有 10 到 50 个星号的仓库。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><ul>
+<li>日期格式遵循ISO8601，YYYY-MM-DD</li>
+<li></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;YYYY-MM-DD</td>
+<td>cats created:&gt;2016-04-29</td>
+<td>匹配含有 “cats” 字样、在 2016 年 4 月 29 日之后创建的议题。</td>
+</tr>
+<tr>
+<td></td>
+<td>cats pushed:&lt;2012-07-05</td>
+<td>匹配在 2012 年 7 月 5 日之前推送的仓库中含有 “cats” 字样的代码。</td>
+</tr>
+<tr>
+<td>YYYY-MM-DD..YYYY-MM-DD</td>
+<td>cats pushed:2016-04-30..2017-07-31</td>
+<td>匹配含有 “cats” 字样、在 2016 年 4 月末到 7 月之间推送的仓库。</td>
+</tr>
+<tr>
+<td>YYYY-MM-DD..*</td>
+<td>cats created:2012-04-30..</td>
+<td>匹配在 2012 年 4 月 30 日之后创建、含有 “cats” 字样的议题。</td>
+</tr>
+<tr>
+<td>*..YYYY-MM-DD</td>
+<td>cats created:*..2012-07-04</td>
+<td>匹配在 2012 年 7 月 4 日之前创建、含有 “cats” 字样的议题。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>您也可以在日期后添加可选的时间信息 <code>THH:MM:SS+00:00</code>，以便按小时、分钟和秒进行搜索。 这是 <code>T</code>，随后是 <code>HH:MM:SS</code>（时-分-秒）和 UTC 偏移 (<code>+00:00</code>)<ul>
+<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>+<em>00</em>:<em>00</em></li>
+<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>Z</li>
+</ul>
+</li>
+</ul>
+<h2 id="排除"><a href="#排除" class="headerlink" title="排除"></a>排除</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>not</td>
+<td>hello not world</td>
+<td>匹配含有 “hello” 字样但不含有 “world” 字样的仓库</td>
+</tr>
+<tr>
+<td>-</td>
+<td><strong>cats stars:&gt;10 -language:javascript</strong></td>
+<td>匹配含有 “cats” 字样、有超过 10 个星号但并非以 JavaScript 编写的仓库。</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>mentions:defunkt -org:github</strong></td>
+<td>匹配提及 @defunkt 且不在 GitHub 组织仓库中的议题</td>
+</tr>
+</tbody></table>
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><ul>
+<li>如果搜索含有空格的查询，您需要用引号将其括起来。 例如：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cats NOT “hello world”</td>
+<td>匹配含有 “cats” 字样但不含有 “hello world” 字样的仓库。</td>
+</tr>
+<tr>
+<td>build label:”bug fix”</td>
+<td>匹配具有标签 “bug fix”、含有 “build” 字样的议题。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="用户名"><a href="#用户名" class="headerlink" title="用户名"></a>用户名</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>QUALIFIER:USERNAME</td>
+<td>author:nat</td>
+<td>匹配 @nat 创作的提交。</td>
+</tr>
+<tr>
+<td>QUALIFIER:@me</td>
+<td>is:issue assignee:@me</td>
+<td>匹配已分配给结果查看者的议题</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="搜索实例"><a href="#搜索实例" class="headerlink" title="搜索实例"></a>搜索实例</h1><ul>
+<li>关注打★的部分，其他应该不多见。</li>
+</ul>
+<h2 id="★★按仓库名称、说明或自述文件内容搜索"><a href="#★★按仓库名称、说明或自述文件内容搜索" class="headerlink" title="★★按仓库名称、说明或自述文件内容搜索"></a>★★按仓库名称、说明或自述文件内容搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>in:name</code></td>
+<td align="left">jquery in:name 匹配仓库名称中含有 “jquery” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>in:description</code></td>
+<td align="left">jquery in:name,description匹配仓库名称或说明中含有 “jquery” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>in:readme</code></td>
+<td align="left">jquery in:readme匹配仓库自述文件中提及 “jquery” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>repo:owner/name</code></td>
+<td align="left">repo:octocat/hello-world匹配特定仓库名称</td>
+</tr>
+</tbody></table>
+<h2 id="在用户或组织的仓库内搜索"><a href="#在用户或组织的仓库内搜索" class="headerlink" title="在用户或组织的仓库内搜索"></a>在用户或组织的仓库内搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>user:USERNAME</code></td>
+<td align="left">user:defunkt forks:&gt;100 匹配来自 @defunkt、拥有超过 100 复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>org:ORGNAME</code></td>
+<td align="left">org:github 匹配来自 GitHub 的仓库</td>
+</tr>
+</tbody></table>
+<h2 id="按仓库大小搜索"><a href="#按仓库大小搜索" class="headerlink" title="按仓库大小搜索"></a>按仓库大小搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">size:n</td>
+<td align="left">size:1000 匹配恰好为 1 MB 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">size:&gt;=30000匹配至少为 30 MB 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">size:&lt;50匹配小于 50 KB 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">size:50..120 匹配介于 50 KB 与 120 KB 之间的仓库</td>
+</tr>
+</tbody></table>
+<h2 id="★按关注者数量搜索"><a href="#★按关注者数量搜索" class="headerlink" title="★按关注者数量搜索"></a>★按关注者数量搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">followers:n</td>
+<td align="left">node followers:&gt;=10000 匹配有 10,000 或更多关注者提及文字 “node” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">styleguide linter followers:1..10 匹配拥有 1 到 10 个关注者并且提及 “styleguide linter” 一词的的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="★按fork数量搜索"><a href="#★按fork数量搜索" class="headerlink" title="★按fork数量搜索"></a>★按fork数量搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">forks:n</td>
+<td align="left">forks:5匹配只有 5 个复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">forks:&gt;=205匹配具有至少 205 个复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">forks:&lt;90 匹配具有少于 90 个复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">forks:10..20 匹配具有 10 到 20 个复刻的仓库</td>
+</tr>
+</tbody></table>
+<h2 id="★★按星号数量搜索"><a href="#★★按星号数量搜索" class="headerlink" title="★★按星号数量搜索"></a>★★按星号数量搜索</h2><table>
+<thead>
+<tr>
+<th>stars:n</th>
+<th>stars:500匹配恰好具有 500 个星号的仓库。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>stars:10..20 匹配具有 10 到 20 个星号、小于 1000 KB 的仓库。</td>
+</tr>
+<tr>
+<td></td>
+<td>stars:&gt;=500 fork:true language:php 匹配具有至少 500 个星号，包括复刻的星号（以 PHP 编写）的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="★★按语言搜索"><a href="#★★按语言搜索" class="headerlink" title="★★按语言搜索"></a>★★按语言搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">language:LANGUAGE</td>
+<td align="left">rails language:javascript 匹配用 JavaScript 编写、包含单词“rails”的存储库</td>
+</tr>
+</tbody></table>
+<h2 id="按主题搜索"><a href="#按主题搜索" class="headerlink" title="按主题搜索"></a>按主题搜索</h2><p>您可以找到按特定主题分类的所有仓库。 </p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>topic:*TOPIC*</code></td>
+<td align="left">topic:jekyll 匹配属于 “Jekyll” 主题类别的存储库。</td>
+</tr>
+</tbody></table>
+<h2 id="按主题数量搜索"><a href="#按主题数量搜索" class="headerlink" title="按主题数量搜索"></a>按主题数量搜索</h2><p>您可以使用 <code>topics</code> 限定符以及大于、小于和范围限定符，根据应用于仓库的主题数量来搜索仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>topics:*n*</code></td>
+<td align="left">topics:5 匹配具有五个主题的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">topics:&gt;3 匹配超过三个主题的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="按许可搜索"><a href="#按许可搜索" class="headerlink" title="按许可搜索"></a>按许可搜索</h2><p>您可以根据仓库中许可的类型搜索仓库。 您必须使用许可关键字，按特定许可或许可系列来过滤仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>license:*LICENSE_KEYWORD*</code></td>
+<td align="left">license:apache-2.0匹配根据 Apache License 2.0 授权的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="按仓库可见性搜索"><a href="#按仓库可见性搜索" class="headerlink" title="按仓库可见性搜索"></a>按仓库可见性搜索</h2><p>您可以根据仓库的可见性过滤搜索。 </p>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>is:public</td>
+<td>is:public org:github匹配 GitHub 拥有的公共存储库</td>
+</tr>
+<tr>
+<td>is:private</td>
+<td>is:private pages匹配您可以访问并且包含单词“pages”的存储库</td>
+</tr>
+</tbody></table>
+<h2 id="基于仓库是否为镜像搜索"><a href="#基于仓库是否为镜像搜索" class="headerlink" title="基于仓库是否为镜像搜索"></a>基于仓库是否为镜像搜索</h2><p>您可以根据仓库是否为镜像以及托管于其他位置托管来搜索仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>mirror:true</code></td>
+<td align="left">mirror:true GNOME匹配是镜像且包含 “GNOME” 字样的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>mirror:false</code></td>
+<td align="left">mirror:false GNOME匹配并非镜像且包含 “GNOME” 字样的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="基于仓库是否已存档搜索"><a href="#基于仓库是否已存档搜索" class="headerlink" title="基于仓库是否已存档搜索"></a>基于仓库是否已存档搜索</h2><p>您可以基于仓库是否已存档来搜索仓库。 </p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>archived:true</code></td>
+<td align="left">archived:true GNOME匹配已存档且包含 “GNOME” 字样的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>archived:false</code></td>
+<td align="left">archived:false GNOME匹配未存档且包含 “GNOME” 字样的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索"><a href="#基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索" class="headerlink" title="基于具有 good first issue 或 help wanted 标签的议题数量搜索"></a>基于具有 <code>good first issue</code> 或 <code>help wanted</code> 标签的议题数量搜索</h2><p>您可以使用限定符 <code>help-wanted-issues:&gt;n</code> 和 <code>good-first-issues:&gt;n</code> 搜索具有最少数量标签为 <code>help-wanted</code> 或 <code>good-first-issue</code> 议题的仓库。。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>good-first-issues:&gt;n</code></td>
+<td align="left">good-first-issues:&gt;2 javascript匹配具有超过两个标签为 <code>good-first-issue</code> 的议题并且包含单词“javascript”的存储库。</td>
+</tr>
+<tr>
+<td align="left"><code>help-wanted-issues:&gt;n</code></td>
+<td align="left">help-wanted-issues:&gt;4 react匹配具有超过四个标签为 <code>help-wanted</code> 的议题且包含 “React” 字样的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="基于赞助能力的搜索"><a href="#基于赞助能力的搜索" class="headerlink" title="基于赞助能力的搜索"></a>基于赞助能力的搜索</h2><p>您可以使用 <code>is:sponsorable</code> 限定符在 GitHub 赞助者 上搜索其所有者可以赞助的仓库。 </p>
+<p>您可以使用 <code>has:funding-file</code> 限定符搜索具有融资文件的仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>is:sponsorable</code></td>
+<td align="left">is:sponsorable匹配其所有者具有 GitHub 赞助者 配置文件的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>has:funding-file</code></td>
+<td align="left">has:funding-file 匹配具有 FUNDING.yml 文件的仓库。</td>
+</tr>
+</tbody></table>
+<h1 id="说在最后的"><a href="#说在最后的" class="headerlink" title="说在最后的"></a>说在最后的</h1><ul>
+<li><p>官网没有提到的，比如还有location</p>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>location:china</td>
+<td>匹配用户的地址填写在china的</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>完结</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Github仓库整理</title>
     <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
@@ -1000,489 +1483,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github搜索技巧一览</title>
-    <url>/2022/04/10/Github%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<h1 id="Github搜索技巧一览"><a href="#Github搜索技巧一览" class="headerlink" title="Github搜索技巧一览"></a>Github搜索技巧一览</h1><blockquote>
-<p><a href="https://docs.github.com/cn/search-github">https://docs.github.com/cn/search-github</a></p>
-<p>都参考了官网</p>
-</blockquote>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&gt;</td>
-<td>cats stars:&gt;1000</td>
-<td>匹配含有 “cats” 字样、星标超过 1000 个的仓库。</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>cats topics:&gt;=5</td>
-<td>匹配含有 “cats” 字样、有 5 个或更多主题的仓库。</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>cats size:&lt;10000</td>
-<td>匹配小于 10 KB 的文件中含有 “cats” 字样的代码</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>cats stars:&lt;50</td>
-<td>匹配含有 “cats” 字样、星标不超过 50 个的仓库。</td>
-</tr>
-</tbody></table>
-<ul>
-<li>跟everything的语法极其相似</li>
-</ul>
-<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>n..*</td>
-<td>cats stars:10..*</td>
-<td>等同于 <code>stars:&gt;=10</code> 并匹配含有 “cats” 字样、有 10 个或更多星号的仓库。</td>
-</tr>
-<tr>
-<td>*..n</td>
-<td>cats starts:*..10</td>
-<td>等同于 <code>stars:&lt;=10</code> 并匹配含有 “cats” 字样、有不超过 10 个星号的仓库。</td>
-</tr>
-<tr>
-<td>n..n</td>
-<td>cats stars:10..50</td>
-<td>匹配含有 “cats” 字样、有 10 到 50 个星号的仓库。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><ul>
-<li>日期格式遵循ISO8601，YYYY-MM-DD</li>
-<li></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&gt;YYYY-MM-DD</td>
-<td>cats created:&gt;2016-04-29</td>
-<td>匹配含有 “cats” 字样、在 2016 年 4 月 29 日之后创建的议题。</td>
-</tr>
-<tr>
-<td></td>
-<td>cats pushed:&lt;2012-07-05</td>
-<td>匹配在 2012 年 7 月 5 日之前推送的仓库中含有 “cats” 字样的代码。</td>
-</tr>
-<tr>
-<td>YYYY-MM-DD..YYYY-MM-DD</td>
-<td>cats pushed:2016-04-30..2017-07-31</td>
-<td>匹配含有 “cats” 字样、在 2016 年 4 月末到 7 月之间推送的仓库。</td>
-</tr>
-<tr>
-<td>YYYY-MM-DD..*</td>
-<td>cats created:2012-04-30..</td>
-<td>匹配在 2012 年 4 月 30 日之后创建、含有 “cats” 字样的议题。</td>
-</tr>
-<tr>
-<td>*..YYYY-MM-DD</td>
-<td>cats created:*..2012-07-04</td>
-<td>匹配在 2012 年 7 月 4 日之前创建、含有 “cats” 字样的议题。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li>您也可以在日期后添加可选的时间信息 <code>THH:MM:SS+00:00</code>，以便按小时、分钟和秒进行搜索。 这是 <code>T</code>，随后是 <code>HH:MM:SS</code>（时-分-秒）和 UTC 偏移 (<code>+00:00</code>)<ul>
-<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>+<em>00</em>:<em>00</em></li>
-<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>Z</li>
-</ul>
-</li>
-</ul>
-<h2 id="排除"><a href="#排除" class="headerlink" title="排除"></a>排除</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>not</td>
-<td>hello not world</td>
-<td>匹配含有 “hello” 字样但不含有 “world” 字样的仓库</td>
-</tr>
-<tr>
-<td>-</td>
-<td><strong>cats stars:&gt;10 -language:javascript</strong></td>
-<td>匹配含有 “cats” 字样、有超过 10 个星号但并非以 JavaScript 编写的仓库。</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>mentions:defunkt -org:github</strong></td>
-<td>匹配提及 @defunkt 且不在 GitHub 组织仓库中的议题</td>
-</tr>
-</tbody></table>
-<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><ul>
-<li>如果搜索含有空格的查询，您需要用引号将其括起来。 例如：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cats NOT “hello world”</td>
-<td>匹配含有 “cats” 字样但不含有 “hello world” 字样的仓库。</td>
-</tr>
-<tr>
-<td>build label:”bug fix”</td>
-<td>匹配具有标签 “bug fix”、含有 “build” 字样的议题。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="用户名"><a href="#用户名" class="headerlink" title="用户名"></a>用户名</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>QUALIFIER:USERNAME</td>
-<td>author:nat</td>
-<td>匹配 @nat 创作的提交。</td>
-</tr>
-<tr>
-<td>QUALIFIER:@me</td>
-<td>is:issue assignee:@me</td>
-<td>匹配已分配给结果查看者的议题</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="搜索实例"><a href="#搜索实例" class="headerlink" title="搜索实例"></a>搜索实例</h1><ul>
-<li>关注打★的部分，其他应该不多见。</li>
-</ul>
-<h2 id="★★按仓库名称、说明或自述文件内容搜索"><a href="#★★按仓库名称、说明或自述文件内容搜索" class="headerlink" title="★★按仓库名称、说明或自述文件内容搜索"></a>★★按仓库名称、说明或自述文件内容搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>in:name</code></td>
-<td align="left">jquery in:name 匹配仓库名称中含有 “jquery” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>in:description</code></td>
-<td align="left">jquery in:name,description匹配仓库名称或说明中含有 “jquery” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>in:readme</code></td>
-<td align="left">jquery in:readme匹配仓库自述文件中提及 “jquery” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>repo:owner/name</code></td>
-<td align="left">repo:octocat/hello-world匹配特定仓库名称</td>
-</tr>
-</tbody></table>
-<h2 id="在用户或组织的仓库内搜索"><a href="#在用户或组织的仓库内搜索" class="headerlink" title="在用户或组织的仓库内搜索"></a>在用户或组织的仓库内搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>user:USERNAME</code></td>
-<td align="left">user:defunkt forks:&gt;100 匹配来自 @defunkt、拥有超过 100 复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>org:ORGNAME</code></td>
-<td align="left">org:github 匹配来自 GitHub 的仓库</td>
-</tr>
-</tbody></table>
-<h2 id="按仓库大小搜索"><a href="#按仓库大小搜索" class="headerlink" title="按仓库大小搜索"></a>按仓库大小搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">size:n</td>
-<td align="left">size:1000 匹配恰好为 1 MB 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">size:&gt;=30000匹配至少为 30 MB 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">size:&lt;50匹配小于 50 KB 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">size:50..120 匹配介于 50 KB 与 120 KB 之间的仓库</td>
-</tr>
-</tbody></table>
-<h2 id="★按关注者数量搜索"><a href="#★按关注者数量搜索" class="headerlink" title="★按关注者数量搜索"></a>★按关注者数量搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">followers:n</td>
-<td align="left">node followers:&gt;=10000 匹配有 10,000 或更多关注者提及文字 “node” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">styleguide linter followers:1..10 匹配拥有 1 到 10 个关注者并且提及 “styleguide linter” 一词的的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="★按fork数量搜索"><a href="#★按fork数量搜索" class="headerlink" title="★按fork数量搜索"></a>★按fork数量搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">forks:n</td>
-<td align="left">forks:5匹配只有 5 个复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">forks:&gt;=205匹配具有至少 205 个复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">forks:&lt;90 匹配具有少于 90 个复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">forks:10..20 匹配具有 10 到 20 个复刻的仓库</td>
-</tr>
-</tbody></table>
-<h2 id="★★按星号数量搜索"><a href="#★★按星号数量搜索" class="headerlink" title="★★按星号数量搜索"></a>★★按星号数量搜索</h2><table>
-<thead>
-<tr>
-<th>stars:n</th>
-<th>stars:500匹配恰好具有 500 个星号的仓库。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>stars:10..20 匹配具有 10 到 20 个星号、小于 1000 KB 的仓库。</td>
-</tr>
-<tr>
-<td></td>
-<td>stars:&gt;=500 fork:true language:php 匹配具有至少 500 个星号，包括复刻的星号（以 PHP 编写）的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="★★按语言搜索"><a href="#★★按语言搜索" class="headerlink" title="★★按语言搜索"></a>★★按语言搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">language:LANGUAGE</td>
-<td align="left">rails language:javascript 匹配用 JavaScript 编写、包含单词“rails”的存储库</td>
-</tr>
-</tbody></table>
-<h2 id="按主题搜索"><a href="#按主题搜索" class="headerlink" title="按主题搜索"></a>按主题搜索</h2><p>您可以找到按特定主题分类的所有仓库。 </p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>topic:*TOPIC*</code></td>
-<td align="left">topic:jekyll 匹配属于 “Jekyll” 主题类别的存储库。</td>
-</tr>
-</tbody></table>
-<h2 id="按主题数量搜索"><a href="#按主题数量搜索" class="headerlink" title="按主题数量搜索"></a>按主题数量搜索</h2><p>您可以使用 <code>topics</code> 限定符以及大于、小于和范围限定符，根据应用于仓库的主题数量来搜索仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>topics:*n*</code></td>
-<td align="left">topics:5 匹配具有五个主题的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">topics:&gt;3 匹配超过三个主题的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="按许可搜索"><a href="#按许可搜索" class="headerlink" title="按许可搜索"></a>按许可搜索</h2><p>您可以根据仓库中许可的类型搜索仓库。 您必须使用许可关键字，按特定许可或许可系列来过滤仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>license:*LICENSE_KEYWORD*</code></td>
-<td align="left">license:apache-2.0匹配根据 Apache License 2.0 授权的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="按仓库可见性搜索"><a href="#按仓库可见性搜索" class="headerlink" title="按仓库可见性搜索"></a>按仓库可见性搜索</h2><p>您可以根据仓库的可见性过滤搜索。 </p>
-<table>
-<thead>
-<tr>
-<th>限定符</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>is:public</td>
-<td>is:public org:github匹配 GitHub 拥有的公共存储库</td>
-</tr>
-<tr>
-<td>is:private</td>
-<td>is:private pages匹配您可以访问并且包含单词“pages”的存储库</td>
-</tr>
-</tbody></table>
-<h2 id="基于仓库是否为镜像搜索"><a href="#基于仓库是否为镜像搜索" class="headerlink" title="基于仓库是否为镜像搜索"></a>基于仓库是否为镜像搜索</h2><p>您可以根据仓库是否为镜像以及托管于其他位置托管来搜索仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>mirror:true</code></td>
-<td align="left">mirror:true GNOME匹配是镜像且包含 “GNOME” 字样的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>mirror:false</code></td>
-<td align="left">mirror:false GNOME匹配并非镜像且包含 “GNOME” 字样的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="基于仓库是否已存档搜索"><a href="#基于仓库是否已存档搜索" class="headerlink" title="基于仓库是否已存档搜索"></a>基于仓库是否已存档搜索</h2><p>您可以基于仓库是否已存档来搜索仓库。 </p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>archived:true</code></td>
-<td align="left">archived:true GNOME匹配已存档且包含 “GNOME” 字样的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>archived:false</code></td>
-<td align="left">archived:false GNOME匹配未存档且包含 “GNOME” 字样的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索"><a href="#基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索" class="headerlink" title="基于具有 good first issue 或 help wanted 标签的议题数量搜索"></a>基于具有 <code>good first issue</code> 或 <code>help wanted</code> 标签的议题数量搜索</h2><p>您可以使用限定符 <code>help-wanted-issues:&gt;n</code> 和 <code>good-first-issues:&gt;n</code> 搜索具有最少数量标签为 <code>help-wanted</code> 或 <code>good-first-issue</code> 议题的仓库。。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>good-first-issues:&gt;n</code></td>
-<td align="left">good-first-issues:&gt;2 javascript匹配具有超过两个标签为 <code>good-first-issue</code> 的议题并且包含单词“javascript”的存储库。</td>
-</tr>
-<tr>
-<td align="left"><code>help-wanted-issues:&gt;n</code></td>
-<td align="left">help-wanted-issues:&gt;4 react匹配具有超过四个标签为 <code>help-wanted</code> 的议题且包含 “React” 字样的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="基于赞助能力的搜索"><a href="#基于赞助能力的搜索" class="headerlink" title="基于赞助能力的搜索"></a>基于赞助能力的搜索</h2><p>您可以使用 <code>is:sponsorable</code> 限定符在 GitHub 赞助者 上搜索其所有者可以赞助的仓库。 </p>
-<p>您可以使用 <code>has:funding-file</code> 限定符搜索具有融资文件的仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>is:sponsorable</code></td>
-<td align="left">is:sponsorable匹配其所有者具有 GitHub 赞助者 配置文件的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>has:funding-file</code></td>
-<td align="left">has:funding-file 匹配具有 FUNDING.yml 文件的仓库。</td>
-</tr>
-</tbody></table>
-<h1 id="说在最后的"><a href="#说在最后的" class="headerlink" title="说在最后的"></a>说在最后的</h1><ul>
-<li><p>官网没有提到的，比如还有location</p>
-<table>
-<thead>
-<tr>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>location:china</td>
-<td>匹配用户的地址填写在china的</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode_804. 唯一摩尔斯密码词</title>
     <url>/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</url>
     <content><![CDATA[<h1 id="804-唯一摩尔斯密码词"><a href="#804-唯一摩尔斯密码词" class="headerlink" title="804. 唯一摩尔斯密码词"></a>804. 唯一摩尔斯密码词</h1><ul>
@@ -1508,9 +1508,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>完结</tag>
         <tag>python</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -2471,6 +2471,31 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode_217.存在重复元素</title>
+    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<ul>
+<li><p>难度：简单</p>
+</li>
+<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
+</li>
+<li><p>题目</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>思路：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>python</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode_176.第二高的薪水</title>
     <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
@@ -2493,34 +2518,9 @@
         <category>SQL</category>
       </categories>
       <tags>
+        <tag>完结</tag>
+        <tag>LeetCode</tag>
         <tag>SQL</tag>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_217.存在重复元素</title>
-    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<ul>
-<li><p>难度：简单</p>
-</li>
-<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
-</li>
-<li><p>题目</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>思路：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -2549,9 +2549,9 @@
         <category>SQL</category>
       </categories>
       <tags>
-        <tag>SQL</tag>
-        <tag>LeetCode</tag>
         <tag>完结</tag>
+        <tag>LeetCode</tag>
+        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -2576,9 +2576,9 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>完结</tag>
         <tag>python</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
