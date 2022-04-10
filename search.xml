@@ -108,8 +108,24 @@
 <td><a href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>git</td>
+<td><a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></td>
+</tr>
+<tr>
+<td>allure</td>
+<td><a href="https://github.com/allure-framework/allure2/releases">https://github.com/allure-framework/allure2/releases</a></td>
+</tr>
+<tr>
+<td>adb</td>
+<td><a href="https://adbinstaller.com/">https://adbinstaller.com/</a></td>
+</tr>
+<tr>
+<td>moco</td>
+<td><a href="https://github.com/dreamhead/moco/tags">https://github.com/dreamhead/moco/tags</a></td>
+</tr>
+<tr>
+<td>jenkins</td>
+<td><a href="https://updates.jenkins-ci.org/download/war/">https://updates.jenkins-ci.org/download/war/</a></td>
 </tr>
 </tbody></table>
 <h1 id="PIP安装源"><a href="#PIP安装源" class="headerlink" title="PIP安装源"></a>PIP安装源</h1><table>
@@ -228,6 +244,46 @@
 <td></td>
 </tr>
 </tbody></table>
+<h1 id="Appium相关"><a href="#Appium相关" class="headerlink" title="Appium相关"></a>Appium相关</h1><table>
+<thead>
+<tr>
+<th>地址</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/appium/appium-inspector/releases">https://github.com/appium/appium-inspector/releases</a></td>
+<td>inspector</td>
+</tr>
+<tr>
+<td><a href="https://github.com/appium/appium-desktop/releases">https://github.com/appium/appium-desktop/releases</a></td>
+<td>appium-desktop</td>
+</tr>
+<tr>
+<td><a href="https://pypi.org/project/Appium-Python-Client/">https://pypi.org/project/Appium-Python-Client/</a></td>
+<td>Appium Python Client</td>
+</tr>
+<tr>
+<td><a href="https://github.com/appium/appium/blob/master/docs/cn/writing-running-appium/caps.md">https://github.com/appium/appium/blob/master/docs/cn/writing-running-appium/caps.md</a></td>
+<td>能力值中文</td>
+</tr>
+<tr>
+<td><a href="https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md">https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md</a></td>
+<td>能力值英文</td>
+</tr>
+<tr>
+<td><a href="https://appium.io/docs/en/about-appium/intro/">https://appium.io/docs/en/about-appium/intro/</a></td>
+<td>官网文档</td>
+</tr>
+<tr>
+<td><a href="https://appium.io/docs/cn/about-appium/intro/">https://appium.io/docs/cn/about-appium/intro/</a></td>
+<td>官网文档</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><table>
 <thead>
 <tr>
@@ -308,6 +364,127 @@
       <tags>
         <tag>待续</tag>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github仓库整理</title>
+    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
+<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
+<p>有些内容我就不举例了，大家可以看readme.md</p>
+<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
+</blockquote>
+<ul>
+<li><strong>开源是人类进步的基石</strong></li>
+</ul>
+<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
+<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
+</li>
+<li><p>简单实用的删除图像背景/抠图工具</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
+<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
+<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
+</ul>
+<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
+<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>备注：我一直在用哈</li>
+</ul>
+<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
+<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
+</li>
+<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
+</li>
+</ul>
+<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
+<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
+<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
+</li>
+<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
+</li>
+</ul>
+<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
+<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
+<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
+</ul>
+<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
+<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
+<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
+</ul>
+<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
+<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
+<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
+</ul>
+<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
+<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
+<li>简介：在命令行看股票走势的工具</li>
+<li></li>
+</ul>
+<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
+<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
+<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
+</ul>
+<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
+<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
+<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
+</ul>
+<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
+<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
+</li>
+<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
+</li>
+</ul>
+<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
+<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
+<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
+<li>修改、合并 PDF 文档</li>
+<li>自动生成书签</li>
+<li>书签编辑器</li>
+<li>高速无损地导出文件中的图片</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
+<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
+<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
+</ul>
+<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
+<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
+<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
+<li></li>
+</ul>
+<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
+<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
+<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
+</ul>
+<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
+<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
+<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
+</ul>
+<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
+<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
+<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -794,124 +971,515 @@
       </tags>
   </entry>
   <entry>
-    <title>Github仓库整理</title>
-    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
-<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
-<p>有些内容我就不举例了，大家可以看readme.md</p>
-<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
+    <title>Git入门指南</title>
+    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="Git入门指南"><a href="#Git入门指南" class="headerlink" title="Git入门指南"></a>Git入门指南</h1><blockquote>
+<p>引用了 微信公众号 入门小站的内容</p>
+<p>参考了pro git</p>
+</blockquote>
+<h2 id="概念-TODO"><a href="#概念-TODO" class="headerlink" title="概念 TODO"></a>概念 TODO</h2><h2 id="命令行-拓展"><a href="#命令行-拓展" class="headerlink" title="命令行 - 拓展"></a>命令行 - 拓展</h2><h3 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 在当前目录新建一个Git代码库</span><br><span class="line">$ git init</span><br><span class="line"># 新建一个目录，将其初始化为Git代码库</span><br><span class="line">$ git init [project-name]</span><br><span class="line"># 下载一个项目和它的整个代码历史</span><br><span class="line">$ git clone [url]</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h3><p>Git 的设置文件为. gitconfig，它可以在用户主目录下 (全局配置)，也可以在项目目录下 (项目配置)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示当前的Git配置</span><br><span class="line">$ git config --list</span><br><span class="line"># 编辑Git配置文件</span><br><span class="line">$ git config -e [--global]</span><br><span class="line"># 设置提交代码时的用户信息</span><br><span class="line">$ git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">$ git config [--global] user.email &quot;[email address]&quot;</span><br><span class="line"># 颜色设置</span><br><span class="line">git config --global color.ui true                         # git status等命令自动着色</span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line">git config --global --unset http.proxy                    # remove  proxy configuration on git</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、增加-删除文件"><a href="#三、增加-删除文件" class="headerlink" title="三、增加 / 删除文件"></a>三、增加 / 删除文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 添加指定文件到暂存区</span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"># 添加指定目录到暂存区，包括子目录</span><br><span class="line">$ git add [dir]</span><br><span class="line"># 添加当前目录的所有文件到暂存区</span><br><span class="line">$ git add .</span><br><span class="line"># 添加每个变化前，都会要求确认</span><br><span class="line"># 对于同一个文件的多处变化，可以实现分次提交</span><br><span class="line">$ git add -p</span><br><span class="line"># 删除工作区文件，并且将这次删除放入暂存区</span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"># 停止追踪指定文件，但该文件会保留在工作区</span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"># 改名文件，并且将这个改名放入暂存区</span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 提交暂存区到仓库区</span><br><span class="line">$ git commit -m [message]</span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">$ git commit -a</span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">$ git commit -v</span><br><span class="line"># 将add和commit合为一步</span><br><span class="line">$ git commit -am &#x27;message&#x27;</span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">$ git branch</span><br><span class="line"># 列出所有远程分支</span><br><span class="line">$ git branch -r</span><br><span class="line"># 列出所有本地分支和远程分支</span><br><span class="line">$ git branch -a</span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"># 新建一个分支，指向指定commit</span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"># 新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"># 切换到指定分支，并更新工作区</span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"># 切换到上一个分支</span><br><span class="line">$ git checkout -</span><br><span class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">$ git merge [branch]</span><br><span class="line"># 选择一个commit，合并进当前分支</span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"># 删除分支</span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"># 删除远程分支</span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br><span class="line"># 检出版本v2.0</span><br><span class="line">$ git checkout v2.0</span><br><span class="line"># 从远程分支develop创建新本地分支devel并检出</span><br><span class="line">$ git checkout -b devel origin/develop</span><br><span class="line"># 检出head版本的README文件（可用于修改错误回退）</span><br><span class="line">git checkout -- README</span><br></pre></td></tr></table></figure>
+
+<h3 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 列出所有tag</span><br><span class="line">$ git tag</span><br><span class="line"># 新建一个tag在当前commit</span><br><span class="line">$ git tag [tag]</span><br><span class="line"># 新建一个tag在指定commit</span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"># 删除本地tag</span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"># 删除远程tag</span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"># 查看tag信息</span><br><span class="line">$ git show [tag]</span><br><span class="line"># 提交指定tag</span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"># 提交所有tag</span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"># 新建一个分支，指向某个tag</span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+
+<h3 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示有变更的文件</span><br><span class="line">$ git status</span><br><span class="line"># 显示当前分支的版本历史</span><br><span class="line">$ git log</span><br><span class="line"># 显示commit历史，以及每次commit发生变更的文件</span><br><span class="line">$ git log --stat</span><br><span class="line"># 搜索提交历史，根据关键词</span><br><span class="line">$ git log -S [keyword]</span><br><span class="line"># 显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line">$ git log [tag] HEAD --pretty=format:%s</span><br><span class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span><br><span class="line">$ git log [tag] HEAD --grep feature</span><br><span class="line"># 显示某个文件的版本历史，包括文件改名</span><br><span class="line">$ git log --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"># 显示指定文件相关的每一次diff</span><br><span class="line">$ git log -p [file]</span><br><span class="line"># 显示过去5次提交</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"># 显示所有提交过的用户，按提交次数排序</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"># 显示指定文件是什么人在什么时间修改过</span><br><span class="line">$ git blame [file]</span><br><span class="line"># 显示暂存区和工作区的差异</span><br><span class="line">$ git diff</span><br><span class="line"># 显示暂存区和上一个commit的差异</span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"># 显示工作区与当前分支最新commit之间的差异</span><br><span class="line">$ git diff HEAD</span><br><span class="line"># 显示两次提交之间的差异</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"># 显示今天你写了多少行代码</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"># 显示某次提交的元数据和内容变化</span><br><span class="line">$ git show [commit]</span><br><span class="line"># 显示某次提交发生变化的文件</span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"># 显示某次提交时，某个文件的内容</span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+
+<h3 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 下载远程仓库的所有变动</span><br><span class="line">$ git fetch [remote]</span><br><span class="line"># 显示所有远程仓库</span><br><span class="line">$ git remote -v</span><br><span class="line"># 显示某个远程仓库的信息</span><br><span class="line">$ git remote show [remote]</span><br><span class="line"># 增加一个新的远程仓库，并命名</span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"># 取回远程仓库的变化，并与本地分支合并</span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"># 上传本地指定分支到远程仓库</span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"># 强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line">$ git push [remote] --force</span><br><span class="line"># 推送所有分支到远程仓库</span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
+
+<h3 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 恢复暂存区的指定文件到工作区</span><br><span class="line">$ git checkout [file]</span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">$ git reset [file]</span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">$ git reset --hard</span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">$ git reset [commit]</span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert [commit]</span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+
+<h3 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init                                                  # 初始化本地git仓库（创建新仓库）</span><br><span class="line">git config --global user.name &quot;xxx&quot;                       # 配置用户名</span><br><span class="line">git config --global user.email &quot;xxx@xxx.com&quot;              # 配置邮件</span><br><span class="line">git config --global color.ui true                         # git status等命令自动着色</span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line">git config --global --unset http.proxy           # remove  proxy configuration on git</span><br><span class="line">git clone git+ssh://git@192.168.53.168/VT.git             # clone远程仓库</span><br><span class="line">git status                                                # 查看当前版本状态（是否修改）</span><br><span class="line">git add xyz                                               # 添加xyz文件至index</span><br><span class="line">git add .                                                 # 增加当前子目录下所有更改过的文件至index</span><br><span class="line">git commit -m &#x27;xxx&#x27;                                       # 提交</span><br><span class="line">git commit --amend -m &#x27;xxx&#x27;                               # 合并上一次提交（用于反复修改）</span><br><span class="line">git commit -am &#x27;xxx&#x27;                                      # 将add和commit合为一步</span><br><span class="line">git rm xxx                                                # 删除index中的文件</span><br><span class="line">git rm -r *                                               # 递归删除</span><br><span class="line">git log                                                   # 显示提交日志</span><br><span class="line">git log -1                                                # 显示1行日志 -n为n行</span><br><span class="line">git log -5</span><br><span class="line">git log --stat                                            # 显示提交日志及相关变动文件</span><br><span class="line">git log -p -m</span><br><span class="line">git show dfb02e6e4f2f7b573337763e5c0013802e392818         # 显示某个提交的详细内容</span><br><span class="line">git show dfb02                                            # 可只用commitid的前几位</span><br><span class="line">git show HEAD                                             # 显示HEAD提交日志</span><br><span class="line">git show HEAD^          # 显示HEAD的父（上一个版本）的提交日志 ^^为上两个版本 ^5为上5个版本</span><br><span class="line">git tag                                                   # 显示已存在的tag</span><br><span class="line">git tag -a v2.0 -m &#x27;xxx&#x27;                                  # 增加v2.0的tag</span><br><span class="line">git show v2.0                                             # 显示v2.0的日志及详细内容</span><br><span class="line">git log v2.0                                              # 显示v2.0的日志</span><br><span class="line">git diff                                                  # 显示所有未添加至index的变更</span><br><span class="line">git diff --cached                                         # 显示所有已添加index但还未commit的变更</span><br><span class="line">git diff HEAD^                                            # 比较与上一个版本的差异</span><br><span class="line">git diff HEAD -- ./lib                                    # 比较与HEAD版本lib目录的差异</span><br><span class="line">git diff origin/master..master          # 比较远程分支master上有本地分支master上没有的</span><br><span class="line">git diff origin/master..master --stat                     # 只显示差异的文件，不显示具体内容</span><br><span class="line">git remote add origin git+ssh://git@192.168.53.168/VT.git # 增加远程定义（用于push/pull/fetch）</span><br><span class="line">git branch                                                # 显示本地分支</span><br><span class="line">git branch --contains 50089                               # 显示包含提交50089的分支</span><br><span class="line">git branch -a                                             # 显示所有分支</span><br><span class="line">git branch -r                                             # 显示所有原创分支</span><br><span class="line">git branch --merged                                       # 显示所有已合并到当前分支的分支</span><br><span class="line">git branch --no-merged                                    # 显示所有未合并到当前分支的分支</span><br><span class="line">git branch -m master master_copy                          # 本地分支改名</span><br><span class="line">git checkout -b master_copy              # 从当前分支创建新分支master_copy并检出</span><br><span class="line">git checkout -b master master_copy                        # 上面的完整版</span><br><span class="line">git checkout features/performance                         # 检出已存在的features/performance分支</span><br><span class="line">git checkout --track hotfixes/BJVEP933      # 检出远程分支hotfixes/BJVEP933并创建本地跟踪分支</span><br><span class="line">git checkout v2.0                                         # 检出版本v2.0</span><br><span class="line">git checkout -b devel origin/develop      # 从远程分支develop创建新本地分支devel并检出</span><br><span class="line">git checkout -- README                      # 检出head版本的README文件（可用于修改错误回退）</span><br><span class="line">git merge origin/master                                   # 合并远程master分支至当前分支</span><br><span class="line">git cherry-pick ff44785404a8e                             # 合并提交ff44785404a8e的修改</span><br><span class="line">git push origin master                                    # 将当前分支push到远程master分支</span><br><span class="line">git push origin :hotfixes/BJVEP933           # 删除远程仓库的hotfixes/BJVEP933分支</span><br><span class="line">git push --tags                                           # 把所有tag推送到远程仓库</span><br><span class="line">git fetch                        # 获取所有远程分支（不更新本地分支，另需merge）</span><br><span class="line">git fetch --prune                       # 获取所有原创分支并清除服务器上已删掉的分支</span><br><span class="line">git pull origin master                               # 获取远程分支master并merge到当前分支</span><br><span class="line">git mv README README2                                     # 重命名文件README为README2</span><br><span class="line">git reset --hard HEAD               # 将当前版本重置为HEAD（通常用于merge失败回退）</span><br><span class="line">git rebase</span><br><span class="line">git branch -d hotfixes/BJVEP933        # 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）</span><br><span class="line">git branch -D hotfixes/BJVEP933                           # 强制删除分支hotfixes/BJVEP933</span><br><span class="line">git ls-files                                              # 列出git index包含的文件</span><br><span class="line">git show-branch                                           # 图示当前分支历史</span><br><span class="line">git show-branch --all                                     # 图示所有分支历史</span><br><span class="line">git whatchanged                                           # 显示提交历史对应的文件修改</span><br><span class="line">git revert dfb02e6e4f2f7b573337763e5c0013802e392818       # 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818</span><br><span class="line">git ls-tree HEAD                                          # 内部命令：显示某个git对象</span><br><span class="line">git rev-parse v2.0                                        # 内部命令：显示某个ref对于的SHA1 HASH</span><br><span class="line">git reflog                                                # 显示所有提交，包括孤立节点</span><br><span class="line">git show HEAD@&#123;5&#125;</span><br><span class="line">git show master@&#123;yesterday&#125;                               # 显示master分支昨天的状态</span><br><span class="line">git log --pretty=format:&#x27;%h %s&#x27; --graph                   # 图示提交日志</span><br><span class="line">git show HEAD~3</span><br><span class="line">git show -s --pretty=raw 2be7fcb476</span><br><span class="line">git stash                                                 # 暂存当前修改，将所有至为HEAD状态</span><br><span class="line">git stash list                                            # 查看所有暂存</span><br><span class="line">git stash show -p stash@&#123;0&#125;                               # 参考第一次暂存</span><br><span class="line">git stash apply stash@&#123;0&#125;                                 # 应用第一次暂存</span><br><span class="line">git grep &quot;delete from&quot;                                    # 文件中搜索文本“delete from”</span><br><span class="line">git grep -e &#x27;#define&#x27; --and -e SORT_DIRENT</span><br><span class="line">git gc</span><br><span class="line">git fsck</span><br><span class="line"># 生成一个可供发布的压缩包</span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="实用案例"><a href="#实用案例" class="headerlink" title="实用案例"></a>实用案例</h2><h3 id="我刚才提交了什么"><a href="#我刚才提交了什么" class="headerlink" title="我刚才提交了什么?"></a>我刚才提交了什么?</h3><blockquote>
+<p>如果你用 <code>git commit -a</code> 提交了一次变化(changes)，而你又不确定到底这次提交了哪些内容。你就可以用下面的命令显示当前<code>HEAD</code>上的最近一次的提交(commit):</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git show</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git log -n1 -p</span><br></pre></td></tr></table></figure>
+
+<h3 id="我的提交信息-commit-message-写错了"><a href="#我的提交信息-commit-message-写错了" class="headerlink" title="我的提交信息(commit message)写错了"></a>我的提交信息(commit message)写错了</h3><blockquote>
+<p>如果你的提交信息(commit message)写错了且这次提交(commit)还没有推(push), 你可以通过下面的方法来修改提交信息(commit message):</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git commit --amend --only</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这会打开你的默认编辑器, 在这里你可以编辑信息. 另一方面, 你也可以用一条命令一次完成:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git commit --amend --only -m &#x27;xxxxxxx&#x27;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你已经推(push)了这次提交(commit), 你可以修改这次提交(commit)然后强推(force push), 但是不推荐这么做。</p>
+</blockquote>
+<h3 id="我提交-commit-里的用户名和邮箱不对"><a href="#我提交-commit-里的用户名和邮箱不对" class="headerlink" title="我提交(commit)里的用户名和邮箱不对"></a>我提交(commit)里的用户名和邮箱不对</h3><blockquote>
+<p>如果这只是单个提交(commit)，修改它：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git commit --amend --author &quot;New Authorname &lt;authoremail@mydomain.com&gt;&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你需要修改所有历史, 参考 ‘git filter-branch’的指南页.</p>
+</blockquote>
+<h3 id="我想从一个提交-commit-里移除一个文件"><a href="#我想从一个提交-commit-里移除一个文件" class="headerlink" title="我想从一个提交(commit)里移除一个文件"></a>我想从一个提交(commit)里移除一个文件</h3><p>通过下面的方法，从一个提交(commit)里移除一个文件:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout HEAD^ myfile$ git add -A$ git commit --amend</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这将非常有用，当你有一个开放的补丁(open patch)，你往上面提交了一个不必要的文件，你需要强推(force push)去更新这个远程补丁。</p>
+</blockquote>
+<h3 id="我想删除我的的最后一次提交-commit"><a href="#我想删除我的的最后一次提交-commit" class="headerlink" title="我想删除我的的最后一次提交(commit)"></a>我想删除我的的最后一次提交(commit)</h3><blockquote>
+<p>如果你需要删除推了的提交(pushed commits)，你可以使用下面的方法。可是，这会不可逆的改变你的历史，也会搞乱那些已经从该仓库拉取(pulled)了的人的历史。简而言之，如果你不是很确定，千万不要这么做。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git reset HEAD^ --hard$ git push -f [remote] [branch]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你还没有推到远程, 把Git重置(reset)到你最后一次提交前的状态就可以了(同时保存暂存的变化):</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch*)$ git reset --soft HEAD@&#123;1&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这只能在没有推送之前有用. 如果你已经推了, 唯一安全能做的是 <code>git revert SHAofBadCommit</code>， 那会创建一个新的提交(commit)用于撤消前一个提交的所有变化(changes)；或者, 如果你推的这个分支是rebase-safe的 (例如：其它开发者不会从这个分支拉), 只需要使用 <code>git push -f</code>。</p>
+</blockquote>
+<h3 id="删除任意提交-commit"><a href="#删除任意提交-commit" class="headerlink" title="删除任意提交(commit)"></a>删除任意提交(commit)</h3><p>同样的警告：不到万不得已的时候不要这么做.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT$ git push -f [remote] [branch]</span><br></pre></td></tr></table></figure>
+
+<p>或者做一个 交互式rebase 删除那些你想要删除的提交(commit)里所对应的行。</p>
+<h3 id="我尝试推一个修正后的提交-amended-commit-到远程，但是报错："><a href="#我尝试推一个修正后的提交-amended-commit-到远程，但是报错：" class="headerlink" title="我尝试推一个修正后的提交(amended commit)到远程，但是报错："></a>我尝试推一个修正后的提交(amended commit)到远程，但是报错：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">To https://github.com/yourusername/repo.git! [rejected]        mybranch -&gt; mybranch (non-fast-forward)error: failed to push some refs to &#x27;https://github.com/tanay1337/webmaker.org.git&#x27;hint: Updates were rejected because the tip of your current branch is behindhint: its remote counterpart. Integrate the remote changes (e.g.hint: &#x27;git pull ...&#x27;) before pushing again.hint: See the &#x27;Note about fast-forwards&#x27; in &#x27;git push --help&#x27; for details.</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意, rebasing(见下面)和修正(amending)会用一个<strong>新的提交(commit)代替旧的</strong>, 所以如果之前你已经往远程仓库上推过一次修正前的提交(commit)，那你现在就必须强推(force push) (<code>-f</code>)。注意 – <em>总是</em> 确保你指明一个分支!</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git push origin mybranch -f</span><br></pre></td></tr></table></figure>
+
+<p>一般来说, <strong>要避免强推</strong>. 最好是创建和推(push)一个新的提交(commit)，而不是强推一个修正后的提交。后者会使那些与该分支或该分支的子分支工作的开发者，在源历史中产生冲突。</p>
+<h3 id="我意外的做了一次硬重置-hard-reset-，我想找回我的内容"><a href="#我意外的做了一次硬重置-hard-reset-，我想找回我的内容" class="headerlink" title="我意外的做了一次硬重置(hard reset)，我想找回我的内容"></a>我意外的做了一次硬重置(hard reset)，我想找回我的内容</h3><blockquote>
+<p>如果你意外的做了 <code>git reset --hard</code>, 你通常能找回你的提交(commit), 因为Git对每件事都会有日志，且都会保存几天。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reflog</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你将会看到一个你过去提交(commit)的列表, 和一个重置的提交。选择你想要回到的提交(commit)的SHA，再重置一次:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reset --hard SHA1234</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这样就完成了。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>暂存(Staging)</p>
+</blockquote>
+<h3 id="我需要把暂存的内容添加到上一次的提交-commit"><a href="#我需要把暂存的内容添加到上一次的提交-commit" class="headerlink" title="我需要把暂存的内容添加到上一次的提交(commit)"></a>我需要把暂存的内容添加到上一次的提交(commit)</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch*)$ git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想要暂存一个新文件的一部分，而不是这个文件的全部"><a href="#我想要暂存一个新文件的一部分，而不是这个文件的全部" class="headerlink" title="我想要暂存一个新文件的一部分，而不是这个文件的全部"></a>我想要暂存一个新文件的一部分，而不是这个文件的全部</h3><p>一般来说, 如果你想暂存一个文件的一部分, 你可这样做:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add --patch filename.x</span><br></pre></td></tr></table></figure>
+
+<p><code>-p</code> 简写。这会打开交互模式， 你将能够用 <code>s</code> 选项来分隔提交(commit)；然而, 如果这个文件是新的, 会没有这个选择， 添加一个新文件时, 这样做:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git add -N filename.x</span><br></pre></td></tr></table></figure>
+
+<p>然后, 你需要用 <code>e</code> 选项来手动选择需要添加的行，执行 <code>git diff --cached</code> 将会显示哪些行暂存了哪些行只是保存在本地了。</p>
+<h3 id="我想把在一个文件里的变化-changes-加到两个提交-commit-里"><a href="#我想把在一个文件里的变化-changes-加到两个提交-commit-里" class="headerlink" title="我想把在一个文件里的变化(changes)加到两个提交(commit)里"></a>我想把在一个文件里的变化(changes)加到两个提交(commit)里</h3><p><code>git add</code> 会把整个文件加入到一个提交. <code>git add -p</code> 允许交互式的选择你想要提交的部分.</p>
+<h3 id="我想把暂存的内容变成未暂存，把未暂存的内容暂存起来"><a href="#我想把暂存的内容变成未暂存，把未暂存的内容暂存起来" class="headerlink" title="我想把暂存的内容变成未暂存，把未暂存的内容暂存起来"></a>我想把暂存的内容变成未暂存，把未暂存的内容暂存起来</h3><p>多数情况下，你应该将所有的内容变为未暂存，然后再选择你想要的内容进行commit。但假定你就是想要这么做，这里你可以创建一个临时的commit来保存你已暂存的内容，然后暂存你的未暂存的内容并进行stash。然后reset最后一个commit将原本暂存的内容变为未暂存，最后stash pop回来。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git commit -m &quot;WIP&quot;$ git add .$ git stash$ git reset HEAD^$ git stash pop --index 0</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意1: 这里使用<code>pop</code>仅仅是因为想尽可能保持幂等。注意2: 假如你不加上<code>--index</code>你会把暂存的文件标记为为存储。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>未暂存(Unstaged)的内容</p>
+</blockquote>
+<h3 id="我想把未暂存的内容移动到一个新分支"><a href="#我想把未暂存的内容移动到一个新分支" class="headerlink" title="我想把未暂存的内容移动到一个新分支"></a>我想把未暂存的内容移动到一个新分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout -b my-branch</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想把未暂存的内容移动到另一个已存在的分支"><a href="#我想把未暂存的内容移动到另一个已存在的分支" class="headerlink" title="我想把未暂存的内容移动到另一个已存在的分支"></a>我想把未暂存的内容移动到另一个已存在的分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash$ git checkout my-branch$ git stash pop</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想丢弃本地未提交的变化-uncommitted-changes"><a href="#我想丢弃本地未提交的变化-uncommitted-changes" class="headerlink" title="我想丢弃本地未提交的变化(uncommitted changes)"></a>我想丢弃本地未提交的变化(uncommitted changes)</h3><blockquote>
+<p>如果你只是想重置源(origin)和你本地(local)之间的一些提交(commit)，你可以：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># one commit(my-branch)$ git reset --hard HEAD^# two commits(my-branch)$ git reset --hard HEAD^^# four commits(my-branch)$ git reset --hard HEAD~4# or(main)$ git checkout -f</span><br></pre></td></tr></table></figure>
+
+<p>重置某个特殊的文件, 你可以用文件名做为参数:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git reset filename</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想丢弃某些未暂存的内容"><a href="#我想丢弃某些未暂存的内容" class="headerlink" title="我想丢弃某些未暂存的内容"></a>我想丢弃某些未暂存的内容</h3><blockquote>
+<p>如果你想丢弃工作拷贝中的一部分内容，而不是全部。</p>
+</blockquote>
+<p>签出(checkout)不需要的内容，保留需要的。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout -p# Answer y to all of the snippets you want to drop</span><br></pre></td></tr></table></figure>
+
+<p>另外一个方法是使用 <code>stash</code>， Stash所有要保留下的内容, 重置工作拷贝, 重新应用保留的部分。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash -p# Select all of the snippets you want to save$ git reset --hard$ git stash pop</span><br></pre></td></tr></table></figure>
+
+<p>或者, stash 你不需要的部分, 然后stash drop。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash -p# Select all of the snippets you don&#x27;t want to save$ git stash drop</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<h2 id="分支-Branches"><a href="#分支-Branches" class="headerlink" title="分支(Branches)"></a>分支(Branches)</h2></blockquote>
+<h3 id="我从错误的分支拉取了内容，或把内容拉取到了错误的分支"><a href="#我从错误的分支拉取了内容，或把内容拉取到了错误的分支" class="headerlink" title="我从错误的分支拉取了内容，或把内容拉取到了错误的分支"></a>我从错误的分支拉取了内容，或把内容拉取到了错误的分支</h3><blockquote>
+<p>这是另外一种使用 <code>git reflog</code> 情况，找到在这次错误拉(pull) 之前HEAD的指向。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reflogab7555f HEAD@&#123;0&#125;: pull origin wrong-branch: Fast-forwardc5bc55a HEAD@&#123;1&#125;: checkout: checkout message goes here</span><br></pre></td></tr></table></figure>
+
+<p>重置分支到你所需的提交(desired commit):</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git reset --hard c5bc55a</span><br></pre></td></tr></table></figure>
+
+<p>完成。</p>
+<h3 id="我想扔掉本地的提交-commit-，以便我的分支与远程的保持一致"><a href="#我想扔掉本地的提交-commit-，以便我的分支与远程的保持一致" class="headerlink" title="我想扔掉本地的提交(commit)，以便我的分支与远程的保持一致"></a>我想扔掉本地的提交(commit)，以便我的分支与远程的保持一致</h3><p>先确认你没有推(push)你的内容到远程。</p>
+<p><code>git status</code> 会显示你领先(ahead)源(origin)多少个提交:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git status# On branch my-branch# Your branch is ahead of &#x27;origin/my-branch&#x27; by 2 commits.#   (use &quot;git push&quot; to publish your local commits)#</span><br></pre></td></tr></table></figure>
+
+<p>一种方法是:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reset --hard origin/my-branch</span><br></pre></td></tr></table></figure>
+
+<h3 id="我需要提交到一个新分支，但错误的提交到了main"><a href="#我需要提交到一个新分支，但错误的提交到了main" class="headerlink" title="我需要提交到一个新分支，但错误的提交到了main"></a>我需要提交到一个新分支，但错误的提交到了main</h3><p>在main下创建一个新分支，不切换到新分支,仍在main下:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git branch my-branch</span><br></pre></td></tr></table></figure>
+
+<p>把main分支重置到前一个提交:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+
+<p><code>HEAD^</code> 是 <code>HEAD^1</code> 的简写，你可以通过指定要设置的<code>HEAD</code>来进一步重置。</p>
+<blockquote>
+<p>或者, 如果你不想使用 <code>HEAD^</code>, 找到你想重置到的提交(commit)的hash(<code>git log</code> 能够完成)， 然后重置到这个hash。使用<code>git push</code> 同步内容到远程。</p>
+</blockquote>
+<p>例如, main分支想重置到的提交的hash为<code>a13b85e</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reset --hard a13b85eHEAD is now at a13b85e</span><br></pre></td></tr></table></figure>
+
+<p>签出(checkout)刚才新建的分支继续工作:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git checkout my-branch</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想保留来自另外一个ref-ish的整个文件"><a href="#我想保留来自另外一个ref-ish的整个文件" class="headerlink" title="我想保留来自另外一个ref-ish的整个文件"></a>我想保留来自另外一个ref-ish的整个文件</h3><blockquote>
+<p>假设你正在做一个原型方案(原文为working spike (see note)), 有成百的内容，每个都工作得很好。现在, 你提交到了一个分支，保存工作内容:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(solution)$ git add -A &amp;&amp; git commit -m &quot;Adding all changes from this spike into one big commit.&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当你想要把它放到一个分支里 (可能是<code>feature</code>, 或者 <code>develop</code>), 你关心是保持整个文件的完整，你想要一个大的提交分隔成比较小。</p>
+</blockquote>
+<p>假设你有:</p>
+<ul>
+<li>分支 <code>solution</code>, 拥有原型方案， 领先 <code>develop</code> 分支。</li>
+<li>分支 <code>develop</code>, 在这里你应用原型方案的一些内容。</li>
+</ul>
+<p>我去可以通过把内容拿到你的分支里，来解决这个问题:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(develop)$ git checkout solution -- file1.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这会把这个文件内容从分支 <code>solution</code> 拿到分支 <code>develop</code> 里来:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># On branch develop# Your branch is up-to-date with &#x27;origin/develop&#x27;.# Changes to be committed:#  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)##        modified:   file1.txt</span><br></pre></td></tr></table></figure>
+
+<p>然后, 正常提交。</p>
+<p>Note: Spike solutions are made to analyze or solve the problem. These solutions are used for estimation and discarded once everyone gets clear visualization of the problem.</p>
+<h3 id="我把几个提交-commit-提交到了同一个分支，而这些提交应该分布在不同的分支里"><a href="#我把几个提交-commit-提交到了同一个分支，而这些提交应该分布在不同的分支里" class="headerlink" title="我把几个提交(commit)提交到了同一个分支，而这些提交应该分布在不同的分支里"></a>我把几个提交(commit)提交到了同一个分支，而这些提交应该分布在不同的分支里</h3><p>假设你有一个<code>main</code>分支， 执行<code>git log</code>, 你看到你做过两次提交:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git logcommit e3851e817c451cc36f2e6f3049db528415e3c114Author: Alex Lee &lt;alexlee@example.com&gt;Date:   Tue Jul 22 15:39:27 2014 -0400    Bug #21 - Added CSRF protectioncommit 5ea51731d150f7ddc4a365437931cd8be3bf3131Author: Alex Lee &lt;alexlee@example.com&gt;Date:   Tue Jul 22 15:39:12 2014 -0400    Bug #14 - Fixed spacing on titlecommit a13b85e984171c6e2a1729bb061994525f626d14Author: Aki Rose &lt;akirose@example.com&gt;Date:   Tue Jul 21 01:12:48 2014 -0400    First commit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>让我们用提交hash(commit hash)标记bug (<code>e3851e8</code> for #21, <code>5ea5173</code> for #14).</p>
+</blockquote>
+<p>首先, 我们把<code>main</code>分支重置到正确的提交(<code>a13b85e</code>):</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reset --hard a13b85eHEAD is now at a13b85e</span><br></pre></td></tr></table></figure>
+
+<p>现在, 我们对 bug #21 创建一个新的分支:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git checkout -b 21(21)$</span><br></pre></td></tr></table></figure>
+
+<p>接着, 我们用 <em>cherry-pick</em> 把对bug #21的提交放入当前分支。这意味着我们将应用(apply)这个提交(commit)，仅仅这一个提交(commit)，直接在HEAD上面。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(21)$ git cherry-pick e3851e8</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这时候, 这里可能会产生冲突， 参见交互式 rebasing 章 <strong>冲突节</strong> 解决冲突.</p>
+</blockquote>
+<p>再者， 我们为bug #14 创建一个新的分支, 也基于<code>main</code>分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(21)$ git checkout main(main)$ git checkout -b 14(14)$</span><br></pre></td></tr></table></figure>
+
+<p>最后, 为 bug #14 执行 <code>cherry-pick</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(14)$ git cherry-pick 5ea5173</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想删除上游-upstream-分支被删除了的本地分支"><a href="#我想删除上游-upstream-分支被删除了的本地分支" class="headerlink" title="我想删除上游(upstream)分支被删除了的本地分支"></a>我想删除上游(upstream)分支被删除了的本地分支</h3><blockquote>
+<p>一旦你在github 上面合并(merge)了一个pull request, 你就可以删除你fork里被合并的分支。如果你不准备继续在这个分支里工作, 删除这个分支的本地拷贝会更干净，使你不会陷入工作分支和一堆陈旧分支的混乱之中（<a href="http://mp.weixin.qq.com/s?__biz=MzI1NDY0MTkzNQ==&mid=2247496560&idx=1&sn=2e9d4b74085b1ebd73b6c4145d0f28de&chksm=e9c0a110deb72806c10a2165a0979749e675b2bee4219e11f76da46b5be96fd32d8068ad2b23&scene=21#wechat_redirect">IDEA 中玩转 Git</a>）。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git fetch -p</span><br></pre></td></tr></table></figure>
+
+<h3 id="我不小心删除了我的分支"><a href="#我不小心删除了我的分支" class="headerlink" title="我不小心删除了我的分支"></a>我不小心删除了我的分支</h3><blockquote>
+<p>如果你定期推送到远程, 多数情况下应该是安全的，但有些时候还是可能删除了还没有推到远程的分支。让我们先创建一个分支和一个新的文件:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git checkout -b my-branch(my-branch)$ git branch(my-branch)$ touch foo.txt(my-branch)$ lsREADME.md foo.txt</span><br></pre></td></tr></table></figure>
+
+<p>添加文件并做一次提交</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git add .(my-branch)$ git commit -m &#x27;foo.txt added&#x27;(my-branch)$ foo.txt added 1 files changed, 1 insertions(+) create mode 100644 foo.txt(my-branch)$ git logcommit 4e3cd85a670ced7cc17a2b5d8d3d809ac88d5012Author: siemiatj &lt;siemiatj@example.com&gt;Date:   Wed Jul 30 00:34:10 2014 +0200    foo.txt addedcommit 69204cdf0acbab201619d95ad8295928e7f411d5Author: Kate Hudson &lt;katehudson@example.com&gt;Date:   Tue Jul 29 13:14:46 2014 -0400    Fixes #6: Force pushing after amending commits</span><br></pre></td></tr></table></figure>
+
+<p>现在我们切回到主(main)分支，‘不小心的’删除<code>my-branch</code>分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git checkout mainSwitched to branch &#x27;main&#x27;Your branch is up-to-date with &#x27;origin/main&#x27;.(main)$ git branch -D my-branchDeleted branch my-branch (was 4e3cd85).(main)$ echo oh noes, deleted my branch!oh noes, deleted my branch!</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在这时候你应该想起了<code>reflog</code>, 一个升级版的日志，它存储了仓库(repo)里面所有动作的历史。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reflog69204cd HEAD@&#123;0&#125;: checkout: moving from my-branch to main4e3cd85 HEAD@&#123;1&#125;: commit: foo.txt added69204cd HEAD@&#123;2&#125;: checkout: moving from main to my-branch</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>正如你所见，我们有一个来自删除分支的提交hash(commit hash)，接下来看看是否能恢复删除了的分支。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git checkout -b my-branch-helpSwitched to a new branch &#x27;my-branch-help&#x27;(my-branch-help)$ git reset --hard 4e3cd85HEAD is now at 4e3cd85 foo.txt added(my-branch-help)$ lsREADME.md foo.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>看! 我们把删除的文件找回来了。Git的 <code>reflog</code> 在rebasing出错的时候也是同样有用的。</p>
+</blockquote>
+<h3 id="我想删除一个分支"><a href="#我想删除一个分支" class="headerlink" title="我想删除一个分支"></a>我想删除一个分支</h3><p>删除一个远程分支:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git push origin --delete my-branch</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你也可以:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git push origin :my-branch</span><br></pre></td></tr></table></figure>
+
+<p>删除一个本地分支:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git branch -D my-branch</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想从别人正在工作的远程分支签出-checkout-一个分支"><a href="#我想从别人正在工作的远程分支签出-checkout-一个分支" class="headerlink" title="我想从别人正在工作的远程分支签出(checkout)一个分支"></a>我想从别人正在工作的远程分支签出(checkout)一个分支</h3><p>首先, 从远程拉取(fetch) 所有分支:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git fetch --all</span><br></pre></td></tr></table></figure>
+
+<p>假设你想要从远程的<code>daves</code>分支签出到本地的<code>daves</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git checkout --track origin/davesBranch daves set up to track remote branch daves from origin.Switched to a new branch &#x27;daves&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>(<code>--track</code> 是 <code>git checkout -b [branch] [remotename]/[branch]</code> 的简写)</p>
+<blockquote>
+<p>这样就得到了一个<code>daves</code>分支的本地拷贝, 任何推过(pushed)的更新，远程都能看到.</p>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="Rebasing-和合并-Merging"><a href="#Rebasing-和合并-Merging" class="headerlink" title="Rebasing 和合并(Merging)"></a>Rebasing 和合并(Merging)</h2></blockquote>
+<h3 id="我想撤销rebase-merge"><a href="#我想撤销rebase-merge" class="headerlink" title="我想撤销rebase/merge"></a>我想撤销rebase/merge</h3><blockquote>
+<p>你可以合并(merge)或rebase了一个错误的分支, 或者完成不了一个进行中的rebase/merge。Git 在进行危险操作的时候会把原始的HEAD保存在一个叫ORIG_HEAD的变量里, 所以要把分支恢复到rebase/merge前的状态是很容易的。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git reset --hard ORIG_HEAD</span><br></pre></td></tr></table></figure>
+
+<h3 id="我已经rebase过-但是我不想强推-force-push"><a href="#我已经rebase过-但是我不想强推-force-push" class="headerlink" title="我已经rebase过, 但是我不想强推(force push)"></a>我已经rebase过, 但是我不想强推(force push)</h3><blockquote>
+<p>不幸的是，如果你想把这些变化(changes)反应到远程分支上，你就必须得强推(force push)。是因你快进(Fast forward)了提交，改变了Git历史, 远程分支不会接受变化(changes)，除非强推(force push)。这就是许多人使用 merge 工作流, 而不是 rebasing 工作流的主要原因之一， 开发者的强推(force push)会使大的团队陷入麻烦。使用时需要注意，一种安全使用 rebase 的方法是，不要把你的变化(changes)反映到远程分支上, 而是按下面的做:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git checkout my-branch(my-branch)$ git rebase -i main(my-branch)$ git checkout main(main)$ git merge --ff-only my-branch</span><br></pre></td></tr></table></figure>
+
+<h3 id="我需要组合-combine-几个提交-commit"><a href="#我需要组合-combine-几个提交-commit" class="headerlink" title="我需要组合(combine)几个提交(commit)"></a>我需要组合(combine)几个提交(commit)</h3><blockquote>
+<p>假设你的工作分支将会做对于 <code>main</code> 的pull-request。一般情况下你不关心提交(commit)的时间戳，只想组合 <strong>所有</strong> 提交(commit) 到一个单独的里面, 然后重置(reset)重提交(recommit)。确保主(main)分支是最新的和你的变化都已经提交了, 然后:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git reset --soft main(my-branch)$ git commit -am &quot;New awesome feature&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你想要更多的控制, 想要保留时间戳, 你需要做交互式rebase (interactive rebase):</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git rebase -i main</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果没有相对的其它分支， 你将不得不相对自己的<code>HEAD</code> 进行 rebase。例如：你想组合最近的两次提交(commit), 你将相对于<code>HEAD~2</code> 进行rebase， 组合最近3次提交(commit), 相对于<code>HEAD~3</code>, 等等。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git rebase -i HEAD~2</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在你执行了交互式 rebase的命令(interactive rebase command)后, 你将在你的编辑器里看到类似下面的内容:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pick a9c8a1d Some refactoringpick 01b2fd8 New awesome featurepick b729ad5 fixuppick e3851e8 another fix# Rebase 8074d12..b729ad5 onto 8074d12## Commands:#  p, pick = use commit#  r, reword = use commit, but edit the commit message#  e, edit = use commit, but stop for amending#  s, squash = use commit, but meld into previous commit#  f, fixup = like &quot;squash&quot;, but discard this commit&#x27;s log message#  x, exec = run command (the rest of the line) using shell## These lines can be re-ordered; they are executed from top to bottom.## If you remove a line here THAT COMMIT WILL BE LOST.## However, if you remove everything, the rebase will be aborted.## Note that empty commits are commented out</span><br></pre></td></tr></table></figure>
+
+<p>所有以 <code>#</code> 开头的行都是注释, 不会影响 rebase.</p>
+<blockquote>
+<p>然后，你可以用任何上面命令列表的命令替换 <code>pick</code>, 你也可以通过删除对应的行来删除一个提交(commit)。</p>
+</blockquote>
+<blockquote>
+<p>例如, 如果你想 <strong>单独保留最旧(first)的提交(commit),组合所有剩下的到第二个里面</strong>, 你就应该编辑第二个提交(commit)后面的每个提交(commit) 前的单词为 <code>f</code>:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pick a9c8a1d Some refactoringpick 01b2fd8 New awesome featuref b729ad5 fixupf e3851e8 another fix</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你想组合这些提交(commit) <strong>并重命名这个提交(commit)</strong>, 你应该在第二个提交(commit)旁边添加一个<code>r</code>，或者更简单的用<code>s</code> 替代 <code>f</code>:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pick a9c8a1d Some refactoringpick 01b2fd8 New awesome features b729ad5 fixups e3851e8 another fix</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你可以在接下来弹出的文本提示框里重命名提交(commit)。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Newer, awesomer features# Please enter the commit message for your changes. Lines starting# with &#x27;#&#x27; will be ignored, and an empty message aborts the commit.# rebase in progress; onto 8074d12# You are currently editing a commit while rebasing branch &#x27;main&#x27; on &#x27;8074d12&#x27;.## Changes to be committed:# modified:   README.md#</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果成功了, 你应该看到类似下面的内容:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ Successfully rebased and updated refs/heads/main.</span><br></pre></td></tr></table></figure>
+
+<h4 id="安全合并-merging-策略"><a href="#安全合并-merging-策略" class="headerlink" title="安全合并(merging)策略"></a>安全合并(merging)策略</h4><blockquote>
+<p><code>--no-commit</code> 执行合并(merge)但不自动提交, 给用户在做提交前检查和修改的机会。<code>no-ff</code> 会为特性分支(feature branch)的存在过留下证据, 保持项目历史一致（更多Git资料，参见<a href="http://mp.weixin.qq.com/s?__biz=MzI1NDY0MTkzNQ==&mid=2247496619&idx=1&sn=712295e82ce4167afa490502dc6aa279&chksm=e9c0a1cbdeb728dd12f134689e60ae287c144fbad4bc6f3c2ba1df7ca950a57aebe4dd87f4fe&scene=21#wechat_redirect">IDEA 中如何完成 Git 版本回退？</a>）。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git merge --no-ff --no-commit my-branch</span><br></pre></td></tr></table></figure>
+
+<h4 id="我需要将一个分支合并成一个提交-commit"><a href="#我需要将一个分支合并成一个提交-commit" class="headerlink" title="我需要将一个分支合并成一个提交(commit)"></a>我需要将一个分支合并成一个提交(commit)</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git merge --squash my-branch</span><br></pre></td></tr></table></figure>
+
+<h4 id="我只想组合-combine-未推的提交-unpushed-commit"><a href="#我只想组合-combine-未推的提交-unpushed-commit" class="headerlink" title="我只想组合(combine)未推的提交(unpushed commit)"></a>我只想组合(combine)未推的提交(unpushed commit)</h4><blockquote>
+<p>有时候，在将数据推向上游之前，你有几个正在进行的工作提交(commit)。这时候不希望把已经推(push)过的组合进来，因为其他人可能已经有提交(commit)引用它们了。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git rebase -i @&#123;u&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这会产生一次交互式的rebase(interactive rebase), 只会列出没有推(push)的提交(commit)， 在这个列表时进行reorder/fix/squash 都是安全的。</p>
+</blockquote>
+<h3 id="检查是否分支上的所有提交-commit-都合并-merge-过了"><a href="#检查是否分支上的所有提交-commit-都合并-merge-过了" class="headerlink" title="检查是否分支上的所有提交(commit)都合并(merge)过了"></a>检查是否分支上的所有提交(commit)都合并(merge)过了</h3><blockquote>
+<p>检查一个分支上的所有提交(commit)是否都已经合并(merge)到了其它分支, 你应该在这些分支的head(或任何 commits)之间做一次diff:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git log --graph --left-right --cherry-pick --oneline HEAD...feature/120-on-scroll</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这会告诉你在一个分支里有而另一个分支没有的所有提交(commit), 和分支之间不共享的提交(commit)的列表。另一个做法可以是:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git log main ^feature/120-on-scroll --no-merges</span><br></pre></td></tr></table></figure>
+
+<h3 id="交互式rebase-interactive-rebase-可能出现的问题"><a href="#交互式rebase-interactive-rebase-可能出现的问题" class="headerlink" title="交互式rebase(interactive rebase)可能出现的问题"></a>交互式rebase(interactive rebase)可能出现的问题</h3><h4 id="这个rebase-编辑屏幕出现’noop’"><a href="#这个rebase-编辑屏幕出现’noop’" class="headerlink" title="这个rebase 编辑屏幕出现’noop’"></a>这个rebase 编辑屏幕出现’noop’</h4><blockquote>
+<p>如果你看到的是这样:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">noop</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这意味着你rebase的分支和当前分支在同一个提交(commit)上, 或者 <em>领先(ahead)</em> 当前分支。你可以尝试:</p>
 </blockquote>
 <ul>
-<li><strong>开源是人类进步的基石</strong></li>
+<li>检查确保主(main)分支没有问题</li>
+<li>rebase  <code>HEAD~2</code> 或者更早</li>
 </ul>
-<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
-<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
-</li>
-<li><p>简单实用的删除图像背景/抠图工具</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
-<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
-<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
-</ul>
-<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
-<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>备注：我一直在用哈</li>
-</ul>
-<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
-<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
-</li>
-<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
-</li>
-</ul>
-<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
-<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
-<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
-</li>
-<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
-</li>
-</ul>
-<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
-<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
-<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
-</ul>
-<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
-<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
-<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
-</ul>
-<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
-<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
-<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
-</ul>
-<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
-<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
-<li>简介：在命令行看股票走势的工具</li>
-<li></li>
-</ul>
-<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
-<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
-<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
-</ul>
-<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
-<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
-<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
-</ul>
-<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
-<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
-</li>
-<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
-</li>
-</ul>
-<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
-<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
-<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
-<li>修改、合并 PDF 文档</li>
-<li>自动生成书签</li>
-<li>书签编辑器</li>
-<li>高速无损地导出文件中的图片</li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
-<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
-<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
-</ul>
-<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
-<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
-<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
-<li></li>
-</ul>
-<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
-<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
-<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
-</ul>
-<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
-<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
-<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
-</ul>
-<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
-<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
-<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
-</ul>
+<h4 id="有冲突的情况"><a href="#有冲突的情况" class="headerlink" title="有冲突的情况"></a>有冲突的情况</h4><blockquote>
+<p>如果你不能成功的完成rebase, 你可能必须要解决冲突。</p>
+</blockquote>
+<p>首先执行 <code>git status</code> 找出哪些文件有冲突:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git statusOn branch my-branchChanges not staged for commit:  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory) modified:   README.md</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子里面, <code>README.md</code> 有冲突。打开这个文件找到类似下面的内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD   some code   =========   some code   &gt;&gt;&gt;&gt;&gt;&gt;&gt; new-commit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你需要解决新提交的代码(示例里, 从中间<code>==</code>线到<code>new-commit</code>的地方)与<code>HEAD</code> 之间不一样的地方.</p>
+</blockquote>
+<p>有时候这些合并非常复杂，你应该使用可视化的差异编辑器(visual diff editor):</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main*)$ git mergetool -t opendiff</span><br></pre></td></tr></table></figure>
+
+<p>在你解决完所有冲突和测试过后, <code>git add</code> 变化了的(changed)文件, 然后用<code>git rebase --continue</code> 继续rebase。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git add README.md(my-branch)$ git rebase --continue</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果在解决完所有的冲突过后，得到了与提交前一样的结果, 可以执行<code>git rebase --skip</code>。</p>
+</blockquote>
+<p>任何时候你想结束整个rebase 过程，回来rebase前的分支状态, 你可以做:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(my-branch)$ git rebase --abort</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<h2 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h2></blockquote>
+<h3 id="暂存所有改动"><a href="#暂存所有改动" class="headerlink" title="暂存所有改动"></a>暂存所有改动</h3><p>暂存你工作目录下的所有改动</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你可以使用<code>-u</code>来排除一些文件</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash -u</span><br></pre></td></tr></table></figure>
+
+<h3 id="暂存指定文件"><a href="#暂存指定文件" class="headerlink" title="暂存指定文件"></a>暂存指定文件</h3><p>假设你只想暂存某一个文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash push working-directory-path/filename.ext</span><br></pre></td></tr></table></figure>
+
+<p>假设你想暂存多个文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash push working-directory-path/filename1.ext working-directory-path/filename2.ext</span><br></pre></td></tr></table></figure>
+
+<h3 id="暂存时记录消息"><a href="#暂存时记录消息" class="headerlink" title="暂存时记录消息"></a>暂存时记录消息</h3><blockquote>
+<p>这样你可以在<code>list</code>时看到它</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash save &lt;message&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash push -m &lt;message&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用某个指定暂存"><a href="#使用某个指定暂存" class="headerlink" title="使用某个指定暂存"></a>使用某个指定暂存</h3><p>首先你可以查看你的<code>stash</code>记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash list</span><br></pre></td></tr></table></figure>
+
+<p>然后你可以<code>apply</code>某个<code>stash</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash apply &quot;stash@&#123;n&#125;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>此处， ‘n’是<code>stash</code>在栈中的位置，最上层的<code>stash</code>会是0</p>
+<p>除此之外，也可以使用时间标记(假如你能记得的话)。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash apply &quot;stash@&#123;2.hours.ago&#125;&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="暂存时保留未暂存的内容"><a href="#暂存时保留未暂存的内容" class="headerlink" title="暂存时保留未暂存的内容"></a>暂存时保留未暂存的内容</h3><blockquote>
+<p>你需要手动create一个<code>stash commit</code>， 然后使用<code>git stash store</code>。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git stash create$ git stash store -m &quot;commit-message&quot; CREATED_SHA1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<h2 id="杂项-Miscellaneous-Objects"><a href="#杂项-Miscellaneous-Objects" class="headerlink" title="杂项(Miscellaneous Objects)"></a>杂项(Miscellaneous Objects)</h2></blockquote>
+<h3 id="克隆所有子模块"><a href="#克隆所有子模块" class="headerlink" title="克隆所有子模块"></a>克隆所有子模块</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git clone --recursive git://github.com/foo/bar.git</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果已经克隆了:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git submodule update --init --recursive</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除标签-tag"><a href="#删除标签-tag" class="headerlink" title="删除标签(tag)"></a>删除标签(tag)</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git tag -d &lt;tag_name&gt;$ git push &lt;remote&gt; :refs/tags/&lt;tag_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="恢复已删除标签-tag"><a href="#恢复已删除标签-tag" class="headerlink" title="恢复已删除标签(tag)"></a>恢复已删除标签(tag)</h3><blockquote>
+<p>如果你想恢复一个已删除标签(tag), 可以按照下面的步骤: 首先, 需要找到无法访问的标签(unreachable tag):</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git fsck --unreachable | grep tag</span><br></pre></td></tr></table></figure>
+
+<p>记下这个标签(tag)的hash，然后用Git的 update-ref</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git update-ref refs/tags/&lt;tag_name&gt; &lt;hash&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这时你的标签(tag)应该已经恢复了。</p>
+</blockquote>
+<h3 id="已删除补丁-patch"><a href="#已删除补丁-patch" class="headerlink" title="已删除补丁(patch)"></a>已删除补丁(patch)</h3><blockquote>
+<p>如果某人在 GitHub 上给你发了一个pull request, 但是然后他删除了他自己的原始 fork, 你将没法克隆他们的提交(commit)或使用 <code>git am</code>。在这种情况下, 最好手动的查看他们的提交(commit)，并把它们拷贝到一个本地新分支，然后做提交。</p>
+</blockquote>
+<p>做完提交后, 再修改作者，参见变更作者。然后, 应用变化, 再发起一个新的pull request。</p>
+<hr>
+<blockquote>
+<h2 id="跟踪文件-Tracking-Files"><a href="#跟踪文件-Tracking-Files" class="headerlink" title="跟踪文件(Tracking Files)"></a>跟踪文件(Tracking Files)</h2></blockquote>
+<h3 id="我只想改变一个文件名字的大小写，而不修改内容"><a href="#我只想改变一个文件名字的大小写，而不修改内容" class="headerlink" title="我只想改变一个文件名字的大小写，而不修改内容"></a>我只想改变一个文件名字的大小写，而不修改内容</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git mv --force myfile MyFile</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想从Git删除一个文件，但保留该文件"><a href="#我想从Git删除一个文件，但保留该文件" class="headerlink" title="我想从Git删除一个文件，但保留该文件"></a>我想从Git删除一个文件，但保留该文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git rm --cached log.txt</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<h2 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置(Configuration)"></a>配置(Configuration)</h2></blockquote>
+<h3 id="我想给一些Git命令添加别名-alias"><a href="#我想给一些Git命令添加别名-alias" class="headerlink" title="我想给一些Git命令添加别名(alias)"></a>我想给一些Git命令添加别名(alias)</h3><p>在 OS X 和 Linux 下, 你的 Git的配置文件储存在 <code>~/.gitconfig</code>。我在<code>[alias]</code> 部分添加了一些快捷别名(和一些我容易拼写错误的)，如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[alias]    a = add    amend = commit --amend    c = commit    ca = commit --amend    ci = commit -a    co = checkout    d = diff    dc = diff --changed    ds = diff --staged    f = fetch    loll = log --graph --decorate --pretty=oneline --abbrev-commit    m = merge    one = log --pretty=oneline    outstanding = rebase -i @&#123;u&#125;    s = status    unpushed = log @&#123;u&#125;    wc = whatchanged    wip = rebase -i @&#123;u&#125;    zap = fetch -p</span><br></pre></td></tr></table></figure>
+
+<h3 id="我想缓存一个仓库-repository-的用户名和密码"><a href="#我想缓存一个仓库-repository-的用户名和密码" class="headerlink" title="我想缓存一个仓库(repository)的用户名和密码"></a>我想缓存一个仓库(repository)的用户名和密码</h3><blockquote>
+<p>你可能有一个仓库需要授权，这时你可以缓存用户名和密码，而不用每次推/拉(push/pull)的时候都输入，Credential helper能帮你。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global credential.helper cache# Set git to use the credential memory cache</span><br><span class="line">$ git config --global credential.helper &#x27;cache --timeout=3600&#x27;# Set the cache to timeout after 1 hour (setting is in seconds)</span><br></pre></td></tr></table></figure>
+
+<h3 id="我不知道我做错了些什么"><a href="#我不知道我做错了些什么" class="headerlink" title="我不知道我做错了些什么"></a>我不知道我做错了些什么</h3><blockquote>
+<p>你把事情搞砸了：你 <code>重置(reset)</code> 了一些东西, 或者你合并了错误的分支, 亦或你强推了后找不到你自己的提交(commit)了。有些时候, 你一直都做得很好, 但你想回到以前的某个状态。</p>
+</blockquote>
+<blockquote>
+<p>这就是 <code>git reflog</code> 的目的， <code>reflog</code> 记录对分支顶端(the tip of a branch)的任何改变, 即使那个顶端没有被任何分支或标签引用。基本上, 每次HEAD的改变, 一条新的记录就会增加到<code>reflog</code>。遗憾的是，这只对本地分支起作用，且它只跟踪动作 (例如，不会跟踪一个没有被记录的文件的任何改变)。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(main)$ git reflog0a2e358 HEAD@&#123;0&#125;: reset: moving to HEAD~20254ea7 HEAD@&#123;1&#125;: checkout: moving from 2.2 to mainc10f740 HEAD@&#123;2&#125;: checkout: moving from main to 2.2</span><br></pre></td></tr></table></figure>
+
+<p>上面的reflog展示了从main分支签出(checkout)到2.2 分支，然后再签回。那里，还有一个硬重置(hard reset)到一个较旧的提交。最新的动作出现在最上面以 <code>HEAD@&#123;0&#125;</code>标识.</p>
+<blockquote>
+<p>如果事实证明你不小心回移(move back)了提交(commit), reflog 会包含你不小心回移前main上指向的提交(0254ea7)。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git reset --hard 0254ea7</span><br></pre></td></tr></table></figure>
+
+<p>然后使用git reset就可以把main改回到之前的commit，这提供了一个在历史被意外更改情况下的安全网</p>
 ]]></content>
       <categories>
-        <category>github</category>
+        <category>git</category>
       </categories>
       <tags>
         <tag>待续</tag>
-        <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1925,6 +2493,33 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode_788. 旋转数字</title>
+    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<ul>
+<li>难度：简单</li>
+<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
+<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>思路</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>执行效果也是非常的好。</p>
+</li>
+</ul>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>LeetCode</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode_512.游戏玩家分析2</title>
     <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
@@ -1953,33 +2548,6 @@
         <tag>完结</tag>
         <tag>SQL</tag>
         <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_788. 旋转数字</title>
-    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
-    <content><![CDATA[<ul>
-<li>难度：简单</li>
-<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
-<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><p>思路</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>执行效果也是非常的好。</p>
-</li>
-</ul>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>LeetCode</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
