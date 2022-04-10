@@ -1,3 +1,12 @@
 1. JSON
-2. CONNECT-TYPE
-3. 
+2. yaml
+3. rsa文件加密
+4. leetcode
+5. cookies、session、token
+6. 三次握手四次挥手
+7. request
+8. http协议
+9. 显式等待
+10. 切换
+11. pytest
+12. 设计模式-单例
