@@ -3498,13 +3498,13 @@
 <li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
 </li>
 <li><p>简介：破解密码</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">  hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line">  </span><br><span class="line">hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="reveal-js"><a href="#reveal-js" class="headerlink" title="reveal.js"></a>reveal.js</h2><ul>
 <li><p>地址：<a href="https://github.com/hakimel/reveal.js">https://github.com/hakimel/reveal.js</a></p>
 </li>
 <li><p>简介：HTML演示框架</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">reveal.js is an open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free. Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">reveal.js is an open source HTML presentation framework. </span><br><span class="line">It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></li>
 <li><p>备注：我一直在用哈</p>
 </li>
 </ul>
