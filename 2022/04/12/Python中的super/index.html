@@ -84,7 +84,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">2.9k</span>
+            <span class="post-count">3.1k</span>
         </span>
     </span>
 
@@ -93,7 +93,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">13 分钟</span>
+            <span class="post-count">14 分钟</span>
         </span>
     </span>
 </div>
@@ -121,6 +121,7 @@
 </ul>
 </li>
 <li><p>对于pycharm这样的IDE，会提示你如下图：缺少对超类__init__的调用，你点击蓝色的添加超类调用，就会生成代码</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/04/12/2cb8cf31b925d19b.png"></p>
 <p><img src="C:/Users/songqin008/AppData/Roaming/Typora/typora-user-images/1649662766028.png" alt="1649662766028"></p>
 </li>
 <li><p>代码2：添加了超类的调用</p>
@@ -225,11 +226,36 @@
 <li>这么理解不知道是否能明白。</li>
 <li>所以很多人会认为super是调用父类的同名函数，这是不够准确的。</li>
 </ul>
-<h1 id="super的源码"><a href="#super的源码" class="headerlink" title="super的源码"></a>super的源码</h1><ul>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><ul>
+<li><p>super的用法，有四种，13最常用</p>
+<ul>
+<li><strong>super()</strong></li>
+<li>super(type)</li>
+<li><strong>super(type,obj)</strong></li>
+<li>super(type1,type2)</li>
+</ul>
+</li>
+<li><p>super在多重继承(C-&gt;B-&gt;A)的时候可以选择性跳过某个父节点</p>
+</li>
+<li><p>super在多重继承(D-&gt;C|B-&gt;A)的时候要注意其MRO</p>
+</li>
+<li><p>显式调用super，传入参数，搜索MRO</p>
+</li>
+<li><p>super中有2个参数，第一个是type（也就是一个class），第二个是type或者ojbect，第二个参数决定了这个函数？bind到哪个object或者class上。同时第二个参数决定了使用哪个mro。第一个参数也决定了在mro这个链上从哪个class开始找</p>
+</li>
+<li><p>super还可以在函数外调用</p>
+</li>
+<li><p>难一些的是bound和unbound</p>
+</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h1 id="附录1：super的源码"><a href="#附录1：super的源码" class="headerlink" title="附录1：super的源码"></a>附录1：super的源码</h1><ul>
 <li><p>在typeobject.c这个文件中</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">PyTypeObject PySuper_Type = &#123;</span><br><span class="line">    PyVarObject_HEAD_INIT(&amp;PyType_Type, <span class="number">0</span>)</span><br><span class="line">    <span class="string">&quot;super&quot;</span>,                                    <span class="comment">/* tp_name */</span></span><br><span class="line">    <span class="keyword">sizeof</span>(superobject),                        <span class="comment">/* tp_basicsize */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_itemsize */</span></span><br><span class="line">    <span class="comment">/* methods */</span></span><br><span class="line">    super_dealloc,                              <span class="comment">/* tp_dealloc */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_vectorcall_offset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_getattr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_setattr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_async */</span></span><br><span class="line">    super_repr,                                 <span class="comment">/* tp_repr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_number */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_sequence */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_mapping */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_hash */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_call */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_str */</span></span><br><span class="line">    super_getattro,                             <span class="comment">/* tp_getattro */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_setattro */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_buffer */</span></span><br><span class="line">    Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC |</span><br><span class="line">        Py_TPFLAGS_BASETYPE,                    <span class="comment">/* tp_flags */</span></span><br><span class="line">    super_doc,                                  <span class="comment">/* tp_doc */</span></span><br><span class="line">    super_traverse,                             <span class="comment">/* tp_traverse */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_clear */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_richcompare */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_weaklistoffset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_iter */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_iternext */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_methods */</span></span><br><span class="line">    super_members,                              <span class="comment">/* tp_members */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_getset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_base */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_dict */</span></span><br><span class="line">    super_descr_get,                            <span class="comment">/* tp_descr_get */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_descr_set */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_dictoffset */</span></span><br><span class="line">    super_init,                                 <span class="comment">/* tp_init */</span></span><br><span class="line">    PyType_GenericAlloc,                        <span class="comment">/* tp_alloc */</span></span><br><span class="line">    PyType_GenericNew,                          <span class="comment">/* tp_new */</span></span><br><span class="line">    PyObject_GC_Del,                            <span class="comment">/* tp_free */</span></span><br><span class="line">    .tp_vectorcall = (vectorcallfunc)super_vectorcall,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="super在pythondoc上的解释"><a href="#super在pythondoc上的解释" class="headerlink" title="super在pythondoc上的解释"></a>super在pythondoc上的解释</h1><h2 id="英文版-super-type-object-or-type"><a href="#英文版-super-type-object-or-type" class="headerlink" title="英文版 super([type[, object-or-type]])"></a>英文版 super([type[, object-or-type]])</h2><p>Return a proxy object that delegates method calls to a parent or sibling class of type. This is useful for accessing inherited methods that have been overridden in a class.</p>
+<h1 id="附录2：super在pythondoc上的解释"><a href="#附录2：super在pythondoc上的解释" class="headerlink" title="附录2：super在pythondoc上的解释"></a>附录2：super在pythondoc上的解释</h1><h2 id="英文版-super-type-object-or-type"><a href="#英文版-super-type-object-or-type" class="headerlink" title="英文版 super([type[, object-or-type]])"></a>英文版 super([type[, object-or-type]])</h2><p>Return a proxy object that delegates method calls to a parent or sibling class of type. This is useful for accessing inherited methods that have been overridden in a class.</p>
 <p>The object-or-type determines the method resolution order to be searched. The search starts from the class right after the type.</p>
 <p>For example, if __mro__ of object-or-type is D -&gt; B -&gt; C -&gt; A -&gt; object and the value of type is B, then super() searches C -&gt; A -&gt; object.</p>
 <p>The __mro__ attribute of the object-or-type lists the method resolution search order used by both getattr() and super(). The attribute is dynamic and can change whenever the inheritance hierarchy is updated.</p>
