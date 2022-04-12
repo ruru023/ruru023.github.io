@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/04/12/LeetCode-806-%E5%86%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%9C%80%E8%A6%81%E7%9A%84%E8%A1%8C%E6%95%B0/</loc>
+    <loc>http://example.com/todo/Python%E4%B8%AD%E7%9A%84super.html</loc>
     
     <lastmod>2022-04-12</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>http://example.com/todo/Python%E4%B8%AD%E7%9A%84super.html</loc>
+    <loc>http://example.com/2022/04/12/LeetCode-806-%E5%86%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%9C%80%E8%A6%81%E7%9A%84%E8%A1%8C%E6%95%B0/</loc>
     
-    <lastmod>2022-04-11</lastmod>
+    <lastmod>2022-04-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -327,13 +327,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/git/</loc>
-    <lastmod>2022-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/SQL/</loc>
     <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -342,6 +335,13 @@
   
   <url>
     <loc>http://example.com/tags/LeetCode/</loc>
+    <lastmod>2022-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/git/</loc>
     <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -441,14 +441,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/git/</loc>
+    <loc>http://example.com/categories/SQL/</loc>
     <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/SQL/</loc>
+    <loc>http://example.com/categories/git/</loc>
     <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
