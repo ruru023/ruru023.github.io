@@ -430,7 +430,171 @@
         <category>python</category>
       </categories>
       <tags>
+        <tag>完结</tag>
         <tag>LeetCode</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python中的super</title>
+    <url>/2022/04/12/Python%E4%B8%AD%E7%9A%84super/</url>
+    <content><![CDATA[<h1 id="Python中的super"><a href="#Python中的super" class="headerlink" title="Python中的super"></a>Python中的super</h1><blockquote>
+<p>你嫌啰嗦就直接看示例</p>
+<p><a href="https://www.bilibili.com/video/BV1FL4y1E7xK">https://www.bilibili.com/video/BV1FL4y1E7xK</a>  参考了码农高天的视频</p>
+</blockquote>
+<h1 id="先看简单示例"><a href="#先看简单示例" class="headerlink" title="先看简单示例"></a>先看简单示例</h1><ul>
+<li><p>代码0：基类的</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,name</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;A init...&#x27;</span>)</span><br><span class="line">        self.name = name</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> saying&#x27;</span>)</span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">drink</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;drinking...&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>代码1：子类（第一个版本）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B1</span>(<span class="title class_ inherited__">A</span>):  <span class="comment">#没有对super调用</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B1 init...&#x27;</span>)</span><br><span class="line"></span><br><span class="line">b = B1(<span class="string">&#x27;wuxianfeng&#x27;</span>)  <span class="comment">#B1 init...</span></span><br><span class="line">b.drink()  <span class="comment">#drinking...</span></span><br><span class="line">b.say()    <span class="comment">#报错了，没属性name  #AttributeError: &#x27;B1&#x27; object has no attribute &#x27;name&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>你会输出B init…，但没有输出A init…，所以你这个继承丢失了父类A的初始化。</li>
+</ul>
+</li>
+<li><p>对于pycharm这样的IDE，会提示你如下图：缺少对超类__init__的调用，你点击蓝色的添加超类调用，就会生成代码</p>
+<p><img src="C:/Users/songqin008/AppData/Roaming/Typora/typora-user-images/1649662766028.png" alt="1649662766028"></p>
+</li>
+<li><p>代码2：添加了超类的调用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B2</span>(<span class="title class_ inherited__">A</span>):  <span class="comment">#有对super调用</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__(name) <span class="comment">#点击蓝色的添加超类调用产生的代码</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B2 init...&#x27;</span>)</span><br><span class="line">b = B2(<span class="string">&#x27;wuxianfeng&#x27;</span>)  <span class="comment">#A init...  # B2 init...</span></span><br><span class="line">b.drink()  <span class="comment">#drinking...</span></span><br><span class="line">b.say()    <span class="comment">#wuxianfeng saying</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>你可以想见super()的意思就是B2的父类A，所以我们可以换个写法</li>
+</ul>
+</li>
+<li><p>代码3：换一个写法的调用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B3</span>(<span class="title class_ inherited__">A</span>):  <span class="comment">#有对super调用</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        A.__init__(self,name)  <span class="comment">#注意A没有()，init的调用self不能少，name也是要的（跟A的初始化函数有关）</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B3 init...&#x27;</span>)</span><br><span class="line"></span><br><span class="line">b = B3(<span class="string">&#x27;wuxianfeng&#x27;</span>)</span><br><span class="line">b.drink()</span><br><span class="line">b.say()</span><br></pre></td></tr></table></figure></li>
+<li><p>代码4：再换一个写法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B4</span>(<span class="title class_ inherited__">A</span>):  <span class="comment">#有对super调用</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        <span class="built_in">super</span>(B4,self).__init__(name)   <span class="comment">#注意super(当前类名,self).__init__(父类初始化需要的参数)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B4 init...&#x27;</span>)</span><br><span class="line">b = B4(<span class="string">&#x27;wuxianfeng&#x27;</span>)</span><br><span class="line">b.drink()</span><br><span class="line">b.say()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="super的DOC"><a href="#super的DOC" class="headerlink" title="super的DOC"></a>super的DOC</h1><ul>
+<li><p>所以super不是方法不是函数也不是关键字啥的，是个类！</p>
+</li>
+<li><p>在IDE中点击super能得到如下提示，摘录部分，也就是super.__doc__</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">super</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    super() -&gt; same as super(__class__, &lt;first argument&gt;)</span></span><br><span class="line"><span class="string">    super(type) -&gt; unbound super object</span></span><br><span class="line"><span class="string">    super(type, obj) -&gt; bound super object; requires isinstance(obj, type)</span></span><br><span class="line"><span class="string">    super(type, type2) -&gt; bound super object; requires issubclass(type2, type)</span></span><br><span class="line"><span class="string">    Typical use to call a cooperative superclass method:</span></span><br><span class="line"><span class="string">    class C(B):</span></span><br><span class="line"><span class="string">        def meth(self, arg):</span></span><br><span class="line"><span class="string">            super().meth(arg)</span></span><br><span class="line"><span class="string">    This works for class methods too:</span></span><br><span class="line"><span class="string">    class C(B):</span></span><br><span class="line"><span class="string">        @classmethod</span></span><br><span class="line"><span class="string">        def cmeth(cls, arg):</span></span><br><span class="line"><span class="string">            super().cmeth(arg)</span></span><br></pre></td></tr></table></figure></li>
+<li><p>四种用法</p>
+<ul>
+<li><strong>super()，等价于super(__class__, &lt;first argument&gt;)</strong></li>
+<li>super(type),unbound super object</li>
+<li><strong>super(type,obj),bound super object，requires isinstance(obj, type)</strong></li>
+<li>super(type1,type2),bound super object，requires issubclass(type2, type)</li>
+</ul>
+</li>
+<li><p>其实我们简单来说，你用的无非是1和3</p>
+</li>
+<li><p>稍微进一步你可能要去理解bound和unbound</p>
+</li>
+</ul>
+<h1 id="super的源码"><a href="#super的源码" class="headerlink" title="super的源码"></a>super的源码</h1><ul>
+<li><p>在typeobject.c这个文件中</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">PyTypeObject PySuper_Type = &#123;</span><br><span class="line">    PyVarObject_HEAD_INIT(&amp;PyType_Type, <span class="number">0</span>)</span><br><span class="line">    <span class="string">&quot;super&quot;</span>,                                    <span class="comment">/* tp_name */</span></span><br><span class="line">    <span class="keyword">sizeof</span>(superobject),                        <span class="comment">/* tp_basicsize */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_itemsize */</span></span><br><span class="line">    <span class="comment">/* methods */</span></span><br><span class="line">    super_dealloc,                              <span class="comment">/* tp_dealloc */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_vectorcall_offset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_getattr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_setattr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_async */</span></span><br><span class="line">    super_repr,                                 <span class="comment">/* tp_repr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_number */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_sequence */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_mapping */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_hash */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_call */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_str */</span></span><br><span class="line">    super_getattro,                             <span class="comment">/* tp_getattro */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_setattro */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_buffer */</span></span><br><span class="line">    Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC |</span><br><span class="line">        Py_TPFLAGS_BASETYPE,                    <span class="comment">/* tp_flags */</span></span><br><span class="line">    super_doc,                                  <span class="comment">/* tp_doc */</span></span><br><span class="line">    super_traverse,                             <span class="comment">/* tp_traverse */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_clear */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_richcompare */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_weaklistoffset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_iter */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_iternext */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_methods */</span></span><br><span class="line">    super_members,                              <span class="comment">/* tp_members */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_getset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_base */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_dict */</span></span><br><span class="line">    super_descr_get,                            <span class="comment">/* tp_descr_get */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_descr_set */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_dictoffset */</span></span><br><span class="line">    super_init,                                 <span class="comment">/* tp_init */</span></span><br><span class="line">    PyType_GenericAlloc,                        <span class="comment">/* tp_alloc */</span></span><br><span class="line">    PyType_GenericNew,                          <span class="comment">/* tp_new */</span></span><br><span class="line">    PyObject_GC_Del,                            <span class="comment">/* tp_free */</span></span><br><span class="line">    .tp_vectorcall = (vectorcallfunc)super_vectorcall,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="super在pythondoc上的解释"><a href="#super在pythondoc上的解释" class="headerlink" title="super在pythondoc上的解释"></a>super在pythondoc上的解释</h1><h2 id="英文版-super-type-object-or-type"><a href="#英文版-super-type-object-or-type" class="headerlink" title="英文版 super([type[, object-or-type]])"></a>英文版 super([type[, object-or-type]])</h2><p>Return a proxy object that delegates method calls to a parent or sibling class of type. This is useful for accessing inherited methods that have been overridden in a class.</p>
+<p>The object-or-type determines the method resolution order to be searched. The search starts from the class right after the type.</p>
+<p>For example, if __mro__ of object-or-type is D -&gt; B -&gt; C -&gt; A -&gt; object and the value of type is B, then super() searches C -&gt; A -&gt; object.</p>
+<p>The __mro__ attribute of the object-or-type lists the method resolution search order used by both getattr() and super(). The attribute is dynamic and can change whenever the inheritance hierarchy is updated.</p>
+<p>If the second argument is omitted, the super object returned is unbound. If the second argument is an object, isinstance(obj, type) must be true. If the second argument is a type, issubclass(type2, type) must be true (this is useful for classmethods).</p>
+<p>There are two typical use cases for super. In a class hierarchy with single inheritance, super can be used to refer to parent classes without naming them explicitly, thus making the code more maintainable. This use closely parallels the use of super in other programming languages.</p>
+<p>The second use case is to support cooperative multiple inheritance in a dynamic execution environment. This use case is unique to Python and is not found in statically compiled languages or languages that only support single inheritance. This makes it possible to implement “diamond diagrams” where multiple base classes implement the same method. Good design dictates that such implementations have the same calling signature in every case (because the order of calls is determined at runtime, because that order adapts to changes in the class hierarchy, and because that order can include sibling classes that are unknown prior to runtime).</p>
+<p>For both use cases, a typical superclass call looks like this:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>(<span class="title class_ inherited__">B</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">method</span>(<span class="params">self, arg</span>):</span><br><span class="line">        <span class="built_in">super</span>().method(arg)    <span class="comment"># This does the same thing as:</span></span><br><span class="line">                               <span class="comment"># super(C, self).method(arg)</span></span><br></pre></td></tr></table></figure>
+
+
+<p>In addition to method lookups, super() also works for attribute lookups. One possible use case for this is calling descriptors in a parent or sibling class.</p>
+<p>Note that super() is implemented as part of the binding process for explicit dotted attribute lookups such as super().__getitem__(name). It does so by implementing its own __getattribute__() method for searching classes in a predictable order that supports cooperative multiple inheritance. Accordingly, super() is undefined for implicit lookups using statements or operators such as super()[name].</p>
+<p>Also note that, aside from the zero argument form, super() is not limited to use inside methods. The two argument form specifies the arguments exactly and makes the appropriate references. The zero argument form only works inside a class definition, as the compiler fills in the necessary details to correctly retrieve the class being defined, as well as accessing the current instance for ordinary methods.</p>
+<p>For practical suggestions on how to design cooperative classes using super(), see guide to using super().</p>
+<h2 id="中文版-super-type-object-or-type"><a href="#中文版-super-type-object-or-type" class="headerlink" title="中文版 super([type[, object-or-type]])"></a>中文版 super([type[, object-or-type]])</h2><p>返回一个<strong>代理对象</strong>，它会将方法调用委托给 type 的父类或兄弟类。 这对于访问已在类中被重载的继承方法很有用。</p>
+<p>object-or-type 确定用于搜索的 method resolution order。 搜索会从 type 之后的类开始。</p>
+<p>举例来说，如果 object-or-type 的 __mro__ 为 D -&gt; B -&gt; C -&gt; A -&gt; object 并且 type 的值为 B，则 super() 将会搜索 C -&gt; A -&gt; object。</p>
+<p>object-or-type 的__mro__ 属性列出了 getattr() 和 super() 所共同使用的方法解析搜索顺序。 该属性是动态的，可以在任何继承层级结构发生更新的时候被改变。</p>
+<p>如果省略第二个参数，则返回的超类对象是未绑定的。 如果第二个参数为一个对象，则 isinstance(obj, type) 必须为真值。 如果第二个参数为一个类型，则 issubclass(type2, type) 必须为真值（这适用于类方法）。</p>
+<p>super 有两个典型用例。 在具有单继承的类层级结构中，super 可用来引用父类而不必显式地指定它们的名称，从而令代码更易维护。 这种用法与其他编程语言中 super 的用法非常相似。</p>
+<p>第二个用例是在动态执行环境中支持协作多重继承。 此用例为 Python 所独有而不存在于静态编码语言或仅支持单继承的语言当中。 这使用实现“菱形图”成为可能，即有多个基类实现相同的方法。 好的设计强制要求这样的方法在每个情况下都具有相同的调用签名（因为调用顺序是在运行时确定的，也因为这个顺序要适应类层级结构的更改，还因为这个顺序可能包括在运行时之前未知的兄弟类）。</p>
+<p>对于以上两个用例，典型的超类调用看起来是这样的:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>(<span class="title class_ inherited__">B</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">method</span>(<span class="params">self, arg</span>):</span><br><span class="line">        <span class="built_in">super</span>().method(arg)    <span class="comment"># This does the same thing as:</span></span><br><span class="line">                               <span class="comment"># super(C, self).method(arg)</span></span><br></pre></td></tr></table></figure>
+
+
+<p>除了方法查找之外，super() 也可用于属性查找。 一个可能的应用场合是在上级或同级类中调用 描述器。</p>
+<p>请注意 super() 是作为显式加点属性查找的绑定过程的一部分来实现的，例如 super().__getitem__(name)。 它做到这一点是通过实现自己的 __getattribute__() 方法，这样就能以可预测的顺序搜索类，并且支持协作多重继承。 对应地，super() 在像 super()[name] 这样使用语句或操作符进行隐式查找时则未被定义。</p>
+<p>还要注意的是，除了零个参数的形式以外，super() 并不限于在方法内部使用。 两个参数的形式明确指定参数并进行相应的引用。 零个参数的形式仅适用于类定义内部，因为编译器需要填入必要的细节以正确地检索到被定义的类，还需要让普通方法访问当前实例。</p>
+<p>对于有关如何使用 super() 来如何设计协作类的实用建议，请参阅 使用 super() 的指南。</p>
+<h1 id="看另外一个示例"><a href="#看另外一个示例" class="headerlink" title="看另外一个示例"></a>看另外一个示例</h1><ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> objprint <span class="keyword">import</span> op   <span class="comment">#打印对象信息</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Male</span>(<span class="title class_ inherited__">Person</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        <span class="comment">#super().__init__(name)</span></span><br><span class="line">        <span class="built_in">super</span>(Male, self).__init__(name)   <span class="comment">#这两句是一样的</span></span><br><span class="line">        self.sex = <span class="string">&#x27;male&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wuhanyu = Male(<span class="string">&#x27;wuhanyu&#x27;</span>)</span><br><span class="line">op(wuhanyu)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Male 0x22f114758e0</span><br><span class="line">  .name = &#x27;wuhanyu&#x27;,</span><br><span class="line">  .sex = &#x27;male&#x27;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>super中有2个参数，第一个是type（也就是一个class），第二个是type或者ojbect，第二个参数决定了这个函数？bind到哪个object或者class上。同时第二个参数决定了使用哪个mro。第一个参数也决定了在mro这个链上从哪个class开始找。</p>
+</li>
+<li><p>片段</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">super</span>().__init__(name)</span><br><span class="line">等价于</span><br><span class="line"><span class="built_in">super</span>(Male, self).__init__(name) </span><br><span class="line">	Male是个<span class="keyword">class</span></span><br><span class="line">    <span class="title class_">self是个object</span></span><br></pre></td></tr></table></figure></li>
+<li><p>super(Male,self)做的事情是，</p>
+<ul>
+<li><p>首先，从self这个object中拿到mro.如下，Male-&gt;Person-&gt;object；</p>
+</li>
+<li><p>然后，找到Male在MRO中所处的位置（当前情况下就是第一个），然后找Male后面的（也就是Person，object）开始找，第一个找到的是Person，然后看Person中是否存在__init__这个函数，如果有（确实有），就把__init__这个函数bind到self上，</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> inspect</span><br><span class="line"><span class="built_in">print</span>(inspect.getmro(Male)) </span><br><span class="line">===&gt;(&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.Male&#x27;</span>&gt;, &lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.Person&#x27;</span>&gt;, &lt;<span class="keyword">class</span> <span class="string">&#x27;object&#x27;</span>&gt;)</span><br></pre></td></tr></table></figure></li>
+<li><p>所以综上，又有一个等价关系</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">super</span>().__init__(name)</span><br><span class="line">等价于</span><br><span class="line"><span class="built_in">super</span>(Male, self).__init__(name) </span><br><span class="line">等价于</span><br><span class="line">Person.__init__(self,name)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>那么为何不用Person.的方式，用super比较好呢？super是动态的，Person就写死了，如果你哪天改变了继承关系，那Person.就不合适了。</p>
+<ul>
+<li>改变基类的名字</li>
+<li>改变继承的方式</li>
+<li>super是动态的</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h1 id="关于super是动态的示例"><a href="#关于super是动态的示例" class="headerlink" title="关于super是动态的示例"></a>关于super是动态的示例</h1><ul>
+<li><p>修改上面的代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> objprint <span class="keyword">import</span> op</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,age</span>):</span><br><span class="line">        self.age = age</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>(<span class="title class_ inherited__">Animal</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name,age</span>):</span><br><span class="line">        <span class="built_in">super</span>(Person, self).__init__(age)</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Male</span>(<span class="title class_ inherited__">Person</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name,age</span>):</span><br><span class="line">        <span class="comment"># super().__init__(name,age)</span></span><br><span class="line">        <span class="built_in">super</span>(Male, self).__init__(name,age)</span><br><span class="line">        self.sex = <span class="string">&#x27;male&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wuhanyu = Male(<span class="string">&#x27;wuhanyu&#x27;</span>,<span class="number">18</span>)</span><br><span class="line">op(wuhanyu)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果把15行改为如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">super</span>(Person, self).__init__(name,age)</span><br></pre></td></tr></table></figure></li>
+<li><p>事实是报错了，因为根据前面说的MRO搜索，super(Person, self)，从Person往后找它的MRO链，第一个是Animal，初始化的时候只需age参数，你现在传递了2个参数</p>
+</li>
+<li><p>修改下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Male</span>(<span class="title class_ inherited__">Person</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,age</span>):   <span class="comment">#此处改了</span></span><br><span class="line">        <span class="comment">#super().__init__(name,age)</span></span><br><span class="line">        <span class="built_in">super</span>(Person, self).__init__(age)  <span class="comment">#此处改了</span></span><br><span class="line">        self.sex = <span class="string">&#x27;male&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wuhanyu = Male(<span class="number">18</span>)   <span class="comment">#此处改了</span></span><br><span class="line">op(wuhanyu)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Male 0x238fd4e5d90</span><br><span class="line">  .age = 18,</span><br><span class="line">  .sex = &#x27;male&#x27;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>你会发现跳过了Person，没有name了，只有age和sex了！</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="super可以在class之外使用"><a href="#super可以在class之外使用" class="headerlink" title="super可以在class之外使用"></a>super可以在class之外使用</h2><ul>
+<li><p>片段</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">wuhanyu = Male(<span class="number">18</span>)</span><br><span class="line"><span class="built_in">super</span>(Male,wuhanyu).__init__(<span class="string">&#x27;wuxianfeng&#x27;</span>,<span class="number">19</span>)</span><br><span class="line">op(wuhanyu)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Male 0x1cc841870a0</span><br><span class="line">  .age = 19,         #一开始是18，后来被覆盖了</span><br><span class="line">  .name = &#x27;wuxianfeng&#x27;,</span><br><span class="line">  .sex = &#x27;male&#x27;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>这句话的含义其实是，从m这个对象的mro上寻找Male后面的__init__函数，就对应了Person的，</p>
+</li>
+</ul>
+<h1 id="特例"><a href="#特例" class="headerlink" title="特例"></a>特例</h1><ul>
+<li><p>代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().say()</span><br><span class="line">        <span class="comment">#super(B,self).say()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;C&#x27;</span>)</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">M</span>(B,C):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment">#super().say()</span></span><br><span class="line">        B.say(self)</span><br><span class="line">m = M()</span><br><span class="line">m.say()</span><br></pre></td></tr></table></figure></li>
+<li><p>上面的打印结果是什么？</p>
+</li>
+</ul>
+<ul>
+<li>是C</li>
+<li>B和C好像没有任何关系</li>
+<li>但是m这个实例对象，是M object，的父类是B和C，其MRO是B-&gt;C-&gt;A</li>
+<li>而B中的第七行，跟第八行是一样的，第八行中的self是m，</li>
+<li>m找到B之后下面找的是C，C的say是输出c</li>
+<li>这么理解不知道是否能明白。</li>
+<li>所以很多人会认为super是调用父类的同名函数，这是不够准确的。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
         <tag>完结</tag>
         <tag>python</tag>
       </tags>
@@ -554,6 +718,489 @@
       <tags>
         <tag>待续</tag>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github搜索技巧一览</title>
+    <url>/2022/04/10/Github%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<h1 id="Github搜索技巧一览"><a href="#Github搜索技巧一览" class="headerlink" title="Github搜索技巧一览"></a>Github搜索技巧一览</h1><blockquote>
+<p><a href="https://docs.github.com/cn/search-github">https://docs.github.com/cn/search-github</a></p>
+<p>都参考了官网</p>
+</blockquote>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>cats stars:&gt;1000</td>
+<td>匹配含有 “cats” 字样、星标超过 1000 个的仓库。</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>cats topics:&gt;=5</td>
+<td>匹配含有 “cats” 字样、有 5 个或更多主题的仓库。</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>cats size:&lt;10000</td>
+<td>匹配小于 10 KB 的文件中含有 “cats” 字样的代码</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>cats stars:&lt;50</td>
+<td>匹配含有 “cats” 字样、星标不超过 50 个的仓库。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>跟everything的语法极其相似</li>
+</ul>
+<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n..*</td>
+<td>cats stars:10..*</td>
+<td>等同于 <code>stars:&gt;=10</code> 并匹配含有 “cats” 字样、有 10 个或更多星号的仓库。</td>
+</tr>
+<tr>
+<td>*..n</td>
+<td>cats starts:*..10</td>
+<td>等同于 <code>stars:&lt;=10</code> 并匹配含有 “cats” 字样、有不超过 10 个星号的仓库。</td>
+</tr>
+<tr>
+<td>n..n</td>
+<td>cats stars:10..50</td>
+<td>匹配含有 “cats” 字样、有 10 到 50 个星号的仓库。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><ul>
+<li>日期格式遵循ISO8601，YYYY-MM-DD</li>
+<li></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;YYYY-MM-DD</td>
+<td>cats created:&gt;2016-04-29</td>
+<td>匹配含有 “cats” 字样、在 2016 年 4 月 29 日之后创建的议题。</td>
+</tr>
+<tr>
+<td></td>
+<td>cats pushed:&lt;2012-07-05</td>
+<td>匹配在 2012 年 7 月 5 日之前推送的仓库中含有 “cats” 字样的代码。</td>
+</tr>
+<tr>
+<td>YYYY-MM-DD..YYYY-MM-DD</td>
+<td>cats pushed:2016-04-30..2017-07-31</td>
+<td>匹配含有 “cats” 字样、在 2016 年 4 月末到 7 月之间推送的仓库。</td>
+</tr>
+<tr>
+<td>YYYY-MM-DD..*</td>
+<td>cats created:2012-04-30..</td>
+<td>匹配在 2012 年 4 月 30 日之后创建、含有 “cats” 字样的议题。</td>
+</tr>
+<tr>
+<td>*..YYYY-MM-DD</td>
+<td>cats created:*..2012-07-04</td>
+<td>匹配在 2012 年 7 月 4 日之前创建、含有 “cats” 字样的议题。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>您也可以在日期后添加可选的时间信息 <code>THH:MM:SS+00:00</code>，以便按小时、分钟和秒进行搜索。 这是 <code>T</code>，随后是 <code>HH:MM:SS</code>（时-分-秒）和 UTC 偏移 (<code>+00:00</code>)<ul>
+<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>+<em>00</em>:<em>00</em></li>
+<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>Z</li>
+</ul>
+</li>
+</ul>
+<h2 id="排除"><a href="#排除" class="headerlink" title="排除"></a>排除</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>not</td>
+<td>hello not world</td>
+<td>匹配含有 “hello” 字样但不含有 “world” 字样的仓库</td>
+</tr>
+<tr>
+<td>-</td>
+<td><strong>cats stars:&gt;10 -language:javascript</strong></td>
+<td>匹配含有 “cats” 字样、有超过 10 个星号但并非以 JavaScript 编写的仓库。</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>mentions:defunkt -org:github</strong></td>
+<td>匹配提及 @defunkt 且不在 GitHub 组织仓库中的议题</td>
+</tr>
+</tbody></table>
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><ul>
+<li>如果搜索含有空格的查询，您需要用引号将其括起来。 例如：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cats NOT “hello world”</td>
+<td>匹配含有 “cats” 字样但不含有 “hello world” 字样的仓库。</td>
+</tr>
+<tr>
+<td>build label:”bug fix”</td>
+<td>匹配具有标签 “bug fix”、含有 “build” 字样的议题。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="用户名"><a href="#用户名" class="headerlink" title="用户名"></a>用户名</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>QUALIFIER:USERNAME</td>
+<td>author:nat</td>
+<td>匹配 @nat 创作的提交。</td>
+</tr>
+<tr>
+<td>QUALIFIER:@me</td>
+<td>is:issue assignee:@me</td>
+<td>匹配已分配给结果查看者的议题</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="搜索实例"><a href="#搜索实例" class="headerlink" title="搜索实例"></a>搜索实例</h1><ul>
+<li>关注打★的部分，其他应该不多见。</li>
+</ul>
+<h2 id="★★按仓库名称、说明或自述文件内容搜索"><a href="#★★按仓库名称、说明或自述文件内容搜索" class="headerlink" title="★★按仓库名称、说明或自述文件内容搜索"></a>★★按仓库名称、说明或自述文件内容搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>in:name</code></td>
+<td align="left">jquery in:name 匹配仓库名称中含有 “jquery” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>in:description</code></td>
+<td align="left">jquery in:name,description匹配仓库名称或说明中含有 “jquery” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>in:readme</code></td>
+<td align="left">jquery in:readme匹配仓库自述文件中提及 “jquery” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>repo:owner/name</code></td>
+<td align="left">repo:octocat/hello-world匹配特定仓库名称</td>
+</tr>
+</tbody></table>
+<h2 id="在用户或组织的仓库内搜索"><a href="#在用户或组织的仓库内搜索" class="headerlink" title="在用户或组织的仓库内搜索"></a>在用户或组织的仓库内搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>user:USERNAME</code></td>
+<td align="left">user:defunkt forks:&gt;100 匹配来自 @defunkt、拥有超过 100 复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>org:ORGNAME</code></td>
+<td align="left">org:github 匹配来自 GitHub 的仓库</td>
+</tr>
+</tbody></table>
+<h2 id="按仓库大小搜索"><a href="#按仓库大小搜索" class="headerlink" title="按仓库大小搜索"></a>按仓库大小搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">size:n</td>
+<td align="left">size:1000 匹配恰好为 1 MB 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">size:&gt;=30000匹配至少为 30 MB 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">size:&lt;50匹配小于 50 KB 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">size:50..120 匹配介于 50 KB 与 120 KB 之间的仓库</td>
+</tr>
+</tbody></table>
+<h2 id="★按关注者数量搜索"><a href="#★按关注者数量搜索" class="headerlink" title="★按关注者数量搜索"></a>★按关注者数量搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">followers:n</td>
+<td align="left">node followers:&gt;=10000 匹配有 10,000 或更多关注者提及文字 “node” 的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">styleguide linter followers:1..10 匹配拥有 1 到 10 个关注者并且提及 “styleguide linter” 一词的的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="★按fork数量搜索"><a href="#★按fork数量搜索" class="headerlink" title="★按fork数量搜索"></a>★按fork数量搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">forks:n</td>
+<td align="left">forks:5匹配只有 5 个复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">forks:&gt;=205匹配具有至少 205 个复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">forks:&lt;90 匹配具有少于 90 个复刻的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">forks:10..20 匹配具有 10 到 20 个复刻的仓库</td>
+</tr>
+</tbody></table>
+<h2 id="★★按星号数量搜索"><a href="#★★按星号数量搜索" class="headerlink" title="★★按星号数量搜索"></a>★★按星号数量搜索</h2><table>
+<thead>
+<tr>
+<th>stars:n</th>
+<th>stars:500匹配恰好具有 500 个星号的仓库。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>stars:10..20 匹配具有 10 到 20 个星号、小于 1000 KB 的仓库。</td>
+</tr>
+<tr>
+<td></td>
+<td>stars:&gt;=500 fork:true language:php 匹配具有至少 500 个星号，包括复刻的星号（以 PHP 编写）的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="★★按语言搜索"><a href="#★★按语言搜索" class="headerlink" title="★★按语言搜索"></a>★★按语言搜索</h2><table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">language:LANGUAGE</td>
+<td align="left">rails language:javascript 匹配用 JavaScript 编写、包含单词“rails”的存储库</td>
+</tr>
+</tbody></table>
+<h2 id="按主题搜索"><a href="#按主题搜索" class="headerlink" title="按主题搜索"></a>按主题搜索</h2><p>您可以找到按特定主题分类的所有仓库。 </p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>topic:*TOPIC*</code></td>
+<td align="left">topic:jekyll 匹配属于 “Jekyll” 主题类别的存储库。</td>
+</tr>
+</tbody></table>
+<h2 id="按主题数量搜索"><a href="#按主题数量搜索" class="headerlink" title="按主题数量搜索"></a>按主题数量搜索</h2><p>您可以使用 <code>topics</code> 限定符以及大于、小于和范围限定符，根据应用于仓库的主题数量来搜索仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>topics:*n*</code></td>
+<td align="left">topics:5 匹配具有五个主题的仓库。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">topics:&gt;3 匹配超过三个主题的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="按许可搜索"><a href="#按许可搜索" class="headerlink" title="按许可搜索"></a>按许可搜索</h2><p>您可以根据仓库中许可的类型搜索仓库。 您必须使用许可关键字，按特定许可或许可系列来过滤仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>license:*LICENSE_KEYWORD*</code></td>
+<td align="left">license:apache-2.0匹配根据 Apache License 2.0 授权的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="按仓库可见性搜索"><a href="#按仓库可见性搜索" class="headerlink" title="按仓库可见性搜索"></a>按仓库可见性搜索</h2><p>您可以根据仓库的可见性过滤搜索。 </p>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>is:public</td>
+<td>is:public org:github匹配 GitHub 拥有的公共存储库</td>
+</tr>
+<tr>
+<td>is:private</td>
+<td>is:private pages匹配您可以访问并且包含单词“pages”的存储库</td>
+</tr>
+</tbody></table>
+<h2 id="基于仓库是否为镜像搜索"><a href="#基于仓库是否为镜像搜索" class="headerlink" title="基于仓库是否为镜像搜索"></a>基于仓库是否为镜像搜索</h2><p>您可以根据仓库是否为镜像以及托管于其他位置托管来搜索仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>mirror:true</code></td>
+<td align="left">mirror:true GNOME匹配是镜像且包含 “GNOME” 字样的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>mirror:false</code></td>
+<td align="left">mirror:false GNOME匹配并非镜像且包含 “GNOME” 字样的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="基于仓库是否已存档搜索"><a href="#基于仓库是否已存档搜索" class="headerlink" title="基于仓库是否已存档搜索"></a>基于仓库是否已存档搜索</h2><p>您可以基于仓库是否已存档来搜索仓库。 </p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>archived:true</code></td>
+<td align="left">archived:true GNOME匹配已存档且包含 “GNOME” 字样的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>archived:false</code></td>
+<td align="left">archived:false GNOME匹配未存档且包含 “GNOME” 字样的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索"><a href="#基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索" class="headerlink" title="基于具有 good first issue 或 help wanted 标签的议题数量搜索"></a>基于具有 <code>good first issue</code> 或 <code>help wanted</code> 标签的议题数量搜索</h2><p>您可以使用限定符 <code>help-wanted-issues:&gt;n</code> 和 <code>good-first-issues:&gt;n</code> 搜索具有最少数量标签为 <code>help-wanted</code> 或 <code>good-first-issue</code> 议题的仓库。。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>good-first-issues:&gt;n</code></td>
+<td align="left">good-first-issues:&gt;2 javascript匹配具有超过两个标签为 <code>good-first-issue</code> 的议题并且包含单词“javascript”的存储库。</td>
+</tr>
+<tr>
+<td align="left"><code>help-wanted-issues:&gt;n</code></td>
+<td align="left">help-wanted-issues:&gt;4 react匹配具有超过四个标签为 <code>help-wanted</code> 的议题且包含 “React” 字样的仓库。</td>
+</tr>
+</tbody></table>
+<h2 id="基于赞助能力的搜索"><a href="#基于赞助能力的搜索" class="headerlink" title="基于赞助能力的搜索"></a>基于赞助能力的搜索</h2><p>您可以使用 <code>is:sponsorable</code> 限定符在 GitHub 赞助者 上搜索其所有者可以赞助的仓库。 </p>
+<p>您可以使用 <code>has:funding-file</code> 限定符搜索具有融资文件的仓库。</p>
+<table>
+<thead>
+<tr>
+<th align="left">限定符</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>is:sponsorable</code></td>
+<td align="left">is:sponsorable匹配其所有者具有 GitHub 赞助者 配置文件的仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>has:funding-file</code></td>
+<td align="left">has:funding-file 匹配具有 FUNDING.yml 文件的仓库。</td>
+</tr>
+</tbody></table>
+<h1 id="说在最后的"><a href="#说在最后的" class="headerlink" title="说在最后的"></a>说在最后的</h1><ul>
+<li><p>官网没有提到的，比如还有location</p>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>location:china</td>
+<td>匹配用户的地址填写在china的</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -1069,489 +1716,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github搜索技巧一览</title>
-    <url>/2022/04/10/Github%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<h1 id="Github搜索技巧一览"><a href="#Github搜索技巧一览" class="headerlink" title="Github搜索技巧一览"></a>Github搜索技巧一览</h1><blockquote>
-<p><a href="https://docs.github.com/cn/search-github">https://docs.github.com/cn/search-github</a></p>
-<p>都参考了官网</p>
-</blockquote>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&gt;</td>
-<td>cats stars:&gt;1000</td>
-<td>匹配含有 “cats” 字样、星标超过 1000 个的仓库。</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>cats topics:&gt;=5</td>
-<td>匹配含有 “cats” 字样、有 5 个或更多主题的仓库。</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>cats size:&lt;10000</td>
-<td>匹配小于 10 KB 的文件中含有 “cats” 字样的代码</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>cats stars:&lt;50</td>
-<td>匹配含有 “cats” 字样、星标不超过 50 个的仓库。</td>
-</tr>
-</tbody></table>
-<ul>
-<li>跟everything的语法极其相似</li>
-</ul>
-<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>n..*</td>
-<td>cats stars:10..*</td>
-<td>等同于 <code>stars:&gt;=10</code> 并匹配含有 “cats” 字样、有 10 个或更多星号的仓库。</td>
-</tr>
-<tr>
-<td>*..n</td>
-<td>cats starts:*..10</td>
-<td>等同于 <code>stars:&lt;=10</code> 并匹配含有 “cats” 字样、有不超过 10 个星号的仓库。</td>
-</tr>
-<tr>
-<td>n..n</td>
-<td>cats stars:10..50</td>
-<td>匹配含有 “cats” 字样、有 10 到 50 个星号的仓库。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><ul>
-<li>日期格式遵循ISO8601，YYYY-MM-DD</li>
-<li></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&gt;YYYY-MM-DD</td>
-<td>cats created:&gt;2016-04-29</td>
-<td>匹配含有 “cats” 字样、在 2016 年 4 月 29 日之后创建的议题。</td>
-</tr>
-<tr>
-<td></td>
-<td>cats pushed:&lt;2012-07-05</td>
-<td>匹配在 2012 年 7 月 5 日之前推送的仓库中含有 “cats” 字样的代码。</td>
-</tr>
-<tr>
-<td>YYYY-MM-DD..YYYY-MM-DD</td>
-<td>cats pushed:2016-04-30..2017-07-31</td>
-<td>匹配含有 “cats” 字样、在 2016 年 4 月末到 7 月之间推送的仓库。</td>
-</tr>
-<tr>
-<td>YYYY-MM-DD..*</td>
-<td>cats created:2012-04-30..</td>
-<td>匹配在 2012 年 4 月 30 日之后创建、含有 “cats” 字样的议题。</td>
-</tr>
-<tr>
-<td>*..YYYY-MM-DD</td>
-<td>cats created:*..2012-07-04</td>
-<td>匹配在 2012 年 7 月 4 日之前创建、含有 “cats” 字样的议题。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li>您也可以在日期后添加可选的时间信息 <code>THH:MM:SS+00:00</code>，以便按小时、分钟和秒进行搜索。 这是 <code>T</code>，随后是 <code>HH:MM:SS</code>（时-分-秒）和 UTC 偏移 (<code>+00:00</code>)<ul>
-<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>+<em>00</em>:<em>00</em></li>
-<li><em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>HH</em>:<em>MM</em>:<em>SS</em>Z</li>
-</ul>
-</li>
-</ul>
-<h2 id="排除"><a href="#排除" class="headerlink" title="排除"></a>排除</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>not</td>
-<td>hello not world</td>
-<td>匹配含有 “hello” 字样但不含有 “world” 字样的仓库</td>
-</tr>
-<tr>
-<td>-</td>
-<td><strong>cats stars:&gt;10 -language:javascript</strong></td>
-<td>匹配含有 “cats” 字样、有超过 10 个星号但并非以 JavaScript 编写的仓库。</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>mentions:defunkt -org:github</strong></td>
-<td>匹配提及 @defunkt 且不在 GitHub 组织仓库中的议题</td>
-</tr>
-</tbody></table>
-<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><ul>
-<li>如果搜索含有空格的查询，您需要用引号将其括起来。 例如：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cats NOT “hello world”</td>
-<td>匹配含有 “cats” 字样但不含有 “hello world” 字样的仓库。</td>
-</tr>
-<tr>
-<td>build label:”bug fix”</td>
-<td>匹配具有标签 “bug fix”、含有 “build” 字样的议题。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="用户名"><a href="#用户名" class="headerlink" title="用户名"></a>用户名</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>QUALIFIER:USERNAME</td>
-<td>author:nat</td>
-<td>匹配 @nat 创作的提交。</td>
-</tr>
-<tr>
-<td>QUALIFIER:@me</td>
-<td>is:issue assignee:@me</td>
-<td>匹配已分配给结果查看者的议题</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="搜索实例"><a href="#搜索实例" class="headerlink" title="搜索实例"></a>搜索实例</h1><ul>
-<li>关注打★的部分，其他应该不多见。</li>
-</ul>
-<h2 id="★★按仓库名称、说明或自述文件内容搜索"><a href="#★★按仓库名称、说明或自述文件内容搜索" class="headerlink" title="★★按仓库名称、说明或自述文件内容搜索"></a>★★按仓库名称、说明或自述文件内容搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>in:name</code></td>
-<td align="left">jquery in:name 匹配仓库名称中含有 “jquery” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>in:description</code></td>
-<td align="left">jquery in:name,description匹配仓库名称或说明中含有 “jquery” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>in:readme</code></td>
-<td align="left">jquery in:readme匹配仓库自述文件中提及 “jquery” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>repo:owner/name</code></td>
-<td align="left">repo:octocat/hello-world匹配特定仓库名称</td>
-</tr>
-</tbody></table>
-<h2 id="在用户或组织的仓库内搜索"><a href="#在用户或组织的仓库内搜索" class="headerlink" title="在用户或组织的仓库内搜索"></a>在用户或组织的仓库内搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>user:USERNAME</code></td>
-<td align="left">user:defunkt forks:&gt;100 匹配来自 @defunkt、拥有超过 100 复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>org:ORGNAME</code></td>
-<td align="left">org:github 匹配来自 GitHub 的仓库</td>
-</tr>
-</tbody></table>
-<h2 id="按仓库大小搜索"><a href="#按仓库大小搜索" class="headerlink" title="按仓库大小搜索"></a>按仓库大小搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">size:n</td>
-<td align="left">size:1000 匹配恰好为 1 MB 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">size:&gt;=30000匹配至少为 30 MB 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">size:&lt;50匹配小于 50 KB 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">size:50..120 匹配介于 50 KB 与 120 KB 之间的仓库</td>
-</tr>
-</tbody></table>
-<h2 id="★按关注者数量搜索"><a href="#★按关注者数量搜索" class="headerlink" title="★按关注者数量搜索"></a>★按关注者数量搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">followers:n</td>
-<td align="left">node followers:&gt;=10000 匹配有 10,000 或更多关注者提及文字 “node” 的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">styleguide linter followers:1..10 匹配拥有 1 到 10 个关注者并且提及 “styleguide linter” 一词的的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="★按fork数量搜索"><a href="#★按fork数量搜索" class="headerlink" title="★按fork数量搜索"></a>★按fork数量搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">forks:n</td>
-<td align="left">forks:5匹配只有 5 个复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">forks:&gt;=205匹配具有至少 205 个复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">forks:&lt;90 匹配具有少于 90 个复刻的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">forks:10..20 匹配具有 10 到 20 个复刻的仓库</td>
-</tr>
-</tbody></table>
-<h2 id="★★按星号数量搜索"><a href="#★★按星号数量搜索" class="headerlink" title="★★按星号数量搜索"></a>★★按星号数量搜索</h2><table>
-<thead>
-<tr>
-<th>stars:n</th>
-<th>stars:500匹配恰好具有 500 个星号的仓库。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>stars:10..20 匹配具有 10 到 20 个星号、小于 1000 KB 的仓库。</td>
-</tr>
-<tr>
-<td></td>
-<td>stars:&gt;=500 fork:true language:php 匹配具有至少 500 个星号，包括复刻的星号（以 PHP 编写）的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="★★按语言搜索"><a href="#★★按语言搜索" class="headerlink" title="★★按语言搜索"></a>★★按语言搜索</h2><table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">language:LANGUAGE</td>
-<td align="left">rails language:javascript 匹配用 JavaScript 编写、包含单词“rails”的存储库</td>
-</tr>
-</tbody></table>
-<h2 id="按主题搜索"><a href="#按主题搜索" class="headerlink" title="按主题搜索"></a>按主题搜索</h2><p>您可以找到按特定主题分类的所有仓库。 </p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>topic:*TOPIC*</code></td>
-<td align="left">topic:jekyll 匹配属于 “Jekyll” 主题类别的存储库。</td>
-</tr>
-</tbody></table>
-<h2 id="按主题数量搜索"><a href="#按主题数量搜索" class="headerlink" title="按主题数量搜索"></a>按主题数量搜索</h2><p>您可以使用 <code>topics</code> 限定符以及大于、小于和范围限定符，根据应用于仓库的主题数量来搜索仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>topics:*n*</code></td>
-<td align="left">topics:5 匹配具有五个主题的仓库。</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">topics:&gt;3 匹配超过三个主题的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="按许可搜索"><a href="#按许可搜索" class="headerlink" title="按许可搜索"></a>按许可搜索</h2><p>您可以根据仓库中许可的类型搜索仓库。 您必须使用许可关键字，按特定许可或许可系列来过滤仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>license:*LICENSE_KEYWORD*</code></td>
-<td align="left">license:apache-2.0匹配根据 Apache License 2.0 授权的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="按仓库可见性搜索"><a href="#按仓库可见性搜索" class="headerlink" title="按仓库可见性搜索"></a>按仓库可见性搜索</h2><p>您可以根据仓库的可见性过滤搜索。 </p>
-<table>
-<thead>
-<tr>
-<th>限定符</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>is:public</td>
-<td>is:public org:github匹配 GitHub 拥有的公共存储库</td>
-</tr>
-<tr>
-<td>is:private</td>
-<td>is:private pages匹配您可以访问并且包含单词“pages”的存储库</td>
-</tr>
-</tbody></table>
-<h2 id="基于仓库是否为镜像搜索"><a href="#基于仓库是否为镜像搜索" class="headerlink" title="基于仓库是否为镜像搜索"></a>基于仓库是否为镜像搜索</h2><p>您可以根据仓库是否为镜像以及托管于其他位置托管来搜索仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>mirror:true</code></td>
-<td align="left">mirror:true GNOME匹配是镜像且包含 “GNOME” 字样的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>mirror:false</code></td>
-<td align="left">mirror:false GNOME匹配并非镜像且包含 “GNOME” 字样的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="基于仓库是否已存档搜索"><a href="#基于仓库是否已存档搜索" class="headerlink" title="基于仓库是否已存档搜索"></a>基于仓库是否已存档搜索</h2><p>您可以基于仓库是否已存档来搜索仓库。 </p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>archived:true</code></td>
-<td align="left">archived:true GNOME匹配已存档且包含 “GNOME” 字样的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>archived:false</code></td>
-<td align="left">archived:false GNOME匹配未存档且包含 “GNOME” 字样的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索"><a href="#基于具有-good-first-issue-或-help-wanted-标签的议题数量搜索" class="headerlink" title="基于具有 good first issue 或 help wanted 标签的议题数量搜索"></a>基于具有 <code>good first issue</code> 或 <code>help wanted</code> 标签的议题数量搜索</h2><p>您可以使用限定符 <code>help-wanted-issues:&gt;n</code> 和 <code>good-first-issues:&gt;n</code> 搜索具有最少数量标签为 <code>help-wanted</code> 或 <code>good-first-issue</code> 议题的仓库。。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>good-first-issues:&gt;n</code></td>
-<td align="left">good-first-issues:&gt;2 javascript匹配具有超过两个标签为 <code>good-first-issue</code> 的议题并且包含单词“javascript”的存储库。</td>
-</tr>
-<tr>
-<td align="left"><code>help-wanted-issues:&gt;n</code></td>
-<td align="left">help-wanted-issues:&gt;4 react匹配具有超过四个标签为 <code>help-wanted</code> 的议题且包含 “React” 字样的仓库。</td>
-</tr>
-</tbody></table>
-<h2 id="基于赞助能力的搜索"><a href="#基于赞助能力的搜索" class="headerlink" title="基于赞助能力的搜索"></a>基于赞助能力的搜索</h2><p>您可以使用 <code>is:sponsorable</code> 限定符在 GitHub 赞助者 上搜索其所有者可以赞助的仓库。 </p>
-<p>您可以使用 <code>has:funding-file</code> 限定符搜索具有融资文件的仓库。</p>
-<table>
-<thead>
-<tr>
-<th align="left">限定符</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>is:sponsorable</code></td>
-<td align="left">is:sponsorable匹配其所有者具有 GitHub 赞助者 配置文件的仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>has:funding-file</code></td>
-<td align="left">has:funding-file 匹配具有 FUNDING.yml 文件的仓库。</td>
-</tr>
-</tbody></table>
-<h1 id="说在最后的"><a href="#说在最后的" class="headerlink" title="说在最后的"></a>说在最后的</h1><ul>
-<li><p>官网没有提到的，比如还有location</p>
-<table>
-<thead>
-<tr>
-<th>示例</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>location:china</td>
-<td>匹配用户的地址填写在china的</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode_804. 唯一摩尔斯密码词</title>
     <url>/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</url>
     <content><![CDATA[<h1 id="804-唯一摩尔斯密码词"><a href="#804-唯一摩尔斯密码词" class="headerlink" title="804. 唯一摩尔斯密码词"></a>804. 唯一摩尔斯密码词</h1><ul>
@@ -1577,8 +1741,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>完结</tag>
+        <tag>LeetCode</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -2562,9 +2726,9 @@
         <category>SQL</category>
       </categories>
       <tags>
+        <tag>完结</tag>
         <tag>SQL</tag>
         <tag>LeetCode</tag>
-        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -2587,8 +2751,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>完结</tag>
+        <tag>LeetCode</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -2618,9 +2782,9 @@
         <category>SQL</category>
       </categories>
       <tags>
+        <tag>完结</tag>
         <tag>SQL</tag>
         <tag>LeetCode</tag>
-        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -2645,8 +2809,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>完结</tag>
+        <tag>LeetCode</tag>
         <tag>python</tag>
       </tags>
   </entry>
