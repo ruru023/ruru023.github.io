@@ -600,127 +600,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github仓库整理</title>
-    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
-<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
-<p>有些内容我就不举例了，大家可以看readme.md</p>
-<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
-</blockquote>
-<ul>
-<li><strong>开源是人类进步的基石</strong></li>
-</ul>
-<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
-<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
-</li>
-<li><p>简单实用的删除图像背景/抠图工具</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
-<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
-<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
-</ul>
-<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
-<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>备注：我一直在用哈</li>
-</ul>
-<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
-<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
-</li>
-<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
-</li>
-</ul>
-<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
-<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
-<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
-</li>
-<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
-</li>
-</ul>
-<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
-<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
-<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
-</ul>
-<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
-<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
-<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
-</ul>
-<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
-<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
-<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
-</ul>
-<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
-<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
-<li>简介：在命令行看股票走势的工具</li>
-<li></li>
-</ul>
-<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
-<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
-<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
-</ul>
-<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
-<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
-<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
-</ul>
-<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
-<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
-</li>
-<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
-</li>
-</ul>
-<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
-<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
-<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
-<li>修改、合并 PDF 文档</li>
-<li>自动生成书签</li>
-<li>书签编辑器</li>
-<li>高速无损地导出文件中的图片</li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
-<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
-<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
-</ul>
-<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
-<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
-<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
-<li></li>
-</ul>
-<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
-<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
-<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
-</ul>
-<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
-<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
-<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
-</ul>
-<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
-<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
-<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>待续</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Github搜索技巧一览</title>
     <url>/2022/04/10/Github%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<h1 id="Github搜索技巧一览"><a href="#Github搜索技巧一览" class="headerlink" title="Github搜索技巧一览"></a>Github搜索技巧一览</h1><blockquote>
@@ -1201,6 +1080,127 @@
       <tags>
         <tag>github</tag>
         <tag>完结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github仓库整理</title>
+    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
+<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
+<p>有些内容我就不举例了，大家可以看readme.md</p>
+<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
+</blockquote>
+<ul>
+<li><strong>开源是人类进步的基石</strong></li>
+</ul>
+<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
+<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
+</li>
+<li><p>简单实用的删除图像背景/抠图工具</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
+<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
+<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
+</ul>
+<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
+<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>备注：我一直在用哈</li>
+</ul>
+<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
+<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
+</li>
+<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
+</li>
+</ul>
+<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
+<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
+<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
+</li>
+<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
+</li>
+</ul>
+<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
+<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
+<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
+</ul>
+<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
+<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
+<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
+</ul>
+<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
+<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
+<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
+</ul>
+<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
+<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
+<li>简介：在命令行看股票走势的工具</li>
+<li></li>
+</ul>
+<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
+<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
+<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
+</ul>
+<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
+<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
+<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
+</ul>
+<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
+<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
+</li>
+<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
+</li>
+</ul>
+<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
+<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
+<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
+<li>修改、合并 PDF 文档</li>
+<li>自动生成书签</li>
+<li>书签编辑器</li>
+<li>高速无损地导出文件中的图片</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
+<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
+<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
+</ul>
+<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
+<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
+<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
+<li></li>
+</ul>
+<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
+<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
+<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
+</ul>
+<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
+<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
+<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
+</ul>
+<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
+<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
+<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
