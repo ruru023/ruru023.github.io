@@ -411,6 +411,47 @@
       </tags>
   </entry>
   <entry>
+    <title>Git入门指南(二)</title>
+    <url>/2022/04/13/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%BA%8C/</url>
+    <content><![CDATA[<h1 id="Git入门指南-二"><a href="#Git入门指南-二" class="headerlink" title="Git入门指南(二)"></a>Git入门指南(二)</h1><blockquote>
+<p>引用了 微信公众号 入门小站的内容</p>
+<p>参考了pro git</p>
+</blockquote>
+<h2 id="命令行-拓展"><a href="#命令行-拓展" class="headerlink" title="命令行 - 拓展"></a>命令行 - 拓展</h2><h3 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 在当前目录新建一个Git代码库</span><br><span class="line">$ git init</span><br><span class="line"># 新建一个目录，将其初始化为Git代码库</span><br><span class="line">$ git init [project-name]</span><br><span class="line"># 下载一个项目和它的整个代码历史</span><br><span class="line">$ git clone [url]</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h3><p>Git 的设置文件为. gitconfig，它可以在用户主目录下 (全局配置)，也可以在项目目录下 (项目配置)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示当前的Git配置</span><br><span class="line">$ git config --list</span><br><span class="line"># 编辑Git配置文件</span><br><span class="line">$ git config -e [--global]</span><br><span class="line"># 设置提交代码时的用户信息</span><br><span class="line">$ git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">$ git config [--global] user.email &quot;[email address]&quot;</span><br><span class="line"># 颜色设置</span><br><span class="line">git config --global color.ui true                         # git status等命令自动着色</span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line">git config --global --unset http.proxy    # remove  proxy configuration on git</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、增加-删除文件"><a href="#三、增加-删除文件" class="headerlink" title="三、增加 / 删除文件"></a>三、增加 / 删除文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 添加指定文件到暂存区</span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"># 添加指定目录到暂存区，包括子目录</span><br><span class="line">$ git add [dir]</span><br><span class="line"># 添加当前目录的所有文件到暂存区</span><br><span class="line">$ git add .</span><br><span class="line"># 添加每个变化前，都会要求确认</span><br><span class="line"># 对于同一个文件的多处变化，可以实现分次提交</span><br><span class="line">$ git add -p</span><br><span class="line"># 删除工作区文件，并且将这次删除放入暂存区</span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"># 停止追踪指定文件，但该文件会保留在工作区</span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"># 改名文件，并且将这个改名放入暂存区</span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 提交暂存区到仓库区</span><br><span class="line">$ git commit -m [message]</span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">$ git commit -a</span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">$ git commit -v</span><br><span class="line"># 将add和commit合为一步</span><br><span class="line">$ git commit -am &#x27;message&#x27;</span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">$ git branch</span><br><span class="line"># 列出所有远程分支</span><br><span class="line">$ git branch -r</span><br><span class="line"># 列出所有本地分支和远程分支</span><br><span class="line">$ git branch -a</span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"># 新建一个分支，指向指定commit</span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"># 新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"># 切换到指定分支，并更新工作区</span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"># 切换到上一个分支</span><br><span class="line">$ git checkout -</span><br><span class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">$ git merge [branch]</span><br><span class="line"># 选择一个commit，合并进当前分支</span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"># 删除分支</span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"># 删除远程分支</span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br><span class="line"># 检出版本v2.0</span><br><span class="line">$ git checkout v2.0</span><br><span class="line"># 从远程分支develop创建新本地分支devel并检出</span><br><span class="line">$ git checkout -b devel origin/develop</span><br><span class="line"># 检出head版本的README文件（可用于修改错误回退）</span><br><span class="line">git checkout -- README</span><br></pre></td></tr></table></figure>
+
+<h3 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 列出所有tag</span><br><span class="line">$ git tag</span><br><span class="line"># 新建一个tag在当前commit</span><br><span class="line">$ git tag [tag]</span><br><span class="line"># 新建一个tag在指定commit</span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"># 删除本地tag</span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"># 删除远程tag</span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"># 查看tag信息</span><br><span class="line">$ git show [tag]</span><br><span class="line"># 提交指定tag</span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"># 提交所有tag</span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"># 新建一个分支，指向某个tag</span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+
+<h3 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示有变更的文件</span><br><span class="line">$ git status</span><br><span class="line"># 显示当前分支的版本历史</span><br><span class="line">$ git log</span><br><span class="line"># 显示commit历史，以及每次commit发生变更的文件</span><br><span class="line">$ git log --stat</span><br><span class="line"># 搜索提交历史，根据关键词</span><br><span class="line">$ git log -S [keyword]</span><br><span class="line"># 显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line">$ git log [tag] HEAD --pretty=format:%s</span><br><span class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span><br><span class="line">$ git log [tag] HEAD --grep feature</span><br><span class="line"># 显示某个文件的版本历史，包括文件改名</span><br><span class="line">$ git log --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"># 显示指定文件相关的每一次diff</span><br><span class="line">$ git log -p [file]</span><br><span class="line"># 显示过去5次提交</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"># 显示所有提交过的用户，按提交次数排序</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"># 显示指定文件是什么人在什么时间修改过</span><br><span class="line">$ git blame [file]</span><br><span class="line"># 显示暂存区和工作区的差异</span><br><span class="line">$ git diff</span><br><span class="line"># 显示暂存区和上一个commit的差异</span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"># 显示工作区与当前分支最新commit之间的差异</span><br><span class="line">$ git diff HEAD</span><br><span class="line"># 显示两次提交之间的差异</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"># 显示今天你写了多少行代码</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"># 显示某次提交的元数据和内容变化</span><br><span class="line">$ git show [commit]</span><br><span class="line"># 显示某次提交发生变化的文件</span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"># 显示某次提交时，某个文件的内容</span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+
+<h3 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 下载远程仓库的所有变动</span><br><span class="line">$ git fetch [remote]</span><br><span class="line"># 显示所有远程仓库</span><br><span class="line">$ git remote -v</span><br><span class="line"># 显示某个远程仓库的信息</span><br><span class="line">$ git remote show [remote]</span><br><span class="line"># 增加一个新的远程仓库，并命名</span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"># 取回远程仓库的变化，并与本地分支合并</span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"># 上传本地指定分支到远程仓库</span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"># 强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line">$ git push [remote] --force</span><br><span class="line"># 推送所有分支到远程仓库</span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
+
+<h3 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 恢复暂存区的指定文件到工作区</span><br><span class="line">$ git checkout [file]</span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">$ git reset [file]</span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">$ git reset --hard</span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">$ git reset [commit]</span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert [commit]</span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+
+<h3 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init                                                  # 初始化本地git仓库（创建新仓库）</span><br><span class="line">git config --global user.name &quot;xxx&quot;                       # 配置用户名</span><br><span class="line">git config --global user.email &quot;xxx@xxx.com&quot;              # 配置邮件</span><br><span class="line">git config --global color.ui true                         # git status等命令自动着色</span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line">git config --global --unset http.proxy           # remove  proxy configuration on git</span><br><span class="line">git clone git+ssh://git@192.168.53.168/VT.git             # clone远程仓库</span><br><span class="line">git status                                                # 查看当前版本状态（是否修改）</span><br><span class="line">git add xyz                                               # 添加xyz文件至index</span><br><span class="line">git add .                                                 # 增加当前子目录下所有更改过的文件至index</span><br><span class="line">git commit -m &#x27;xxx&#x27;                                       # 提交</span><br><span class="line">git commit --amend -m &#x27;xxx&#x27;                               # 合并上一次提交（用于反复修改）</span><br><span class="line">git commit -am &#x27;xxx&#x27;                                      # 将add和commit合为一步</span><br><span class="line">git rm xxx                                                # 删除index中的文件</span><br><span class="line">git rm -r *                                               # 递归删除</span><br><span class="line">git log                                                   # 显示提交日志</span><br><span class="line">git log -1                                                # 显示1行日志 -n为n行</span><br><span class="line">git log -5</span><br><span class="line">git log --stat                                            # 显示提交日志及相关变动文件</span><br><span class="line">git log -p -m</span><br><span class="line">git show dfb02e6e4f2f7b573337763e5c0013802e392818         # 显示某个提交的详细内容</span><br><span class="line">git show dfb02                                            # 可只用commitid的前几位</span><br><span class="line">git show HEAD                                             # 显示HEAD提交日志</span><br><span class="line">git show HEAD^          # 显示HEAD的父（上一个版本）的提交日志 ^^为上两个版本 ^5为上5个版本</span><br><span class="line">git tag                                                   # 显示已存在的tag</span><br><span class="line">git tag -a v2.0 -m &#x27;xxx&#x27;                                  # 增加v2.0的tag</span><br><span class="line">git show v2.0                                             # 显示v2.0的日志及详细内容</span><br><span class="line">git log v2.0                                              # 显示v2.0的日志</span><br><span class="line">git diff                                                  # 显示所有未添加至index的变更</span><br><span class="line">git diff --cached                                         # 显示所有已添加index但还未commit的变更</span><br><span class="line">git diff HEAD^                                            # 比较与上一个版本的差异</span><br><span class="line">git diff HEAD -- ./lib                                    # 比较与HEAD版本lib目录的差异</span><br><span class="line">git diff origin/master..master          # 比较远程分支master上有本地分支master上没有的</span><br><span class="line">git diff origin/master..master --stat                     # 只显示差异的文件，不显示具体内容</span><br><span class="line">git remote add origin git+ssh://git@192.168.53.168/VT.git # 增加远程定义（用于push/pull/fetch）</span><br><span class="line">git branch                                                # 显示本地分支</span><br><span class="line">git branch --contains 50089                               # 显示包含提交50089的分支</span><br><span class="line">git branch -a                                             # 显示所有分支</span><br><span class="line">git branch -r                                             # 显示所有原创分支</span><br><span class="line">git branch --merged                                       # 显示所有已合并到当前分支的分支</span><br><span class="line">git branch --no-merged                                    # 显示所有未合并到当前分支的分支</span><br><span class="line">git branch -m master master_copy                          # 本地分支改名</span><br><span class="line">git checkout -b master_copy              # 从当前分支创建新分支master_copy并检出</span><br><span class="line">git checkout -b master master_copy                        # 上面的完整版</span><br><span class="line">git checkout features/performance                         # 检出已存在的features/performance分支</span><br><span class="line">git checkout --track hotfixes/BJVEP933      # 检出远程分支hotfixes/BJVEP933并创建本地跟踪分支</span><br><span class="line">git checkout v2.0                                         # 检出版本v2.0</span><br><span class="line">git checkout -b devel origin/develop      # 从远程分支develop创建新本地分支devel并检出</span><br><span class="line">git checkout -- README                      # 检出head版本的README文件（可用于修改错误回退）</span><br><span class="line">git merge origin/master                                   # 合并远程master分支至当前分支</span><br><span class="line">git cherry-pick ff44785404a8e                             # 合并提交ff44785404a8e的修改</span><br><span class="line">git push origin master                                    # 将当前分支push到远程master分支</span><br><span class="line">git push origin :hotfixes/BJVEP933           # 删除远程仓库的hotfixes/BJVEP933分支</span><br><span class="line">git push --tags                                           # 把所有tag推送到远程仓库</span><br><span class="line">git fetch                        # 获取所有远程分支（不更新本地分支，另需merge）</span><br><span class="line">git fetch --prune                       # 获取所有原创分支并清除服务器上已删掉的分支</span><br><span class="line">git pull origin master                               # 获取远程分支master并merge到当前分支</span><br><span class="line">git mv README README2                                     # 重命名文件README为README2</span><br><span class="line">git reset --hard HEAD               # 将当前版本重置为HEAD（通常用于merge失败回退）</span><br><span class="line">git rebase</span><br><span class="line">git branch -d hotfixes/BJVEP933        # 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）</span><br><span class="line">git branch -D hotfixes/BJVEP933                           # 强制删除分支hotfixes/BJVEP933</span><br><span class="line">git ls-files                                              # 列出git index包含的文件</span><br><span class="line">git show-branch                                           # 图示当前分支历史</span><br><span class="line">git show-branch --all                                     # 图示所有分支历史</span><br><span class="line">git whatchanged                                           # 显示提交历史对应的文件修改</span><br><span class="line">git revert dfb02e6e4f2f7b573337763e5c0013802e392818       # 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818</span><br><span class="line">git ls-tree HEAD                                          # 内部命令：显示某个git对象</span><br><span class="line">git rev-parse v2.0                                        # 内部命令：显示某个ref对于的SHA1 HASH</span><br><span class="line">git reflog                                                # 显示所有提交，包括孤立节点</span><br><span class="line">git show HEAD@&#123;5&#125;</span><br><span class="line">git show master@&#123;yesterday&#125;                               # 显示master分支昨天的状态</span><br><span class="line">git log --pretty=format:&#x27;%h %s&#x27; --graph                   # 图示提交日志</span><br><span class="line">git show HEAD~3</span><br><span class="line">git show -s --pretty=raw 2be7fcb476</span><br><span class="line">git stash                                                 # 暂存当前修改，将所有至为HEAD状态</span><br><span class="line">git stash list                                            # 查看所有暂存</span><br><span class="line">git stash show -p stash@&#123;0&#125;                               # 参考第一次暂存</span><br><span class="line">git stash apply stash@&#123;0&#125;                                 # 应用第一次暂存</span><br><span class="line">git grep &quot;delete from&quot;                                    # 文件中搜索文本“delete from”</span><br><span class="line">git grep -e &#x27;#define&#x27; --and -e SORT_DIRENT</span><br><span class="line">git gc</span><br><span class="line">git fsck</span><br><span class="line"># 生成一个可供发布的压缩包</span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>待续</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode_806. 写字符串需要的行数</title>
     <url>/2022/04/12/LeetCode-806-%E5%86%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%9C%80%E8%A6%81%E7%9A%84%E8%A1%8C%E6%95%B0/</url>
     <content><![CDATA[<h1 id="806-写字符串需要的行数"><a href="#806-写字符串需要的行数" class="headerlink" title="806. 写字符串需要的行数"></a>806. 写字符串需要的行数</h1><ul>
@@ -623,158 +664,28 @@
       </tags>
   </entry>
   <entry>
-    <title>Github仓库整理</title>
-    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
-<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
-<p>有些内容我就不举例了，大家可以看readme.md</p>
-<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
-</blockquote>
-<ul>
-<li><strong>开源是人类进步的基石</strong></li>
-</ul>
-<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
-<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
-</li>
-<li><p>简单实用的删除图像背景/抠图工具</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
-<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
-<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
-</ul>
-<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
-<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>备注：我一直在用哈</li>
-</ul>
-<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
-<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
-</li>
-<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
-</li>
-</ul>
-<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
-<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
-<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
-</li>
-<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
-</li>
-</ul>
-<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
-<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
-<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
-</ul>
-<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
-<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
-<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
-</ul>
-<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
-<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
-<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
-</ul>
-<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
-<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
-<li>简介：在命令行看股票走势的工具</li>
-<li></li>
-</ul>
-<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
-<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
-<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
-</ul>
-<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
-<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
-<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
-</ul>
-<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
-<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
-</li>
-<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
-</li>
-</ul>
-<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
-<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
-<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
-<li>修改、合并 PDF 文档</li>
-<li>自动生成书签</li>
-<li>书签编辑器</li>
-<li>高速无损地导出文件中的图片</li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
-<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
-<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
-</ul>
-<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
-<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
-<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
-<li></li>
-</ul>
-<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
-<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
-<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
-</ul>
-<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
-<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
-<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
-</ul>
-<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
-<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
-<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>待续</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git入门指南</title>
-    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="Git入门指南"><a href="#Git入门指南" class="headerlink" title="Git入门指南"></a>Git入门指南</h1><blockquote>
+    <title>Git入门指南(一)</title>
+    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Git入门指南-一"><a href="#Git入门指南-一" class="headerlink" title="Git入门指南(一)"></a>Git入门指南(一)</h1><blockquote>
 <p>引用了 微信公众号 入门小站的内容</p>
 <p>参考了pro git</p>
 </blockquote>
-<h2 id="概念-TODO"><a href="#概念-TODO" class="headerlink" title="概念 TODO"></a>概念 TODO</h2><h2 id="命令行-拓展"><a href="#命令行-拓展" class="headerlink" title="命令行 - 拓展"></a>命令行 - 拓展</h2><h3 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 在当前目录新建一个Git代码库</span><br><span class="line">$ git init</span><br><span class="line"># 新建一个目录，将其初始化为Git代码库</span><br><span class="line">$ git init [project-name]</span><br><span class="line"># 下载一个项目和它的整个代码历史</span><br><span class="line">$ git clone [url]</span><br></pre></td></tr></table></figure>
-
-<h3 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h3><p>Git 的设置文件为. gitconfig，它可以在用户主目录下 (全局配置)，也可以在项目目录下 (项目配置)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示当前的Git配置</span><br><span class="line">$ git config --list</span><br><span class="line"># 编辑Git配置文件</span><br><span class="line">$ git config -e [--global]</span><br><span class="line"># 设置提交代码时的用户信息</span><br><span class="line">$ git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">$ git config [--global] user.email &quot;[email address]&quot;</span><br><span class="line"># 颜色设置</span><br><span class="line">git config --global color.ui true                         # git status等命令自动着色</span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line">git config --global --unset http.proxy                    # remove  proxy configuration on git</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、增加-删除文件"><a href="#三、增加-删除文件" class="headerlink" title="三、增加 / 删除文件"></a>三、增加 / 删除文件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 添加指定文件到暂存区</span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"># 添加指定目录到暂存区，包括子目录</span><br><span class="line">$ git add [dir]</span><br><span class="line"># 添加当前目录的所有文件到暂存区</span><br><span class="line">$ git add .</span><br><span class="line"># 添加每个变化前，都会要求确认</span><br><span class="line"># 对于同一个文件的多处变化，可以实现分次提交</span><br><span class="line">$ git add -p</span><br><span class="line"># 删除工作区文件，并且将这次删除放入暂存区</span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"># 停止追踪指定文件，但该文件会保留在工作区</span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"># 改名文件，并且将这个改名放入暂存区</span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
-
-<h3 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 提交暂存区到仓库区</span><br><span class="line">$ git commit -m [message]</span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">$ git commit -a</span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">$ git commit -v</span><br><span class="line"># 将add和commit合为一步</span><br><span class="line">$ git commit -am &#x27;message&#x27;</span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
-
-<h3 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">$ git branch</span><br><span class="line"># 列出所有远程分支</span><br><span class="line">$ git branch -r</span><br><span class="line"># 列出所有本地分支和远程分支</span><br><span class="line">$ git branch -a</span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"># 新建一个分支，指向指定commit</span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"># 新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"># 切换到指定分支，并更新工作区</span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"># 切换到上一个分支</span><br><span class="line">$ git checkout -</span><br><span class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">$ git merge [branch]</span><br><span class="line"># 选择一个commit，合并进当前分支</span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"># 删除分支</span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"># 删除远程分支</span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br><span class="line"># 检出版本v2.0</span><br><span class="line">$ git checkout v2.0</span><br><span class="line"># 从远程分支develop创建新本地分支devel并检出</span><br><span class="line">$ git checkout -b devel origin/develop</span><br><span class="line"># 检出head版本的README文件（可用于修改错误回退）</span><br><span class="line">git checkout -- README</span><br></pre></td></tr></table></figure>
-
-<h3 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 列出所有tag</span><br><span class="line">$ git tag</span><br><span class="line"># 新建一个tag在当前commit</span><br><span class="line">$ git tag [tag]</span><br><span class="line"># 新建一个tag在指定commit</span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"># 删除本地tag</span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"># 删除远程tag</span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"># 查看tag信息</span><br><span class="line">$ git show [tag]</span><br><span class="line"># 提交指定tag</span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"># 提交所有tag</span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"># 新建一个分支，指向某个tag</span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
-
-<h3 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示有变更的文件</span><br><span class="line">$ git status</span><br><span class="line"># 显示当前分支的版本历史</span><br><span class="line">$ git log</span><br><span class="line"># 显示commit历史，以及每次commit发生变更的文件</span><br><span class="line">$ git log --stat</span><br><span class="line"># 搜索提交历史，根据关键词</span><br><span class="line">$ git log -S [keyword]</span><br><span class="line"># 显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line">$ git log [tag] HEAD --pretty=format:%s</span><br><span class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span><br><span class="line">$ git log [tag] HEAD --grep feature</span><br><span class="line"># 显示某个文件的版本历史，包括文件改名</span><br><span class="line">$ git log --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"># 显示指定文件相关的每一次diff</span><br><span class="line">$ git log -p [file]</span><br><span class="line"># 显示过去5次提交</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"># 显示所有提交过的用户，按提交次数排序</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"># 显示指定文件是什么人在什么时间修改过</span><br><span class="line">$ git blame [file]</span><br><span class="line"># 显示暂存区和工作区的差异</span><br><span class="line">$ git diff</span><br><span class="line"># 显示暂存区和上一个commit的差异</span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"># 显示工作区与当前分支最新commit之间的差异</span><br><span class="line">$ git diff HEAD</span><br><span class="line"># 显示两次提交之间的差异</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"># 显示今天你写了多少行代码</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"># 显示某次提交的元数据和内容变化</span><br><span class="line">$ git show [commit]</span><br><span class="line"># 显示某次提交发生变化的文件</span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"># 显示某次提交时，某个文件的内容</span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
-
-<h3 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 下载远程仓库的所有变动</span><br><span class="line">$ git fetch [remote]</span><br><span class="line"># 显示所有远程仓库</span><br><span class="line">$ git remote -v</span><br><span class="line"># 显示某个远程仓库的信息</span><br><span class="line">$ git remote show [remote]</span><br><span class="line"># 增加一个新的远程仓库，并命名</span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"># 取回远程仓库的变化，并与本地分支合并</span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"># 上传本地指定分支到远程仓库</span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"># 强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line">$ git push [remote] --force</span><br><span class="line"># 推送所有分支到远程仓库</span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
-
-<h3 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 恢复暂存区的指定文件到工作区</span><br><span class="line">$ git checkout [file]</span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">$ git reset [file]</span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">$ git reset --hard</span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">$ git reset [commit]</span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert [commit]</span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
-
-<h3 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init                                                  # 初始化本地git仓库（创建新仓库）</span><br><span class="line">git config --global user.name &quot;xxx&quot;                       # 配置用户名</span><br><span class="line">git config --global user.email &quot;xxx@xxx.com&quot;              # 配置邮件</span><br><span class="line">git config --global color.ui true                         # git status等命令自动着色</span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br><span class="line">git config --global --unset http.proxy           # remove  proxy configuration on git</span><br><span class="line">git clone git+ssh://git@192.168.53.168/VT.git             # clone远程仓库</span><br><span class="line">git status                                                # 查看当前版本状态（是否修改）</span><br><span class="line">git add xyz                                               # 添加xyz文件至index</span><br><span class="line">git add .                                                 # 增加当前子目录下所有更改过的文件至index</span><br><span class="line">git commit -m &#x27;xxx&#x27;                                       # 提交</span><br><span class="line">git commit --amend -m &#x27;xxx&#x27;                               # 合并上一次提交（用于反复修改）</span><br><span class="line">git commit -am &#x27;xxx&#x27;                                      # 将add和commit合为一步</span><br><span class="line">git rm xxx                                                # 删除index中的文件</span><br><span class="line">git rm -r *                                               # 递归删除</span><br><span class="line">git log                                                   # 显示提交日志</span><br><span class="line">git log -1                                                # 显示1行日志 -n为n行</span><br><span class="line">git log -5</span><br><span class="line">git log --stat                                            # 显示提交日志及相关变动文件</span><br><span class="line">git log -p -m</span><br><span class="line">git show dfb02e6e4f2f7b573337763e5c0013802e392818         # 显示某个提交的详细内容</span><br><span class="line">git show dfb02                                            # 可只用commitid的前几位</span><br><span class="line">git show HEAD                                             # 显示HEAD提交日志</span><br><span class="line">git show HEAD^          # 显示HEAD的父（上一个版本）的提交日志 ^^为上两个版本 ^5为上5个版本</span><br><span class="line">git tag                                                   # 显示已存在的tag</span><br><span class="line">git tag -a v2.0 -m &#x27;xxx&#x27;                                  # 增加v2.0的tag</span><br><span class="line">git show v2.0                                             # 显示v2.0的日志及详细内容</span><br><span class="line">git log v2.0                                              # 显示v2.0的日志</span><br><span class="line">git diff                                                  # 显示所有未添加至index的变更</span><br><span class="line">git diff --cached                                         # 显示所有已添加index但还未commit的变更</span><br><span class="line">git diff HEAD^                                            # 比较与上一个版本的差异</span><br><span class="line">git diff HEAD -- ./lib                                    # 比较与HEAD版本lib目录的差异</span><br><span class="line">git diff origin/master..master          # 比较远程分支master上有本地分支master上没有的</span><br><span class="line">git diff origin/master..master --stat                     # 只显示差异的文件，不显示具体内容</span><br><span class="line">git remote add origin git+ssh://git@192.168.53.168/VT.git # 增加远程定义（用于push/pull/fetch）</span><br><span class="line">git branch                                                # 显示本地分支</span><br><span class="line">git branch --contains 50089                               # 显示包含提交50089的分支</span><br><span class="line">git branch -a                                             # 显示所有分支</span><br><span class="line">git branch -r                                             # 显示所有原创分支</span><br><span class="line">git branch --merged                                       # 显示所有已合并到当前分支的分支</span><br><span class="line">git branch --no-merged                                    # 显示所有未合并到当前分支的分支</span><br><span class="line">git branch -m master master_copy                          # 本地分支改名</span><br><span class="line">git checkout -b master_copy              # 从当前分支创建新分支master_copy并检出</span><br><span class="line">git checkout -b master master_copy                        # 上面的完整版</span><br><span class="line">git checkout features/performance                         # 检出已存在的features/performance分支</span><br><span class="line">git checkout --track hotfixes/BJVEP933      # 检出远程分支hotfixes/BJVEP933并创建本地跟踪分支</span><br><span class="line">git checkout v2.0                                         # 检出版本v2.0</span><br><span class="line">git checkout -b devel origin/develop      # 从远程分支develop创建新本地分支devel并检出</span><br><span class="line">git checkout -- README                      # 检出head版本的README文件（可用于修改错误回退）</span><br><span class="line">git merge origin/master                                   # 合并远程master分支至当前分支</span><br><span class="line">git cherry-pick ff44785404a8e                             # 合并提交ff44785404a8e的修改</span><br><span class="line">git push origin master                                    # 将当前分支push到远程master分支</span><br><span class="line">git push origin :hotfixes/BJVEP933           # 删除远程仓库的hotfixes/BJVEP933分支</span><br><span class="line">git push --tags                                           # 把所有tag推送到远程仓库</span><br><span class="line">git fetch                        # 获取所有远程分支（不更新本地分支，另需merge）</span><br><span class="line">git fetch --prune                       # 获取所有原创分支并清除服务器上已删掉的分支</span><br><span class="line">git pull origin master                               # 获取远程分支master并merge到当前分支</span><br><span class="line">git mv README README2                                     # 重命名文件README为README2</span><br><span class="line">git reset --hard HEAD               # 将当前版本重置为HEAD（通常用于merge失败回退）</span><br><span class="line">git rebase</span><br><span class="line">git branch -d hotfixes/BJVEP933        # 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）</span><br><span class="line">git branch -D hotfixes/BJVEP933                           # 强制删除分支hotfixes/BJVEP933</span><br><span class="line">git ls-files                                              # 列出git index包含的文件</span><br><span class="line">git show-branch                                           # 图示当前分支历史</span><br><span class="line">git show-branch --all                                     # 图示所有分支历史</span><br><span class="line">git whatchanged                                           # 显示提交历史对应的文件修改</span><br><span class="line">git revert dfb02e6e4f2f7b573337763e5c0013802e392818       # 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818</span><br><span class="line">git ls-tree HEAD                                          # 内部命令：显示某个git对象</span><br><span class="line">git rev-parse v2.0                                        # 内部命令：显示某个ref对于的SHA1 HASH</span><br><span class="line">git reflog                                                # 显示所有提交，包括孤立节点</span><br><span class="line">git show HEAD@&#123;5&#125;</span><br><span class="line">git show master@&#123;yesterday&#125;                               # 显示master分支昨天的状态</span><br><span class="line">git log --pretty=format:&#x27;%h %s&#x27; --graph                   # 图示提交日志</span><br><span class="line">git show HEAD~3</span><br><span class="line">git show -s --pretty=raw 2be7fcb476</span><br><span class="line">git stash                                                 # 暂存当前修改，将所有至为HEAD状态</span><br><span class="line">git stash list                                            # 查看所有暂存</span><br><span class="line">git stash show -p stash@&#123;0&#125;                               # 参考第一次暂存</span><br><span class="line">git stash apply stash@&#123;0&#125;                                 # 应用第一次暂存</span><br><span class="line">git grep &quot;delete from&quot;                                    # 文件中搜索文本“delete from”</span><br><span class="line">git grep -e &#x27;#define&#x27; --and -e SORT_DIRENT</span><br><span class="line">git gc</span><br><span class="line">git fsck</span><br><span class="line"># 生成一个可供发布的压缩包</span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<h2 id="概念-TODO"><a href="#概念-TODO" class="headerlink" title="概念 TODO"></a>概念 TODO</h2>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>待续</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git入门指南(三)</title>
+    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%89/</url>
+    <content><![CDATA[<h1 id="Git入门指南-三"><a href="#Git入门指南-三" class="headerlink" title="Git入门指南(三)"></a>Git入门指南(三)</h1><blockquote>
+<p>引用了 微信公众号 入门小站的内容</p>
+<p>参考了pro git</p>
+</blockquote>
 <h2 id="实用案例"><a href="#实用案例" class="headerlink" title="实用案例"></a>实用案例</h2><h3 id="我刚才提交了什么"><a href="#我刚才提交了什么" class="headerlink" title="我刚才提交了什么?"></a>我刚才提交了什么?</h3><blockquote>
 <p>如果你用 <code>git commit -a</code> 提交了一次变化(changes)，而你又不确定到底这次提交了哪些内容。你就可以用下面的命令显示当前<code>HEAD</code>上的最近一次的提交(commit):</p>
 </blockquote>
@@ -1251,8 +1162,129 @@
         <category>git</category>
       </categories>
       <tags>
-        <tag>待续</tag>
         <tag>git</tag>
+        <tag>待续</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github仓库整理</title>
+    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
+<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
+<p>有些内容我就不举例了，大家可以看readme.md</p>
+<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
+</blockquote>
+<ul>
+<li><strong>开源是人类进步的基石</strong></li>
+</ul>
+<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
+<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
+</li>
+<li><p>简单实用的删除图像背景/抠图工具</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
+<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
+<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
+</ul>
+<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
+<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>备注：我一直在用哈</li>
+</ul>
+<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
+<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
+</li>
+<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
+</li>
+</ul>
+<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
+<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
+<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
+</li>
+<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
+</li>
+</ul>
+<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
+<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
+<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
+</ul>
+<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
+<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
+<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
+</ul>
+<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
+<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
+<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
+</ul>
+<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
+<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
+<li>简介：在命令行看股票走势的工具</li>
+<li></li>
+</ul>
+<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
+<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
+<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
+</ul>
+<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
+<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
+<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
+</ul>
+<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
+<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
+</li>
+<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
+</li>
+</ul>
+<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
+<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
+<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
+<li>修改、合并 PDF 文档</li>
+<li>自动生成书签</li>
+<li>书签编辑器</li>
+<li>高速无损地导出文件中的图片</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
+<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
+<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
+</ul>
+<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
+<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
+<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
+<li></li>
+</ul>
+<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
+<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
+<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
+</ul>
+<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
+<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
+<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
+</ul>
+<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
+<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
+<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1734,8 +1766,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>完结</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -2201,8 +2233,8 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>http</tag>
         <tag>待续</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
@@ -2727,6 +2759,59 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode_176.第二高的薪水</title>
+    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
+</li>
+<li><p>难度：简单</p>
+</li>
+</ul>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
+<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
+]]></content>
+      <categories>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_217.存在重复元素</title>
+    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<ul>
+<li><p>难度：简单</p>
+</li>
+<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
+</li>
+<li><p>题目</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>思路：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode_512.游戏玩家分析2</title>
     <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
     <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
@@ -2774,59 +2859,6 @@
 </li>
 </ul>
 <p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_176.第二高的薪水</title>
-    <url>/2022/04/04/LeetCode-176-%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li><p>原文地址：<a href="https://leetcode-cn.com/problems/second-highest-salary/">https://leetcode-cn.com/problems/second-highest-salary/</a></p>
-</li>
-<li><p>难度：简单</p>
-</li>
-</ul>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e0fefbc4a4e~tplv-t2oaga2asx-image.image"><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。</p>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139e1266aa2c13~tplv-t2oaga2asx-image.image"></p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对于oracle很容易就想到下面的做法</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> salary <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> (</span><br><span class="line"><span class="keyword">select</span> salary,rownum <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> employee <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span> ))</span><br><span class="line"><span class="keyword">where</span> rn<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>貌似也没毛病。但其实毛病很大，很多<br>如果不存在第二高的薪水，分2种情况，一种是就1条记录，一种是SAL就一个。<br>那你根据ROWNUM就无法得到。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
-<p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
-]]></content>
-      <categories>
-        <category>SQL</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-        <tag>LeetCode</tag>
-        <tag>完结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_217.存在重复元素</title>
-    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<ul>
-<li><p>难度：简单</p>
-</li>
-<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
-</li>
-<li><p>题目</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>思路：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
-</ul>
 ]]></content>
       <categories>
         <category>python</category>

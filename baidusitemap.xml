@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%89/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2022/04/13/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%BA%8C/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/</loc>
+    <lastmod>2022-04-13</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2022/04/12/Python%E4%B8%AD%E7%9A%84super/</loc>
     <lastmod>2022-04-12</lastmod>
   </url>
@@ -14,10 +26,6 @@
   </url>
   <url>
     <loc>http://example.com/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</loc>
-    <lastmod>2022-04-10</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2022-04-10</lastmod>
   </url>
   <url>
