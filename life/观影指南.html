@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>LeetCode_804. 唯一摩尔斯密码词 |  老吴的博客</title>
+      <title>索尼漫威宇宙 |  老吴的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -53,8 +53,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-LeetCode-804-唯一摩尔斯密码词"
-  class="article article-type-post"
+  id="page-"
+  class="article article-type-page"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -64,68 +64,24 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  LeetCode_804. 唯一摩尔斯密码词
+  索尼漫威宇宙
 </h1>
  
 
       
     </header>
-     
-    <div class="article-meta">
-      <a href="/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/" class="article-date">
-  <time datetime="2022-04-09T16:00:00.000Z" itemprop="datePublished">2022-04-10</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">709</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3 分钟</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
-  
+       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="804-唯一摩尔斯密码词"><a href="#804-唯一摩尔斯密码词" class="headerlink" title="804. 唯一摩尔斯密码词"></a>804. 唯一摩尔斯密码词</h1><ul>
-<li>难度：简单</li>
-<li>原文：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/unique-morse-code-words/">https://leetcode-cn.com/problems/unique-morse-code-words/</a></li>
-<li>题目<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:</span><br><span class="line"></span><br><span class="line">&#x27;a&#x27; 对应 &quot;.-&quot; ，</span><br><span class="line">&#x27;b&#x27; 对应 &quot;-...&quot; ，</span><br><span class="line">&#x27;c&#x27; 对应 &quot;-.-.&quot; ，以此类推。</span><br><span class="line">为了方便，所有 26 个英文字母的摩尔斯密码表如下：</span><br><span class="line"></span><br><span class="line">[&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;.---&quot;,&quot;-.-&quot;,&quot;.-..&quot;,&quot;--&quot;,&quot;-.&quot;,&quot;---&quot;,&quot;.--.&quot;,&quot;--.-&quot;,&quot;.-.&quot;,&quot;...&quot;,&quot;-&quot;,&quot;..-&quot;,&quot;...-&quot;,&quot;.--&quot;,&quot;-..-&quot;,&quot;-.--&quot;,&quot;--..&quot;]</span><br><span class="line">给你一个字符串数组 words ，每个单词可以写成每个字母对应摩尔斯密码的组合。</span><br><span class="line"></span><br><span class="line">例如，&quot;cab&quot; 可以写成 &quot;-.-..--...&quot; ，(即 &quot;-.-.&quot; + &quot;.-&quot; + &quot;-...&quot; 字符串的结合)。我们将这样一个连接过程称作 单词翻译 。</span><br><span class="line">对 words 中所有单词进行单词翻译，返回不同 单词翻译 的数量。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入: words = [&quot;gin&quot;, &quot;zen&quot;, &quot;gig&quot;, &quot;msg&quot;]</span><br><span class="line">输出: 2</span><br><span class="line">解释: </span><br><span class="line">各单词翻译如下:</span><br><span class="line">&quot;gin&quot; -&gt; &quot;--...-.&quot;</span><br><span class="line">&quot;zen&quot; -&gt; &quot;--...-.&quot;</span><br><span class="line">&quot;gig&quot; -&gt; &quot;--...--.&quot;</span><br><span class="line">&quot;msg&quot; -&gt; &quot;--...--.&quot;</span><br><span class="line"></span><br><span class="line">共有 2 种不同翻译, &quot;--...-.&quot; 和 &quot;--...--.&quot;.</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：words = [&quot;a&quot;]</span><br><span class="line">输出：1</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= words.length &lt;= 100</span><br><span class="line">1 &lt;= words[i].length &lt;= 12</span><br><span class="line">words[i] 由小写英文字母组成</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 建立一个26个字母和密码的映射表</span><br><span class="line">2. 将目标字符串列表的元素取出并转换</span><br><span class="line">3. 弄成集合求长度</span><br></pre></td></tr></table></figure>
-
-<h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:</span><br><span class="line">        morse_tab = [&quot;.-&quot;, &quot;-...&quot;, &quot;-.-.&quot;, &quot;-..&quot;, &quot;.&quot;, &quot;..-.&quot;, &quot;--.&quot;, &quot;....&quot;, &quot;..&quot;, &quot;.---&quot;, &quot;-.-&quot;, &quot;.-..&quot;, &quot;--&quot;, &quot;-.&quot;, &quot;---&quot;,</span><br><span class="line">                    &quot;.--.&quot;, &quot;--.-&quot;, &quot;.-.&quot;, &quot;...&quot;, &quot;-&quot;, &quot;..-&quot;, &quot;...-&quot;, &quot;.--&quot;, &quot;-..-&quot;, &quot;-.--&quot;, &quot;--..&quot;]</span><br><span class="line">        from string import ascii_lowercase</span><br><span class="line">        map_morse = dict(zip(ascii_lowercase, morse_tab))</span><br><span class="line">        def rotate_word(word):</span><br><span class="line">            for _ in word:</span><br><span class="line">                return &#x27;&#x27;.join([map_morse[_] for _ in word])</span><br><span class="line">        trans_words = list(map(rotate_word, words))</span><br><span class="line">        return len(set(trans_words))</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>执行效果也是非常的好。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行用时：<span class="number">28</span> ms, 在所有 Python3 提交中击败了<span class="number">98.44</span>%的用户</span><br><span class="line">内存消耗：<span class="number">14.8</span> MB, 在所有 Python3 提交中击败了<span class="number">98.83</span>%的用户</span><br><span class="line">通过测试用例：</span><br><span class="line"><span class="number">82</span> / <span class="number">82</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="其他解法"><a href="#其他解法" class="headerlink" title="其他解法"></a>其他解法</h1><ul>
-<li><p>神奇的一行？</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将 ord(i) - ord(&#x27;a&#x27;) 映射到 MORSES 的索引</span><br><span class="line">对 word 按照字符索引匹配摩尔斯密码，然后求解集合的长度</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MORSES = [&quot;.-&quot;, &quot;-...&quot;, &quot;-.-.&quot;, &quot;-..&quot;, &quot;.&quot;, &quot;..-.&quot;, &quot;--.&quot;, &quot;....&quot;, &quot;..&quot;, &quot;.---&quot;, &quot;-.-&quot;, &quot;.-..&quot;, &quot;--&quot;,</span><br><span class="line">        &quot;-.&quot;, &quot;---&quot;, &quot;.--.&quot;, &quot;--.-&quot;, &quot;.-.&quot;, &quot;...&quot;, &quot;-&quot;, &quot;..-&quot;, &quot;...-&quot;, &quot;.--&quot;, &quot;-..-&quot;, &quot;-.--&quot;, &quot;--..&quot;]</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:</span><br><span class="line">        return len(&#123;&#x27;&#x27;.join(MORSES[ord(i) - ord(&#x27;a&#x27;)] for i in w) for w in words&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
+  <h1 id="索尼漫威宇宙"><a href="#索尼漫威宇宙" class="headerlink" title="索尼漫威宇宙"></a><strong>索尼漫威宇宙</strong></h1><p>1.《蜘蛛侠》（2002）</p>
+<p>2.《蜘蛛侠2》（2004）</p>
+<p>3.《蜘蛛侠3》（2007）</p>
+<p>4.《超凡蜘蛛侠》（2012）</p>
+<p>5.《超凡蜘蛛侠2》（2014）</p>
+<p>6.《毒液：致命守护者》（2018）</p>
+<p>7.《蜘蛛侠：平行宇宙》（动画电影）（2018）</p>
+<p>8.《毒液2》（未上映）</p>
+<p>9.《吸血鬼莫比乌斯》（2021年3月19）</p>
  
       <!-- reward -->
       
@@ -196,36 +152,15 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/life/%E8%A7%82%E5%BD%B1%E6%8C%87%E5%8D%97.html" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li></ul>
-
     </footer>
   </div>
 
    
-  <nav class="article-nav">
-    
-      <a href="/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Git入门指南(一)
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2022/04/09/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pycryptodome%E5%8A%A0%E5%AF%86/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python第三方库_pycryptodome_RSA加密</div>
-      </a>
-    
-  </nav>
-
    
 <!-- valine评论 -->
 <div id="vcomments-box">
@@ -275,16 +210,7 @@
 </style>
 
  
-   
     
-    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
-    <div id="twikoo" class="twikoo"></div>
-    <script>
-        twikoo.init({
-            envId: ""
-        })
-    </script>
- 
 </article>
 
 </section>
@@ -427,22 +353,6 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
- 
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: ".tocbot",
-    contentSelector: ".article-entry",
-    headingSelector: "h1, h2, h3, h4, h5, h6",
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: "main",
-    positionFixedSelector: ".tocbot",
-    positionFixedClass: "is-position-fixed",
-    fixedSidebarOffset: "auto",
-  });
-</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link

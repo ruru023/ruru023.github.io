@@ -142,7 +142,7 @@
 <p>如果你需要修改所有历史, 参考 ‘git filter-branch’的指南页.</p>
 </blockquote>
 <h3 id="我想从一个提交-commit-里移除一个文件"><a href="#我想从一个提交-commit-里移除一个文件" class="headerlink" title="我想从一个提交(commit)里移除一个文件"></a>我想从一个提交(commit)里移除一个文件</h3><p>通过下面的方法，从一个提交(commit)里移除一个文件:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout HEAD^ myfile$ git add -A$ git commit --amend</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout HEAD^ myfile</span><br><span class="line">$ git add -A</span><br><span class="line">$ git commit --amend</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>这将非常有用，当你有一个开放的补丁(open patch)，你往上面提交了一个不必要的文件，你需要强推(force push)去更新这个远程补丁。</p>
@@ -150,7 +150,7 @@
 <h3 id="我想删除我的的最后一次提交-commit"><a href="#我想删除我的的最后一次提交-commit" class="headerlink" title="我想删除我的的最后一次提交(commit)"></a>我想删除我的的最后一次提交(commit)</h3><blockquote>
 <p>如果你需要删除推了的提交(pushed commits)，你可以使用下面的方法。可是，这会不可逆的改变你的历史，也会搞乱那些已经从该仓库拉取(pulled)了的人的历史。简而言之，如果你不是很确定，千万不要这么做。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD^ --hard$ git push -f [remote] [branch]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD^ --hard</span><br><span class="line">$ git push -f [remote] [branch]</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>如果你还没有推到远程, 把Git重置(reset)到你最后一次提交前的状态就可以了(同时保存暂存的变化):</p>
@@ -161,10 +161,10 @@
 <p>这只能在没有推送之前有用. 如果你已经推了, 唯一安全能做的是 <code>git revert SHAofBadCommit</code>， 那会创建一个新的提交(commit)用于撤消前一个提交的所有变化(changes)；或者, 如果你推的这个分支是rebase-safe的 (例如：其它开发者不会从这个分支拉), 只需要使用 <code>git push -f</code>。</p>
 </blockquote>
 <h3 id="删除任意提交-commit"><a href="#删除任意提交-commit" class="headerlink" title="删除任意提交(commit)"></a>删除任意提交(commit)</h3><p>同样的警告：不到万不得已的时候不要这么做.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT$ git push -f [remote] [branch]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT</span><br><span class="line">$ git push -f [remote] [branch]</span><br></pre></td></tr></table></figure>
 
 <p>或者做一个 交互式rebase 删除那些你想要删除的提交(commit)里所对应的行。</p>
-<h3 id="我尝试推一个修正后的提交-amended-commit-到远程，但是报错："><a href="#我尝试推一个修正后的提交-amended-commit-到远程，但是报错：" class="headerlink" title="我尝试推一个修正后的提交(amended commit)到远程，但是报错："></a>我尝试推一个修正后的提交(amended commit)到远程，但是报错：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">To https://github.com/yourusername/repo.git! [rejected]        mybranch -&gt; mybranch (non-fast-forward)error: failed to push some refs to &#x27;https://github.com/tanay1337/webmaker.org.git&#x27;hint: Updates were rejected because the tip of your current branch is behindhint: its remote counterpart. Integrate the remote changes (e.g.hint: &#x27;git pull ...&#x27;) before pushing again.hint: See the &#x27;Note about fast-forwards&#x27; in &#x27;git push --help&#x27; for details.</span><br></pre></td></tr></table></figure>
+<h3 id="我尝试推一个修正后的提交-amended-commit-到远程，但是报错："><a href="#我尝试推一个修正后的提交-amended-commit-到远程，但是报错：" class="headerlink" title="我尝试推一个修正后的提交(amended commit)到远程，但是报错："></a>我尝试推一个修正后的提交(amended commit)到远程，但是报错：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">To https://github.com/yourusername/repo.git</span><br><span class="line">! [rejected]        mybranch -&gt; mybranch (non-fast-forward)</span><br><span class="line">error: failed to push some refs to &#x27;https://github.com/tanay1337/webmaker.org.git&#x27;</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: &#x27;git pull ...&#x27;) before pushing again.</span><br><span class="line">hint: See the &#x27;Note about fast-forwards&#x27; in &#x27;git push --help&#x27; for details.</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意, rebasing(见下面)和修正(amending)会用一个<strong>新的提交(commit)代替旧的</strong>, 所以如果之前你已经往远程仓库上推过一次修正前的提交(commit)，那你现在就必须强推(force push) (<code>-f</code>)。注意 – <em>总是</em> 确保你指明一个分支!</p>
@@ -200,7 +200,7 @@
 <p>然后, 你需要用 <code>e</code> 选项来手动选择需要添加的行，执行 <code>git diff --cached</code> 将会显示哪些行暂存了哪些行只是保存在本地了。</p>
 <h3 id="我想把在一个文件里的变化-changes-加到两个提交-commit-里"><a href="#我想把在一个文件里的变化-changes-加到两个提交-commit-里" class="headerlink" title="我想把在一个文件里的变化(changes)加到两个提交(commit)里"></a>我想把在一个文件里的变化(changes)加到两个提交(commit)里</h3><p><code>git add</code> 会把整个文件加入到一个提交. <code>git add -p</code> 允许交互式的选择你想要提交的部分.</p>
 <h3 id="我想把暂存的内容变成未暂存，把未暂存的内容暂存起来"><a href="#我想把暂存的内容变成未暂存，把未暂存的内容暂存起来" class="headerlink" title="我想把暂存的内容变成未暂存，把未暂存的内容暂存起来"></a>我想把暂存的内容变成未暂存，把未暂存的内容暂存起来</h3><p>多数情况下，你应该将所有的内容变为未暂存，然后再选择你想要的内容进行commit。但假定你就是想要这么做，这里你可以创建一个临时的commit来保存你已暂存的内容，然后暂存你的未暂存的内容并进行stash。然后reset最后一个commit将原本暂存的内容变为未暂存，最后stash pop回来。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;WIP&quot;$ git add .$ git stash$ git reset HEAD^$ git stash pop --index 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;WIP&quot;</span><br><span class="line">$ git add .</span><br><span class="line">$ git stash</span><br><span class="line">$ git reset HEAD^</span><br><span class="line">$ git stash pop --index 0</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意1: 这里使用<code>pop</code>仅仅是因为想尽可能保持幂等。注意2: 假如你不加上<code>--index</code>你会把暂存的文件标记为为存储。</p>
@@ -211,12 +211,12 @@
 </blockquote>
 <h3 id="我想把未暂存的内容移动到一个新分支"><a href="#我想把未暂存的内容移动到一个新分支" class="headerlink" title="我想把未暂存的内容移动到一个新分支"></a>我想把未暂存的内容移动到一个新分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b my-branch</span><br></pre></td></tr></table></figure>
 
-<h3 id="我想把未暂存的内容移动到另一个已存在的分支"><a href="#我想把未暂存的内容移动到另一个已存在的分支" class="headerlink" title="我想把未暂存的内容移动到另一个已存在的分支"></a>我想把未暂存的内容移动到另一个已存在的分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash$ git checkout my-branch$ git stash pop</span><br></pre></td></tr></table></figure>
+<h3 id="我想把未暂存的内容移动到另一个已存在的分支"><a href="#我想把未暂存的内容移动到另一个已存在的分支" class="headerlink" title="我想把未暂存的内容移动到另一个已存在的分支"></a>我想把未暂存的内容移动到另一个已存在的分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git stash</span><br><span class="line">$ git checkout my-branch</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
 
 <h3 id="我想丢弃本地未提交的变化-uncommitted-changes"><a href="#我想丢弃本地未提交的变化-uncommitted-changes" class="headerlink" title="我想丢弃本地未提交的变化(uncommitted changes)"></a>我想丢弃本地未提交的变化(uncommitted changes)</h3><blockquote>
 <p>如果你只是想重置源(origin)和你本地(local)之间的一些提交(commit)，你可以：</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># one commit(my-branch)$ git reset --hard HEAD^# two commits(my-branch)$ git reset --hard HEAD^^# four commits(my-branch)$ git reset --hard HEAD~4# or(main)$ git checkout -f</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># one commit</span><br><span class="line">(my-branch)$ git reset --hard HEAD^</span><br><span class="line"># two commits</span><br><span class="line">(my-branch)$ git reset --hard HEAD^^</span><br><span class="line"># four commits</span><br><span class="line">(my-branch)$ git reset --hard HEAD~4</span><br><span class="line"># or</span><br><span class="line">(main)$ git checkout -f</span><br></pre></td></tr></table></figure>
 
 <p>重置某个特殊的文件, 你可以用文件名做为参数:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset filename</span><br></pre></td></tr></table></figure>
@@ -225,13 +225,13 @@
 <p>如果你想丢弃工作拷贝中的一部分内容，而不是全部。</p>
 </blockquote>
 <p>签出(checkout)不需要的内容，保留需要的。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -p# Answer y to all of the snippets you want to drop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -p</span><br><span class="line"># Answer y to all of the snippets you want to drop</span><br></pre></td></tr></table></figure>
 
 <p>另外一个方法是使用 <code>stash</code>， Stash所有要保留下的内容, 重置工作拷贝, 重新应用保留的部分。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash -p# Select all of the snippets you want to save$ git reset --hard$ git stash pop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git stash -p</span><br><span class="line"># Select all of the snippets you want to save</span><br><span class="line">$ git reset --hard</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
 
 <p>或者, stash 你不需要的部分, 然后stash drop。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash -p# Select all of the snippets you don&#x27;t want to save$ git stash drop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git stash -p</span><br><span class="line"># Select all of the snippets you don&#x27;t want to save</span><br><span class="line">$ git stash drop</span><br></pre></td></tr></table></figure>
 
 <hr>
 <blockquote>
@@ -239,7 +239,7 @@
 <h3 id="我从错误的分支拉取了内容，或把内容拉取到了错误的分支"><a href="#我从错误的分支拉取了内容，或把内容拉取到了错误的分支" class="headerlink" title="我从错误的分支拉取了内容，或把内容拉取到了错误的分支"></a>我从错误的分支拉取了内容，或把内容拉取到了错误的分支</h3><blockquote>
 <p>这是另外一种使用 <code>git reflog</code> 情况，找到在这次错误拉(pull) 之前HEAD的指向。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reflogab7555f HEAD@&#123;0&#125;: pull origin wrong-branch: Fast-forwardc5bc55a HEAD@&#123;1&#125;: checkout: checkout message goes here</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reflog</span><br><span class="line">ab7555f HEAD@&#123;0&#125;: pull origin wrong-branch: Fast-forward</span><br><span class="line">c5bc55a HEAD@&#123;1&#125;: checkout: checkout message goes here</span><br></pre></td></tr></table></figure>
 
 <p>重置分支到你所需的提交(desired commit):</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard c5bc55a</span><br></pre></td></tr></table></figure>
@@ -247,7 +247,7 @@
 <p>完成。</p>
 <h3 id="我想扔掉本地的提交-commit-，以便我的分支与远程的保持一致"><a href="#我想扔掉本地的提交-commit-，以便我的分支与远程的保持一致" class="headerlink" title="我想扔掉本地的提交(commit)，以便我的分支与远程的保持一致"></a>我想扔掉本地的提交(commit)，以便我的分支与远程的保持一致</h3><p>先确认你没有推(push)你的内容到远程。</p>
 <p><code>git status</code> 会显示你领先(ahead)源(origin)多少个提交:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git status# On branch my-branch# Your branch is ahead of &#x27;origin/my-branch&#x27; by 2 commits.#   (use &quot;git push&quot; to publish your local commits)#</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git status</span><br><span class="line"># On branch my-branch</span><br><span class="line"># Your branch is ahead of &#x27;origin/my-branch&#x27; by 2 commits.</span><br><span class="line">#   (use &quot;git push&quot; to publish your local commits)</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
 
 <p>一种方法是:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reset --hard origin/my-branch</span><br></pre></td></tr></table></figure>
@@ -271,7 +271,7 @@
 <h3 id="我想保留来自另外一个ref-ish的整个文件"><a href="#我想保留来自另外一个ref-ish的整个文件" class="headerlink" title="我想保留来自另外一个ref-ish的整个文件"></a>我想保留来自另外一个ref-ish的整个文件</h3><blockquote>
 <p>假设你正在做一个原型方案(原文为working spike (see note)), 有成百的内容，每个都工作得很好。现在, 你提交到了一个分支，保存工作内容:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(solution)$ git add -A &amp;&amp; git commit -m &quot;Adding all changes from this spike into one big commit.&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(solution)$ git add -A &amp;&amp; git commit -m &quot;Adding all changes from this spike into one big commit.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>当你想要把它放到一个分支里 (可能是<code>feature</code>, 或者 <code>develop</code>), 你关心是保持整个文件的完整，你想要一个大的提交分隔成比较小。</p>
@@ -287,18 +287,18 @@
 <blockquote>
 <p>这会把这个文件内容从分支 <code>solution</code> 拿到分支 <code>develop</code> 里来:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># On branch develop# Your branch is up-to-date with &#x27;origin/develop&#x27;.# Changes to be committed:#  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)##        modified:   file1.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># On branch develop</span><br><span class="line"># Your branch is up-to-date with &#x27;origin/develop&#x27;.</span><br><span class="line"># Changes to be committed:</span><br><span class="line">#  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line">##        modified:   file1.txt</span><br></pre></td></tr></table></figure>
 
 <p>然后, 正常提交。</p>
 <p>Note: Spike solutions are made to analyze or solve the problem. These solutions are used for estimation and discarded once everyone gets clear visualization of the problem.</p>
 <h3 id="我把几个提交-commit-提交到了同一个分支，而这些提交应该分布在不同的分支里"><a href="#我把几个提交-commit-提交到了同一个分支，而这些提交应该分布在不同的分支里" class="headerlink" title="我把几个提交(commit)提交到了同一个分支，而这些提交应该分布在不同的分支里"></a>我把几个提交(commit)提交到了同一个分支，而这些提交应该分布在不同的分支里</h3><p>假设你有一个<code>main</code>分支， 执行<code>git log</code>, 你看到你做过两次提交:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git logcommit e3851e817c451cc36f2e6f3049db528415e3c114Author: Alex Lee &lt;alexlee@example.com&gt;Date:   Tue Jul 22 15:39:27 2014 -0400    Bug #21 - Added CSRF protectioncommit 5ea51731d150f7ddc4a365437931cd8be3bf3131Author: Alex Lee &lt;alexlee@example.com&gt;Date:   Tue Jul 22 15:39:12 2014 -0400    Bug #14 - Fixed spacing on titlecommit a13b85e984171c6e2a1729bb061994525f626d14Author: Aki Rose &lt;akirose@example.com&gt;Date:   Tue Jul 21 01:12:48 2014 -0400    First commit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git log</span><br><span class="line"></span><br><span class="line">commit e3851e817c451cc36f2e6f3049db528415e3c114</span><br><span class="line">Author: Alex Lee &lt;alexlee@example.com&gt;</span><br><span class="line">Date:   Tue Jul 22 15:39:27 2014 -0400</span><br><span class="line"></span><br><span class="line">    Bug #21 - Added CSRF protection</span><br><span class="line"></span><br><span class="line">commit 5ea51731d150f7ddc4a365437931cd8be3bf3131</span><br><span class="line">Author: Alex Lee &lt;alexlee@example.com&gt;</span><br><span class="line">Date:   Tue Jul 22 15:39:12 2014 -0400</span><br><span class="line"></span><br><span class="line">    Bug #14 - Fixed spacing on title</span><br><span class="line"></span><br><span class="line">commit a13b85e984171c6e2a1729bb061994525f626d14</span><br><span class="line">Author: Aki Rose &lt;akirose@example.com&gt;</span><br><span class="line">Date:   Tue Jul 21 01:12:48 2014 -0400</span><br><span class="line"></span><br><span class="line">    First commit</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>让我们用提交hash(commit hash)标记bug (<code>e3851e8</code> for #21, <code>5ea5173</code> for #14).</p>
 </blockquote>
 <p>首先, 我们把<code>main</code>分支重置到正确的提交(<code>a13b85e</code>):</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reset --hard a13b85eHEAD is now at a13b85e</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reset --hard a13b85e</span><br><span class="line">HEAD is now at a13b85e</span><br></pre></td></tr></table></figure>
 
 <p>现在, 我们对 bug #21 创建一个新的分支:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout -b 21(21)$</span><br></pre></td></tr></table></figure>
@@ -310,7 +310,7 @@
 <p>这时候, 这里可能会产生冲突， 参见交互式 rebasing 章 <strong>冲突节</strong> 解决冲突.</p>
 </blockquote>
 <p>再者， 我们为bug #14 创建一个新的分支, 也基于<code>main</code>分支</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(21)$ git checkout main(main)$ git checkout -b 14(14)$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(21)$ git checkout main</span><br><span class="line">(main)$ git checkout -b 14</span><br><span class="line">(14)$</span><br></pre></td></tr></table></figure>
 
 <p>最后, 为 bug #14 执行 <code>cherry-pick</code>:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(14)$ git cherry-pick 5ea5173</span><br></pre></td></tr></table></figure>
@@ -323,23 +323,23 @@
 <h3 id="我不小心删除了我的分支"><a href="#我不小心删除了我的分支" class="headerlink" title="我不小心删除了我的分支"></a>我不小心删除了我的分支</h3><blockquote>
 <p>如果你定期推送到远程, 多数情况下应该是安全的，但有些时候还是可能删除了还没有推到远程的分支。让我们先创建一个分支和一个新的文件:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout -b my-branch(my-branch)$ git branch(my-branch)$ touch foo.txt(my-branch)$ lsREADME.md foo.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout -b my-branch</span><br><span class="line">(my-branch)$ git branch</span><br><span class="line">(my-branch)$ touch foo.txt</span><br><span class="line">(my-branch)$ ls</span><br><span class="line">README.md foo.txt</span><br></pre></td></tr></table></figure>
 
 <p>添加文件并做一次提交</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git add .(my-branch)$ git commit -m &#x27;foo.txt added&#x27;(my-branch)$ foo.txt added 1 files changed, 1 insertions(+) create mode 100644 foo.txt(my-branch)$ git logcommit 4e3cd85a670ced7cc17a2b5d8d3d809ac88d5012Author: siemiatj &lt;siemiatj@example.com&gt;Date:   Wed Jul 30 00:34:10 2014 +0200    foo.txt addedcommit 69204cdf0acbab201619d95ad8295928e7f411d5Author: Kate Hudson &lt;katehudson@example.com&gt;Date:   Tue Jul 29 13:14:46 2014 -0400    Fixes #6: Force pushing after amending commits</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git add .</span><br><span class="line">(my-branch)$ git commit -m &#x27;foo.txt added&#x27;</span><br><span class="line">(my-branch)$ foo.txt added</span><br><span class="line"> 1 files changed, 1 insertions(+)</span><br><span class="line"> create mode 100644 foo.txt</span><br><span class="line">(my-branch)$ git log</span><br><span class="line"></span><br><span class="line">commit 4e3cd85a670ced7cc17a2b5d8d3d809ac88d5012</span><br><span class="line">Author: siemiatj &lt;siemiatj@example.com&gt;</span><br><span class="line">Date:   Wed Jul 30 00:34:10 2014 +0200</span><br><span class="line"></span><br><span class="line">    foo.txt added</span><br><span class="line"></span><br><span class="line">commit 69204cdf0acbab201619d95ad8295928e7f411d5</span><br><span class="line">Author: Kate Hudson &lt;katehudson@example.com&gt;</span><br><span class="line">Date:   Tue Jul 29 13:14:46 2014 -0400</span><br><span class="line"></span><br><span class="line">    Fixes #6: Force pushing after amending commits</span><br></pre></td></tr></table></figure>
 
 <p>现在我们切回到主(main)分支，‘不小心的’删除<code>my-branch</code>分支</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git checkout mainSwitched to branch &#x27;main&#x27;Your branch is up-to-date with &#x27;origin/main&#x27;.(main)$ git branch -D my-branchDeleted branch my-branch (was 4e3cd85).(main)$ echo oh noes, deleted my branch!oh noes, deleted my branch!</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git checkout main</span><br><span class="line">Switched to branch &#x27;main&#x27;</span><br><span class="line">Your branch is up-to-date with &#x27;origin/main&#x27;.</span><br><span class="line">(main)$ git branch -D my-branch</span><br><span class="line">Deleted branch my-branch (was 4e3cd85).</span><br><span class="line">(main)$ echo oh noes, deleted my branch!</span><br><span class="line">oh noes, deleted my branch!</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>在这时候你应该想起了<code>reflog</code>, 一个升级版的日志，它存储了仓库(repo)里面所有动作的历史。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reflog69204cd HEAD@&#123;0&#125;: checkout: moving from my-branch to main4e3cd85 HEAD@&#123;1&#125;: commit: foo.txt added69204cd HEAD@&#123;2&#125;: checkout: moving from main to my-branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reflog</span><br><span class="line">69204cd HEAD@&#123;0&#125;: checkout: moving from my-branch to main</span><br><span class="line">4e3cd85 HEAD@&#123;1&#125;: commit: foo.txt added</span><br><span class="line">69204cd HEAD@&#123;2&#125;: checkout: moving from main to my-branch</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>正如你所见，我们有一个来自删除分支的提交hash(commit hash)，接下来看看是否能恢复删除了的分支。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout -b my-branch-helpSwitched to a new branch &#x27;my-branch-help&#x27;(my-branch-help)$ git reset --hard 4e3cd85HEAD is now at 4e3cd85 foo.txt added(my-branch-help)$ lsREADME.md foo.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout -b my-branch-help</span><br><span class="line">Switched to a new branch &#x27;my-branch-help&#x27;</span><br><span class="line">(my-branch-help)$ git reset --hard 4e3cd85</span><br><span class="line">HEAD is now at 4e3cd85 foo.txt added</span><br><span class="line">(my-branch-help)$ ls</span><br><span class="line">README.md foo.txt</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>看! 我们把删除的文件找回来了。Git的 <code>reflog</code> 在rebasing出错的时候也是同样有用的。</p>
@@ -359,7 +359,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git fetch --all</span><br></pre></td></tr></table></figure>
 
 <p>假设你想要从远程的<code>daves</code>分支签出到本地的<code>daves</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout --track origin/davesBranch daves set up to track remote branch daves from origin.Switched to a new branch &#x27;daves&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout --track origin/daves</span><br><span class="line">Branch daves set up to track remote branch daves from origin.</span><br><span class="line">Switched to a new branch &#x27;daves&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>(<code>--track</code> 是 <code>git checkout -b [branch] [remotename]/[branch]</code> 的简写)</p>
 <blockquote>
@@ -376,12 +376,12 @@
 <h3 id="我已经rebase过-但是我不想强推-force-push"><a href="#我已经rebase过-但是我不想强推-force-push" class="headerlink" title="我已经rebase过, 但是我不想强推(force push)"></a>我已经rebase过, 但是我不想强推(force push)</h3><blockquote>
 <p>不幸的是，如果你想把这些变化(changes)反应到远程分支上，你就必须得强推(force push)。是因你快进(Fast forward)了提交，改变了Git历史, 远程分支不会接受变化(changes)，除非强推(force push)。这就是许多人使用 merge 工作流, 而不是 rebasing 工作流的主要原因之一， 开发者的强推(force push)会使大的团队陷入麻烦。使用时需要注意，一种安全使用 rebase 的方法是，不要把你的变化(changes)反映到远程分支上, 而是按下面的做:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout my-branch(my-branch)$ git rebase -i main(my-branch)$ git checkout main(main)$ git merge --ff-only my-branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git checkout my-branch</span><br><span class="line">(my-branch)$ git rebase -i main</span><br><span class="line">(my-branch)$ git checkout main</span><br><span class="line">(main)$ git merge --ff-only my-branch</span><br></pre></td></tr></table></figure>
 
 <h3 id="我需要组合-combine-几个提交-commit"><a href="#我需要组合-combine-几个提交-commit" class="headerlink" title="我需要组合(combine)几个提交(commit)"></a>我需要组合(combine)几个提交(commit)</h3><blockquote>
 <p>假设你的工作分支将会做对于 <code>main</code> 的pull-request。一般情况下你不关心提交(commit)的时间戳，只想组合 <strong>所有</strong> 提交(commit) 到一个单独的里面, 然后重置(reset)重提交(recommit)。确保主(main)分支是最新的和你的变化都已经提交了, 然后:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git reset --soft main(my-branch)$ git commit -am &quot;New awesome feature&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git reset --soft main</span><br><span class="line">(my-branch)$ git commit -am &quot;New awesome feature&quot;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>如果你想要更多的控制, 想要保留时间戳, 你需要做交互式rebase (interactive rebase):</p>
@@ -396,7 +396,7 @@
 <blockquote>
 <p>在你执行了交互式 rebase的命令(interactive rebase command)后, 你将在你的编辑器里看到类似下面的内容:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pick a9c8a1d Some refactoringpick 01b2fd8 New awesome featurepick b729ad5 fixuppick e3851e8 another fix# Rebase 8074d12..b729ad5 onto 8074d12## Commands:#  p, pick = use commit#  r, reword = use commit, but edit the commit message#  e, edit = use commit, but stop for amending#  s, squash = use commit, but meld into previous commit#  f, fixup = like &quot;squash&quot;, but discard this commit&#x27;s log message#  x, exec = run command (the rest of the line) using shell## These lines can be re-ordered; they are executed from top to bottom.## If you remove a line here THAT COMMIT WILL BE LOST.## However, if you remove everything, the rebase will be aborted.## Note that empty commits are commented out</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">pick a9c8a1d Some refactoring</span><br><span class="line">pick 01b2fd8 New awesome feature</span><br><span class="line">pick b729ad5 fixup</span><br><span class="line">pick e3851e8 another fix</span><br><span class="line"></span><br><span class="line"># Rebase 8074d12..b729ad5 onto 8074d12</span><br><span class="line">#</span><br><span class="line"># Commands:</span><br><span class="line">#  p, pick = use commit</span><br><span class="line">#  r, reword = use commit, but edit the commit message</span><br><span class="line">#  e, edit = use commit, but stop for amending</span><br><span class="line">#  s, squash = use commit, but meld into previous commit</span><br><span class="line">#  f, fixup = like &quot;squash&quot;, but discard this commit&#x27;s log message</span><br><span class="line">#  x, exec = run command (the rest of the line) using shell</span><br><span class="line">#</span><br><span class="line"># These lines can be re-ordered; they are executed from top to bottom.</span><br><span class="line">#</span><br><span class="line"># If you remove a line here THAT COMMIT WILL BE LOST.</span><br><span class="line">#</span><br><span class="line"># However, if you remove everything, the rebase will be aborted.</span><br><span class="line">#</span><br><span class="line"># Note that empty commits are commented out</span><br></pre></td></tr></table></figure>
 
 <p>所有以 <code>#</code> 开头的行都是注释, 不会影响 rebase.</p>
 <blockquote>
@@ -405,17 +405,17 @@
 <blockquote>
 <p>例如, 如果你想 <strong>单独保留最旧(first)的提交(commit),组合所有剩下的到第二个里面</strong>, 你就应该编辑第二个提交(commit)后面的每个提交(commit) 前的单词为 <code>f</code>:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pick a9c8a1d Some refactoringpick 01b2fd8 New awesome featuref b729ad5 fixupf e3851e8 another fix</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pick a9c8a1d Some refactoring</span><br><span class="line">pick 01b2fd8 New awesome feature</span><br><span class="line">f b729ad5 fixup</span><br><span class="line">f e3851e8 another fix</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>如果你想组合这些提交(commit) <strong>并重命名这个提交(commit)</strong>, 你应该在第二个提交(commit)旁边添加一个<code>r</code>，或者更简单的用<code>s</code> 替代 <code>f</code>:</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pick a9c8a1d Some refactoringpick 01b2fd8 New awesome features b729ad5 fixups e3851e8 another fix</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pick a9c8a1d Some refactoring</span><br><span class="line">pick 01b2fd8 New awesome feature</span><br><span class="line">s b729ad5 fixup</span><br><span class="line">s e3851e8 another fix</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>你可以在接下来弹出的文本提示框里重命名提交(commit)。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Newer, awesomer features# Please enter the commit message for your changes. Lines starting# with &#x27;#&#x27; will be ignored, and an empty message aborts the commit.# rebase in progress; onto 8074d12# You are currently editing a commit while rebasing branch &#x27;main&#x27; on &#x27;8074d12&#x27;.## Changes to be committed:# modified:   README.md#</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Newer, awesomer features</span><br><span class="line"></span><br><span class="line"># Please enter the commit message for your changes. Lines starting</span><br><span class="line"># with &#x27;#&#x27; will be ignored, and an empty message aborts the commit.</span><br><span class="line"># rebase in progress; onto 8074d12</span><br><span class="line"># You are currently editing a commit while rebasing branch &#x27;main&#x27; on &#x27;8074d12&#x27;.</span><br><span class="line">#</span><br><span class="line"># Changes to be committed:</span><br><span class="line"># modified:   README.md</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>如果成功了, 你应该看到类似下面的内容:</p>
@@ -463,10 +463,10 @@
 <p>如果你不能成功的完成rebase, 你可能必须要解决冲突。</p>
 </blockquote>
 <p>首先执行 <code>git status</code> 找出哪些文件有冲突:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git statusOn branch my-branchChanges not staged for commit:  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory) modified:   README.md</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git status</span><br><span class="line">On branch my-branch</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line"></span><br><span class="line"> modified:   README.md</span><br></pre></td></tr></table></figure>
 
 <p>在这个例子里面, <code>README.md</code> 有冲突。打开这个文件找到类似下面的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD   some code   =========   some code   &gt;&gt;&gt;&gt;&gt;&gt;&gt; new-commit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">some code</span><br><span class="line">=========</span><br><span class="line">some code</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; new-commit</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>你需要解决新提交的代码(示例里, 从中间<code>==</code>线到<code>new-commit</code>的地方)与<code>HEAD</code> 之间不一样的地方.</p>
@@ -475,7 +475,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main*)$ git mergetool -t opendiff</span><br></pre></td></tr></table></figure>
 
 <p>在你解决完所有冲突和测试过后, <code>git add</code> 变化了的(changed)文件, 然后用<code>git rebase --continue</code> 继续rebase。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git add README.md(my-branch)$ git rebase --continue</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(my-branch)$ git add README.md</span><br><span class="line">(my-branch)$ git rebase --continue</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>如果在解决完所有的冲突过后，得到了与提交前一样的结果, 可以执行<code>git rebase --skip</code>。</p>
@@ -498,7 +498,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash push working-directory-path/filename.ext</span><br></pre></td></tr></table></figure>
 
 <p>假设你想暂存多个文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash push working-directory-path/filename1.ext working-directory-path/filename2.ext</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git stash push working-directory-path/filename1.ext working-directory-path/filename2.ext</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="暂存时记录消息"><a href="#暂存时记录消息" class="headerlink" title="暂存时记录消息"></a>暂存时记录消息</h3><blockquote>
 <p>这样你可以在<code>list</code>时看到它</p>
@@ -521,7 +521,7 @@
 <h3 id="暂存时保留未暂存的内容"><a href="#暂存时保留未暂存的内容" class="headerlink" title="暂存时保留未暂存的内容"></a>暂存时保留未暂存的内容</h3><blockquote>
 <p>你需要手动create一个<code>stash commit</code>， 然后使用<code>git stash store</code>。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash create$ git stash store -m &quot;commit-message&quot; CREATED_SHA1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git stash create</span><br><span class="line">$ git stash store -m &quot;commit-message&quot; CREATED_SHA1</span><br></pre></td></tr></table></figure>
 
 <hr>
 <blockquote>
@@ -561,12 +561,12 @@
 <blockquote>
 <h2 id="配置-Configuration"><a href="#配置-Configuration" class="headerlink" title="配置(Configuration)"></a>配置(Configuration)</h2></blockquote>
 <h3 id="我想给一些Git命令添加别名-alias"><a href="#我想给一些Git命令添加别名-alias" class="headerlink" title="我想给一些Git命令添加别名(alias)"></a>我想给一些Git命令添加别名(alias)</h3><p>在 OS X 和 Linux 下, 你的 Git的配置文件储存在 <code>~/.gitconfig</code>。我在<code>[alias]</code> 部分添加了一些快捷别名(和一些我容易拼写错误的)，如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[alias]    a = add    amend = commit --amend    c = commit    ca = commit --amend    ci = commit -a    co = checkout    d = diff    dc = diff --changed    ds = diff --staged    f = fetch    loll = log --graph --decorate --pretty=oneline --abbrev-commit    m = merge    one = log --pretty=oneline    outstanding = rebase -i @&#123;u&#125;    s = status    unpushed = log @&#123;u&#125;    wc = whatchanged    wip = rebase -i @&#123;u&#125;    zap = fetch -p</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[alias]</span><br><span class="line">    a = add</span><br><span class="line">    amend = commit --amend</span><br><span class="line">    c = commit</span><br><span class="line">    ca = commit --amend</span><br><span class="line">    ci = commit -a</span><br><span class="line">    co = checkout</span><br><span class="line">    d = diff</span><br><span class="line">    dc = diff --changed</span><br><span class="line">    ds = diff --staged</span><br><span class="line">    f = fetch</span><br><span class="line">    loll = log --graph --decorate --pretty=oneline --abbrev-commit</span><br><span class="line">    m = merge</span><br><span class="line">    one = log --pretty=oneline</span><br><span class="line">    outstanding = rebase -i @&#123;u&#125;</span><br><span class="line">    s = status</span><br><span class="line">    unpushed = log @&#123;u&#125;</span><br><span class="line">    wc = whatchanged</span><br><span class="line">    wip = rebase -i @&#123;u&#125;</span><br><span class="line">    zap = fetch -p</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="我想缓存一个仓库-repository-的用户名和密码"><a href="#我想缓存一个仓库-repository-的用户名和密码" class="headerlink" title="我想缓存一个仓库(repository)的用户名和密码"></a>我想缓存一个仓库(repository)的用户名和密码</h3><blockquote>
 <p>你可能有一个仓库需要授权，这时你可以缓存用户名和密码，而不用每次推/拉(push/pull)的时候都输入，Credential helper能帮你。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global credential.helper cache# Set git to use the credential memory cache</span><br><span class="line">$ git config --global credential.helper &#x27;cache --timeout=3600&#x27;# Set the cache to timeout after 1 hour (setting is in seconds)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global credential.helper cache</span><br><span class="line"># Set git to use the credential memory cache</span><br><span class="line"></span><br><span class="line">$ git config --global credential.helper &#x27;cache --timeout=3600&#x27;</span><br><span class="line"># Set the cache to timeout after 1 hour (setting is in seconds)</span><br></pre></td></tr></table></figure>
 
 <h3 id="我不知道我做错了些什么"><a href="#我不知道我做错了些什么" class="headerlink" title="我不知道我做错了些什么"></a>我不知道我做错了些什么</h3><blockquote>
 <p>你把事情搞砸了：你 <code>重置(reset)</code> 了一些东西, 或者你合并了错误的分支, 亦或你强推了后找不到你自己的提交(commit)了。有些时候, 你一直都做得很好, 但你想回到以前的某个状态。</p>
@@ -574,7 +574,7 @@
 <blockquote>
 <p>这就是 <code>git reflog</code> 的目的， <code>reflog</code> 记录对分支顶端(the tip of a branch)的任何改变, 即使那个顶端没有被任何分支或标签引用。基本上, 每次HEAD的改变, 一条新的记录就会增加到<code>reflog</code>。遗憾的是，这只对本地分支起作用，且它只跟踪动作 (例如，不会跟踪一个没有被记录的文件的任何改变)。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reflog0a2e358 HEAD@&#123;0&#125;: reset: moving to HEAD~20254ea7 HEAD@&#123;1&#125;: checkout: moving from 2.2 to mainc10f740 HEAD@&#123;2&#125;: checkout: moving from main to 2.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(main)$ git reflog</span><br><span class="line">0a2e358 HEAD@&#123;0&#125;: reset: moving to HEAD~2</span><br><span class="line">0254ea7 HEAD@&#123;1&#125;: checkout: moving from 2.2 to main</span><br><span class="line">c10f740 HEAD@&#123;2&#125;: checkout: moving from main to 2.2</span><br></pre></td></tr></table></figure>
 
 <p>上面的reflog展示了从main分支签出(checkout)到2.2 分支，然后再签回。那里，还有一个硬重置(hard reset)到一个较旧的提交。最新的动作出现在最上面以 <code>HEAD@&#123;0&#125;</code>标识.</p>
 <blockquote>
@@ -666,19 +666,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/" class="article-nav-link">
+      <a href="/2022/04/10/Github%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Git入门指南(一)
+            Github搜索技巧一览
           
         </div>
       </a>
     
     
-      <a href="/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/" class="article-nav-link">
+      <a href="/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">LeetCode_804. 唯一摩尔斯密码词</div>
+        <div class="article-nav-title">Git入门指南(一)</div>
       </a>
     
   </nav>
