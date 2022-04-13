@@ -1,127 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Github仓库整理</title>
-    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
-<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
-<p>有些内容我就不举例了，大家可以看readme.md</p>
-<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
-</blockquote>
-<ul>
-<li><strong>开源是人类进步的基石</strong></li>
-</ul>
-<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
-<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
-</li>
-<li><p>简单实用的删除图像背景/抠图工具</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
-<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
-<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
-</ul>
-<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
-<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>备注：我一直在用哈</li>
-</ul>
-<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
-<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
-</li>
-<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
-</li>
-</ul>
-<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
-<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
-<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
-</li>
-<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
-</li>
-</ul>
-<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
-<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
-<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
-</ul>
-<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
-<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
-<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
-</ul>
-<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
-<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
-<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
-</ul>
-<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
-<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
-<li>简介：在命令行看股票走势的工具</li>
-<li></li>
-</ul>
-<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
-<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
-<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
-</ul>
-<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
-<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
-<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
-</ul>
-<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
-<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
-</li>
-<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
-</li>
-</ul>
-<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
-<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
-<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
-<li>修改、合并 PDF 文档</li>
-<li>自动生成书签</li>
-<li>书签编辑器</li>
-<li>高速无损地导出文件中的图片</li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
-<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
-<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
-</ul>
-<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
-<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
-<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
-<li></li>
-</ul>
-<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
-<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
-<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
-</ul>
-<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
-<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
-<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
-</ul>
-<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
-<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
-<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>待续</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Content-Type的那些事儿</title>
     <url>/2022/04/05/Content-Type/</url>
     <content><![CDATA[<h1 id="Content-Type"><a href="#Content-Type" class="headerlink" title="Content-Type"></a>Content-Type</h1><blockquote>
@@ -303,24 +182,129 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>待续</tag>
         <tag>http</tag>
+        <tag>待续</tag>
       </tags>
   </entry>
   <entry>
-    <title>Git入门指南(一)</title>
-    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="Git入门指南-一"><a href="#Git入门指南-一" class="headerlink" title="Git入门指南(一)"></a>Git入门指南(一)</h1><blockquote>
-<p>引用了 微信公众号 入门小站的内容</p>
-<p>参考了pro git</p>
+    <title>Github仓库整理</title>
+    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
+<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
+<p>有些内容我就不举例了，大家可以看readme.md</p>
+<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
 </blockquote>
-<h2 id="概念-TODO"><a href="#概念-TODO" class="headerlink" title="概念 TODO"></a>概念 TODO</h2>]]></content>
+<ul>
+<li><strong>开源是人类进步的基石</strong></li>
+</ul>
+<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
+<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
+</li>
+<li><p>简单实用的删除图像背景/抠图工具</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
+<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
+<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
+</ul>
+<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
+<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>备注：我一直在用哈</li>
+</ul>
+<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
+<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
+</li>
+<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
+</li>
+</ul>
+<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
+<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
+<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
+</li>
+<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
+</li>
+</ul>
+<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
+<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
+<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
+</ul>
+<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
+<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
+<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
+</ul>
+<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
+<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
+<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
+</ul>
+<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
+<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
+<li>简介：在命令行看股票走势的工具</li>
+<li></li>
+</ul>
+<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
+<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
+<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
+</ul>
+<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
+<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
+<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
+</ul>
+<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
+<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
+</li>
+<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
+</li>
+</ul>
+<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
+<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
+<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
+<li>修改、合并 PDF 文档</li>
+<li>自动生成书签</li>
+<li>书签编辑器</li>
+<li>高速无损地导出文件中的图片</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
+<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
+<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
+</ul>
+<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
+<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
+<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
+<li></li>
+</ul>
+<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
+<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
+<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
+</ul>
+<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
+<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
+<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
+</ul>
+<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
+<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
+<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
+</ul>
+]]></content>
       <categories>
-        <category>git</category>
+        <category>github</category>
       </categories>
       <tags>
         <tag>待续</tag>
-        <tag>git</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -807,34 +791,19 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode_512.游戏玩家分析2</title>
-    <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
-    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
-<li><p>原文地址：<a href="https://leetcode-cn.com/problems/game-play-analysis-i/">https://leetcode-cn.com/problems/game-play-analysis-i/</a></p>
-</li>
-<li><p>难度：简单</p>
-</li>
-<li><p>收费（会员可看），我不是会员。</p>
-</li>
-</ul>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>Activity table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd6c27bf1~tplv-t2oaga2asx-image.image" alt="image.png"></p>
-<p>Result table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd0c865ee~tplv-t2oaga2asx-image.image" alt="image.png"></p>
-<p>题目是：Write a SQL query that reports the device that is first logged in for each player<br>翻译一下就是写一条sql，显示每个玩家首次登录的设备号（同时显示玩家ID）</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>如果做过题1，那这道题就简单一些了。我们可以先求出每次玩家首次登录的信息。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id</span><br></pre></td></tr></table></figure>
-
-<p>有了这个信息，我们可以根据它们找到指定id、指定时间的设备id信息。<br>但此处可能有很多方法：</p>
-<h2 id="方法1，用in来做"><a href="#方法1，用in来做" class="headerlink" title="方法1，用in来做"></a>方法1，用in来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,device_id</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">WHERE</span> (player_id,event_date) <span class="keyword">IN</span> (</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd5d5e9b9~tplv-t2oaga2asx-image.image" alt="image.png"></p>
-<h2 id="方法2，用表关联来做"><a href="#方法2，用表关联来做" class="headerlink" title="方法2，用表关联来做"></a>方法2，用表关联来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.player_id,a.device_id</span><br><span class="line"><span class="keyword">FROM</span> activity <span class="keyword">AS</span> a,</span><br><span class="line">(</span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date) <span class="keyword">AS</span> mindate</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id) <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">WHERE</span> a.`event_date`<span class="operator">=</span>b.mindate </span><br><span class="line"><span class="keyword">AND</span> a.`player_id`<span class="operator">=</span>b.player_id</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Git入门指南(一)</title>
+    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Git入门指南-一"><a href="#Git入门指南-一" class="headerlink" title="Git入门指南(一)"></a>Git入门指南(一)</h1><blockquote>
+<p>引用了 微信公众号 入门小站的内容</p>
+<p>参考了pro git</p>
+</blockquote>
+<h2 id="概念-TODO"><a href="#概念-TODO" class="headerlink" title="概念 TODO"></a>概念 TODO</h2>]]></content>
       <categories>
-        <category>SQL</category>
+        <category>git</category>
       </categories>
       <tags>
-        <tag>完结</tag>
-        <tag>SQL</tag>
-        <tag>LeetCode</tag>
+        <tag>待续</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1325,31 +1294,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode_217.存在重复元素</title>
-    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<ul>
-<li><p>难度：简单</p>
-</li>
-<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
-</li>
-<li><p>题目</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>思路：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>LeetCode</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git入门指南(二)</title>
     <url>/2022/04/13/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%BA%8C/</url>
     <content><![CDATA[<h1 id="Git入门指南-二"><a href="#Git入门指南-二" class="headerlink" title="Git入门指南(二)"></a>Git入门指南(二)</h1><blockquote>
@@ -1409,6 +1353,62 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MAX(Salary) as SecondHighestSalary  FROM Employee </span><br><span class="line">WHERE Salary!=(SELECT MAX(Salary) FROM Employee )</span><br></pre></td></tr></table></figure>
 <p>这个思路貌似没问题，但在oracle中提交总是超时，我也不明所以。Mysql下提交通过的。</p>
 ]]></content>
+      <categories>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>SQL</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_217.存在重复元素</title>
+    <url>/2022/04/04/LeetCode-217-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<ul>
+<li><p>难度：简单</p>
+</li>
+<li><p>原文：<a href="https://leetcode-cn.com/problems/contains-duplicate/">https://leetcode-cn.com/problems/contains-duplicate/</a></p>
+</li>
+<li><p>题目</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>思路：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">如果有重复排重后的长度就短了</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)!=<span class="built_in">len</span>(<span class="built_in">set</span>(nums))</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>LeetCode</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_512.游戏玩家分析2</title>
+    <url>/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/</url>
+    <content><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><ul>
+<li><p>原文地址：<a href="https://leetcode-cn.com/problems/game-play-analysis-i/">https://leetcode-cn.com/problems/game-play-analysis-i/</a></p>
+</li>
+<li><p>难度：简单</p>
+</li>
+<li><p>收费（会员可看），我不是会员。</p>
+</li>
+</ul>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>Activity table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd6c27bf1~tplv-t2oaga2asx-image.image" alt="image.png"></p>
+<p>Result table:<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd0c865ee~tplv-t2oaga2asx-image.image" alt="image.png"></p>
+<p>题目是：Write a SQL query that reports the device that is first logged in for each player<br>翻译一下就是写一条sql，显示每个玩家首次登录的设备号（同时显示玩家ID）</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>如果做过题1，那这道题就简单一些了。我们可以先求出每次玩家首次登录的信息。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id</span><br></pre></td></tr></table></figure>
+
+<p>有了这个信息，我们可以根据它们找到指定id、指定时间的设备id信息。<br>但此处可能有很多方法：</p>
+<h2 id="方法1，用in来做"><a href="#方法1，用in来做" class="headerlink" title="方法1，用in来做"></a>方法1，用in来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> player_id,device_id</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">WHERE</span> (player_id,event_date) <span class="keyword">IN</span> (</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date)</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/2/17139d9dd5d5e9b9~tplv-t2oaga2asx-image.image" alt="image.png"></p>
+<h2 id="方法2，用表关联来做"><a href="#方法2，用表关联来做" class="headerlink" title="方法2，用表关联来做"></a>方法2，用表关联来做</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.player_id,a.device_id</span><br><span class="line"><span class="keyword">FROM</span> activity <span class="keyword">AS</span> a,</span><br><span class="line">(</span><br><span class="line"><span class="keyword">SELECT</span> player_id,<span class="built_in">MIN</span>(event_date) <span class="keyword">AS</span> mindate</span><br><span class="line"><span class="keyword">FROM</span> activity</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> player_id) <span class="keyword">AS</span> b</span><br><span class="line"><span class="keyword">WHERE</span> a.`event_date`<span class="operator">=</span>b.mindate </span><br><span class="line"><span class="keyword">AND</span> a.`player_id`<span class="operator">=</span>b.player_id</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>SQL</category>
       </categories>
@@ -1499,195 +1499,6 @@
         <tag>完结</tag>
         <tag>LeetCode</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Postman测试脚本</title>
-    <url>/2022/04/05/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h1 id="Postman测试脚本"><a href="#Postman测试脚本" class="headerlink" title="Postman测试脚本"></a>Postman测试脚本</h1><blockquote>
-<p><a href="https://learning.postman.com/docs/writing-scripts/script-references/test-examples/">https://learning.postman.com/docs/writing-scripts/script-references/test-examples/</a></p>
-</blockquote>
-<h1 id="SNIPPETS"><a href="#SNIPPETS" class="headerlink" title="SNIPPETS"></a>SNIPPETS</h1><blockquote>
-<p>POSTMAN界面提供的</p>
-</blockquote>
-<h2 id="响应体包含字符串"><a href="#响应体包含字符串" class="headerlink" title="响应体包含字符串"></a>响应体包含字符串</h2><blockquote>
-<p><em>{<strong>retcode: 0</strong>} 这是响应体</em></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body matches string&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.text()).to.include(<span class="string">&quot;retcode&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应体JSON数据"><a href="#响应体JSON数据" class="headerlink" title="响应体JSON数据"></a>响应体JSON数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Your test name&quot;</span>, function () &#123;</span><br><span class="line">    var jsonData = pm.response.json();</span><br><span class="line">    pm.expect(jsonData.retcode).to.eql(<span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应体数据"><a href="#响应体数据" class="headerlink" title="响应体数据"></a>响应体数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body is correct&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.body(&#123;retcode: <span class="number">0</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应头数据"><a href="#响应头数据" class="headerlink" title="响应头数据"></a>响应头数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Content-Type is present&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.header(<span class="string">&quot;Content-Type&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Response time is less than 200ms&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.responseTime).to.be.below(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="响应码"><a href="#响应码" class="headerlink" title="响应码"></a>响应码</h2><ul>
-<li><p>方式一</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Successful POST request&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.code).to.be.oneOf([<span class="number">200</span>, <span class="number">201</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p>方式二</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code is 200&quot;</span>, function () &#123;</span><br><span class="line">  pm.response.to.have.status(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="响应码字符串"><a href="#响应码字符串" class="headerlink" title="响应码字符串"></a>响应码字符串</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code name has string&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.status(<span class="string">&quot;OK&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li></li>
-</ul>
-<h1 id="pm-Obj"><a href="#pm-Obj" class="headerlink" title="pm Obj"></a>pm Obj</h1><h2 id="脚本中使用变量"><a href="#脚本中使用变量" class="headerlink" title="脚本中使用变量"></a>脚本中使用变量</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 变量??</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → <span class="title class_">Boolean</span>   <span class="comment">//较少使用</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *         <span class="comment">//多用get或者set</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//环境变量</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="property">name</span>:<span class="title class_">String</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → <span class="title class_">Boolean</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">unset</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">clear</span>():<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 集合变量</span></span><br><span class="line">pm.<span class="property">collectionVariables</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">collectionVariables</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量</span></span><br><span class="line">pm.<span class="property">globals</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">globals</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// data 变量，在run collection的时候</span></span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → boolean</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">toObject</span>():<span class="keyword">function</span> → <span class="title class_">Object</span></span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">toJSON</span>():<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">unset</span>(<span class="attr">key</span>:<span class="title class_">String</span>):<span class="keyword">function</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>变量的有效范围，从大到小</strong></p>
-<ul>
-<li>Global</li>
-<li>Collection</li>
-<li>Environment</li>
-<li>Data</li>
-<li>Local</li>
-</ul>
-<h2 id="脚本中使用request和response数据"><a href="#脚本中使用request和response数据" class="headerlink" title="脚本中使用request和response数据"></a>脚本中使用request和response数据</h2><table>
-<thead>
-<tr>
-<th>对象方法</th>
-<th>属性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>pm.request</td>
-<td>pm.request.url:Url</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.request.headers:HeaderList</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.request.method:String</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.request.body:RequestBody</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.request.headers.add(header:Header):function</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.request.headers.remove(headerName:String):function</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.request.headers.upsert({key: headerName:String, value: headerValue:String}):function)</td>
-</tr>
-<tr>
-<td>pm.response</td>
-<td>pm.response.code:Number</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.response.status:String</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.response.headers:HeaderList</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.response.responseTime:Number</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.response.responseSize:Number</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.response.text():Function → String</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.response.json():Function → Object</td>
-</tr>
-<tr>
-<td>pm.info</td>
-<td>pm.info.eventName:String</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.info.iteration:Number</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.info.iterationCount:Number</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.info.requestName:String</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.info.requestId:String</td>
-</tr>
-<tr>
-<td>pm.cookies</td>
-<td>pm.cookies.has(cookieName:String):Function → Boolean</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.cookies.get(cookieName:String):Function → String</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.cookies.toObject():Function → Object</td>
-</tr>
-<tr>
-<td></td>
-<td>pm.cookies.jar():Function → Object</td>
-</tr>
-<tr>
-<td>pm.sendRequest</td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>示例1</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="property">request</span>.<span class="property">headers</span>.<span class="title function_">add</span>(&#123;</span><br><span class="line">  <span class="attr">key</span>: <span class="string">&quot;client-id&quot;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&quot;abcdef&quot;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p>示例2</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> jar = pm.<span class="property">cookies</span>.<span class="title function_">jar</span>();</span><br><span class="line">jar.<span class="title function_">set</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, cookie <span class="attr">name</span>:<span class="title class_">String</span>, cookie <span class="attr">value</span>:<span class="title class_">String</span>, <span class="title function_">callback</span>(error, cookie)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line">    </span><br><span class="line">jar.<span class="title function_">set</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, &#123; <span class="attr">name</span>:<span class="title class_">String</span>, <span class="attr">value</span>:<span class="title class_">String</span>, <span class="attr">httpOnly</span>:<span class="title class_">Bool</span> &#125;, <span class="title function_">callback</span>(error, cookie)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">get</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, <span class="attr">cookieName</span>:<span class="title class_">String</span>, callback (error, value)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">getAll</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, callback (error, cookies)):<span class="title class_">Function</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">unset</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, <span class="attr">token</span>:<span class="title class_">String</span>, <span class="title function_">callback</span>(error)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line">  </span><br><span class="line">jar.<span class="title function_">clear</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, callback (error)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br></pre></td></tr></table></figure></li>
-<li><p>示例3</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> jar = pm.<span class="property">cookies</span>.<span class="title function_">jar</span>();</span><br><span class="line">jar.<span class="title function_">set</span>(<span class="string">&quot;httpbin.org&quot;</span>, <span class="string">&quot;session-id&quot;</span>, <span class="string">&quot;abc123&quot;</span>, <span class="function">(<span class="params">error, cookie</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`An error occurred: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Cookie saved: <span class="subst">$&#123;cookie&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-<li><p>示例4</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Example with a plain string URL</span></span><br><span class="line">pm.<span class="title function_">sendRequest</span>(<span class="string">&#x27;https://postman-echo.com/get&#x27;</span>, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example with a full-fledged request</span></span><br><span class="line"><span class="keyword">const</span> postRequest = &#123;</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://postman-echo.com/post&#x27;</span>,</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  <span class="attr">header</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X-Foo&#x27;</span>: <span class="string">&#x27;bar&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">body</span>: &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&#x27;raw&#x27;</span>,</span><br><span class="line">    <span class="attr">raw</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="attr">key</span>: <span class="string">&#x27;this is json&#x27;</span> &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">pm.<span class="title function_">sendRequest</span>(postRequest, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(error ? error : response.<span class="title function_">json</span>());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example containing a test</span></span><br><span class="line">pm.<span class="title function_">sendRequest</span>(<span class="string">&#x27;https://postman-echo.com/get&#x27;</span>, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  pm.<span class="title function_">test</span>(<span class="string">&#x27;response should be okay to process&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    pm.<span class="title function_">expect</span>(error).<span class="property">to</span>.<span class="title function_">equal</span>(<span class="literal">null</span>);</span><br><span class="line">    pm.<span class="title function_">expect</span>(response).<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">property</span>(<span class="string">&#x27;code&#x27;</span>, <span class="number">200</span>);</span><br><span class="line">    pm.<span class="title function_">expect</span>(response).<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">property</span>(<span class="string">&#x27;status&#x27;</span>, <span class="string">&#x27;OK&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="pm-test"><a href="#pm-test" class="headerlink" title="pm.test()"></a>pm.test()</h2><ul>
-<li><p>语法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(<span class="attr">testName</span>:<span class="title class_">String</span>, <span class="attr">specFunction</span>:<span class="title class_">Function</span>):<span class="title class_">Function</span></span><br><span class="line">参数<span class="number">1</span>: 函数执行成功后输出的字符串</span><br><span class="line">参数<span class="number">2</span>：测试函数，格式 ===&gt;函数: <span class="keyword">function</span>(<span class="params"></span>) &#123; 函数体&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>示例1</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#下面要结合pm.<span class="property">expect</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">text</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">json</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">code</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">responseTime</span></span><br><span class="line">#下面可以直接断言</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">body</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">header</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">status</span></span><br></pre></td></tr></table></figure></li>
-<li><p>示例2</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(<span class="string">&quot;response should be okay to process&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">not</span>.<span class="property">be</span>.<span class="property">error</span>;</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">jsonBody</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">not</span>.<span class="property">have</span>.<span class="title function_">jsonBody</span>(<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">&#125;);	</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="pm-expect"><a href="#pm-expect" class="headerlink" title="pm.expect()"></a>pm.expect()</h2><ul>
-<li><p>往往嵌入到pm.test()中使用</p>
-</li>
-<li><p>语法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">expect</span>(<span class="attr">assertion</span>:*):<span class="title class_">Function</span> → <span class="title class_">Assertion</span></span><br></pre></td></tr></table></figure></li>
-<li><p>请结合上面的SNIPPETS来使用</p>
-</li>
-</ul>
-<hr>
-<blockquote>
-<p>写不下去了，这玩意没啥营养，真做POSTMAN做到这个层面，写代码自动化不香吗？</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>postman</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>postman</tag>
-        <tag>api</tag>
       </tags>
   </entry>
   <entry>
@@ -2667,6 +2478,242 @@
       </tags>
   </entry>
   <entry>
+    <title>Postman测试脚本</title>
+    <url>/2022/04/05/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h1 id="Postman测试脚本"><a href="#Postman测试脚本" class="headerlink" title="Postman测试脚本"></a>Postman测试脚本</h1><blockquote>
+<p><a href="https://learning.postman.com/docs/writing-scripts/script-references/test-examples/">https://learning.postman.com/docs/writing-scripts/script-references/test-examples/</a></p>
+</blockquote>
+<h1 id="SNIPPETS"><a href="#SNIPPETS" class="headerlink" title="SNIPPETS"></a>SNIPPETS</h1><blockquote>
+<p>POSTMAN界面提供的</p>
+</blockquote>
+<h2 id="响应体包含字符串"><a href="#响应体包含字符串" class="headerlink" title="响应体包含字符串"></a>响应体包含字符串</h2><blockquote>
+<p><em>{<strong>retcode: 0</strong>} 这是响应体</em></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body matches string&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.text()).to.include(<span class="string">&quot;retcode&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应体JSON数据"><a href="#响应体JSON数据" class="headerlink" title="响应体JSON数据"></a>响应体JSON数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Your test name&quot;</span>, function () &#123;</span><br><span class="line">    var jsonData = pm.response.json();</span><br><span class="line">    pm.expect(jsonData.retcode).to.eql(<span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应体数据"><a href="#响应体数据" class="headerlink" title="响应体数据"></a>响应体数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Body is correct&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.body(&#123;retcode: <span class="number">0</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应头数据"><a href="#响应头数据" class="headerlink" title="响应头数据"></a>响应头数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Content-Type is present&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.header(<span class="string">&quot;Content-Type&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应时间"><a href="#响应时间" class="headerlink" title="响应时间"></a>响应时间</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Response time is less than 200ms&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.responseTime).to.be.below(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应码"><a href="#响应码" class="headerlink" title="响应码"></a>响应码</h2><ul>
+<li><p>方式一</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Successful POST request&quot;</span>, function () &#123;</span><br><span class="line">    pm.expect(pm.response.code).to.be.oneOf([<span class="number">200</span>, <span class="number">201</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>方式二</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code is 200&quot;</span>, function () &#123;</span><br><span class="line">  pm.response.to.have.status(<span class="number">200</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="响应码字符串"><a href="#响应码字符串" class="headerlink" title="响应码字符串"></a>响应码字符串</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pm.test(<span class="string">&quot;Status code name has string&quot;</span>, function () &#123;</span><br><span class="line">    pm.response.to.have.status(<span class="string">&quot;OK&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li></li>
+</ul>
+<h1 id="pm-Obj"><a href="#pm-Obj" class="headerlink" title="pm Obj"></a>pm Obj</h1><h2 id="脚本中使用变量"><a href="#脚本中使用变量" class="headerlink" title="脚本中使用变量"></a>脚本中使用变量</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 变量??</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → <span class="title class_">Boolean</span>   <span class="comment">//较少使用</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *         <span class="comment">//多用get或者set</span></span><br><span class="line">pm.<span class="property">variables</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//环境变量</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="property">name</span>:<span class="title class_">String</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → <span class="title class_">Boolean</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">unset</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span></span><br><span class="line">pm.<span class="property">environment</span>.<span class="title function_">clear</span>():<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 集合变量</span></span><br><span class="line">pm.<span class="property">collectionVariables</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">collectionVariables</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量</span></span><br><span class="line">pm.<span class="property">globals</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">globals</span>.<span class="title function_">set</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>, <span class="attr">variableValue</span>:*):<span class="keyword">function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// data 变量，在run collection的时候</span></span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">has</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → boolean</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">get</span>(<span class="attr">variableName</span>:<span class="title class_">String</span>):<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">toObject</span>():<span class="keyword">function</span> → <span class="title class_">Object</span></span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">toJSON</span>():<span class="keyword">function</span> → *</span><br><span class="line">pm.<span class="property">iterationData</span>.<span class="title function_">unset</span>(<span class="attr">key</span>:<span class="title class_">String</span>):<span class="keyword">function</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>变量的有效范围，从大到小</strong></p>
+<ul>
+<li>Global</li>
+<li>Collection</li>
+<li>Environment</li>
+<li>Data</li>
+<li>Local</li>
+</ul>
+<h2 id="脚本中使用request和response数据"><a href="#脚本中使用request和response数据" class="headerlink" title="脚本中使用request和response数据"></a>脚本中使用request和response数据</h2><table>
+<thead>
+<tr>
+<th>对象方法</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pm.request</td>
+<td>pm.request.url:Url</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers:HeaderList</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.method:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.body:RequestBody</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers.add(header:Header):function</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers.remove(headerName:String):function</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.request.headers.upsert({key: headerName:String, value: headerValue:String}):function)</td>
+</tr>
+<tr>
+<td>pm.response</td>
+<td>pm.response.code:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.status:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.headers:HeaderList</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.responseTime:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.responseSize:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.text():Function → String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.response.json():Function → Object</td>
+</tr>
+<tr>
+<td>pm.info</td>
+<td>pm.info.eventName:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.iteration:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.iterationCount:Number</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.requestName:String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.info.requestId:String</td>
+</tr>
+<tr>
+<td>pm.cookies</td>
+<td>pm.cookies.has(cookieName:String):Function → Boolean</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.cookies.get(cookieName:String):Function → String</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.cookies.toObject():Function → Object</td>
+</tr>
+<tr>
+<td></td>
+<td>pm.cookies.jar():Function → Object</td>
+</tr>
+<tr>
+<td>pm.sendRequest</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例1</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="property">request</span>.<span class="property">headers</span>.<span class="title function_">add</span>(&#123;</span><br><span class="line">  <span class="attr">key</span>: <span class="string">&quot;client-id&quot;</span>,</span><br><span class="line">  <span class="attr">value</span>: <span class="string">&quot;abcdef&quot;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>示例2</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> jar = pm.<span class="property">cookies</span>.<span class="title function_">jar</span>();</span><br><span class="line">jar.<span class="title function_">set</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, cookie <span class="attr">name</span>:<span class="title class_">String</span>, cookie <span class="attr">value</span>:<span class="title class_">String</span>, <span class="title function_">callback</span>(error, cookie)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line">    </span><br><span class="line">jar.<span class="title function_">set</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, &#123; <span class="attr">name</span>:<span class="title class_">String</span>, <span class="attr">value</span>:<span class="title class_">String</span>, <span class="attr">httpOnly</span>:<span class="title class_">Bool</span> &#125;, <span class="title function_">callback</span>(error, cookie)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">get</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, <span class="attr">cookieName</span>:<span class="title class_">String</span>, callback (error, value)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">getAll</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, callback (error, cookies)):<span class="title class_">Function</span></span><br><span class="line"></span><br><span class="line">jar.<span class="title function_">unset</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, <span class="attr">token</span>:<span class="title class_">String</span>, <span class="title function_">callback</span>(error)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br><span class="line">  </span><br><span class="line">jar.<span class="title function_">clear</span>(<span class="attr">URL</span>:<span class="title class_">String</span>, callback (error)):<span class="title class_">Function</span> → <span class="title class_">Object</span></span><br></pre></td></tr></table></figure></li>
+<li><p>示例3</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> jar = pm.<span class="property">cookies</span>.<span class="title function_">jar</span>();</span><br><span class="line">jar.<span class="title function_">set</span>(<span class="string">&quot;httpbin.org&quot;</span>, <span class="string">&quot;session-id&quot;</span>, <span class="string">&quot;abc123&quot;</span>, <span class="function">(<span class="params">error, cookie</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`An error occurred: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Cookie saved: <span class="subst">$&#123;cookie&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>示例4</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Example with a plain string URL</span></span><br><span class="line">pm.<span class="title function_">sendRequest</span>(<span class="string">&#x27;https://postman-echo.com/get&#x27;</span>, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(response);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example with a full-fledged request</span></span><br><span class="line"><span class="keyword">const</span> postRequest = &#123;</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://postman-echo.com/post&#x27;</span>,</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  <span class="attr">header</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;X-Foo&#x27;</span>: <span class="string">&#x27;bar&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">body</span>: &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&#x27;raw&#x27;</span>,</span><br><span class="line">    <span class="attr">raw</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="attr">key</span>: <span class="string">&#x27;this is json&#x27;</span> &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">pm.<span class="title function_">sendRequest</span>(postRequest, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(error ? error : response.<span class="title function_">json</span>());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example containing a test</span></span><br><span class="line">pm.<span class="title function_">sendRequest</span>(<span class="string">&#x27;https://postman-echo.com/get&#x27;</span>, <span class="function">(<span class="params">error, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  pm.<span class="title function_">test</span>(<span class="string">&#x27;response should be okay to process&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    pm.<span class="title function_">expect</span>(error).<span class="property">to</span>.<span class="title function_">equal</span>(<span class="literal">null</span>);</span><br><span class="line">    pm.<span class="title function_">expect</span>(response).<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">property</span>(<span class="string">&#x27;code&#x27;</span>, <span class="number">200</span>);</span><br><span class="line">    pm.<span class="title function_">expect</span>(response).<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">property</span>(<span class="string">&#x27;status&#x27;</span>, <span class="string">&#x27;OK&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="pm-test"><a href="#pm-test" class="headerlink" title="pm.test()"></a>pm.test()</h2><ul>
+<li><p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(<span class="attr">testName</span>:<span class="title class_">String</span>, <span class="attr">specFunction</span>:<span class="title class_">Function</span>):<span class="title class_">Function</span></span><br><span class="line">参数<span class="number">1</span>: 函数执行成功后输出的字符串</span><br><span class="line">参数<span class="number">2</span>：测试函数，格式 ===&gt;函数: <span class="keyword">function</span>(<span class="params"></span>) &#123; 函数体&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>示例1</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">#下面要结合pm.<span class="property">expect</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">text</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="title function_">json</span>()</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">code</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">responseTime</span></span><br><span class="line">#下面可以直接断言</span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">body</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">header</span></span><br><span class="line">pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="property">status</span></span><br></pre></td></tr></table></figure></li>
+<li><p>示例2</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">test</span>(<span class="string">&quot;response should be okay to process&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">not</span>.<span class="property">be</span>.<span class="property">error</span>;</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">have</span>.<span class="title function_">jsonBody</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  pm.<span class="property">response</span>.<span class="property">to</span>.<span class="property">not</span>.<span class="property">have</span>.<span class="title function_">jsonBody</span>(<span class="string">&#x27;error&#x27;</span>);</span><br><span class="line">&#125;);	</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="pm-expect"><a href="#pm-expect" class="headerlink" title="pm.expect()"></a>pm.expect()</h2><ul>
+<li><p>往往嵌入到pm.test()中使用</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="title function_">expect</span>(<span class="attr">assertion</span>:*):<span class="title class_">Function</span> → <span class="title class_">Assertion</span></span><br></pre></td></tr></table></figure></li>
+<li><p>请结合上面的SNIPPETS来使用</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>写不下去了，这玩意没啥营养，真做POSTMAN做到这个层面，写代码自动化不香吗？</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>postman</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>postman</tag>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Postman生成报告</title>
+    <url>/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[<h1 id="Postman生成报告"><a href="#Postman生成报告" class="headerlink" title="Postman生成报告"></a>Postman生成报告</h1><blockquote>
+<p>POSTMAN的企业版是支持生成一个漂亮的报告的</p>
+</blockquote>
+<h2 id="newman安装"><a href="#newman安装" class="headerlink" title="newman安装"></a>newman安装</h2><ul>
+<li><p>安装newman</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">npm install -g newman</span><br></pre></td></tr></table></figure></li>
+<li><p>new报告插件安装</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman-reporter-html</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="POSTMAN中导出"><a href="#POSTMAN中导出" class="headerlink" title="POSTMAN中导出"></a>POSTMAN中导出</h2><ul>
+<li><p>导出用例</p>
+<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
+<p><img src="https://s2.loli.net/2022/03/31/JdifKSGBZg5WaRI.png" alt="1648712363265.png"></p>
+</li>
+<li><p>导出环境变量</p>
+<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
+</li>
+<li><p>这样会生成两个json文件</p>
+<ul>
+<li>教官系统.postman_collection.json</li>
+<li>教官系统环境变量.postman_environment.json</li>
+</ul>
+</li>
+</ul>
+<h2 id="newman生成报告"><a href="#newman生成报告" class="headerlink" title="newman生成报告"></a>newman生成报告</h2><ul>
+<li><p>newman其实是个命令行工具</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman -h</span><br><span class="line">Usage: newman [options] [command]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -v, --version               output the version number</span><br><span class="line">  -h, --<span class="built_in">help</span>                  display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  run [options] &lt;collection&gt;  Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">To get available options <span class="keyword">for</span> a command:</span><br><span class="line">  newman &lt;command&gt; -h</span><br></pre></td></tr></table></figure></li>
+<li><p>可以看到关键是run命令，主要的参数和用法如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman run 用例.json -e 环境.json -r html  <span class="comment">#生成一个html报告</span></span><br><span class="line">newman run 用例.json -e 环境.json --bail newman  <span class="comment">#console打印</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>cmd示例,html的就不看了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">newman run 教官系统.postman_collection.json -e 教官系统环境变量.postman_environment.json --bail newman</span></span><br><span class="line">newman</span><br><span class="line"></span><br><span class="line">教官系统</span><br><span class="line"></span><br><span class="line">→ 登录</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/loginReq ―[200 OK, 256B, 214ms]</span><br><span class="line">  1. Response time is less than 200ms</span><br><span class="line">  √  Status code name has string</span><br><span class="line">  √  Status code is 200</span><br><span class="line">  ┌</span><br><span class="line">  │ &#x27;&#123;&quot;retcode&quot;: 0&#125;&#x27;</span><br><span class="line">  │ [</span><br><span class="line">  │   &#123;</span><br><span class="line">  │     name: &#x27;sessionid&#x27;,</span><br><span class="line">  │     expires: null,</span><br><span class="line">  │     maxAge: 0,</span><br><span class="line">  │     domain: &#x27;124.223.33.41&#x27;,</span><br><span class="line">  │     path: &#x27;/&#x27;,</span><br><span class="line">  │     secure: false,</span><br><span class="line">  │     httpOnly: true,</span><br><span class="line">  │     hostOnly: true,</span><br><span class="line">  │     value: &#x27;5nhn3fuygio2bddi1vodi7nk79vnusdr&#x27;</span><br><span class="line">  │   &#125;</span><br><span class="line">  │ ]</span><br><span class="line">  └</span><br><span class="line"></span><br><span class="line">→ 添加课程</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 194B, 36ms]</span><br><span class="line">  √  Status code is 200</span><br><span class="line"></span><br><span class="line">→ 列出课程</span><br><span class="line">  GET http://124.223.33.41:7081/api/mgr/sq_mgr/?action=list_course&amp;pagenum=1&amp;pagesize=20 [200 OK, 546B, 20ms]</span><br><span class="line"></span><br><span class="line">→ 修改课程</span><br><span class="line">  PUT http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 49ms]</span><br><span class="line"></span><br><span class="line">→ 删除课程</span><br><span class="line">  DELETE http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 39ms]</span><br><span class="line"></span><br><span class="line">┌─────────────────────────┬───────────────────┬───────────────────┐</span><br><span class="line">│                         │          executed │            failed │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              iterations │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│                requests │                 5 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│            test-scripts │                 3 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│      prerequest-scripts │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              assertions │                 4 │                 1 │</span><br><span class="line">├─────────────────────────┴───────────────────┴───────────────────┤</span><br><span class="line">│ total run duration: 793ms                                       │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ total data received: 445B (approx)                              │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ average response time: 71ms [min: 20ms, max: 214ms, s.d.: 71ms] │</span><br><span class="line">└─────────────────────────────────────────────────────────────────┘</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash"> failure                detail</span></span><br><span class="line"></span><br><span class="line"> 1.  AssertionError         Response time is less than 200ms</span><br><span class="line">                            expected 214 to be below 200</span><br><span class="line">                            at assertion:0 in test-script</span><br><span class="line">                            inside &quot;登录&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="附录：run命令所有帮助"><a href="#附录：run命令所有帮助" class="headerlink" title="附录：run命令所有帮助"></a>附录：run命令所有帮助</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman run -h</span><br><span class="line">Usage: newman run &lt;collection&gt; [options]</span><br><span class="line"></span><br><span class="line">Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -e, --environment &lt;path&gt;              Specify a URL <span class="keyword">or</span> path to a Postman Environment</span><br><span class="line">  -g, --<span class="built_in">globals</span> &lt;path&gt;                  Specify a URL <span class="keyword">or</span> path to a file containing Postman Globals</span><br><span class="line">  -r, --reporters [reporters]           Specify the reporters to use <span class="keyword">for</span> this run (default: [<span class="string">&quot;cli&quot;</span>])</span><br><span class="line">  -n, --iteration-count &lt;n&gt;             Define the number of iterations to run</span><br><span class="line">  -d, --iteration-data &lt;path&gt;           Specify a data file to use <span class="keyword">for</span> iterations (either JSON <span class="keyword">or</span> CSV)</span><br><span class="line">  --folder &lt;path&gt;                       Specify the folder to run <span class="keyword">from</span> a collection. Can be specified multiple times to</span><br><span class="line">                                        run multiple folders (default: [])</span><br><span class="line">  --<span class="keyword">global</span>-var &lt;value&gt;                  Allows the specification of <span class="keyword">global</span> variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --env-var &lt;value&gt;                     Allows the specification of environment variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --export-environment &lt;path&gt;           Exports the final environment to a file after completing the run</span><br><span class="line">  --export-<span class="built_in">globals</span> &lt;path&gt;               Exports the final <span class="built_in">globals</span> to a file after completing the run</span><br><span class="line">  --export-collection &lt;path&gt;            Exports the executed collection to a file after completing the run</span><br><span class="line">  --postman-api-key &lt;apiKey&gt;            API Key used to load the resources <span class="keyword">from</span> the Postman API</span><br><span class="line">  --bail [modifiers]                    Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to gracefully stop a collection run on encountering an</span><br><span class="line">                                        error <span class="keyword">and</span> whether to end the run <span class="keyword">with</span> an error based on the optional modifier</span><br><span class="line">  --ignore-redirects                    Prevents Newman <span class="keyword">from</span> automatically following 3XX redirect responses</span><br><span class="line">  -x , --suppress-exit-code             Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to override the default exit code <span class="keyword">for</span> the current run</span><br><span class="line">  --silent                              Prevents Newman <span class="keyword">from</span> showing output to CLI</span><br><span class="line">  --disable-unicode                     Forces Unicode compliant symbols to be replaced by their plain text equivalents</span><br><span class="line">  --color &lt;value&gt;                       Enable/Disable colored output (auto|on|off) (default: <span class="string">&quot;auto&quot;</span>)</span><br><span class="line">  --delay-request [n]                   Specify the extent of delay between requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout [n]                         Specify a timeout <span class="keyword">for</span> collection run (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-request [n]                 Specify a timeout <span class="keyword">for</span> requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-script [n]                  Specify a timeout <span class="keyword">for</span> scripts (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --working-<span class="built_in">dir</span> &lt;path&gt;                  Specify the path to the working directory</span><br><span class="line">  --no-insecure-file-read               Prevents reading the files situated outside of the working directory</span><br><span class="line">  -k, --insecure                        Disables SSL validations</span><br><span class="line">  --ssl-client-cert-<span class="built_in">list</span> &lt;path&gt;         Specify the path to a client certificates configurations (JSON)</span><br><span class="line">  --ssl-client-cert &lt;path&gt;              Specify the path to a client certificate (PEM)</span><br><span class="line">  --ssl-client-key &lt;path&gt;               Specify the path to a client certificate private key</span><br><span class="line">  --ssl-client-passphrase &lt;passphrase&gt;  Specify the client certificate passphrase (<span class="keyword">for</span> protected key)</span><br><span class="line">  --ssl-extra-ca-certs &lt;path&gt;           Specify additionally trusted CA certificates (PEM)</span><br><span class="line">  --cookie-jar &lt;path&gt;                   Specify the path to a custom cookie jar (serialized tough-cookie JSON)</span><br><span class="line">  --export-cookie-jar &lt;path&gt;            Exports the cookie jar to a file after completing the run</span><br><span class="line">  --verbose                             Show detailed information of collection run <span class="keyword">and</span> each request sent</span><br><span class="line">  -h, --<span class="built_in">help</span>                            display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>postman</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>postman</tag>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python中的super</title>
     <url>/2022/04/12/Python%E4%B8%AD%E7%9A%84super/</url>
     <content><![CDATA[<h1 id="Python中的super"><a href="#Python中的super" class="headerlink" title="Python中的super"></a>Python中的super</h1><blockquote>
@@ -2854,50 +2901,96 @@
       </tags>
   </entry>
   <entry>
-    <title>Postman生成报告</title>
-    <url>/2022/03/31/Postman%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A/</url>
-    <content><![CDATA[<h1 id="Postman生成报告"><a href="#Postman生成报告" class="headerlink" title="Postman生成报告"></a>Postman生成报告</h1><blockquote>
-<p>POSTMAN的企业版是支持生成一个漂亮的报告的</p>
+    <title>Python小技巧</title>
+    <url>/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<h1 id="Python小技巧"><a href="#Python小技巧" class="headerlink" title="Python小技巧"></a>Python小技巧</h1><blockquote>
+<p>参考文档： <a href="https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository">https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository</a></p>
+<p>计划：先翻译上述文档；再把工作中遇到的逐步移植过来。</p>
 </blockquote>
-<h2 id="newman安装"><a href="#newman安装" class="headerlink" title="newman安装"></a>newman安装</h2><ul>
-<li><p>安装newman</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">npm install -g newman</span><br></pre></td></tr></table></figure></li>
-<li><p>new报告插件安装</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman-reporter-html</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="POSTMAN中导出"><a href="#POSTMAN中导出" class="headerlink" title="POSTMAN中导出"></a>POSTMAN中导出</h2><ul>
-<li><p>导出用例</p>
-<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
-<p><img src="https://s2.loli.net/2022/03/31/JdifKSGBZg5WaRI.png" alt="1648712363265.png"></p>
-</li>
-<li><p>导出环境变量</p>
-<p><img src="https://s2.loli.net/2022/03/31/4nt3yOgQGKlJBU1.png" alt="1648712267412.png"></p>
-</li>
-<li><p>这样会生成两个json文件</p>
-<ul>
-<li>教官系统.postman_collection.json</li>
-<li>教官系统环境变量.postman_environment.json</li>
-</ul>
-</li>
-</ul>
-<h2 id="newman生成报告"><a href="#newman生成报告" class="headerlink" title="newman生成报告"></a>newman生成报告</h2><ul>
-<li><p>newman其实是个命令行工具</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman -h</span><br><span class="line">Usage: newman [options] [command]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -v, --version               output the version number</span><br><span class="line">  -h, --<span class="built_in">help</span>                  display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  run [options] &lt;collection&gt;  Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">To get available options <span class="keyword">for</span> a command:</span><br><span class="line">  newman &lt;command&gt; -h</span><br></pre></td></tr></table></figure></li>
-<li><p>可以看到关键是run命令，主要的参数和用法如下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">newman run 用例.json -e 环境.json -r html  <span class="comment">#生成一个html报告</span></span><br><span class="line">newman run 用例.json -e 环境.json --bail newman  <span class="comment">#console打印</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>cmd示例,html的就不看了</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">newman run 教官系统.postman_collection.json -e 教官系统环境变量.postman_environment.json --bail newman</span></span><br><span class="line">newman</span><br><span class="line"></span><br><span class="line">教官系统</span><br><span class="line"></span><br><span class="line">→ 登录</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/loginReq ―[200 OK, 256B, 214ms]</span><br><span class="line">  1. Response time is less than 200ms</span><br><span class="line">  √  Status code name has string</span><br><span class="line">  √  Status code is 200</span><br><span class="line">  ┌</span><br><span class="line">  │ &#x27;&#123;&quot;retcode&quot;: 0&#125;&#x27;</span><br><span class="line">  │ [</span><br><span class="line">  │   &#123;</span><br><span class="line">  │     name: &#x27;sessionid&#x27;,</span><br><span class="line">  │     expires: null,</span><br><span class="line">  │     maxAge: 0,</span><br><span class="line">  │     domain: &#x27;124.223.33.41&#x27;,</span><br><span class="line">  │     path: &#x27;/&#x27;,</span><br><span class="line">  │     secure: false,</span><br><span class="line">  │     httpOnly: true,</span><br><span class="line">  │     hostOnly: true,</span><br><span class="line">  │     value: &#x27;5nhn3fuygio2bddi1vodi7nk79vnusdr&#x27;</span><br><span class="line">  │   &#125;</span><br><span class="line">  │ ]</span><br><span class="line">  └</span><br><span class="line"></span><br><span class="line">→ 添加课程</span><br><span class="line">  POST http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 194B, 36ms]</span><br><span class="line">  √  Status code is 200</span><br><span class="line"></span><br><span class="line">→ 列出课程</span><br><span class="line">  GET http://124.223.33.41:7081/api/mgr/sq_mgr/?action=list_course&amp;pagenum=1&amp;pagesize=20 [200 OK, 546B, 20ms]</span><br><span class="line"></span><br><span class="line">→ 修改课程</span><br><span class="line">  PUT http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 49ms]</span><br><span class="line"></span><br><span class="line">→ 删除课程</span><br><span class="line">  DELETE http://124.223.33.41:7081/api/mgr/sq_mgr/ [200 OK, 182B, 39ms]</span><br><span class="line"></span><br><span class="line">┌─────────────────────────┬───────────────────┬───────────────────┐</span><br><span class="line">│                         │          executed │            failed │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              iterations │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│                requests │                 5 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│            test-scripts │                 3 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│      prerequest-scripts │                 1 │                 0 │</span><br><span class="line">├─────────────────────────┼───────────────────┼───────────────────┤</span><br><span class="line">│              assertions │                 4 │                 1 │</span><br><span class="line">├─────────────────────────┴───────────────────┴───────────────────┤</span><br><span class="line">│ total run duration: 793ms                                       │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ total data received: 445B (approx)                              │</span><br><span class="line">├─────────────────────────────────────────────────────────────────┤</span><br><span class="line">│ average response time: 71ms [min: 20ms, max: 214ms, s.d.: 71ms] │</span><br><span class="line">└─────────────────────────────────────────────────────────────────┘</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">  # </span><span class="language-bash"> failure                detail</span></span><br><span class="line"></span><br><span class="line"> 1.  AssertionError         Response time is less than 200ms</span><br><span class="line">                            expected 214 to be below 200</span><br><span class="line">                            at assertion:0 in test-script</span><br><span class="line">                            inside &quot;登录&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="附录：run命令所有帮助"><a href="#附录：run命令所有帮助" class="headerlink" title="附录：run命令所有帮助"></a>附录：run命令所有帮助</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;newman run -h</span><br><span class="line">Usage: newman run &lt;collection&gt; [options]</span><br><span class="line"></span><br><span class="line">Initiate a Postman Collection run <span class="keyword">from</span> a given URL <span class="keyword">or</span> path</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -e, --environment &lt;path&gt;              Specify a URL <span class="keyword">or</span> path to a Postman Environment</span><br><span class="line">  -g, --<span class="built_in">globals</span> &lt;path&gt;                  Specify a URL <span class="keyword">or</span> path to a file containing Postman Globals</span><br><span class="line">  -r, --reporters [reporters]           Specify the reporters to use <span class="keyword">for</span> this run (default: [<span class="string">&quot;cli&quot;</span>])</span><br><span class="line">  -n, --iteration-count &lt;n&gt;             Define the number of iterations to run</span><br><span class="line">  -d, --iteration-data &lt;path&gt;           Specify a data file to use <span class="keyword">for</span> iterations (either JSON <span class="keyword">or</span> CSV)</span><br><span class="line">  --folder &lt;path&gt;                       Specify the folder to run <span class="keyword">from</span> a collection. Can be specified multiple times to</span><br><span class="line">                                        run multiple folders (default: [])</span><br><span class="line">  --<span class="keyword">global</span>-var &lt;value&gt;                  Allows the specification of <span class="keyword">global</span> variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --env-var &lt;value&gt;                     Allows the specification of environment variables via the command line, <span class="keyword">in</span> a</span><br><span class="line">                                        key=value <span class="built_in">format</span> (default: [])</span><br><span class="line">  --export-environment &lt;path&gt;           Exports the final environment to a file after completing the run</span><br><span class="line">  --export-<span class="built_in">globals</span> &lt;path&gt;               Exports the final <span class="built_in">globals</span> to a file after completing the run</span><br><span class="line">  --export-collection &lt;path&gt;            Exports the executed collection to a file after completing the run</span><br><span class="line">  --postman-api-key &lt;apiKey&gt;            API Key used to load the resources <span class="keyword">from</span> the Postman API</span><br><span class="line">  --bail [modifiers]                    Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to gracefully stop a collection run on encountering an</span><br><span class="line">                                        error <span class="keyword">and</span> whether to end the run <span class="keyword">with</span> an error based on the optional modifier</span><br><span class="line">  --ignore-redirects                    Prevents Newman <span class="keyword">from</span> automatically following 3XX redirect responses</span><br><span class="line">  -x , --suppress-exit-code             Specify whether <span class="keyword">or</span> <span class="keyword">not</span> to override the default exit code <span class="keyword">for</span> the current run</span><br><span class="line">  --silent                              Prevents Newman <span class="keyword">from</span> showing output to CLI</span><br><span class="line">  --disable-unicode                     Forces Unicode compliant symbols to be replaced by their plain text equivalents</span><br><span class="line">  --color &lt;value&gt;                       Enable/Disable colored output (auto|on|off) (default: <span class="string">&quot;auto&quot;</span>)</span><br><span class="line">  --delay-request [n]                   Specify the extent of delay between requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout [n]                         Specify a timeout <span class="keyword">for</span> collection run (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-request [n]                 Specify a timeout <span class="keyword">for</span> requests (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --timeout-script [n]                  Specify a timeout <span class="keyword">for</span> scripts (milliseconds) (default: <span class="number">0</span>)</span><br><span class="line">  --working-<span class="built_in">dir</span> &lt;path&gt;                  Specify the path to the working directory</span><br><span class="line">  --no-insecure-file-read               Prevents reading the files situated outside of the working directory</span><br><span class="line">  -k, --insecure                        Disables SSL validations</span><br><span class="line">  --ssl-client-cert-<span class="built_in">list</span> &lt;path&gt;         Specify the path to a client certificates configurations (JSON)</span><br><span class="line">  --ssl-client-cert &lt;path&gt;              Specify the path to a client certificate (PEM)</span><br><span class="line">  --ssl-client-key &lt;path&gt;               Specify the path to a client certificate private key</span><br><span class="line">  --ssl-client-passphrase &lt;passphrase&gt;  Specify the client certificate passphrase (<span class="keyword">for</span> protected key)</span><br><span class="line">  --ssl-extra-ca-certs &lt;path&gt;           Specify additionally trusted CA certificates (PEM)</span><br><span class="line">  --cookie-jar &lt;path&gt;                   Specify the path to a custom cookie jar (serialized tough-cookie JSON)</span><br><span class="line">  --export-cookie-jar &lt;path&gt;            Exports the cookie jar to a file after completing the run</span><br><span class="line">  --verbose                             Show detailed information of collection run <span class="keyword">and</span> each request sent</span><br><span class="line">  -h, --<span class="built_in">help</span>                            display <span class="built_in">help</span> <span class="keyword">for</span> command</span><br></pre></td></tr></table></figure>
+<h1 id="001：合并字典的多种方式"><a href="#001：合并字典的多种方式" class="headerlink" title="001：合并字典的多种方式"></a>001：合并字典的多种方式</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#原始的字典</span></span><br><span class="line">orig_dict = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;wuxianfeng&quot;</span>,<span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>,<span class="string">&#x27;sex&#x27;</span>:<span class="string">&#x27;male&#x27;</span>&#125;</span><br><span class="line"><span class="comment">#新的key</span></span><br><span class="line">new_dict = &#123;<span class="string">&#x27;country&#x27;</span>:<span class="string">&#x27;china&#x27;</span>&#125;</span><br><span class="line"><span class="comment">#重复的key</span></span><br><span class="line">dupe_dict = &#123;<span class="string">&#x27;sex&#x27;</span>:<span class="string">&#x27;female&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式1</span></span><br><span class="line">orig_dict.update(new_dict)</span><br><span class="line"><span class="built_in">print</span>(orig_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式2 遍历2个字典   注意与方式1要分开测试，因为方式1已经改变了原始的字典，下面的是新的字典不影响</span></span><br><span class="line">merge_dict2 = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> (orig_dict, new_dict):</span><br><span class="line">    <span class="keyword">for</span> key, value <span class="keyword">in</span> _.items():</span><br><span class="line">        merge_dict2[key] = value</span><br><span class="line"><span class="built_in">print</span>(merge_dict2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式3 字典推导式</span></span><br><span class="line">merge_dict3 = &#123;key: value <span class="keyword">for</span> d <span class="keyword">in</span> (orig_dict, new_dict) <span class="keyword">for</span> key, value <span class="keyword">in</span> d.items()&#125;</span><br><span class="line"><span class="built_in">print</span>(merge_dict3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并方式4  字典解包</span></span><br><span class="line"><span class="comment"># Dictionary unpacking (Python 3.5+)</span></span><br><span class="line">merge_dict4 = &#123;**orig_dict, **new_dict&#125;</span><br><span class="line"><span class="built_in">print</span>(merge_dict4)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式5 联合字典</span></span><br><span class="line"><span class="comment"># # Dictionary union operator (Python 3.9+ maybe?)</span></span><br><span class="line">merge_dict5 = orig_dict | dupe_dict</span><br><span class="line">merge_dict6 = dupe_dict | orig_dict</span><br><span class="line"><span class="built_in">print</span>(merge_dict5)</span><br><span class="line"><span class="built_in">print</span>(merge_dict6)</span><br></pre></td></tr></table></figure>
 
+
+
+<h1 id="002：-转置字典的多种方式"><a href="#002：-转置字典的多种方式" class="headerlink" title="002： 转置字典的多种方式"></a>002： 转置字典的多种方式</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ori_dict = &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;wuxianfeng&#x27;</span>,<span class="string">&#x27;city&#x27;</span>:<span class="string">&#x27;suzhou&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># # 方法一：推导式</span></span><br><span class="line">reverse_dict2 = &#123;value:key <span class="keyword">for</span> key,value <span class="keyword">in</span> ori_dict.items()&#125;</span><br><span class="line"><span class="built_in">print</span>(reverse_dict2)</span><br><span class="line"><span class="comment"># 方法二：map映射 结合reversed转置</span></span><br><span class="line">reverse_dict1 = <span class="built_in">dict</span>(<span class="built_in">map</span>(<span class="built_in">reversed</span>,ori_dict.items()))</span><br><span class="line"><span class="built_in">print</span>(reverse_dict1)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="003：输出在同一行"><a href="#003：输出在同一行" class="headerlink" title="003：输出在同一行"></a>003：输出在同一行</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello china&#x27;</span>)  <span class="comment">#这一行跟上一行在一起</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.stdout.write(<span class="string">&#x27;hello nanjing&#x27;</span>)</span><br><span class="line">sys.stdout.write(<span class="string">&#x27;hello jiangning&#x27;</span>)  <span class="comment">#这一行跟上一行在一起</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="004：代码运行时间"><a href="#004：代码运行时间" class="headerlink" title="004：代码运行时间"></a>004：代码运行时间</h1><ul>
+<li><p><strong>方法一:timeit</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> timeit</span><br><span class="line">expr = <span class="string">&#x27;[(a, b) for a in (1, 3, 5) for b in (2, 4, 6)]&#x27;</span>  <span class="comment">#被测代码</span></span><br><span class="line"><span class="built_in">print</span>(timeit.timeit(expr,number=<span class="number">1000000</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">min</span>(timeit.repeat(expr)))</span><br></pre></td></tr></table></figure></li>
+<li><p>timeit.repeat()</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">repeat</span>(<span class="params">stmt=<span class="string">&quot;pass&quot;</span>, setup=<span class="string">&quot;pass&quot;</span>, timer=default_timer,</span></span><br><span class="line"><span class="params">           repeat=default_repeat, number=default_number, <span class="built_in">globals</span>=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Convenience function to create Timer object and call repeat method.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> Timer(stmt, setup, timer, <span class="built_in">globals</span>).repeat(repeat, number)</span><br><span class="line">default_number = <span class="number">1000000</span></span><br><span class="line">default_repeat = <span class="number">5</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>方法二:cprofile</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python -m cProfile -s cumulative  待执行的文件.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Ordered by: cumulative time</span><br><span class="line">  </span><br><span class="line">ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.099</span>    <span class="number">0.099</span> &#123;built-<span class="keyword">in</span> method builtins.<span class="built_in">exec</span>&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.099</span>    <span class="number">0.099</span> 待执行的文件.py:<span class="number">6</span>(&lt;module&gt;)</span><br><span class="line">     <span class="number">2</span>    <span class="number">0.088</span>    <span class="number">0.044</span>    <span class="number">0.088</span>    <span class="number">0.044</span> &#123;built-<span class="keyword">in</span> method builtins.<span class="built_in">print</span>&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.006</span>    <span class="number">0.006</span>    <span class="number">0.008</span>    <span class="number">0.008</span> 待执行的文件.py:<span class="number">11</span>(test2)</span><br><span class="line"> <span class="number">30000</span>    <span class="number">0.003</span>    <span class="number">0.000</span>    <span class="number">0.003</span>    <span class="number">0.000</span> &#123;method <span class="string">&#x27;append&#x27;</span> of <span class="string">&#x27;list&#x27;</span> objects&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.001</span>    <span class="number">0.001</span>    <span class="number">0.002</span>    <span class="number">0.002</span> 待执行的文件.py:<span class="number">6</span>(test1)</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.000</span> &#123;method <span class="string">&#x27;disable&#x27;</span> of <span class="string">&#x27;_lsprof.Profiler&#x27;</span> objects&#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>ncalls</strong>：表示函数调用的次数；</li>
+<li><strong>tottime</strong>：表示指定函数的总的运行时间，除掉函数中调用子函数的运行时间；</li>
+<li><strong>percall</strong>：（第一个percall）等于 tottime/ncalls；</li>
+<li><strong>cumtime</strong>：表示该函数及其所有子函数的调用运行的时间，即函数开始调用到返回的时间；</li>
+<li><strong>percall</strong>：（第二个percall）即函数运行一次的平均时间，等于 cumtime/ncalls；</li>
+<li>**filename:lineno(function)**：每个函数调用的具体信息；</li>
+<li>需要注意的是cProfile很难搞清楚函数内的每一行发生了什么，是针对整个函数来说的。</li>
+</ul>
+</li>
+</ul>
+<h1 id="005：python3-10以下版本实现switch-case"><a href="#005：python3-10以下版本实现switch-case" class="headerlink" title="005：python3.10以下版本实现switch-case"></a>005：python3.10以下版本实现switch-case</h1><ul>
+<li><p>python3.10天然就支持了，不需要额外实现。</p>
+</li>
+<li><p>常规的处理</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">choice  = <span class="built_in">input</span>(<span class="string">&#x27;choice:&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> choice == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 1&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> choice == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 2&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;oops!&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>字典实现</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">choice_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;1&#x27;</span>:<span class="string">&#x27;choose 1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;2&#x27;</span>:<span class="string">&#x27;choose 2&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">choice = <span class="built_in">input</span>(<span class="string">&#x27;choice: &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(choice_dict.get(choice,<span class="string">&#x27;oops!&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
+<li><p>如果要做很多事情，用函数封装一下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">choose_1</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 1&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">choose_2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 2&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">choose_3</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 3&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">choice_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;1&#x27;</span>:choose_1,</span><br><span class="line">    <span class="string">&#x27;2&#x27;</span>:choose_2,</span><br><span class="line">    <span class="string">&#x27;3&#x27;</span>:choose_3</span><br><span class="line">&#125;</span><br><span class="line">choice = <span class="built_in">input</span>(<span class="string">&#x27;choice: &#x27;</span>)</span><br><span class="line">choice_dict.get(choice,<span class="string">&#x27;oops!&#x27;</span>)()</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
       <categories>
-        <category>postman</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python小程序_简单凯撒加密</title>
+    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86/</url>
+    <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h1><ul>
+<li><p>chr：返回指定数字的unicode字符串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chr</span>(i, /)</span><br><span class="line">    Return a Unicode string of one character <span class="keyword">with</span> ordinal i; <span class="number">0</span> &lt;= i &lt;= <span class="number">0x10ffff</span>.</span><br><span class="line">    </span><br><span class="line"><span class="built_in">chr</span>(<span class="number">65</span>)  是A  <span class="built_in">chr</span>(<span class="number">90</span>)是Z ,差<span class="number">25</span></span><br><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)  是a  <span class="built_in">chr</span>(<span class="number">122</span>)是z，差<span class="number">25</span>(<span class="number">26</span>个英文字母)</span><br></pre></td></tr></table></figure></li>
+<li><p>chr(i+c)，i从0到25</p>
+</li>
+<li><p>两个for循环建立了一个字典</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#超出26个字符要求余数+C，这是关键</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;A&#x27;</span>: <span class="string">&#x27;N&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;B&#x27;</span>: <span class="string">&#x27;O&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;C&#x27;</span>: <span class="string">&#x27;P&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;D&#x27;</span>: <span class="string">&#x27;Q&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;E&#x27;</span>: <span class="string">&#x27;R&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;F&#x27;</span>: <span class="string">&#x27;S&#x27;</span>) <span class="comment">#省略了很多  A后第13个字符串后的N</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="代码改造成函数"><a href="#代码改造成函数" class="headerlink" title="代码改造成函数"></a>代码改造成函数</h1><ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):   <span class="comment">#接受一个字符串，通过将每个字符串往后挪13位（默认值，可以自行更改）</span></span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span>  <span class="comment">#原始字符串</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan  #加密后的字符串</span></span><br></pre></td></tr></table></figure></li>
+<li><p>解码代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)  <span class="comment">#返回来就是解密</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
       </categories>
       <tags>
         <tag>完结</tag>
-        <tag>postman</tag>
-        <tag>api</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -3061,99 +3154,6 @@
         <tag>完结</tag>
         <tag>python</tag>
         <tag>MD5</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python小技巧</title>
-    <url>/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<h1 id="Python小技巧"><a href="#Python小技巧" class="headerlink" title="Python小技巧"></a>Python小技巧</h1><blockquote>
-<p>参考文档： <a href="https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository">https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository</a></p>
-<p>计划：先翻译上述文档；再把工作中遇到的逐步移植过来。</p>
-</blockquote>
-<h1 id="001：合并字典的多种方式"><a href="#001：合并字典的多种方式" class="headerlink" title="001：合并字典的多种方式"></a>001：合并字典的多种方式</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#原始的字典</span></span><br><span class="line">orig_dict = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;wuxianfeng&quot;</span>,<span class="string">&#x27;age&#x27;</span>:<span class="number">18</span>,<span class="string">&#x27;sex&#x27;</span>:<span class="string">&#x27;male&#x27;</span>&#125;</span><br><span class="line"><span class="comment">#新的key</span></span><br><span class="line">new_dict = &#123;<span class="string">&#x27;country&#x27;</span>:<span class="string">&#x27;china&#x27;</span>&#125;</span><br><span class="line"><span class="comment">#重复的key</span></span><br><span class="line">dupe_dict = &#123;<span class="string">&#x27;sex&#x27;</span>:<span class="string">&#x27;female&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式1</span></span><br><span class="line">orig_dict.update(new_dict)</span><br><span class="line"><span class="built_in">print</span>(orig_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式2 遍历2个字典   注意与方式1要分开测试，因为方式1已经改变了原始的字典，下面的是新的字典不影响</span></span><br><span class="line">merge_dict2 = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> (orig_dict, new_dict):</span><br><span class="line">    <span class="keyword">for</span> key, value <span class="keyword">in</span> _.items():</span><br><span class="line">        merge_dict2[key] = value</span><br><span class="line"><span class="built_in">print</span>(merge_dict2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并方式3 字典推导式</span></span><br><span class="line">merge_dict3 = &#123;key: value <span class="keyword">for</span> d <span class="keyword">in</span> (orig_dict, new_dict) <span class="keyword">for</span> key, value <span class="keyword">in</span> d.items()&#125;</span><br><span class="line"><span class="built_in">print</span>(merge_dict3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并方式4  字典解包</span></span><br><span class="line"><span class="comment"># Dictionary unpacking (Python 3.5+)</span></span><br><span class="line">merge_dict4 = &#123;**orig_dict, **new_dict&#125;</span><br><span class="line"><span class="built_in">print</span>(merge_dict4)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式5 联合字典</span></span><br><span class="line"><span class="comment"># # Dictionary union operator (Python 3.9+ maybe?)</span></span><br><span class="line">merge_dict5 = orig_dict | dupe_dict</span><br><span class="line">merge_dict6 = dupe_dict | orig_dict</span><br><span class="line"><span class="built_in">print</span>(merge_dict5)</span><br><span class="line"><span class="built_in">print</span>(merge_dict6)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="002：-转置字典的多种方式"><a href="#002：-转置字典的多种方式" class="headerlink" title="002： 转置字典的多种方式"></a>002： 转置字典的多种方式</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ori_dict = &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;wuxianfeng&#x27;</span>,<span class="string">&#x27;city&#x27;</span>:<span class="string">&#x27;suzhou&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># # 方法一：推导式</span></span><br><span class="line">reverse_dict2 = &#123;value:key <span class="keyword">for</span> key,value <span class="keyword">in</span> ori_dict.items()&#125;</span><br><span class="line"><span class="built_in">print</span>(reverse_dict2)</span><br><span class="line"><span class="comment"># 方法二：map映射 结合reversed转置</span></span><br><span class="line">reverse_dict1 = <span class="built_in">dict</span>(<span class="built_in">map</span>(<span class="built_in">reversed</span>,ori_dict.items()))</span><br><span class="line"><span class="built_in">print</span>(reverse_dict1)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="003：输出在同一行"><a href="#003：输出在同一行" class="headerlink" title="003：输出在同一行"></a>003：输出在同一行</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello world&#x27;</span>,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello china&#x27;</span>)  <span class="comment">#这一行跟上一行在一起</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.stdout.write(<span class="string">&#x27;hello nanjing&#x27;</span>)</span><br><span class="line">sys.stdout.write(<span class="string">&#x27;hello jiangning&#x27;</span>)  <span class="comment">#这一行跟上一行在一起</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="004：代码运行时间"><a href="#004：代码运行时间" class="headerlink" title="004：代码运行时间"></a>004：代码运行时间</h1><ul>
-<li><p><strong>方法一:timeit</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> timeit</span><br><span class="line">expr = <span class="string">&#x27;[(a, b) for a in (1, 3, 5) for b in (2, 4, 6)]&#x27;</span>  <span class="comment">#被测代码</span></span><br><span class="line"><span class="built_in">print</span>(timeit.timeit(expr,number=<span class="number">1000000</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">min</span>(timeit.repeat(expr)))</span><br></pre></td></tr></table></figure></li>
-<li><p>timeit.repeat()</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">repeat</span>(<span class="params">stmt=<span class="string">&quot;pass&quot;</span>, setup=<span class="string">&quot;pass&quot;</span>, timer=default_timer,</span></span><br><span class="line"><span class="params">           repeat=default_repeat, number=default_number, <span class="built_in">globals</span>=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Convenience function to create Timer object and call repeat method.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> Timer(stmt, setup, timer, <span class="built_in">globals</span>).repeat(repeat, number)</span><br><span class="line">default_number = <span class="number">1000000</span></span><br><span class="line">default_repeat = <span class="number">5</span></span><br></pre></td></tr></table></figure></li>
-<li><p><strong>方法二:cprofile</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python -m cProfile -s cumulative  待执行的文件.py</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Ordered by: cumulative time</span><br><span class="line">  </span><br><span class="line">ncalls  tottime  percall  cumtime  percall filename:lineno(function)</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.099</span>    <span class="number">0.099</span> &#123;built-<span class="keyword">in</span> method builtins.<span class="built_in">exec</span>&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.099</span>    <span class="number">0.099</span> 待执行的文件.py:<span class="number">6</span>(&lt;module&gt;)</span><br><span class="line">     <span class="number">2</span>    <span class="number">0.088</span>    <span class="number">0.044</span>    <span class="number">0.088</span>    <span class="number">0.044</span> &#123;built-<span class="keyword">in</span> method builtins.<span class="built_in">print</span>&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.006</span>    <span class="number">0.006</span>    <span class="number">0.008</span>    <span class="number">0.008</span> 待执行的文件.py:<span class="number">11</span>(test2)</span><br><span class="line"> <span class="number">30000</span>    <span class="number">0.003</span>    <span class="number">0.000</span>    <span class="number">0.003</span>    <span class="number">0.000</span> &#123;method <span class="string">&#x27;append&#x27;</span> of <span class="string">&#x27;list&#x27;</span> objects&#125;</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.001</span>    <span class="number">0.001</span>    <span class="number">0.002</span>    <span class="number">0.002</span> 待执行的文件.py:<span class="number">6</span>(test1)</span><br><span class="line">     <span class="number">1</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.000</span>    <span class="number">0.000</span> &#123;method <span class="string">&#x27;disable&#x27;</span> of <span class="string">&#x27;_lsprof.Profiler&#x27;</span> objects&#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>ncalls</strong>：表示函数调用的次数；</li>
-<li><strong>tottime</strong>：表示指定函数的总的运行时间，除掉函数中调用子函数的运行时间；</li>
-<li><strong>percall</strong>：（第一个percall）等于 tottime/ncalls；</li>
-<li><strong>cumtime</strong>：表示该函数及其所有子函数的调用运行的时间，即函数开始调用到返回的时间；</li>
-<li><strong>percall</strong>：（第二个percall）即函数运行一次的平均时间，等于 cumtime/ncalls；</li>
-<li>**filename:lineno(function)**：每个函数调用的具体信息；</li>
-<li>需要注意的是cProfile很难搞清楚函数内的每一行发生了什么，是针对整个函数来说的。</li>
-</ul>
-</li>
-</ul>
-<h1 id="005：python3-10以下版本实现switch-case"><a href="#005：python3-10以下版本实现switch-case" class="headerlink" title="005：python3.10以下版本实现switch-case"></a>005：python3.10以下版本实现switch-case</h1><ul>
-<li><p>python3.10天然就支持了，不需要额外实现。</p>
-</li>
-<li><p>常规的处理</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">choice  = <span class="built_in">input</span>(<span class="string">&#x27;choice:&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> choice == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 1&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> choice == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 2&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;oops!&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p>字典实现</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">choice_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;1&#x27;</span>:<span class="string">&#x27;choose 1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;2&#x27;</span>:<span class="string">&#x27;choose 2&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">choice = <span class="built_in">input</span>(<span class="string">&#x27;choice: &#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(choice_dict.get(choice,<span class="string">&#x27;oops!&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
-<li><p>如果要做很多事情，用函数封装一下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">choose_1</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 1&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">choose_2</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 2&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">choose_3</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;choose 3&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">choice_dict = &#123;</span><br><span class="line">    <span class="string">&#x27;1&#x27;</span>:choose_1,</span><br><span class="line">    <span class="string">&#x27;2&#x27;</span>:choose_2,</span><br><span class="line">    <span class="string">&#x27;3&#x27;</span>:choose_3</span><br><span class="line">&#125;</span><br><span class="line">choice = <span class="built_in">input</span>(<span class="string">&#x27;choice: &#x27;</span>)</span><br><span class="line">choice_dict.get(choice,<span class="string">&#x27;oops!&#x27;</span>)()</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>待续</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python小程序_简单凯撒加密</title>
-    <url>/2022/03/31/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[<h1 id="Python之禅-THIS-PY"><a href="#Python之禅-THIS-PY" class="headerlink" title="Python之禅:THIS.PY"></a>Python之禅:THIS.PY</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;&quot;&quot;Gur Mra bs Clguba, ol Gvz Crgref&quot;&quot;&quot;</span>  <span class="comment">#编码后的字符串，我删除了很多信息</span></span><br><span class="line"></span><br><span class="line">d = &#123;&#125;  <span class="comment">#空字典</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):  <span class="comment">#c就是2个值，65和97</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):  <span class="comment">#26个字母</span></span><br><span class="line">        d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#建立字典对应关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s]))  <span class="comment">#将新的字符串加密（rot13）得到一个新的字符串。</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h1><ul>
-<li><p>chr：返回指定数字的unicode字符串</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chr</span>(i, /)</span><br><span class="line">    Return a Unicode string of one character <span class="keyword">with</span> ordinal i; <span class="number">0</span> &lt;= i &lt;= <span class="number">0x10ffff</span>.</span><br><span class="line">    </span><br><span class="line"><span class="built_in">chr</span>(<span class="number">65</span>)  是A  <span class="built_in">chr</span>(<span class="number">90</span>)是Z ,差<span class="number">25</span></span><br><span class="line"><span class="built_in">chr</span>(<span class="number">97</span>)  是a  <span class="built_in">chr</span>(<span class="number">122</span>)是z，差<span class="number">25</span>(<span class="number">26</span>个英文字母)</span><br></pre></td></tr></table></figure></li>
-<li><p>chr(i+c)，i从0到25</p>
-</li>
-<li><p>两个for循环建立了一个字典</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+<span class="number">13</span>) % <span class="number">26</span> + c)  <span class="comment">#超出26个字符要求余数+C，这是关键</span></span><br><span class="line"></span><br><span class="line">&#123;<span class="string">&#x27;A&#x27;</span>: <span class="string">&#x27;N&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;B&#x27;</span>: <span class="string">&#x27;O&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;C&#x27;</span>: <span class="string">&#x27;P&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;D&#x27;</span>: <span class="string">&#x27;Q&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;E&#x27;</span>: <span class="string">&#x27;R&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;F&#x27;</span>: <span class="string">&#x27;S&#x27;</span>) <span class="comment">#省略了很多  A后第13个字符串后的N</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="代码改造成函数"><a href="#代码改造成函数" class="headerlink" title="代码改造成函数"></a>代码改造成函数</h1><ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):   <span class="comment">#接受一个字符串，通过将每个字符串往后挪13位（默认值，可以自行更改）</span></span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i+n) % <span class="number">26</span> + c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;i love china&#x27;</span>  <span class="comment">#原始字符串</span></span><br><span class="line"><span class="built_in">print</span>(rot_n(sen,<span class="number">13</span>))   <span class="comment">#v ybir puvan  #加密后的字符串</span></span><br></pre></td></tr></table></figure></li>
-<li><p>解码代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">de_rot_n</span>(<span class="params">s,n=<span class="number">13</span></span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> (<span class="number">65</span>, <span class="number">97</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">            d[<span class="built_in">chr</span>(i+c)] = <span class="built_in">chr</span>((i-n) % <span class="number">26</span> + c)  <span class="comment">#返回来就是解密</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([d.get(c, c) <span class="keyword">for</span> c <span class="keyword">in</span> s])</span><br><span class="line">sen = <span class="string">&#x27;v ybir puvan&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(de_rot_n(sen,<span class="number">13</span>))  <span class="comment">#i love china</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
