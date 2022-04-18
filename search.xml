@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>网络资源整理</title>
-    <url>/2022/04/11/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</url>
+    <url>/2022/04/11/TODO-%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<h1 id="网络资源整理"><a href="#网络资源整理" class="headerlink" title="网络资源整理"></a>网络资源整理</h1><h1 id="IT博客"><a href="#IT博客" class="headerlink" title="IT博客"></a>IT博客</h1><table>
 <thead>
 <tr>
@@ -356,7 +356,7 @@
   </entry>
   <entry>
     <title>Python小技巧</title>
-    <url>/2022/03/31/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+    <url>/2022/03/31/TODO-Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<h1 id="Python小技巧"><a href="#Python小技巧" class="headerlink" title="Python小技巧"></a>Python小技巧</h1><blockquote>
 <p>参考文档： <a href="https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository">https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/#code-snippet-repository</a></p>
 <p>计划：先翻译上述文档；再把工作中遇到的逐步移植过来。</p>
@@ -417,7 +417,7 @@
   </entry>
   <entry>
     <title>Git入门指南(二)</title>
-    <url>/2022/04/13/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%BA%8C/</url>
+    <url>/2022/04/13/TODO-Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%BA%8C/</url>
     <content><![CDATA[<h1 id="Git入门指南-二"><a href="#Git入门指南-二" class="headerlink" title="Git入门指南(二)"></a>Git入门指南(二)</h1><blockquote>
 <p>引用了 微信公众号 入门小站的内容</p>
 <p>参考了pro git</p>
@@ -476,8 +476,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>LeetCode</tag>
+        <tag>完结</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -666,127 +666,6 @@
       <tags>
         <tag>完结</tag>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github仓库整理</title>
-    <url>/2022/04/10/Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
-<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
-<p>有些内容我就不举例了，大家可以看readme.md</p>
-<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
-</blockquote>
-<ul>
-<li><strong>开源是人类进步的基石</strong></li>
-</ul>
-<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
-<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
-</li>
-<li><p>简单实用的删除图像背景/抠图工具</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
-<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
-<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
-</ul>
-<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
-<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>备注：我一直在用哈</li>
-</ul>
-<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
-<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
-</li>
-<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
-</li>
-</ul>
-<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
-<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
-</li>
-<li><p>简介</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
-<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
-</li>
-<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
-</li>
-</ul>
-<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
-<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
-<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
-</ul>
-<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
-<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
-<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
-</ul>
-<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
-<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
-<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
-</ul>
-<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
-<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
-<li>简介：在命令行看股票走势的工具</li>
-<li></li>
-</ul>
-<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
-<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
-<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
-</ul>
-<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
-<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
-<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
-</ul>
-<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
-<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
-</li>
-<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
-</li>
-</ul>
-<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
-<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
-<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
-<li>修改、合并 PDF 文档</li>
-<li>自动生成书签</li>
-<li>书签编辑器</li>
-<li>高速无损地导出文件中的图片</li>
-<li>等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
-<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
-<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
-</ul>
-<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
-<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
-<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
-<li></li>
-</ul>
-<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
-<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
-<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
-</ul>
-<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
-<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
-<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
-</ul>
-<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
-<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
-<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>待续</tag>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1268,13 +1147,208 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>完结</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_804. 唯一摩尔斯密码词</title>
+    <url>/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="804-唯一摩尔斯密码词"><a href="#804-唯一摩尔斯密码词" class="headerlink" title="804. 唯一摩尔斯密码词"></a>804. 唯一摩尔斯密码词</h1><ul>
+<li>难度：简单</li>
+<li>原文：<a href="https://leetcode-cn.com/problems/unique-morse-code-words/">https://leetcode-cn.com/problems/unique-morse-code-words/</a></li>
+<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:</span><br><span class="line"></span><br><span class="line">&#x27;a&#x27; 对应 &quot;.-&quot; ，</span><br><span class="line">&#x27;b&#x27; 对应 &quot;-...&quot; ，</span><br><span class="line">&#x27;c&#x27; 对应 &quot;-.-.&quot; ，以此类推。</span><br><span class="line">为了方便，所有 26 个英文字母的摩尔斯密码表如下：</span><br><span class="line"></span><br><span class="line">[&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;.---&quot;,&quot;-.-&quot;,&quot;.-..&quot;,&quot;--&quot;,&quot;-.&quot;,&quot;---&quot;,&quot;.--.&quot;,&quot;--.-&quot;,&quot;.-.&quot;,&quot;...&quot;,&quot;-&quot;,&quot;..-&quot;,&quot;...-&quot;,&quot;.--&quot;,&quot;-..-&quot;,&quot;-.--&quot;,&quot;--..&quot;]</span><br><span class="line">给你一个字符串数组 words ，每个单词可以写成每个字母对应摩尔斯密码的组合。</span><br><span class="line"></span><br><span class="line">例如，&quot;cab&quot; 可以写成 &quot;-.-..--...&quot; ，(即 &quot;-.-.&quot; + &quot;.-&quot; + &quot;-...&quot; 字符串的结合)。我们将这样一个连接过程称作 单词翻译 。</span><br><span class="line">对 words 中所有单词进行单词翻译，返回不同 单词翻译 的数量。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入: words = [&quot;gin&quot;, &quot;zen&quot;, &quot;gig&quot;, &quot;msg&quot;]</span><br><span class="line">输出: 2</span><br><span class="line">解释: </span><br><span class="line">各单词翻译如下:</span><br><span class="line">&quot;gin&quot; -&gt; &quot;--...-.&quot;</span><br><span class="line">&quot;zen&quot; -&gt; &quot;--...-.&quot;</span><br><span class="line">&quot;gig&quot; -&gt; &quot;--...--.&quot;</span><br><span class="line">&quot;msg&quot; -&gt; &quot;--...--.&quot;</span><br><span class="line"></span><br><span class="line">共有 2 种不同翻译, &quot;--...-.&quot; 和 &quot;--...--.&quot;.</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：words = [&quot;a&quot;]</span><br><span class="line">输出：1</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= words.length &lt;= 100</span><br><span class="line">1 &lt;= words[i].length &lt;= 12</span><br><span class="line">words[i] 由小写英文字母组成</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 建立一个26个字母和密码的映射表</span><br><span class="line">2. 将目标字符串列表的元素取出并转换</span><br><span class="line">3. 弄成集合求长度</span><br></pre></td></tr></table></figure>
+
+<h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:</span><br><span class="line">        morse_tab = [&quot;.-&quot;, &quot;-...&quot;, &quot;-.-.&quot;, &quot;-..&quot;, &quot;.&quot;, &quot;..-.&quot;, &quot;--.&quot;, &quot;....&quot;, &quot;..&quot;, &quot;.---&quot;, &quot;-.-&quot;, &quot;.-..&quot;, &quot;--&quot;, &quot;-.&quot;, &quot;---&quot;,</span><br><span class="line">                    &quot;.--.&quot;, &quot;--.-&quot;, &quot;.-.&quot;, &quot;...&quot;, &quot;-&quot;, &quot;..-&quot;, &quot;...-&quot;, &quot;.--&quot;, &quot;-..-&quot;, &quot;-.--&quot;, &quot;--..&quot;]</span><br><span class="line">        from string import ascii_lowercase</span><br><span class="line">        map_morse = dict(zip(ascii_lowercase, morse_tab))</span><br><span class="line">        def rotate_word(word):</span><br><span class="line">            for _ in word:</span><br><span class="line">                return &#x27;&#x27;.join([map_morse[_] for _ in word])</span><br><span class="line">        trans_words = list(map(rotate_word, words))</span><br><span class="line">        return len(set(trans_words))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>执行效果也是非常的好。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">执行用时：<span class="number">28</span> ms, 在所有 Python3 提交中击败了<span class="number">98.44</span>%的用户</span><br><span class="line">内存消耗：<span class="number">14.8</span> MB, 在所有 Python3 提交中击败了<span class="number">98.83</span>%的用户</span><br><span class="line">通过测试用例：</span><br><span class="line"><span class="number">82</span> / <span class="number">82</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="其他解法"><a href="#其他解法" class="headerlink" title="其他解法"></a>其他解法</h1><ul>
+<li><p>神奇的一行？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">将 ord(i) - ord(&#x27;a&#x27;) 映射到 MORSES 的索引</span><br><span class="line">对 word 按照字符索引匹配摩尔斯密码，然后求解集合的长度</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MORSES = [&quot;.-&quot;, &quot;-...&quot;, &quot;-.-.&quot;, &quot;-..&quot;, &quot;.&quot;, &quot;..-.&quot;, &quot;--.&quot;, &quot;....&quot;, &quot;..&quot;, &quot;.---&quot;, &quot;-.-&quot;, &quot;.-..&quot;, &quot;--&quot;,</span><br><span class="line">        &quot;-.&quot;, &quot;---&quot;, &quot;.--.&quot;, &quot;--.-&quot;, &quot;.-.&quot;, &quot;...&quot;, &quot;-&quot;, &quot;..-&quot;, &quot;...-&quot;, &quot;.--&quot;, &quot;-..-&quot;, &quot;-.--&quot;, &quot;--..&quot;]</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:</span><br><span class="line">        return len(&#123;&#x27;&#x27;.join(MORSES[ord(i) - ord(&#x27;a&#x27;)] for i in w) for w in words&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github仓库整理</title>
+    <url>/2022/04/10/TODO-Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="Github仓库整理"><a href="#Github仓库整理" class="headerlink" title="Github仓库整理"></a>Github仓库整理</h1><blockquote>
+<p>采集于 hellogithub，也有自己发现的，二道贩子</p>
+<p>有些内容我就不举例了，大家可以看readme.md</p>
+<p>截止到今天分析到hellogithub 70（倒着来的），每月28日发布一期，22-3，发布72期。</p>
+</blockquote>
+<ul>
+<li><strong>开源是人类进步的基石</strong></li>
+</ul>
+<h1 id="python相关"><a href="#python相关" class="headerlink" title="python相关"></a>python相关</h1><h2 id="rembg"><a href="#rembg" class="headerlink" title="rembg"></a>rembg</h2><ul>
+<li><p>地址：<a href="https://github.com/danielgatis/rembg">https://github.com/danielgatis/rembg</a></p>
+</li>
+<li><p>简单实用的删除图像背景/抠图工具</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from rembg import remove</span><br><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line">input_path = &#x27;input.png&#x27;</span><br><span class="line">output_path = &#x27;output.png&#x27;</span><br><span class="line"></span><br><span class="line">input = Image.open(input_path)</span><br><span class="line">output = remove(input)</span><br><span class="line">output.save(output_path)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="★python开源算法库"><a href="#★python开源算法库" class="headerlink" title="★python开源算法库"></a>★python开源算法库</h2><ul>
+<li>地址：<a href="https://github.com/TheAlgorithms/Python">https://github.com/TheAlgorithms/Python</a></li>
+<li>简介：用 Python 实现所有算法。该项目是用 Python 语言实现各种算法的集合，主要用于教育和学习。包括搜索、排序、数据结构、机器学习、密码、神经网络等方面</li>
+</ul>
+<h1 id="杂类"><a href="#杂类" class="headerlink" title="杂类"></a>杂类</h1><h2 id="hashcat-破解密码"><a href="#hashcat-破解密码" class="headerlink" title="hashcat  破解密码"></a>hashcat  破解密码</h2><ul>
+<li><p>地址：<a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">hashcat is the world&#x27;s fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>hashcat currently supports CPUs, GPUs, and other hardware accelerators on Linux, Windows, and macOS, and has facilities to help enable distributed password cracking<br>  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  </span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">## reveal.js HTML演示框架</span><br><span class="line"></span><br><span class="line">- 地址：https://github.com/hakimel/reveal.js</span><br><span class="line"></span><br><span class="line">- 简介</span><br><span class="line"></span><br><span class="line">  ```http</span><br><span class="line">  reveal.js is an open source HTML presentation framework. </span><br><span class="line">  It enables anyone with a web browser to create beautiful presentations for free. </span><br><span class="line">  Check out the live demo at revealjs.com</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>备注：我一直在用哈</li>
+</ul>
+<h2 id="人人都能看懂的设计模式教程"><a href="#人人都能看懂的设计模式教程" class="headerlink" title="人人都能看懂的设计模式教程"></a>人人都能看懂的设计模式教程</h2><ul>
+<li><p>地址：<a href="https://github.com/guanguans/design-patterns-for-humans-cn">https://github.com/guanguans/design-patterns-for-humans-cn</a></p>
+</li>
+<li><p>地址：<a href="https://github.com/kamranahmedse/design-patterns-for-humans">https://github.com/kamranahmedse/design-patterns-for-humans</a></p>
+</li>
+</ul>
+<h2 id="electerm-终端工具"><a href="#electerm-终端工具" class="headerlink" title="electerm 终端工具"></a>electerm 终端工具</h2><ul>
+<li><p>地址：<a href="https://github.com/electerm/electerm">https://github.com/electerm/electerm</a></p>
+</li>
+<li><p>简介</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Terminal/ssh/sftp client(linux, mac, win) based on electron/ssh2/node-pty/xterm/antd/subx and other libs.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="h2o-高性能-HTTP-服务器"><a href="#h2o-高性能-HTTP-服务器" class="headerlink" title="h2o 高性能 HTTP 服务器"></a>h2o 高性能 HTTP 服务器</h2><ul>
+<li><p>地址：<a href="https://github.com/h2o/h2o">https://github.com/h2o/h2o</a></p>
+</li>
+<li><p>相较于传统 Web 服务器，它充分利用了 HTTP/2 的资源加载优先级和服务器推送技术，所以在静态文件方面性能明显优于 Nginx 服务器</p>
+</li>
+</ul>
+<h2 id="物联网-IoT-平台-ThingsBoard"><a href="#物联网-IoT-平台-ThingsBoard" class="headerlink" title="物联网 IoT 平台 ThingsBoard"></a>物联网 IoT 平台 ThingsBoard</h2><ul>
+<li>地址：<a href="https://github.com/thingsboard/thingsboard">https://github.com/thingsboard/thingsboard</a></li>
+<li>简介：完全开源的物联网 IoT 平台。它使用行业的标准物联网协议 MQTT、CoAP 和 HTTP 连接设备，支持数据收集、处理、可视化和设备管理等功能。通过该项目可快速实现物联网平台搭建，从而成为众多大型企业的首选，行业覆盖电信、智慧城市、环境监测等</li>
+</ul>
+<h2 id="DreamScene2-windows动态桌面"><a href="#DreamScene2-windows动态桌面" class="headerlink" title="DreamScene2 windows动态桌面"></a>DreamScene2 windows动态桌面</h2><ul>
+<li>地址：<a href="https://github.com/he55/DreamScene2">https://github.com/he55/DreamScene2</a></li>
+<li>简介：小巧的 Windows 动态桌面工具。适用于 Windows10/11 系统，支持视频、网页动画播放</li>
+</ul>
+<h2 id="DB-TUTORIAL-数据库教程"><a href="#DB-TUTORIAL-数据库教程" class="headerlink" title="DB-TUTORIAL 数据库教程"></a>DB-TUTORIAL 数据库教程</h2><ul>
+<li>地址：<a href="https://github.com/dunwu/db-tutorial">https://github.com/dunwu/db-tutorial</a></li>
+<li>一份关于数据库的教程。内容涵盖了 MySQL、Redis、ES、MongoDB 从入门到面试等多方面的知识</li>
+</ul>
+<h2 id="tstock-命令行看股票"><a href="#tstock-命令行看股票" class="headerlink" title="tstock 命令行看股票"></a>tstock 命令行看股票</h2><ul>
+<li>地址：<a href="https://github.com/Gbox4/tstock">https://github.com/Gbox4/tstock</a></li>
+<li>简介：在命令行看股票走势的工具</li>
+<li></li>
+</ul>
+<h2 id="在线文件管理-filestash"><a href="#在线文件管理-filestash" class="headerlink" title="在线文件管理 filestash"></a>在线文件管理 filestash</h2><ul>
+<li>地址：<a href="https://github.com/mickael-kerjean/filestash">https://github.com/mickael-kerjean/filestash</a></li>
+<li>简介：在线文件管理工具。在浏览器上管理 FTP、SFTP、Git、S3、MySQL、Dropbox 等服务中的文件和数据，支持编辑文件、图片管理、视频转码、Office 文档、全文搜索等功能</li>
+</ul>
+<h2 id="Resume-在线简历"><a href="#Resume-在线简历" class="headerlink" title="Résumé 在线简历"></a>Résumé 在线简历</h2><ul>
+<li>地址：<a href="https://github.com/billryan/resume">https://github.com/billryan/resume</a></li>
+<li>简介：简历模板。不需要懂 LaTeX 语法就可以用，适合用来做一页纸简历</li>
+</ul>
+<h2 id="远程桌面工具-PowerRemoteDesktop"><a href="#远程桌面工具-PowerRemoteDesktop" class="headerlink" title="远程桌面工具 PowerRemoteDesktop"></a>远程桌面工具 PowerRemoteDesktop</h2><ul>
+<li><p>地址：<a href="https://github.com/DarkCoderSc/PowerRemoteDesktop">https://github.com/DarkCoderSc/PowerRemoteDesktop</a></p>
+</li>
+<li><p>简介：仅用 PowerShell 实现的远程桌面工具。它易于安装和使用、功能齐全，未依赖现有的协议和工具</p>
+</li>
+</ul>
+<h2 id="PDF-工具箱-PDFPatcher"><a href="#PDF-工具箱-PDFPatcher" class="headerlink" title="PDF 工具箱 PDFPatcher"></a>PDF 工具箱 PDFPatcher</h2><ul>
+<li>地址：<a href="https://github.com/wmjordan/PDFPatcher">https://github.com/wmjordan/PDFPatcher</a></li>
+<li>简介：多功能的 PDF 工具箱，可用于修改 PDF 文件信息。支持：<ul>
+<li>修改、合并 PDF 文档</li>
+<li>自动生成书签</li>
+<li>书签编辑器</li>
+<li>高速无损地导出文件中的图片</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="★在线简历生成器-resume"><a href="#★在线简历生成器-resume" class="headerlink" title="★在线简历生成器 resume"></a>★在线简历生成器 resume</h2><ul>
+<li>地址：<a href="https://github.com/visiky/resume">https://github.com/visiky/resume</a></li>
+<li>在线简历生成器。轻松实现在线简历，支持在线预览、编辑和下载 PDF 简历。<a href="https://visiky.github.io/resume/?mode=edit">在线尝试</a></li>
+</ul>
+<h2 id="抽奖程序-lottery"><a href="#抽奖程序-lottery" class="headerlink" title="抽奖程序 lottery"></a>抽奖程序 lottery</h2><ul>
+<li>地址：<a href="https://github.com/moshang-xc/lottery">https://github.com/moshang-xc/lottery</a></li>
+<li>简介：年会抽奖程序。基于 Express + Three.js 的 3D 球体抽奖项目，能够自定义文字、图片和抽奖规则，还支持一键导入抽奖人员和导出抽奖结果</li>
+<li></li>
+</ul>
+<h2 id="在线项目管理平台-dootask"><a href="#在线项目管理平台-dootask" class="headerlink" title="在线项目管理平台 dootask"></a>在线项目管理平台 dootask</h2><ul>
+<li>地址：<a href="https://github.com/kuaifan/dootask">https://github.com/kuaifan/dootask</a></li>
+<li>简介：在线项目管理平台。功能包括任务分配、文档协作、即时 IM、文档协作、文件管理等</li>
+</ul>
+<h2 id="桌面下载工具-Hitomi-Downloader"><a href="#桌面下载工具-Hitomi-Downloader" class="headerlink" title="桌面下载工具 Hitomi-Downloader"></a>桌面下载工具 Hitomi-Downloader</h2><ul>
+<li>地址：<a href="https://github.com/KurtBestor/Hitomi-Downloader">https://github.com/KurtBestor/Hitomi-Downloader</a></li>
+<li>简介：Python 写的桌面下载工具。界面简单使用方便，拥有下载限速、BT 种子、自动提取网页视频等功能，支持下载国内多个视频网站的内容</li>
+</ul>
+<h2 id="一页HTML能做什么"><a href="#一页HTML能做什么" class="headerlink" title="一页HTML能做什么"></a>一页HTML能做什么</h2><ul>
+<li>地址：<a href="https://github.com/Metroxe/one-html-page-challenge">https://github.com/Metroxe/one-html-page-challenge</a></li>
+<li>简介：单个 HTML 页面的挑战。该项目汇集了满足仅有一个 HTML 文件、小于 1MB、不可接入 API、不能引用库条件下实现的创意网页。<a href="https://onehtmlpagechallenge.com/">在线查看</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>2022.4.18</p>
+</blockquote>
+<h2 id="★简历生成器Reactive-Resume"><a href="#★简历生成器Reactive-Resume" class="headerlink" title="★简历生成器Reactive-Resume"></a><strong>★简历生成器Reactive-Resume</strong></h2><ul>
+<li><p>地址：<a href="https://github.com/AmruthPillai/Reactive-Resume">https://github.com/AmruthPillai/Reactive-Resume</a></p>
+</li>
+<li><p>简介：</p>
+<ul>
+<li>Reactive Resume 是一个免费和开源的简历生成器，旨在简单的创建、更新和共享简历。使用此应用程序，你可以创建多份简历，并通过独特的链接并以 PDF 格式打印，全部免费，无广告，不会丢失您数据的完整性</li>
+</ul>
+</li>
+</ul>
+<h2 id="window10预装程序删除"><a href="#window10预装程序删除" class="headerlink" title="window10预装程序删除"></a>window10预装程序删除</h2><ul>
+<li>地址：<a href="https://github.com/Sycnex/Windows10Debloater">https://github.com/Sycnex/Windows10Debloater</a></li>
+<li>简介：<ul>
+<li>删除 Windows 预安装的不必要的应用程序。</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据库模型文档管理平台"><a href="#数据库模型文档管理平台" class="headerlink" title="数据库模型文档管理平台"></a><strong>数据库模型文档管理平台</strong></h2><ul>
+<li>地址：<a href="https://github.com/vran-dev/databasir">https://github.com/vran-dev/databasir</a></li>
+<li>简介：<ul>
+<li>Databasir 是面向团队的关系型数据库模型文档管理平台，旨在通过自动化的方式解决模型文档管理过程中维护成本高、内容更新不及时以及团队协作复杂等问题</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git入门指南(一)</title>
+    <url>/2022/04/10/TODO-Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/</url>
+    <content><![CDATA[<h1 id="Git入门指南-一"><a href="#Git入门指南-一" class="headerlink" title="Git入门指南(一)"></a>Git入门指南(一)</h1><blockquote>
+<p>引用了 微信公众号 入门小站的内容</p>
+<p>参考了pro git</p>
+</blockquote>
+<h2 id="概念-TODO"><a href="#概念-TODO" class="headerlink" title="概念 TODO"></a>概念 TODO</h2>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>待续</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
     <title>Git入门指南(三)</title>
-    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%89/</url>
+    <url>/2022/04/10/TODO-Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%89/</url>
     <content><![CDATA[<h1 id="Git入门指南-三"><a href="#Git入门指南-三" class="headerlink" title="Git入门指南(三)"></a>Git入门指南(三)</h1><blockquote>
 <p>引用了 微信公众号 入门小站的内容</p>
 <p>参考了pro git</p>
@@ -1760,55 +1834,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Git入门指南(一)</title>
-    <url>/2022/04/10/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%80/</url>
-    <content><![CDATA[<h1 id="Git入门指南-一"><a href="#Git入门指南-一" class="headerlink" title="Git入门指南(一)"></a>Git入门指南(一)</h1><blockquote>
-<p>引用了 微信公众号 入门小站的内容</p>
-<p>参考了pro git</p>
-</blockquote>
-<h2 id="概念-TODO"><a href="#概念-TODO" class="headerlink" title="概念 TODO"></a>概念 TODO</h2>]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>待续</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode_804. 唯一摩尔斯密码词</title>
-    <url>/2022/04/10/LeetCode-804-%E5%94%AF%E4%B8%80%E6%91%A9%E5%B0%94%E6%96%AF%E5%AF%86%E7%A0%81%E8%AF%8D/</url>
-    <content><![CDATA[<h1 id="804-唯一摩尔斯密码词"><a href="#804-唯一摩尔斯密码词" class="headerlink" title="804. 唯一摩尔斯密码词"></a>804. 唯一摩尔斯密码词</h1><ul>
-<li>难度：简单</li>
-<li>原文：<a href="https://leetcode-cn.com/problems/unique-morse-code-words/">https://leetcode-cn.com/problems/unique-morse-code-words/</a></li>
-<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:</span><br><span class="line"></span><br><span class="line">&#x27;a&#x27; 对应 &quot;.-&quot; ，</span><br><span class="line">&#x27;b&#x27; 对应 &quot;-...&quot; ，</span><br><span class="line">&#x27;c&#x27; 对应 &quot;-.-.&quot; ，以此类推。</span><br><span class="line">为了方便，所有 26 个英文字母的摩尔斯密码表如下：</span><br><span class="line"></span><br><span class="line">[&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;.---&quot;,&quot;-.-&quot;,&quot;.-..&quot;,&quot;--&quot;,&quot;-.&quot;,&quot;---&quot;,&quot;.--.&quot;,&quot;--.-&quot;,&quot;.-.&quot;,&quot;...&quot;,&quot;-&quot;,&quot;..-&quot;,&quot;...-&quot;,&quot;.--&quot;,&quot;-..-&quot;,&quot;-.--&quot;,&quot;--..&quot;]</span><br><span class="line">给你一个字符串数组 words ，每个单词可以写成每个字母对应摩尔斯密码的组合。</span><br><span class="line"></span><br><span class="line">例如，&quot;cab&quot; 可以写成 &quot;-.-..--...&quot; ，(即 &quot;-.-.&quot; + &quot;.-&quot; + &quot;-...&quot; 字符串的结合)。我们将这样一个连接过程称作 单词翻译 。</span><br><span class="line">对 words 中所有单词进行单词翻译，返回不同 单词翻译 的数量。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例 1：</span><br><span class="line"></span><br><span class="line">输入: words = [&quot;gin&quot;, &quot;zen&quot;, &quot;gig&quot;, &quot;msg&quot;]</span><br><span class="line">输出: 2</span><br><span class="line">解释: </span><br><span class="line">各单词翻译如下:</span><br><span class="line">&quot;gin&quot; -&gt; &quot;--...-.&quot;</span><br><span class="line">&quot;zen&quot; -&gt; &quot;--...-.&quot;</span><br><span class="line">&quot;gig&quot; -&gt; &quot;--...--.&quot;</span><br><span class="line">&quot;msg&quot; -&gt; &quot;--...--.&quot;</span><br><span class="line"></span><br><span class="line">共有 2 种不同翻译, &quot;--...-.&quot; 和 &quot;--...--.&quot;.</span><br><span class="line">示例 2：</span><br><span class="line"></span><br><span class="line">输入：words = [&quot;a&quot;]</span><br><span class="line">输出：1</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">1 &lt;= words.length &lt;= 100</span><br><span class="line">1 &lt;= words[i].length &lt;= 12</span><br><span class="line">words[i] 由小写英文字母组成</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 建立一个26个字母和密码的映射表</span><br><span class="line">2. 将目标字符串列表的元素取出并转换</span><br><span class="line">3. 弄成集合求长度</span><br></pre></td></tr></table></figure>
-
-<h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:</span><br><span class="line">        morse_tab = [&quot;.-&quot;, &quot;-...&quot;, &quot;-.-.&quot;, &quot;-..&quot;, &quot;.&quot;, &quot;..-.&quot;, &quot;--.&quot;, &quot;....&quot;, &quot;..&quot;, &quot;.---&quot;, &quot;-.-&quot;, &quot;.-..&quot;, &quot;--&quot;, &quot;-.&quot;, &quot;---&quot;,</span><br><span class="line">                    &quot;.--.&quot;, &quot;--.-&quot;, &quot;.-.&quot;, &quot;...&quot;, &quot;-&quot;, &quot;..-&quot;, &quot;...-&quot;, &quot;.--&quot;, &quot;-..-&quot;, &quot;-.--&quot;, &quot;--..&quot;]</span><br><span class="line">        from string import ascii_lowercase</span><br><span class="line">        map_morse = dict(zip(ascii_lowercase, morse_tab))</span><br><span class="line">        def rotate_word(word):</span><br><span class="line">            for _ in word:</span><br><span class="line">                return &#x27;&#x27;.join([map_morse[_] for _ in word])</span><br><span class="line">        trans_words = list(map(rotate_word, words))</span><br><span class="line">        return len(set(trans_words))</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>执行效果也是非常的好。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">执行用时：<span class="number">28</span> ms, 在所有 Python3 提交中击败了<span class="number">98.44</span>%的用户</span><br><span class="line">内存消耗：<span class="number">14.8</span> MB, 在所有 Python3 提交中击败了<span class="number">98.83</span>%的用户</span><br><span class="line">通过测试用例：</span><br><span class="line"><span class="number">82</span> / <span class="number">82</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="其他解法"><a href="#其他解法" class="headerlink" title="其他解法"></a>其他解法</h1><ul>
-<li><p>神奇的一行？</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">将 ord(i) - ord(&#x27;a&#x27;) 映射到 MORSES 的索引</span><br><span class="line">对 word 按照字符索引匹配摩尔斯密码，然后求解集合的长度</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MORSES = [&quot;.-&quot;, &quot;-...&quot;, &quot;-.-.&quot;, &quot;-..&quot;, &quot;.&quot;, &quot;..-.&quot;, &quot;--.&quot;, &quot;....&quot;, &quot;..&quot;, &quot;.---&quot;, &quot;-.-&quot;, &quot;.-..&quot;, &quot;--&quot;,</span><br><span class="line">        &quot;-.&quot;, &quot;---&quot;, &quot;.--.&quot;, &quot;--.-&quot;, &quot;.-.&quot;, &quot;...&quot;, &quot;-&quot;, &quot;..-&quot;, &quot;...-&quot;, &quot;.--&quot;, &quot;-..-&quot;, &quot;-.--&quot;, &quot;--..&quot;]</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def uniqueMorseRepresentations(self, words: List[str]) -&gt; int:</span><br><span class="line">        return len(&#123;&#x27;&#x27;.join(MORSES[ord(i) - ord(&#x27;a&#x27;)] for i in w) for w in words&#125;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>LeetCode</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python第三方库_pycryptodome_RSA加密</title>
-    <url>/2022/04/09/Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pycryptodome%E5%8A%A0%E5%AF%86/</url>
+    <url>/2022/04/09/TODO-Python%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93pycryptodome%E5%8A%A0%E5%AF%86/</url>
     <content><![CDATA[<h1 id="Python第三方库pycryptodome加密"><a href="#Python第三方库pycryptodome加密" class="headerlink" title="Python第三方库pycryptodome加密"></a>Python第三方库pycryptodome加密</h1><blockquote>
 <p><a href="https://www.pycryptodome.org/en/latest/src/introduction.html">https://www.pycryptodome.org/en/latest/src/introduction.html</a></p>
 </blockquote>
@@ -2243,8 +2270,313 @@
       </tags>
   </entry>
   <entry>
+    <title>使用requests实现selenium相关API操作</title>
+    <url>/2022/04/05/Selenium-%E4%BD%BF%E7%94%A8requests%E5%AE%9E%E7%8E%B0selenium%E7%9B%B8%E5%85%B3API%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li><p>你在做下面的练习之前应该具备</p>
+<ul>
+<li><p>安装好chrome，并通过chrome://version确认其版本号</p>
+</li>
+<li><p>安装chromedriver并与你的chrome版本相匹配，下载路径如下</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://registry.npmmirror.com/binary.html?path=chromedriver/</span><br></pre></td></tr></table></figure></li>
+<li><p>你应该有一个python+ide（如pycharm）的环境，反正下面的示例是用这些来完成的。</p>
+</li>
+<li><p>下好requests库，对语法不再阐述</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="关于chromedriver"><a href="#关于chromedriver" class="headerlink" title="关于chromedriver"></a>关于chromedriver</h1><ul>
+<li><p>本质上是个web server</p>
+</li>
+<li><p>在命令行启动chromedriver应该是如下提示</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cmd&gt;chromedriver.exe</span><br><span class="line">Starting ChromeDriver <span class="number">100.0</span><span class="number">.4896</span><span class="number">.20</span> (f9d71f93d32a6487809d6f35a9670c879fe97dfe-refs/branch-heads/<span class="number">4896</span>@&#123;<span class="comment">#203&#125;) on port 9515</span></span><br><span class="line">Only local connections are allowed.</span><br><span class="line">Please see https://chromedriver.chromium.org/security-considerations <span class="keyword">for</span> suggestions on keeping ChromeDriver safe.</span><br><span class="line">ChromeDriver was started successfully.</span><br></pre></td></tr></table></figure></li>
+<li><p>放在那里不要关闭哦~</p>
+</li>
+</ul>
+<h1 id="关于webdriver"><a href="#关于webdriver" class="headerlink" title="关于webdriver"></a>关于webdriver</h1><ul>
+<li><p>参阅:6.5的endpoint部分</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://w3c.github.io/webdriver/#endpoints</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><blockquote>
+<p>我就不封装了，你有兴趣自行封装</p>
+</blockquote>
+<h2 id="不一样的，打开浏览器"><a href="#不一样的，打开浏览器" class="headerlink" title="不一样的，打开浏览器"></a>不一样的，打开浏览器</h2><table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">URI Template</th>
+<th align="left">Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">/session</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例代码：以chrome为例</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span> </span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;   <span class="comment">#此处可以变更浏览器类型，前提你启动了对应的chromedriver或者geckodriver等。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#json传递</span></span><br></pre></td></tr></table></figure></li>
+<li><p>是不是相当于selenium的api</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure></li>
+<li><p>区别是？不需要安装selenium就可以通过api来调用了，当然会更麻烦，人家给你封装好了。</p>
+</li>
+</ul>
+<h2 id="不一样的，输入网址"><a href="#不一样的，输入网址" class="headerlink" title="不一样的，输入网址"></a>不一样的，输入网址</h2><table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">URI Template</th>
+<th align="left">Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">/session</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/url</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 打开网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)  <span class="comment">#首先要获取sessionId，是后面操作的根基</span></span><br><span class="line">dest_url = <span class="string">&#x27;http://121.41.14.39:8088/index.html#/&#x27;</span>  <span class="comment">#比如你要打开这个网址</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;  <span class="comment">#字典形式</span></span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data) <span class="comment">#注意url的格式，跟ep对比</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>是不是类似于selenium中的driver.get()</p>
+</li>
+</ul>
+<h2 id="不一样的，输入，点击"><a href="#不一样的，输入，点击" class="headerlink" title="不一样的，输入，点击"></a>不一样的，输入，点击</h2><table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">URI Template</th>
+<th align="left">Command</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POST</td>
+<td align="left">/session</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/url</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/element</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-find-element">Find Element</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/element/{element id}/click</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-click">Element Click</a></td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">/session/{session id}/element/{element id}/value</td>
+<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-send-keys">Element Send Keys</a></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#登录</span></span><br><span class="line"><span class="comment"># 1. 打开浏览器</span></span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 2. 输入网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)</span><br><span class="line">dest_url = <span class="string">&#x27;http://106.14.1.150:8090/forum.php&#x27;</span>  <span class="comment">#这是我在阿里云部署的一个服务器</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;</span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单封装下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_eid</span>(<span class="params">url,sid,method,method_value</span>):  <span class="comment">#获取elementid</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;using&#x27;</span>:method,<span class="string">&#x27;value&#x27;</span>:method_value&#125;</span><br><span class="line">    <span class="keyword">return</span> requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element&#x27;</span>,json=data).json().get(<span class="string">&#x27;value&#x27;</span>).get(<span class="string">&#x27;ELEMENT&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">input_text</span>(<span class="params">url,sid,eid,text</span>): <span class="comment">#在指定的元素上输入内容</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;value&#x27;</span>:[text]&#125;</span><br><span class="line">    requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element/&#x27;</span>+eid+<span class="string">&#x27;/value&#x27;</span>, json=data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">click_element</span>(<span class="params">url,sid,eid</span>): <span class="comment">#点击指定的元素</span></span><br><span class="line">    requests.post(url + <span class="string">&#x27;/&#x27;</span> + sid + <span class="string">&#x27;/element/&#x27;</span> + eid + <span class="string">&#x27;/click&#x27;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 3. 输入用户名</span></span><br><span class="line"><span class="comment"># 3.1 获取用户名元素的elementid，通过id方式，其值为ls_username</span></span><br><span class="line">username_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_username&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,username_id,<span class="string">&#x27;ruru023&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.2 获取密码元素的elementid，通过id方式，其值为ls_password</span></span><br><span class="line">password_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_password&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,password_id,<span class="string">&#x27;123456&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.3 获取登录按钮元素的elementid，通过css selector方式，其值为.pn.vm</span></span><br><span class="line">login_button_id =  get_eid(server_url,session_id,<span class="string">&#x27;css selector&#x27;</span>,<span class="string">&#x27;.pn.vm&#x27;</span>)</span><br><span class="line">click_element(server_url,session_id,login_button_id)</span><br></pre></td></tr></table></figure></li>
+<li><p>类似于seleniumapi中的</p>
+<ul>
+<li>webelement.send_keys()</li>
+<li>webelement.click()</li>
+<li>driver.find_element(By.ID,’ID_VALUE’)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>selenium</category>
+      </categories>
+      <tags>
+        <tag>api</tag>
+        <tag>selenium</tag>
+        <tag>ui</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RESTful相关信息整理</title>
+    <url>/2022/04/05/RESTful%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E6%95%B4%E7%90%86/</url>
+    <content><![CDATA[<h1 id="RESTful相关信息整理"><a href="#RESTful相关信息整理" class="headerlink" title="RESTful相关信息整理"></a>RESTful相关信息整理</h1><blockquote>
+<p>参考：可以看的出来我是阮一峰的忠实读者</p>
+<ol>
+<li>阮一峰的《理解RESTful架构》 <a href="https://www.ruanyifeng.com/blog/2011/09/restful.html">https://www.ruanyifeng.com/blog/2011/09/restful.html</a></li>
+<li><a href="https://restfulapi.cn/">https://restfulapi.cn/</a>  </li>
+<li>阮一峰的《RESTful API 设计指南》<a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html">http://www.ruanyifeng.com/blog/2014/05/restful_api.html</a></li>
+</ol>
+</blockquote>
+<h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><blockquote>
+<p><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm</a></p>
+</blockquote>
+<ul>
+<li><p>Roy Thomas Fielding在2000年的时候发表的《Architectural Styles and the Design of Network-based Software Architectures》</p>
+</li>
+<li><p>论文的目的</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">&quot;本文研究计算机科学两大前沿----软件和网络----的交叉点。长期以来，软件研究主要关注软件设计的分类、设计方法的演化，很少客观地评估不同的设计选择对系统行为的影响。而相反地，网络研究主要关注系统之间通信行为的细节、如何改进特定通信机制的表现，常常忽视了一个事实，那就是改变应用程序的互动风格比改变互动协议，对整体表现有更大的影响。我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适宜通信的架构。&quot;</span><br><span class="line"></span><br><span class="line">(This dissertation explores a junction on the frontiers of two research disciplines in computer science: software and networking. Software research has long been concerned with the categorization of software designs and the development of design methodologies, but has rarely been able to objectively evaluate the impact of various design choices on system behavior. Networking research, in contrast, is focused on the details of generic communication behavior between systems and improving the performance of particular communication techniques, often ignoring the fact that changing the interaction style of an application can have more impact on performance than the communication protocols used for that interaction. My work is motivated by the desire to understand and evaluate the architectural design of network-based application software through principled use of architectural constraints, thereby obtaining the functional, performance, and social properties desired of an architecture. )</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="什么是RESTful"><a href="#什么是RESTful" class="headerlink" title="什么是RESTful"></a>什么是RESTful</h1><ul>
+<li>REST：Representational State Transfer，翻译过来就是<strong>表现层状态转化</strong></li>
+<li>如果一个架构符合REST原则，就称它为RESTful架构。</li>
+<li></li>
+</ul>
+<h2 id="资源-resource"><a href="#资源-resource" class="headerlink" title="资源  resource"></a>资源  resource</h2><ul>
+<li>REST的名称”表现层状态转化”中，省略了主语。”表现层”其实指的是”资源”（Resources）的”表现层”</li>
+<li><strong>所谓”资源”，就是网络上的一个实体，或者说是网络上的一个具体信息</strong></li>
+<li>它可以是一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实在</li>
+<li>你可以用一个URI（统一资源定位符）指向它，每种资源对应一个特定的URI</li>
+<li>URI就成了每一个资源的地址或独一无二的识别符</li>
+<li>所谓”上网”，就是与互联网上一系列的”资源”互动，调用它的URI</li>
+</ul>
+<h2 id="表现-Representation"><a href="#表现-Representation" class="headerlink" title="表现 Representation"></a>表现 <strong>Representation</strong></h2><ul>
+<li>上面说了，资源的表现可以是：一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实在</li>
+<li>URI只代表资源的实体，不代表它的形式</li>
+<li>它的具体表现形式，应该在HTTP请求的头信息中用Accept和Content-Type字段指定，这两个字段才是对”表现层”的描述</li>
+</ul>
+<h2 id="状态转换-State-Transfer"><a href="#状态转换-State-Transfer" class="headerlink" title="状态转换 State Transfer"></a>状态转换 <strong>State Transfer</strong></h2><ul>
+<li>访问一个网站，就代表了客户端和服务器的一个互动过程。在这个过程中，势必涉及到数据和状态的变化。</li>
+<li>互联网通信协议HTTP协议，是一个无状态协议。这意味着，所有的状态都保存在服务器端</li>
+<li><strong>如果客户端想要操作服务器，必须通过某种手段，让服务器端发生”状态转化”（State Transfer）</strong></li>
+<li><strong>而这种转化是建立在表现层之上的，所以就是”表现层状态转化”</strong></li>
+<li>客户端用到的手段，只能是HTTP协议</li>
+<li>HTTP协议里面，四个表示操作方式的动词：GET、POST、PUT、DELETE（其实还有PATCH等）</li>
+<li>它们分别对应几种基本操作：<ul>
+<li><strong>GET用来获取资源</strong></li>
+<li><strong>POST用来新建资源（也可以用于更新资源）</strong></li>
+<li><strong>PUT用来更新资源</strong></li>
+<li><strong>PATCH： 更新（Update），通常是部分更新</strong></li>
+<li><strong>DELETE用来删除资源</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="RESTful实例"><a href="#RESTful实例" class="headerlink" title="RESTful实例"></a>RESTful实例</h1><ul>
+<li>RESTful 架构可以充分的利用 HTTP 协议的各种功能，是 HTTP 协议的最佳实践</li>
+<li>RESTful API 是一种软件架构风格、设计风格，可以让软件更加清晰，更简洁，更有层次，可维护性更好</li>
+</ul>
+<h2 id="API请求设计"><a href="#API请求设计" class="headerlink" title="API请求设计"></a>API请求设计</h2><ul>
+<li><p>请求 = 动词 + 宾语</p>
+</li>
+<li><p>动词 使用五种 HTTP 方法，对应 CRUD 操作</p>
+</li>
+<li><p>宾语 URL 应该全部使用名词复数，可以有例外，比如搜索可以使用更加直观的 search</p>
+</li>
+<li><p>过滤信息（Filtering） 如果记录数量很多，API应该提供参数，过滤返回结果。 ?limit=10 指定返回记录的数量 ?offset=10 指定返回记录的开始位置。还有很多</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">?limit=10：指定返回记录的数量</span><br><span class="line">?offset=10：指定返回记录的开始位置。</span><br><span class="line">?page=2&amp;per_page=100：指定第几页，以及每页的记录数。</span><br><span class="line">?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序。</span><br><span class="line">?animal_type_id=1：指定筛选条件</span><br></pre></td></tr></table></figure></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>请求</th>
+<th>URI</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET</td>
+<td>/zoos</td>
+<td>列出所有动物园</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/zoos</td>
+<td>新建一个动物园</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/zoos/{id}</td>
+<td>获取某个指定动物园的信息</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>/zoos/{id}</td>
+<td>更新某个指定动物园的全部信息</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>/zoos/{id}</td>
+<td>更新某个指定动物园的部分信息</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/zoos/{id}</td>
+<td>删除某个动物园</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/zoos/{id}/animals</td>
+<td>列出某个指定动物园的所有动物</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/zoos/{id}/animals/{animal_id}</td>
+<td>删除某个指定动物园的指定动物</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="API响应设计"><a href="#API响应设计" class="headerlink" title="API响应设计"></a>API响应设计</h2><ul>
+<li>客户端的每一次请求，服务器都必须给出回应。回应包括 HTTP 状态码和数据两部分。</li>
+<li>五大类状态码，总共100多种，覆盖了绝大部分可能遇到的情况。每一种状态码都有约定的解释，客户端只需查看状态码，就可以判断出发生了什么情况。API 不需要1xx状态码<ul>
+<li>1xx 相关信息</li>
+<li>2xx 操作成功</li>
+<li>3xx 重定向</li>
+<li>4xx 客户端错误</li>
+<li>5xx 服务器错误</li>
+</ul>
+</li>
+</ul>
+<h2 id="服务器回应数据"><a href="#服务器回应数据" class="headerlink" title="服务器回应数据"></a>服务器回应数据</h2><ul>
+<li>客户端请求时，要明确告诉服务器，接受 JSON 格式，请求的 HTTP 头的 ACCEPT 属性要设成 application/json</li>
+<li>服务端返回的数据，不应该是纯文本，而应该是一个 JSON 对象。服务器回应的 HTTP 头的 Content-Type 属性要设为 application/json</li>
+<li>错误处理 如果状态码是4xx，就应该向用户返回出错信息。一般来说，返回的信息中将 error 作为键名，出错信息作为键值即可。 {error: “Invalid API key”}</li>
+<li>认证 RESTful API 应该是无状态，每个请求应该带有一些认证凭证。推荐使用 JWT 认证，并且使用 SSL</li>
+<li>Hypermedia 即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么</li>
+</ul>
+<h1 id="误区"><a href="#误区" class="headerlink" title="误区"></a>误区</h1><h2 id="URI包含动词"><a href="#URI包含动词" class="headerlink" title="URI包含动词"></a><strong>URI包含动词</strong></h2><ul>
+<li><p>因为”资源”表示一种实体，所以应该是名词，URI不应该有动词，动词应该放在HTTP协议中</p>
+</li>
+<li><p>错误的示例</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">POST /accounts/1/transfer/500/to/2</span><br></pre></td></tr></table></figure></li>
+<li><p>正确的做法：把动词transfer改成名词transaction，资源不能是动词，但是可以是一种服务</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/transaction</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>127.0.0.1</span><br><span class="line">　　</span><br><span class="line">from=1&amp;to=2&amp;amount=500.00</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="在URI中加入版本号"><a href="#在URI中加入版本号" class="headerlink" title="在URI中加入版本号"></a><strong>在URI中加入版本号</strong></h2><ul>
+<li><p>错误的示例</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">http://www.example.com/app/1.0/foo</span><br></pre></td></tr></table></figure></li>
+<li><p>正确的做法：因为不同的版本，可以理解成同一种资源的不同表现形式，所以应该采用同一个URI。版本号可以在HTTP请求头信息的Accept字段中进行区分</p>
+<blockquote>
+<p>参考  <a href="https://www.informit.com/articles/article.aspx?p=1566460">https://www.informit.com/articles/article.aspx?p=1566460</a></p>
+</blockquote>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>vnd.example-com.foo+json; version=1.0</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>api</category>
+      </categories>
+      <tags>
+        <tag>完结</tag>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Postman测试脚本</title>
-    <url>/2022/04/05/Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</url>
+    <url>/2022/04/05/TODO-Postman%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC/</url>
     <content><![CDATA[<h1 id="Postman测试脚本"><a href="#Postman测试脚本" class="headerlink" title="Postman测试脚本"></a>Postman测试脚本</h1><blockquote>
 <p><a href="https://learning.postman.com/docs/writing-scripts/script-references/test-examples/">https://learning.postman.com/docs/writing-scripts/script-references/test-examples/</a></p>
 </blockquote>
@@ -2432,311 +2764,6 @@
       </tags>
   </entry>
   <entry>
-    <title>RESTful相关信息整理</title>
-    <url>/2022/04/05/RESTful%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E6%95%B4%E7%90%86/</url>
-    <content><![CDATA[<h1 id="RESTful相关信息整理"><a href="#RESTful相关信息整理" class="headerlink" title="RESTful相关信息整理"></a>RESTful相关信息整理</h1><blockquote>
-<p>参考：可以看的出来我是阮一峰的忠实读者</p>
-<ol>
-<li>阮一峰的《理解RESTful架构》 <a href="https://www.ruanyifeng.com/blog/2011/09/restful.html">https://www.ruanyifeng.com/blog/2011/09/restful.html</a></li>
-<li><a href="https://restfulapi.cn/">https://restfulapi.cn/</a>  </li>
-<li>阮一峰的《RESTful API 设计指南》<a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html">http://www.ruanyifeng.com/blog/2014/05/restful_api.html</a></li>
-</ol>
-</blockquote>
-<h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><blockquote>
-<p><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm</a></p>
-</blockquote>
-<ul>
-<li><p>Roy Thomas Fielding在2000年的时候发表的《Architectural Styles and the Design of Network-based Software Architectures》</p>
-</li>
-<li><p>论文的目的</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">&quot;本文研究计算机科学两大前沿----软件和网络----的交叉点。长期以来，软件研究主要关注软件设计的分类、设计方法的演化，很少客观地评估不同的设计选择对系统行为的影响。而相反地，网络研究主要关注系统之间通信行为的细节、如何改进特定通信机制的表现，常常忽视了一个事实，那就是改变应用程序的互动风格比改变互动协议，对整体表现有更大的影响。我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适宜通信的架构。&quot;</span><br><span class="line"></span><br><span class="line">(This dissertation explores a junction on the frontiers of two research disciplines in computer science: software and networking. Software research has long been concerned with the categorization of software designs and the development of design methodologies, but has rarely been able to objectively evaluate the impact of various design choices on system behavior. Networking research, in contrast, is focused on the details of generic communication behavior between systems and improving the performance of particular communication techniques, often ignoring the fact that changing the interaction style of an application can have more impact on performance than the communication protocols used for that interaction. My work is motivated by the desire to understand and evaluate the architectural design of network-based application software through principled use of architectural constraints, thereby obtaining the functional, performance, and social properties desired of an architecture. )</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="什么是RESTful"><a href="#什么是RESTful" class="headerlink" title="什么是RESTful"></a>什么是RESTful</h1><ul>
-<li>REST：Representational State Transfer，翻译过来就是<strong>表现层状态转化</strong></li>
-<li>如果一个架构符合REST原则，就称它为RESTful架构。</li>
-<li></li>
-</ul>
-<h2 id="资源-resource"><a href="#资源-resource" class="headerlink" title="资源  resource"></a>资源  resource</h2><ul>
-<li>REST的名称”表现层状态转化”中，省略了主语。”表现层”其实指的是”资源”（Resources）的”表现层”</li>
-<li><strong>所谓”资源”，就是网络上的一个实体，或者说是网络上的一个具体信息</strong></li>
-<li>它可以是一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实在</li>
-<li>你可以用一个URI（统一资源定位符）指向它，每种资源对应一个特定的URI</li>
-<li>URI就成了每一个资源的地址或独一无二的识别符</li>
-<li>所谓”上网”，就是与互联网上一系列的”资源”互动，调用它的URI</li>
-</ul>
-<h2 id="表现-Representation"><a href="#表现-Representation" class="headerlink" title="表现 Representation"></a>表现 <strong>Representation</strong></h2><ul>
-<li>上面说了，资源的表现可以是：一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实在</li>
-<li>URI只代表资源的实体，不代表它的形式</li>
-<li>它的具体表现形式，应该在HTTP请求的头信息中用Accept和Content-Type字段指定，这两个字段才是对”表现层”的描述</li>
-</ul>
-<h2 id="状态转换-State-Transfer"><a href="#状态转换-State-Transfer" class="headerlink" title="状态转换 State Transfer"></a>状态转换 <strong>State Transfer</strong></h2><ul>
-<li>访问一个网站，就代表了客户端和服务器的一个互动过程。在这个过程中，势必涉及到数据和状态的变化。</li>
-<li>互联网通信协议HTTP协议，是一个无状态协议。这意味着，所有的状态都保存在服务器端</li>
-<li><strong>如果客户端想要操作服务器，必须通过某种手段，让服务器端发生”状态转化”（State Transfer）</strong></li>
-<li><strong>而这种转化是建立在表现层之上的，所以就是”表现层状态转化”</strong></li>
-<li>客户端用到的手段，只能是HTTP协议</li>
-<li>HTTP协议里面，四个表示操作方式的动词：GET、POST、PUT、DELETE（其实还有PATCH等）</li>
-<li>它们分别对应几种基本操作：<ul>
-<li><strong>GET用来获取资源</strong></li>
-<li><strong>POST用来新建资源（也可以用于更新资源）</strong></li>
-<li><strong>PUT用来更新资源</strong></li>
-<li><strong>PATCH： 更新（Update），通常是部分更新</strong></li>
-<li><strong>DELETE用来删除资源</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="RESTful实例"><a href="#RESTful实例" class="headerlink" title="RESTful实例"></a>RESTful实例</h1><ul>
-<li>RESTful 架构可以充分的利用 HTTP 协议的各种功能，是 HTTP 协议的最佳实践</li>
-<li>RESTful API 是一种软件架构风格、设计风格，可以让软件更加清晰，更简洁，更有层次，可维护性更好</li>
-</ul>
-<h2 id="API请求设计"><a href="#API请求设计" class="headerlink" title="API请求设计"></a>API请求设计</h2><ul>
-<li><p>请求 = 动词 + 宾语</p>
-</li>
-<li><p>动词 使用五种 HTTP 方法，对应 CRUD 操作</p>
-</li>
-<li><p>宾语 URL 应该全部使用名词复数，可以有例外，比如搜索可以使用更加直观的 search</p>
-</li>
-<li><p>过滤信息（Filtering） 如果记录数量很多，API应该提供参数，过滤返回结果。 ?limit=10 指定返回记录的数量 ?offset=10 指定返回记录的开始位置。还有很多</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">?limit=10：指定返回记录的数量</span><br><span class="line">?offset=10：指定返回记录的开始位置。</span><br><span class="line">?page=2&amp;per_page=100：指定第几页，以及每页的记录数。</span><br><span class="line">?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序。</span><br><span class="line">?animal_type_id=1：指定筛选条件</span><br></pre></td></tr></table></figure></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>请求</th>
-<th>URI</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>GET</td>
-<td>/zoos</td>
-<td>列出所有动物园</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>/zoos</td>
-<td>新建一个动物园</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/zoos/{id}</td>
-<td>获取某个指定动物园的信息</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>/zoos/{id}</td>
-<td>更新某个指定动物园的全部信息</td>
-</tr>
-<tr>
-<td>PATCH</td>
-<td>/zoos/{id}</td>
-<td>更新某个指定动物园的部分信息</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>/zoos/{id}</td>
-<td>删除某个动物园</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>/zoos/{id}/animals</td>
-<td>列出某个指定动物园的所有动物</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>/zoos/{id}/animals/{animal_id}</td>
-<td>删除某个指定动物园的指定动物</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="API响应设计"><a href="#API响应设计" class="headerlink" title="API响应设计"></a>API响应设计</h2><ul>
-<li>客户端的每一次请求，服务器都必须给出回应。回应包括 HTTP 状态码和数据两部分。</li>
-<li>五大类状态码，总共100多种，覆盖了绝大部分可能遇到的情况。每一种状态码都有约定的解释，客户端只需查看状态码，就可以判断出发生了什么情况。API 不需要1xx状态码<ul>
-<li>1xx 相关信息</li>
-<li>2xx 操作成功</li>
-<li>3xx 重定向</li>
-<li>4xx 客户端错误</li>
-<li>5xx 服务器错误</li>
-</ul>
-</li>
-</ul>
-<h2 id="服务器回应数据"><a href="#服务器回应数据" class="headerlink" title="服务器回应数据"></a>服务器回应数据</h2><ul>
-<li>客户端请求时，要明确告诉服务器，接受 JSON 格式，请求的 HTTP 头的 ACCEPT 属性要设成 application/json</li>
-<li>服务端返回的数据，不应该是纯文本，而应该是一个 JSON 对象。服务器回应的 HTTP 头的 Content-Type 属性要设为 application/json</li>
-<li>错误处理 如果状态码是4xx，就应该向用户返回出错信息。一般来说，返回的信息中将 error 作为键名，出错信息作为键值即可。 {error: “Invalid API key”}</li>
-<li>认证 RESTful API 应该是无状态，每个请求应该带有一些认证凭证。推荐使用 JWT 认证，并且使用 SSL</li>
-<li>Hypermedia 即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么</li>
-</ul>
-<h1 id="误区"><a href="#误区" class="headerlink" title="误区"></a>误区</h1><h2 id="URI包含动词"><a href="#URI包含动词" class="headerlink" title="URI包含动词"></a><strong>URI包含动词</strong></h2><ul>
-<li><p>因为”资源”表示一种实体，所以应该是名词，URI不应该有动词，动词应该放在HTTP协议中</p>
-</li>
-<li><p>错误的示例</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">POST /accounts/1/transfer/500/to/2</span><br></pre></td></tr></table></figure></li>
-<li><p>正确的做法：把动词transfer改成名词transaction，资源不能是动词，但是可以是一种服务</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/transaction</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>127.0.0.1</span><br><span class="line">　　</span><br><span class="line">from=1&amp;to=2&amp;amount=500.00</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="在URI中加入版本号"><a href="#在URI中加入版本号" class="headerlink" title="在URI中加入版本号"></a><strong>在URI中加入版本号</strong></h2><ul>
-<li><p>错误的示例</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">http://www.example.com/app/1.0/foo</span><br></pre></td></tr></table></figure></li>
-<li><p>正确的做法：因为不同的版本，可以理解成同一种资源的不同表现形式，所以应该采用同一个URI。版本号可以在HTTP请求头信息的Accept字段中进行区分</p>
-<blockquote>
-<p>参考  <a href="https://www.informit.com/articles/article.aspx?p=1566460">https://www.informit.com/articles/article.aspx?p=1566460</a></p>
-</blockquote>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>vnd.example-com.foo+json; version=1.0</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>api</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>api</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用requests实现selenium相关API操作</title>
-    <url>/2022/04/05/Selenium-%E4%BD%BF%E7%94%A8requests%E5%AE%9E%E7%8E%B0selenium%E7%9B%B8%E5%85%B3API%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li><p>你在做下面的练习之前应该具备</p>
-<ul>
-<li><p>安装好chrome，并通过chrome://version确认其版本号</p>
-</li>
-<li><p>安装chromedriver并与你的chrome版本相匹配，下载路径如下</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://registry.npmmirror.com/binary.html?path=chromedriver/</span><br></pre></td></tr></table></figure></li>
-<li><p>你应该有一个python+ide（如pycharm）的环境，反正下面的示例是用这些来完成的。</p>
-</li>
-<li><p>下好requests库，对语法不再阐述</p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="关于chromedriver"><a href="#关于chromedriver" class="headerlink" title="关于chromedriver"></a>关于chromedriver</h1><ul>
-<li><p>本质上是个web server</p>
-</li>
-<li><p>在命令行启动chromedriver应该是如下提示</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cmd&gt;chromedriver.exe</span><br><span class="line">Starting ChromeDriver <span class="number">100.0</span><span class="number">.4896</span><span class="number">.20</span> (f9d71f93d32a6487809d6f35a9670c879fe97dfe-refs/branch-heads/<span class="number">4896</span>@&#123;<span class="comment">#203&#125;) on port 9515</span></span><br><span class="line">Only local connections are allowed.</span><br><span class="line">Please see https://chromedriver.chromium.org/security-considerations <span class="keyword">for</span> suggestions on keeping ChromeDriver safe.</span><br><span class="line">ChromeDriver was started successfully.</span><br></pre></td></tr></table></figure></li>
-<li><p>放在那里不要关闭哦~</p>
-</li>
-</ul>
-<h1 id="关于webdriver"><a href="#关于webdriver" class="headerlink" title="关于webdriver"></a>关于webdriver</h1><ul>
-<li><p>参阅:6.5的endpoint部分</p>
-<figure class="highlight http"><table><tr><td class="code"><pre><span class="line">https://w3c.github.io/webdriver/#endpoints</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><blockquote>
-<p>我就不封装了，你有兴趣自行封装</p>
-</blockquote>
-<h2 id="不一样的，打开浏览器"><a href="#不一样的，打开浏览器" class="headerlink" title="不一样的，打开浏览器"></a>不一样的，打开浏览器</h2><table>
-<thead>
-<tr>
-<th align="left">Method</th>
-<th align="left">URI Template</th>
-<th align="left">Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POST</td>
-<td align="left">/session</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>示例代码：以chrome为例</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span> </span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;   <span class="comment">#此处可以变更浏览器类型，前提你启动了对应的chromedriver或者geckodriver等。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#json传递</span></span><br></pre></td></tr></table></figure></li>
-<li><p>是不是相当于selenium的api</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure></li>
-<li><p>区别是？不需要安装selenium就可以通过api来调用了，当然会更麻烦，人家给你封装好了。</p>
-</li>
-</ul>
-<h2 id="不一样的，输入网址"><a href="#不一样的，输入网址" class="headerlink" title="不一样的，输入网址"></a>不一样的，输入网址</h2><table>
-<thead>
-<tr>
-<th align="left">Method</th>
-<th align="left">URI Template</th>
-<th align="left">Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POST</td>
-<td align="left">/session</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/url</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 打开网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)  <span class="comment">#首先要获取sessionId，是后面操作的根基</span></span><br><span class="line">dest_url = <span class="string">&#x27;http://121.41.14.39:8088/index.html#/&#x27;</span>  <span class="comment">#比如你要打开这个网址</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;  <span class="comment">#字典形式</span></span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data) <span class="comment">#注意url的格式，跟ep对比</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>是不是类似于selenium中的driver.get()</p>
-</li>
-</ul>
-<h2 id="不一样的，输入，点击"><a href="#不一样的，输入，点击" class="headerlink" title="不一样的，输入，点击"></a>不一样的，输入，点击</h2><table>
-<thead>
-<tr>
-<th align="left">Method</th>
-<th align="left">URI Template</th>
-<th align="left">Command</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POST</td>
-<td align="left">/session</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-new-sessions">New Session</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/url</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-navigate-to">Navigate To</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/element</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-find-element">Find Element</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/element/{element id}/click</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-click">Element Click</a></td>
-</tr>
-<tr>
-<td align="left">POST</td>
-<td align="left">/session/{session id}/element/{element id}/value</td>
-<td align="left"><a href="https://w3c.github.io/webdriver/#dfn-element-send-keys">Element Send Keys</a></td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#登录</span></span><br><span class="line"><span class="comment"># 1. 打开浏览器</span></span><br><span class="line">server_url = <span class="string">&#x27;http://127.0.0.1:9515/session&#x27;</span>  <span class="comment">#这个url不能以/结尾</span></span><br><span class="line">session_data = &#123;</span><br><span class="line">    <span class="string">&#x27;desiredCapabilities&#x27;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;caps&quot;</span>:&#123;<span class="string">&quot;browserName&quot;</span>:<span class="string">&quot;chrome&quot;</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">session_req = requests.post(url=server_url,json=session_data)  <span class="comment">#此处不能是data</span></span><br><span class="line"><span class="comment"># 2. 输入网址</span></span><br><span class="line">session_id = session_req.json().get(<span class="string">&#x27;sessionId&#x27;</span>)</span><br><span class="line">dest_url = <span class="string">&#x27;http://106.14.1.150:8090/forum.php&#x27;</span>  <span class="comment">#这是我在阿里云部署的一个服务器</span></span><br><span class="line">get_url_data = &#123;<span class="string">&#x27;url&#x27;</span>:dest_url&#125;</span><br><span class="line">requests.post(server_url+<span class="string">&#x27;/&#x27;</span>+session_id+<span class="string">&#x27;/url&#x27;</span>,json=get_url_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单封装下</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_eid</span>(<span class="params">url,sid,method,method_value</span>):  <span class="comment">#获取elementid</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;using&#x27;</span>:method,<span class="string">&#x27;value&#x27;</span>:method_value&#125;</span><br><span class="line">    <span class="keyword">return</span> requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element&#x27;</span>,json=data).json().get(<span class="string">&#x27;value&#x27;</span>).get(<span class="string">&#x27;ELEMENT&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">input_text</span>(<span class="params">url,sid,eid,text</span>): <span class="comment">#在指定的元素上输入内容</span></span><br><span class="line">    data = &#123;<span class="string">&#x27;value&#x27;</span>:[text]&#125;</span><br><span class="line">    requests.post(url+<span class="string">&#x27;/&#x27;</span>+sid+<span class="string">&#x27;/element/&#x27;</span>+eid+<span class="string">&#x27;/value&#x27;</span>, json=data)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">click_element</span>(<span class="params">url,sid,eid</span>): <span class="comment">#点击指定的元素</span></span><br><span class="line">    requests.post(url + <span class="string">&#x27;/&#x27;</span> + sid + <span class="string">&#x27;/element/&#x27;</span> + eid + <span class="string">&#x27;/click&#x27;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 3. 输入用户名</span></span><br><span class="line"><span class="comment"># 3.1 获取用户名元素的elementid，通过id方式，其值为ls_username</span></span><br><span class="line">username_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_username&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,username_id,<span class="string">&#x27;ruru023&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.2 获取密码元素的elementid，通过id方式，其值为ls_password</span></span><br><span class="line">password_id = get_eid(server_url,session_id,<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;ls_password&#x27;</span>)</span><br><span class="line">input_text(server_url,session_id,password_id,<span class="string">&#x27;123456&#x27;</span>)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 3.3 获取登录按钮元素的elementid，通过css selector方式，其值为.pn.vm</span></span><br><span class="line">login_button_id =  get_eid(server_url,session_id,<span class="string">&#x27;css selector&#x27;</span>,<span class="string">&#x27;.pn.vm&#x27;</span>)</span><br><span class="line">click_element(server_url,session_id,login_button_id)</span><br></pre></td></tr></table></figure></li>
-<li><p>类似于seleniumapi中的</p>
-<ul>
-<li>webelement.send_keys()</li>
-<li>webelement.click()</li>
-<li>driver.find_element(By.ID,’ID_VALUE’)</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>selenium</category>
-      </categories>
-      <tags>
-        <tag>api</tag>
-        <tag>selenium</tag>
-        <tag>ui</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬虫_下载王者荣耀英雄图片</title>
     <url>/2022/04/05/%E7%88%AC%E8%99%AB-%E4%B8%8B%E8%BD%BD%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E8%8B%B1%E9%9B%84%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<h1 id="下载王者荣耀英雄图片"><a href="#下载王者荣耀英雄图片" class="headerlink" title="下载王者荣耀英雄图片"></a>下载王者荣耀英雄图片</h1><ul>
@@ -2786,9 +2813,9 @@
         <category>SQL</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>SQL</tag>
         <tag>LeetCode</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
@@ -2811,8 +2838,35 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>LeetCode</tag>
+        <tag>完结</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode_788. 旋转数字</title>
+    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<ul>
+<li>难度：简单</li>
+<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
+<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>思路</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
+<li><p>示例代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>执行效果也是非常的好。</p>
+</li>
+</ul>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>完结</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -2842,36 +2896,172 @@
         <category>SQL</category>
       </categories>
       <tags>
-        <tag>完结</tag>
         <tag>SQL</tag>
         <tag>LeetCode</tag>
+        <tag>完结</tag>
       </tags>
   </entry>
   <entry>
-    <title>LeetCode_788. 旋转数字</title>
-    <url>/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/</url>
-    <content><![CDATA[<ul>
-<li>难度：简单</li>
-<li>原文：<a href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
-<li>题目<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
+    <title>Python小程序_MD5常见操作</title>
+    <url>/2022/04/03/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F-MD5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="MD5不是加密"><a href="#MD5不是加密" class="headerlink" title="MD5不是加密"></a>MD5不是加密</h1><blockquote>
+<p><a href="https://draveness.me/whys-the-design-password-with-md5/">https://draveness.me/whys-the-design-password-with-md5/</a>   参考为什么这么设计</p>
+</blockquote>
 <ul>
-<li><p>思路</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>执行效果也是非常的好。</p>
+<li><p><strong>Message-Digest Algorithm 5</strong>：信息摘要算法</p>
+</li>
+<li><p>MD5 并不是一种加密算法，我们也可以叫它哈希函数</p>
+</li>
+<li><p>世界上最常见的20个密码，类似建立一个彩虹表进行碰撞，以达到<em>解密</em>的效果。</p>
+<ul>
+<li><a href="https://md5.hwcha.com/">https://md5.hwcha.com/</a></li>
+<li><a href="https://www.sojson.com/md5/">https://www.sojson.com/md5/</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>RANK</th>
+<th>2021</th>
+<th>MD5值(32位小写)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>123456</td>
+<td>e10adc3949ba59abbe56e057f20f883e</td>
+</tr>
+<tr>
+<td>2</td>
+<td>123456789</td>
+<td>25f9e794323b453885f5181f1b624d0b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>12345</td>
+<td>827ccb0eea8a706c4c34a16891f84e7b</td>
+</tr>
+<tr>
+<td>4</td>
+<td>qwerty</td>
+<td>d8578edf8458ce06fbc5bb76a58c5ca4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>password</td>
+<td>5f4dcc3b5aa765d61d8327deb882cf99</td>
+</tr>
+<tr>
+<td>6</td>
+<td>12345678</td>
+<td>25d55ad283aa400af464c76d713c07ad</td>
+</tr>
+<tr>
+<td>7</td>
+<td>111111</td>
+<td>96e79218965eb72c92a549dd5a330112</td>
+</tr>
+<tr>
+<td>8</td>
+<td>123123</td>
+<td>4297f44b13955235245b2497399d7a93</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1234567890</td>
+<td>e807f1fcf82d132f9bb018ca6738a19f</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1234567</td>
+<td>fcea920f7412b5da7be0cf42b8c93759</td>
+</tr>
+<tr>
+<td>11</td>
+<td>qwerty123</td>
+<td>3fc0a7acf087f549ac2b266baf94b8b1</td>
+</tr>
+<tr>
+<td>12</td>
+<td>000000</td>
+<td>670b14728ad9902aecba32e22fa4f6bd</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1q2w3e</td>
+<td>3fde6bb0541387e4ebdadf7c2ff31123</td>
+</tr>
+<tr>
+<td>14</td>
+<td>aa12345678</td>
+<td>d4f2a60315eef2b600cf0240ac0c37ad</td>
+</tr>
+<tr>
+<td>15</td>
+<td>abc123</td>
+<td>e99a18c428cb38d5f260853678922e03</td>
+</tr>
+<tr>
+<td>16</td>
+<td>password1</td>
+<td>7c6a180b36896a0a8c02787eeafb0e4c</td>
+</tr>
+<tr>
+<td>17</td>
+<td>1234</td>
+<td>81dc9bdb52d04dc20036dbd8313ed055</td>
+</tr>
+<tr>
+<td>18</td>
+<td>qwertyuiop</td>
+<td>6eea9b7ef19179a06954edd0f6c05ceb</td>
+</tr>
+<tr>
+<td>19</td>
+<td>123321</td>
+<td>c8837b23ff8aaa8a2dde915473ce0991</td>
+</tr>
+<tr>
+<td>20</td>
+<td>password123</td>
+<td>482c811da5d5b4bc6d497ffa98491e38</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>为什么说MD5不是加密呢？</p>
+<ul>
+<li>数据源是无穷尽的，而 MD5密文是有限的。所以不存在MD5解密。</li>
+<li>MD5 哈希的信息无法被还原，只依靠 MD5 是无法完成加密的。</li>
+</ul>
+</li>
+<li><p>哈希加盐salt</p>
+<ul>
+<li>在原始字符串的基础上增加一个字符串，得到一个新的”密码”。</li>
+<li>/etc/passwd早期就是这么存储密码的</li>
+</ul>
+</li>
+<li><p>密码的破解（哈希碰撞）</p>
+<ul>
+<li>攻击者其实不需要知道用户的密码是什么，他只需要找到一个值 <code>value</code>，这个值加盐后的哈希与密码加盐后的哈希完全一致就能登录用户的账号</li>
+<li>可以了解下hashcat（github搜）</li>
+</ul>
 </li>
 </ul>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
+<h1 id="Python中的MD5”加密”"><a href="#Python中的MD5”加密”" class="headerlink" title="Python中的MD5”加密”"></a>Python中的MD5”加密”</h1><ul>
+<li><p>加密</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment">#bytes对象</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="comment">#e10adc3949ba59abbe56e057f20f883e  都是这个</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(<span class="string">b&#x27;123456&#x27;</span>).hexdigest())</span><br></pre></td></tr></table></figure></li>
+<li><p>得到的是32位小写，如果要32位大写、16位大小写，那就简单处理下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest().upper())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>].upper())</span><br></pre></td></tr></table></figure></li>
+<li><p>加盐</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_md5</span>(<span class="params">ori_str:<span class="built_in">str</span>,salt:<span class="built_in">str</span>=<span class="string">&#x27;&#x27;</span>,mode:<span class="built_in">str</span>=<span class="string">&#x27;1&#x27;</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    获取字符串的MD加密后的信息</span></span><br><span class="line"><span class="string">    :param ori_str: 原始字符串</span></span><br><span class="line"><span class="string">    :param salt: 盐值</span></span><br><span class="line"><span class="string">    :param mode: 1=32小  2=32大 3=16小 4=16大</span></span><br><span class="line"><span class="string">    :return: MD5后的字符串</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    md5_password = hashlib.md5((ori_str+salt).encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password.upper()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;3&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>]</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;4&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>].upper()</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">f&#x27;unsupport mode <span class="subst">&#123;mode&#125;</span>,only support 1,2,3,4&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;3&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;5&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
       <categories>
         <category>python</category>
       </categories>
       <tags>
         <tag>完结</tag>
-        <tag>LeetCode</tag>
         <tag>python</tag>
+        <tag>MD5</tag>
       </tags>
   </entry>
   <entry>
@@ -3851,169 +4041,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python小程序_MD5常见操作</title>
-    <url>/2022/04/03/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F-MD5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="MD5不是加密"><a href="#MD5不是加密" class="headerlink" title="MD5不是加密"></a>MD5不是加密</h1><blockquote>
-<p><a href="https://draveness.me/whys-the-design-password-with-md5/">https://draveness.me/whys-the-design-password-with-md5/</a>   参考为什么这么设计</p>
-</blockquote>
-<ul>
-<li><p><strong>Message-Digest Algorithm 5</strong>：信息摘要算法</p>
-</li>
-<li><p>MD5 并不是一种加密算法，我们也可以叫它哈希函数</p>
-</li>
-<li><p>世界上最常见的20个密码，类似建立一个彩虹表进行碰撞，以达到<em>解密</em>的效果。</p>
-<ul>
-<li><a href="https://md5.hwcha.com/">https://md5.hwcha.com/</a></li>
-<li><a href="https://www.sojson.com/md5/">https://www.sojson.com/md5/</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>RANK</th>
-<th>2021</th>
-<th>MD5值(32位小写)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>123456</td>
-<td>e10adc3949ba59abbe56e057f20f883e</td>
-</tr>
-<tr>
-<td>2</td>
-<td>123456789</td>
-<td>25f9e794323b453885f5181f1b624d0b</td>
-</tr>
-<tr>
-<td>3</td>
-<td>12345</td>
-<td>827ccb0eea8a706c4c34a16891f84e7b</td>
-</tr>
-<tr>
-<td>4</td>
-<td>qwerty</td>
-<td>d8578edf8458ce06fbc5bb76a58c5ca4</td>
-</tr>
-<tr>
-<td>5</td>
-<td>password</td>
-<td>5f4dcc3b5aa765d61d8327deb882cf99</td>
-</tr>
-<tr>
-<td>6</td>
-<td>12345678</td>
-<td>25d55ad283aa400af464c76d713c07ad</td>
-</tr>
-<tr>
-<td>7</td>
-<td>111111</td>
-<td>96e79218965eb72c92a549dd5a330112</td>
-</tr>
-<tr>
-<td>8</td>
-<td>123123</td>
-<td>4297f44b13955235245b2497399d7a93</td>
-</tr>
-<tr>
-<td>9</td>
-<td>1234567890</td>
-<td>e807f1fcf82d132f9bb018ca6738a19f</td>
-</tr>
-<tr>
-<td>10</td>
-<td>1234567</td>
-<td>fcea920f7412b5da7be0cf42b8c93759</td>
-</tr>
-<tr>
-<td>11</td>
-<td>qwerty123</td>
-<td>3fc0a7acf087f549ac2b266baf94b8b1</td>
-</tr>
-<tr>
-<td>12</td>
-<td>000000</td>
-<td>670b14728ad9902aecba32e22fa4f6bd</td>
-</tr>
-<tr>
-<td>13</td>
-<td>1q2w3e</td>
-<td>3fde6bb0541387e4ebdadf7c2ff31123</td>
-</tr>
-<tr>
-<td>14</td>
-<td>aa12345678</td>
-<td>d4f2a60315eef2b600cf0240ac0c37ad</td>
-</tr>
-<tr>
-<td>15</td>
-<td>abc123</td>
-<td>e99a18c428cb38d5f260853678922e03</td>
-</tr>
-<tr>
-<td>16</td>
-<td>password1</td>
-<td>7c6a180b36896a0a8c02787eeafb0e4c</td>
-</tr>
-<tr>
-<td>17</td>
-<td>1234</td>
-<td>81dc9bdb52d04dc20036dbd8313ed055</td>
-</tr>
-<tr>
-<td>18</td>
-<td>qwertyuiop</td>
-<td>6eea9b7ef19179a06954edd0f6c05ceb</td>
-</tr>
-<tr>
-<td>19</td>
-<td>123321</td>
-<td>c8837b23ff8aaa8a2dde915473ce0991</td>
-</tr>
-<tr>
-<td>20</td>
-<td>password123</td>
-<td>482c811da5d5b4bc6d497ffa98491e38</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>为什么说MD5不是加密呢？</p>
-<ul>
-<li>数据源是无穷尽的，而 MD5密文是有限的。所以不存在MD5解密。</li>
-<li>MD5 哈希的信息无法被还原，只依靠 MD5 是无法完成加密的。</li>
-</ul>
-</li>
-<li><p>哈希加盐salt</p>
-<ul>
-<li>在原始字符串的基础上增加一个字符串，得到一个新的”密码”。</li>
-<li>/etc/passwd早期就是这么存储密码的</li>
-</ul>
-</li>
-<li><p>密码的破解（哈希碰撞）</p>
-<ul>
-<li>攻击者其实不需要知道用户的密码是什么，他只需要找到一个值 <code>value</code>，这个值加盐后的哈希与密码加盐后的哈希完全一致就能登录用户的账号</li>
-<li>可以了解下hashcat（github搜）</li>
-</ul>
-</li>
-</ul>
-<h1 id="Python中的MD5”加密”"><a href="#Python中的MD5”加密”" class="headerlink" title="Python中的MD5”加密”"></a>Python中的MD5”加密”</h1><ul>
-<li><p>加密</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment">#bytes对象</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="comment">#e10adc3949ba59abbe56e057f20f883e  都是这个</span></span><br><span class="line"><span class="built_in">print</span>(hashlib.md5(<span class="string">b&#x27;123456&#x27;</span>).hexdigest())</span><br></pre></td></tr></table></figure></li>
-<li><p>得到的是32位小写，如果要32位大写、16位大小写，那就简单处理下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">ori_pwd = <span class="string">&#x27;123456&#x27;</span></span><br><span class="line">byte_ori_pwd = ori_pwd.encode(<span class="string">&#x27;utf-8&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;32位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest().upper())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位小写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;16位大写: &#x27;</span>,hashlib.md5(byte_ori_pwd).hexdigest()[<span class="number">8</span>:-<span class="number">8</span>].upper())</span><br></pre></td></tr></table></figure></li>
-<li><p>加盐</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_md5</span>(<span class="params">ori_str:<span class="built_in">str</span>,salt:<span class="built_in">str</span>=<span class="string">&#x27;&#x27;</span>,mode:<span class="built_in">str</span>=<span class="string">&#x27;1&#x27;</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    获取字符串的MD加密后的信息</span></span><br><span class="line"><span class="string">    :param ori_str: 原始字符串</span></span><br><span class="line"><span class="string">    :param salt: 盐值</span></span><br><span class="line"><span class="string">    :param mode: 1=32小  2=32大 3=16小 4=16大</span></span><br><span class="line"><span class="string">    :return: MD5后的字符串</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    md5_password = hashlib.md5((ori_str+salt).encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password.upper()</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;3&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>]</span><br><span class="line">    <span class="keyword">if</span> mode == <span class="string">&#x27;4&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> md5_password[<span class="number">8</span>:-<span class="number">8</span>].upper()</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">f&#x27;unsupport mode <span class="subst">&#123;mode&#125;</span>,only support 1,2,3,4&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;3&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;不加盐16位小写:&#x27;</span>,get_md5(<span class="string">&#x27;123456&#x27;</span>,salt=<span class="string">&#x27;nanjing&#x27;</span>,mode=<span class="string">&#x27;5&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>完结</tag>
-        <tag>python</tag>
-        <tag>MD5</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python标准库_pathlib及实例操作</title>
     <url>/2022/04/02/Python%E6%A0%87%E5%87%86%E5%BA%93pathlib/</url>
     <content><![CDATA[<h1 id="Python标准库pathlib及实例操作"><a href="#Python标准库pathlib及实例操作" class="headerlink" title="Python标准库pathlib及实例操作"></a>Python标准库pathlib及实例操作</h1><blockquote>
@@ -4444,7 +4471,7 @@
   </entry>
   <entry>
     <title>hexo技巧</title>
-    <url>/2022/03/31/hexo/</url>
+    <url>/2022/03/31/TODO-hexo/</url>
     <content><![CDATA[<h1 id="hexo技巧"><a href="#hexo技巧" class="headerlink" title="hexo技巧"></a>hexo技巧</h1><blockquote>
 <p>当前博客是用hexo+ayer主题结合github搭建而成</p>
 </blockquote>
@@ -4502,7 +4529,7 @@
   </entry>
   <entry>
     <title>读书笔记_python源码剖析</title>
-    <url>/2022/03/30/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-python%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/</url>
+    <url>/2022/03/30/TODO-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-python%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/</url>
     <content><![CDATA[<h1 id="读书笔记-python源码剖析"><a href="#读书笔记-python源码剖析" class="headerlink" title="读书笔记_python源码剖析"></a>读书笔记_python源码剖析</h1>]]></content>
       <categories>
         <category>读书笔记</category>
