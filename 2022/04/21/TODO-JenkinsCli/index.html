@@ -84,7 +84,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.8k</span>
+            <span class="post-count">1.9k</span>
         </span>
     </span>
 
@@ -93,7 +93,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">9 分钟</span>
+            <span class="post-count">10 分钟</span>
         </span>
     </span>
 </div>
@@ -113,7 +113,7 @@
 </blockquote>
 <h2 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h2><ul>
 <li>首页-&gt;系统管理-&gt;工具和动作-&gt;Jenkins 命令行接口</li>
-<li>你要去下载一个jenkins-cli.jar</li>
+<li>在这个界面下载一个jenkins-cli.jar</li>
 </ul>
 <h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><h4 id="方式一：用户名密码"><a href="#方式一：用户名密码" class="headerlink" title="方式一：用户名密码"></a>方式一：用户名密码</h4><ul>
 <li>登录操作是所有操作的前提</li>
@@ -143,6 +143,28 @@
 <li><p>你也可以放在linux服务器上，存放到服务器<strong>Jenkins安装目录/war/WEB-INF</strong>下，如命名为password.txt</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth @password.txt   list-jobs</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h4 id="方式四：ssh方式-推荐"><a href="#方式四：ssh方式-推荐" class="headerlink" title="方式四：ssh方式(推荐)"></a>方式四：ssh方式(推荐)</h4><blockquote>
+<p>未测试成功，可能跟阿里云有关系</p>
+</blockquote>
+<ul>
+<li>系统-&gt;系统管理-&gt;全局安全配置-&gt;ssh server<ul>
+<li>指定端口：7654（不要冲突即可）</li>
+<li>保存</li>
+</ul>
+</li>
+<li>参考方式二，切换到API TOKEN界面，找到SSH Public Keys<ul>
+<li>输入你本机的pub key</li>
+</ul>
+</li>
+<li>重启?</li>
+<li></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ssh -l ruru023 -p 8085  106.14.1.150 <span class="built_in">help</span></span></span><br><span class="line">ssh: connect to host 106.14.1.150 port 8085: Connection refused</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h4 id="★写成bat来调度"><a href="#★写成bat来调度" class="headerlink" title="★写成bat来调度"></a>★写成bat来调度</h4><ul>
 <li>参考上面的内容</li>
 </ul>
