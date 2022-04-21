@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Jenkins CLI命令行 |  老吴的博客</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-TODO-JenkinsCli"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Jenkins CLI命令行
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/04/21/TODO-JenkinsCli/" class="article-date">
+  <time datetime="2022-04-20T16:00:00.000Z" itemprop="datePublished">2022-04-21</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jenkins/">jenkins</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.8k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">9 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Jenkins-CLI命令行"><a href="#Jenkins-CLI命令行" class="headerlink" title="Jenkins CLI命令行"></a>Jenkins CLI命令行</h1><blockquote>
+<p>jenkins不光可以UI操作还提供了命令行接口</p>
+</blockquote>
+<h2 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h2><ul>
+<li>首页-&gt;系统管理-&gt;工具和动作-&gt;Jenkins 命令行接口</li>
+<li>你要去下载一个jenkins-cli.jar</li>
+</ul>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><h4 id="方式一：用户名密码"><a href="#方式一：用户名密码" class="headerlink" title="方式一：用户名密码"></a>方式一：用户名密码</h4><ul>
+<li>登录操作是所有操作的前提</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显然这样是不太安全的</li>
+<li></li>
+</ul>
+<h4 id="方式二：API-Token"><a href="#方式二：API-Token" class="headerlink" title="方式二：API Token"></a>方式二：API Token</h4><ul>
+<li>Jenkins-&gt;用户列表-&gt;用户名-&gt;设置-&gt;API Token</li>
+<li>输入名称，点击生成保存即可，但这个token一定要记录下来，你以后再也看不到了。</li>
+</ul>
+<p><img src="C:/Users/songqin008/AppData/Roaming/Typora/typora-user-images/1650520389931.png" alt="1650520389931"></p>
+<ul>
+<li><p>命令行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:11129918daa39bdba49852a08d64ad1f44 list-jobs</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="方式三：文件方式-推荐"><a href="#方式三：文件方式-推荐" class="headerlink" title="方式三：文件方式(推荐)"></a>方式三：文件方式(推荐)</h4><ul>
+<li><p>在有了token的基础上，你可以把以下信息保存下来</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruru023:11129918daa39bdba49852a08d64ad1f44</span><br></pre></td></tr></table></figure></li>
+<li><p>存放到你命令行所在机器的D:\下，如命名为password.txt</p>
+</li>
+<li><p>后面执行命令就用如下方式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth @d:\password.txt   list-jobs</span><br></pre></td></tr></table></figure></li>
+<li><p>你也可以放在linux服务器上，存放到服务器<strong>Jenkins安装目录/war/WEB-INF</strong>下，如命名为password.txt</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth @password.txt   list-jobs</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="★写成bat来调度"><a href="#★写成bat来调度" class="headerlink" title="★写成bat来调度"></a>★写成bat来调度</h4><ul>
+<li>参考上面的内容</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">cls</span><br><span class="line">:start</span><br><span class="line">set /p args=&quot;please input command args:&quot;</span><br><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth @d:\password.txt %args%</span><br><span class="line">goto start</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>执行效果如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">please input command args:list-jobs</span><br><span class="line">Pipeline_forcli</span><br><span class="line">pipeline_forcli2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">please input command args:version</span><br><span class="line">2.319.1</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="重启-关闭Jenkins"><a href="#重启-关闭Jenkins" class="headerlink" title="重启/关闭Jenkins"></a>重启/关闭Jenkins</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 restart</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 shutdown</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>还有安全重启</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">safe-restart   #等到所有的操作都完成然后执行重启</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="列出jobs"><a href="#列出jobs" class="headerlink" title="列出jobs"></a>列出jobs</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 list-jobs</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出</span></span><br><span class="line">Pipeline_forcli</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="构建job"><a href="#构建job" class="headerlink" title="构建job"></a>构建job</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 build Pipeline_forcli  #这是一行</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="删除job的build"><a href="#删除job的build" class="headerlink" title="删除job的build"></a>删除job的build</h3><ul>
+<li><p>语法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar delete-builds JOB RANGE</span><br><span class="line">Delete build records of a specified job, possibly in a bulk.</span><br><span class="line"> JOB   : Name of the job to build</span><br><span class="line"> RANGE : Range of the build records to delete. &#x27;N-M&#x27;, &#x27;N,M&#x27;, or &#x27;N&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 delete-builds pipeline_forcli 1</span></span><br><span class="line">Deleted 1 builds</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 delete-builds pipeline_forcli 2-3</span></span><br><span class="line">Deleted 2 builds</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 delete-builds pipeline_forcli 4,5</span></span><br><span class="line">Deleted 2 builds</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="禁用-启用job"><a href="#禁用-启用job" class="headerlink" title="禁用/启用job"></a>禁用/启用job</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 disable-job pipeline_forcli</span><br><span class="line"></span><br><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 enable-job pipeline_forcli</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="获取job的xml描述"><a href="#获取job的xml描述" class="headerlink" title="获取job的xml描述"></a>获取job的xml描述</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 get-job pipeline_forcli</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>导出到xml文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 get-job pipeline_forcli  &gt;xxx.xml</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="复制job"><a href="#复制job" class="headerlink" title="复制job"></a>复制job</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 copy-job pipeline_forcli pipeline_forcli2</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="删除job"><a href="#删除job" class="headerlink" title="删除job"></a>删除job</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 delete-job pipeline_forcli</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="列出插件"><a href="#列出插件" class="headerlink" title="列出插件"></a>列出插件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 list-plugins</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java -jar jenkins-cli.jar -s http://106.14.1.150:8082/ -auth ruru023:123456 install-plugin jira:3.7.1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出信息</span></span><br><span class="line">Installing jira:3.7.1 from update center</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>其他要么比较简单，要么很少用，要么太复杂，没意思了。</li>
+</ul>
+<h2 id="附录：CLI命令语法"><a href="#附录：CLI命令语法" class="headerlink" title="附录：CLI命令语法"></a>附录：CLI命令语法</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Jenkins CLI</span><br><span class="line">Usage: java -jar jenkins-cli.jar [-s URL] command [opts...] args...</span><br><span class="line">Options:</span><br><span class="line"> -s URL              : the server URL (defaults to the JENKINS_URL env var)</span><br><span class="line"> -http               : use a plain CLI protocol over HTTP(S) (the default; mutually exclusive with -ssh)</span><br><span class="line"> -webSocket          : like -http but using WebSocket (works better with most reverse proxies)</span><br><span class="line"> -ssh                : use SSH protocol (requires -user; SSH port must be open on server, and user must have registered a public key)</span><br><span class="line"> -i KEY              : SSH private key file used for authentication (for use with -ssh)</span><br><span class="line"> -noCertificateCheck : bypass HTTPS certificate check entirely. Use with caution</span><br><span class="line"> -noKeyAuth          : don&#x27;t try to load the SSH authentication private key. Conflicts with -i</span><br><span class="line"> -user               : specify user (for use with -ssh)</span><br><span class="line"> -strictHostKey      : request strict host key checking (for use with -ssh)</span><br><span class="line"> -logger FINE        : enable detailed logging from the client</span><br><span class="line"> -auth [ USER:SECRET | @FILE ] : specify username and either password or API token (or load from them both from a file);</span><br><span class="line">                                 for use with -http.</span><br><span class="line">                                 Passing credentials by file is recommended.</span><br><span class="line">                                 See https://jenkins.io/redirect/cli-http-connection-mode for more info and options.</span><br><span class="line"></span><br><span class="line">The available commands depend on the server. Run the &#x27;help&#x27; command to see the list.</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="附录：CLI命令操作"><a href="#附录：CLI命令操作" class="headerlink" title="附录：CLI命令操作"></a>附录：CLI命令操作</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>add-job-to-view</td>
+<td>Adds jobs to view.</td>
+</tr>
+<tr>
+<td>build</td>
+<td>Builds a job, and optionally waits until its completion.</td>
+</tr>
+<tr>
+<td>cancel-quiet-down</td>
+<td>Cancel the effect of the “quiet-down” command.</td>
+</tr>
+<tr>
+<td>clear-queue</td>
+<td>Clears the build queue.</td>
+</tr>
+<tr>
+<td>connect-node</td>
+<td>Reconnect to a node(s)</td>
+</tr>
+<tr>
+<td>console</td>
+<td>Retrieves console output of a build.</td>
+</tr>
+<tr>
+<td>copy-job</td>
+<td>Copies a job.</td>
+</tr>
+<tr>
+<td>create-credentials-by-xml</td>
+<td>Create Credential by XML</td>
+</tr>
+<tr>
+<td>create-credentials-domain-by-xml</td>
+<td>Create Credentials Domain by XML</td>
+</tr>
+<tr>
+<td>create-job</td>
+<td>Creates a new job by reading stdin as a configuration XML file.</td>
+</tr>
+<tr>
+<td>create-node</td>
+<td>Creates a new node by reading stdin as a XML configuration.</td>
+</tr>
+<tr>
+<td>create-view</td>
+<td>Creates a new view by reading stdin as a XML configuration.</td>
+</tr>
+<tr>
+<td>declarative-linter</td>
+<td>Validate a Jenkinsfile containing a Declarative Pipeline</td>
+</tr>
+<tr>
+<td>delete-builds</td>
+<td>Deletes build record(s).</td>
+</tr>
+<tr>
+<td>delete-credentials</td>
+<td>Delete a Credential</td>
+</tr>
+<tr>
+<td>delete-credentials-domain</td>
+<td>Delete a Credentials Domain</td>
+</tr>
+<tr>
+<td>delete-job</td>
+<td>Deletes job(s).</td>
+</tr>
+<tr>
+<td>delete-node</td>
+<td>Deletes node(s)</td>
+</tr>
+<tr>
+<td>delete-view</td>
+<td>Deletes view(s).</td>
+</tr>
+<tr>
+<td>disable-job</td>
+<td>禁用任务</td>
+</tr>
+<tr>
+<td>disable-plugin</td>
+<td>Disable one or more installed plugins.</td>
+</tr>
+<tr>
+<td>disconnect-node</td>
+<td>Disconnects from a node.</td>
+</tr>
+<tr>
+<td>enable-job</td>
+<td>启用任务</td>
+</tr>
+<tr>
+<td>enable-plugin</td>
+<td>Enables one or more installed plugins transitively.</td>
+</tr>
+<tr>
+<td>get-credentials-as-xml</td>
+<td>Get a Credentials as XML (secrets redacted)</td>
+</tr>
+<tr>
+<td>get-credentials-domain-as-xml</td>
+<td>Get a Credentials Domain as XML</td>
+</tr>
+<tr>
+<td>get-gradle</td>
+<td>List available gradle installations</td>
+</tr>
+<tr>
+<td>get-job</td>
+<td>Dumps the job definition XML to stdout.</td>
+</tr>
+<tr>
+<td>get-node</td>
+<td>Dumps the node definition XML to stdout.</td>
+</tr>
+<tr>
+<td>get-view</td>
+<td>Dumps the view definition XML to stdout.</td>
+</tr>
+<tr>
+<td>groovy</td>
+<td>Executes the specified Groovy script.</td>
+</tr>
+<tr>
+<td>groovysh</td>
+<td>Runs an interactive groovy shell.</td>
+</tr>
+<tr>
+<td>help</td>
+<td>Lists all the available commands or a detailed description of single command.</td>
+</tr>
+<tr>
+<td>import-credentials-as-xml</td>
+<td>Import credentials as XML. The output of “list-credentials-as-xml” can be used as input here as is, the only needed change is to set the actual Secrets which are redacted in the output.</td>
+</tr>
+<tr>
+<td>install-plugin</td>
+<td>Installs a plugin either from a file, an URL, or from update center.</td>
+</tr>
+<tr>
+<td>keep-build</td>
+<td>永久保留这次构建。</td>
+</tr>
+<tr>
+<td>list-changes</td>
+<td>Dumps the changelog for the specified build(s).</td>
+</tr>
+<tr>
+<td>list-credentials</td>
+<td>Lists the Credentials in a specific Store</td>
+</tr>
+<tr>
+<td>list-credentials-as-xml</td>
+<td>Export credentials as XML. The output of this command can be used as input for “import-credentials-as-xml” as is, the only needed change is to set the actual Secrets which are redacted in the output.</td>
+</tr>
+<tr>
+<td>list-credentials-context-resolvers</td>
+<td>List Credentials Context Resolvers</td>
+</tr>
+<tr>
+<td>list-credentials-providers</td>
+<td>List Credentials Providers</td>
+</tr>
+<tr>
+<td>list-jobs</td>
+<td>Lists all jobs in a specific view or item group.</td>
+</tr>
+<tr>
+<td>list-plugins</td>
+<td>Outputs a list of installed plugins.</td>
+</tr>
+<tr>
+<td>mail</td>
+<td>Reads stdin and sends that out as an e-mail.</td>
+</tr>
+<tr>
+<td>offline-node</td>
+<td>Stop using a node for performing builds temporarily, until the next “online-node” command.</td>
+</tr>
+<tr>
+<td>online-node</td>
+<td>Resume using a node for performing builds, to cancel out the earlier “offline-node” command.</td>
+</tr>
+<tr>
+<td>quiet-down</td>
+<td>Quiet down Jenkins, in preparation for a restart. Don’t start any builds.</td>
+</tr>
+<tr>
+<td>reload-configuration</td>
+<td>Discard all the loaded data in memory and reload everything from file system. Useful when you modified config files directly on disk.</td>
+</tr>
+<tr>
+<td>reload-job</td>
+<td>Reload job(s)</td>
+</tr>
+<tr>
+<td>remove-job-from-view</td>
+<td>Removes jobs from view.</td>
+</tr>
+<tr>
+<td>replay-pipeline</td>
+<td>从标准输入中获取的脚本并回放流水线执行</td>
+</tr>
+<tr>
+<td>restart</td>
+<td>重新启动Jenkins</td>
+</tr>
+<tr>
+<td>restart-from-stage</td>
+<td>Restart a completed Declarative Pipeline build from a given stage.</td>
+</tr>
+<tr>
+<td>safe-restart</td>
+<td>安全地重新启动Jenkins</td>
+</tr>
+<tr>
+<td>safe-shutdown</td>
+<td>Puts Jenkins into the quiet mode, wait for existing builds to be completed, and then shut down Jenkins.</td>
+</tr>
+<tr>
+<td>session-id</td>
+<td>Outputs the session ID, which changes every time Jenkins restarts.</td>
+</tr>
+<tr>
+<td>set-build-description</td>
+<td>Sets the description of a build.</td>
+</tr>
+<tr>
+<td>set-build-display-name</td>
+<td>Sets the displayName of a build.</td>
+</tr>
+<tr>
+<td>shutdown</td>
+<td>立刻关闭Jenkins</td>
+</tr>
+<tr>
+<td>stop-builds</td>
+<td>Stop all running builds for job(s)</td>
+</tr>
+<tr>
+<td>update-credentials-by-xml</td>
+<td>Update Credentials by XML</td>
+</tr>
+<tr>
+<td>update-credentials-domain-by-xml</td>
+<td>Update Credentials Domain by XML</td>
+</tr>
+<tr>
+<td>update-job</td>
+<td>Updates the job definition XML from stdin. The opposite of the get-job command.</td>
+</tr>
+<tr>
+<td>update-node</td>
+<td>Updates the node definition XML from stdin. The opposite of the get-node command.</td>
+</tr>
+<tr>
+<td>update-view</td>
+<td>Updates the view definition XML from stdin. The opposite of the get-view command.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>Outputs the current version.</td>
+</tr>
+<tr>
+<td>wait-node-offline</td>
+<td>Wait for a node to become offline.</td>
+</tr>
+<tr>
+<td>wait-node-online</td>
+<td>Wait for a node to become online.</td>
+</tr>
+<tr>
+<td>who-am-i</td>
+<td>Reports your credential and permissions.</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/21/TODO-JenkinsCli/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/devops/" rel="tag">devops</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/" rel="tag">jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/04/13/TODO-Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%BA%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Git入门指南(二)</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "yPxr6M5Pq9OqDxX7xu6PLIvP-gzGzoHsz",
+    app_key: "8W8rnCc8ofSQdGuf0dQdhQh9",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2022
+        <i class="ri-heart-fill heart_icon"></i> 吴贤峰
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="老吴的博客"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/life">生活</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>客观您随意</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

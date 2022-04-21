@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2022/04/21/TODO-JenkinsCli/</loc>
+    <lastmod>2022-04-21</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2022/04/11/TODO-%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</loc>
+    <lastmod>2022-04-21</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2022/04/10/TODO-Github%E4%BB%93%E5%BA%93%E6%95%B4%E7%90%86/</loc>
     <lastmod>2022-04-18</lastmod>
   </url>
@@ -18,10 +26,6 @@
   </url>
   <url>
     <loc>http://example.com/2022/04/10/TODO-Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E4%B8%89/</loc>
-    <lastmod>2022-04-13</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2022/04/11/TODO-%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/</loc>
     <lastmod>2022-04-13</lastmod>
   </url>
   <url>
