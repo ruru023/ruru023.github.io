@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>LeetCode_788. 旋转数字 |  老吴的博客</title>
+      <title>Python的MRO浅谈 |  老吴的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -53,7 +53,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-LeetCode-788-旋转数字"
+  id="post-Python的MRO浅谈"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -64,7 +64,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  LeetCode_788. 旋转数字
+  Python的MRO浅谈
 </h1>
  
 
@@ -72,8 +72,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/" class="article-date">
-  <time datetime="2022-04-03T16:00:00.000Z" itemprop="datePublished">2022-04-04</time>
+      <a href="/2022/04/22/Python%E7%9A%84MRO%E6%B5%85%E8%B0%88/" class="article-date">
+  <time datetime="2022-04-21T16:00:00.000Z" itemprop="datePublished">2022-04-22</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/python/">python</a>
@@ -84,7 +84,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">472</span>
+            <span class="post-count">326</span>
         </span>
     </span>
 
@@ -100,26 +100,60 @@
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <ul>
-<li>难度：简单</li>
-<li>原文：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotated-digits/">https://leetcode-cn.com/problems/rotated-digits/</a></li>
-<li>题目<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">我们称一个数 X 为好数, 如果它的每位数字逐个地被旋转 180 度后，我们仍可以得到一个有效的，且和 X 不同的数。要求每位数字都要被旋转。</span><br><span class="line"></span><br><span class="line">如果一个数的每位数字被旋转以后仍然还是一个数字， 则这个数是有效的。0, 1, 和 8 被旋转后仍然是它们自己；2 和 5 可以互相旋转成对方（在这种情况下，它们以不同的方向旋转，换句话说，2 和 5 互为镜像）；6 和 9 同理，除了这些以外其他的数字旋转以后都不再是有效的数字。</span><br><span class="line"></span><br><span class="line">现在我们有一个正整数 N, 计算从 1 到 N 中有多少个数 X 是好数？</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入: 10</span><br><span class="line">输出: 4</span><br><span class="line">解释: </span><br><span class="line">在[1, 10]中有四个好数： 2, 5, 6, 9。</span><br><span class="line">注意 1 和 10 不是好数, 因为他们在旋转之后不变。</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"></span><br><span class="line">N 的取值范围是 [1, 10000]。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode-cn.com/problems/rotated-digits</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+  <h1 id="Python的MRO浅谈"><a href="#Python的MRO浅谈" class="headerlink" title="Python的MRO浅谈"></a>Python的MRO浅谈</h1><h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h2 id="第一个示例"><a href="#第一个示例" class="headerlink" title="第一个示例"></a>第一个示例</h2><ul>
+<li>最简单</li>
 </ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">b  = B()</span><br><span class="line">b.say()</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><p>思路</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">一开始我想复杂了，还想着去翻转每个数字，用字典来实现。</span><br><span class="line">后来想想其实这题很简单。</span><br><span class="line">凡是符合条件的数，有2个特点</span><br><span class="line">1. 不能有347</span><br><span class="line">2. 不能没有2569</span><br><span class="line">就这么简单，所以做法出来。</span><br></pre></td></tr></table></figure></li>
-<li><p>示例代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def rotatedDigits(self, N: int) -&gt; int:</span><br><span class="line">        result = 0</span><br><span class="line">        for i in range(1,N+1):</span><br><span class="line">            if &quot;3&quot; in str(i) or &quot;4&quot; in str(i) or &quot;7&quot; in str(i):</span><br><span class="line">                continue</span><br><span class="line">            elif &quot;2&quot;  in str(i)  or &quot;5&quot;  in str(i) or &quot;6&quot;  in str(i) or &quot;9&quot;  in str(i):</span><br><span class="line">                result = result +1</span><br><span class="line">        else:</span><br><span class="line">            return result </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>执行效果也是非常的好。</p>
-</li>
+<li>运行结果，打印A</li>
+<li>这是继承，B继承了A的方法say，say方法就输出了A</li>
 </ul>
-<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/4/25/171b19933ac038fc~tplv-t2oaga2asx-image.image"></p>
+<h2 id="第二个示例"><a href="#第二个示例" class="headerlink" title="第二个示例"></a>第二个示例</h2><ul>
+<li>也好理解</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>(<span class="title class_ inherited__">B</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">c = C()</span><br><span class="line">c.say()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行结果，打印B</li>
+<li>C继承了B，B继承了A</li>
+<li>c是C的实例，调用方法的时候用的是父亲B的，而非爷爷A的方法</li>
+</ul>
+<h2 id="第三个实例"><a href="#第三个实例" class="headerlink" title="第三个实例"></a>第三个实例</h2><ul>
+<li>也不难</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>(A,B):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">c = C()</span><br><span class="line">c.say()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出A</li>
+<li>改一下，换下顺序，C类继承(B,A)呢？如你所料输出B</li>
+<li>能不能这样写呢？不可以！</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>(A,B):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">c = C()</span><br><span class="line">c.say()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;demo1.py&quot;</span>, line <span class="number">10</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">C</span>(A,B):</span><br><span class="line">TypeError: Cannot create a consistent method resolution</span><br><span class="line">order (MRO) <span class="keyword">for</span> bases A, B</span><br><span class="line"></span><br><span class="line">进程已结束，退出代码为 <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>那这样写呢？可以的，输出B</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>(<span class="title class_ inherited__">A</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">say</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>(B,A):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">c = C()</span><br><span class="line">c.say()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="关于MRO"><a href="#关于MRO" class="headerlink" title="关于MRO"></a>关于MRO</h1><ul>
+<li>参考官网上文  <a target="_blank" rel="noopener" href="https://www.python.org/download/releases/2.3/mro/">https://www.python.org/download/releases/2.3/mro/</a></li>
+<li></li>
+</ul>
  
       <!-- reward -->
       
@@ -190,12 +224,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/04/LeetCode-788-%E6%97%8B%E8%BD%AC%E6%95%B0%E5%AD%97/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/22/Python%E7%9A%84MRO%E6%B5%85%E8%B0%88/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MRO/" rel="tag">MRO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%8C%E7%BB%93/" rel="tag">完结</a></li></ul>
 
     </footer>
   </div>
@@ -203,19 +237,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/04/04/LeetCode-512-%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%902/" class="article-nav-link">
+      <a href="/2022/04/26/TODO-Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97-%E5%9B%9B/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            LeetCode_512.游戏玩家分析2
+            Git入门指南(四)
           
         </div>
       </a>
     
     
-      <a href="/2022/04/03/Python%E5%B0%8F%E7%A8%8B%E5%BA%8F-MD5%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+      <a href="/2022/04/21/TODO-JenkinsCli/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Python小程序_MD5常见操作</div>
+        <div class="article-nav-title">Jenkins CLI命令行</div>
       </a>
     
   </nav>
